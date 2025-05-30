@@ -1,0 +1,146 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has extent of manifestation
+sidebar_level: 2
+sidebar_position: 11
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1023'
+title: has extent of manifestation
+RDF:
+  definition: Relates a manifestation to a physical characteristic that is a quantification of the physical characteristics of the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1278
+    url: /docs/attributes/1278
+    label: has extent of aggregated content
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1277
+    url: /docs/attributes/1277
+    label: has extent of embodied content
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1276
+    url: /docs/attributes/1276
+    label: has extent of unit
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1275
+    url: /docs/attributes/1275
+    label: has extent of unitary structure
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1242
+    url: /docs/attributes/1242
+    label: has physical characteristic
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has extent of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element supports the user tasks to identify and select the manifestation.
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1280">has manifestation statement of extent</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for controlled keywords.
+</div>
+
+<div className="guid">
+The values of this element may be parsed to extract carrier and content metrics.
+</div>
+
+#### Element values
+
+<div className="guid">
+The value of this element is a quantitative value that measures a single characteristic, or a combination of quantitative and qualitative values that measure multiple characteristics.
+Apply a string encoding scheme to construct a combination of values.
+</div>
+
+#### String encoding schemes
+
+<div className="guid">
+A string encoding scheme should combine values of the element sub-types.
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSES1023">Extent of manifestation SES</InLink> is a string encoding scheme suggested by ISBD for Manifestation for a value of this element.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific attribute.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "216 pages" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx072">Charles Rennie Mackintosh (2002; Thames & Hudson; volume; perfect binding)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unitary structure | "1000 pieces" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx068">Library (2022; Corner Piece Puzzles; object)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unit | "23 leaves" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx059">Asterix and the gowden heuk (2014; Itchy Coo; volume)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "249 foto" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx082">Homazh për De Radën: DVD 1 (2004; Università della Calabria; videodisk)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a quantitative value that consists of a whole number and a controlled term or standard symbol for a unit of a measurement or other quantifiable characteristic of the manifestation.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of manifestation | "1 drawing" |
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that is a combination of quantitative and qualitative values that measure multiple characteristics and that is constructed by applying a string encoding scheme.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of manifestation | "2 CDs (15 studio music performances in 72 mins; stereo + 14 studio music performances in 70 mins; stereo) + 1 booklet (2 photographs in 12 pages)" |
+  </details>
+</div>

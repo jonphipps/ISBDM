@@ -1,0 +1,73 @@
+---
+sidebar_class_name: sidebar-level-4
+slug: /relationships/1286
+sidebar_label: has uniform resource locator
+sidebar_level: 4
+sidebar_position: 15
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │  │  └─ '
+id: '1286'
+title: has uniform resource locator
+RDF:
+  definition: Relates a manifestation to a nomen that is an online address of the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that is an online resource.
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1111
+    url: /docs/relationships/1111
+    label: has identifier of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has uniform resource locator
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+For an online service that is a web page that provides indirect access to a manifestation and does not uniquely identify the manifestation, record the URL in a <InLink href="/docs/notes/1219">has note on category of manifestation</InLink> element.
+</div>
+
+<SeeAlso><InLink href="/docs/notes/1219">has note on category of manifestation</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The value of this element is a string. Record a stringified URL as a value.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use an element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has uniform resource locator | "https://access.rdatoolkit.org/" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx006">RDA toolkit (2020-; RDA Copyright Holders; online resource)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has uniform resource locator | "https://www.myscience.ca/" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx015">myScience Canada (2008-; Scimetrica; online resource)</InLink>.]*
+  </details>
+</div>

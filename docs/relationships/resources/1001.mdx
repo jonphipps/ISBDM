@@ -1,0 +1,137 @@
+---
+slug: /relationships/1001
+sidebar_class_name: sidebar-level-1
+sidebar_label: has work associated with manifestation
+sidebar_level: 1
+sidebar_position: 15
+sidebar_category: resources
+id: '1001'
+title: has work associated with manifestation
+RDF:
+  definition: Relates a manifestation to a work.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Work
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1220
+    url: /docs/relationships/1220
+    label: has work embodied in manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1292
+    url: /docs/relationships/1292
+    label: is subject manifestation of
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1291
+    url: /docs/relationships/1291
+    label: has entity associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has work associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element supports the user tasks to find and identify the manifestation and to explore the context of the manifestation and its relationship to instances of the Work entity.
+</div>
+
+<SeeAlso><InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords, or used to construct browsing lists.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme for an authorized access point of a work should support several levels of identification and collation:
+  1. an agent who is responsible for the creation of the work
+  2. a title that is assigned by an agent who is responsible for the creation of the work or a cataloguing agency
+  3. specific attributes of the work
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSESWor">Work SES</InLink> is a string encoding scheme suggested by <span class="thisem">ISBD for Manifestation</span> for an authorized access point of a work.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has work embodied in manifestation | "Ziga Media, LLC. National parks" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx061">National parks (2015; Ziga Media, LLC; flipchart)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has work embodied in manifestation | "Krämer, Felix, 1971-. Matisse Bonnard" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx065">Matisse Bonnard (2017; Städel Museum; volume)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-types unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a work that is associated with the manifestation. Do not record a work that is known to be falsely associated with the manifestation.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has work associated with manifestation | "Austen, Jane, 1775-1817. Emma" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx016">Emma (2014 ; Borough Press; volume; case binding)</InLink>. The value is an authorized access point of a work that is an inspiration for the work that is embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has work associated with manifestation | "McCall Smith, Alexander, 1948-. Emma" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx053">Emma (1815; John Murray; volume)</InLink>. The value is an authorized access point of a work that is inspired by a work that is embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has work associated with manifestation | "New scientist. The collection (2014-; Reed Business Information Ltd; online resource)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx056">New scientist. The collection (2014-; Reed Business Information Ltd; volume)</InLink>. The value is an authorized access point of a diachronic work that is embodied in a carrier type that is different to the manifestation. The related work does not have a distinct ISSN.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a separate occurrence of the element for each distinct value that is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has work associated with manifestation | "Kero, Pavao, Popis glagoljskih kodeksa Zadarske nadbiskupije" |
+  | has work associated with manifestation | "Cvitanović, Vladislav, Popis glagoljskih kodeksa u zadarskoj nadbiskupiji" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx037">Mrtvi pisani unutra, Žman (1607-1612; Radinić, Pavao, 1549-1611; svezak)</InLink>. The values are authorized access points of works that reference the manifestation.]*
+  </details>
+</div>

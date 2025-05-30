@@ -1,0 +1,429 @@
+---
+slug: /relationships/1037
+sidebar_class_name: sidebar-level-3
+sidebar_label: has title of manifestation
+sidebar_level: 3
+sidebar_position: 16
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │  └─ '
+id: '1037'
+title: has title of manifestation
+RDF:
+  definition: Relates a manifestation to a nomen that is an uncontrolled label.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes a title proper, a variant title, a collective title, a common title, a compound title, and a title of a sub-unit.
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1038
+    url: /docs/relationships/1038
+    label: has title proper
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1245
+    url: /docs/relationships/1245
+    label: has variant title of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1293
+    url: /docs/relationships/1293
+    label: is reference source of
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1274
+    url: /docs/relationships/1274
+    label: has appellation of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has title of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+A title of a manifestation is assigned by an agent who creates the manifestation. A title of manifestation may be based on a title that is assigned by an agent who creates works and expressions that are embodied in the manifestation.
+</div>
+
+<div className="guid">
+Consider a title that is assigned by an agent who owns the only item that exemplifies the manifestation to be a title of the item and not a title of the manifestation.
+</div>
+
+<div className="guid">
+A title of manifestation may have one or more of the following characteristics:
+  - A title may be the same string as the name or title of another manifestation or of another entity.
+  - A title may be a transliteration by the cataloguing agency from a script that cannot be transcribed.
+  - A title may be given in different languages and scripts in statements that appear in the manifestation or in external sources. Consider each distinct value as a separate title.
+  - A title may consist of or include an initialism or a transcription or transliteration of a logo or other image.
+  - A title may include numbers, punctuation marks, and symbols.
+  - A title may include a statement of responsibility or edition that is integrated linguistically with the title.
+  - A title may reflect the characteristics of expressions or works that are embodied in the manifestation.
+<details>
+  <summary>Examples</summary>
+  
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "Faust" |
+    
+    *[The value is a title of multiple distinct manifestations and works, and a name of multiple distinct agents.]*
+    <hr />
+    
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "Album for the young" |
+    | has title of manifestation | "Album für die Jugend" |
+    
+    *[The values are the same title in different languages.]*
+    <hr />
+    
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "Alexandri Aphrodisiensis in Sophisticos Aristotelis elenchos commentaria" |
+    | has title of manifestation | "Аλεξάνδρυ ̀Аφροδισίεως άποσημειόσεις εις τους σοφιστικὸυς έλέγχους" |
+    
+    *[The values are the same title in different scripts.]*
+    <hr />
+    
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "Drawings" |
+    
+    *[The value is a collective title that reflects generic characteristics of aggregated expressions or worksthat are embodied in the manifestation.]*
+    <hr />
+    
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "IFLA journal" |
+    
+    *[The value is a title that includes an initialism.]*
+    <hr />
+    
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "Le 01" |
+    
+    <hr />
+    
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "The Penguin book of Italian madrigals" |
+</details>
+</div>
+
+<div className="guid">
+For an augmented expression aggregate, a collective title may be the same string as a title of an augmented expression or work.
+<details>
+  <summary>Examples</summary>
+  
+    | Property | Value |
+    |:---------|:------|
+    | has title of manifestation | "The last of the Mohicans" |
+    
+    *[The value is a title of an augmented work that is embodied in the manifestation. The augmenting works are identified only as "introduction and notes" in a statement of title and responsibility.]*
+</details>
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1028">has manifestation statement of title and responsibility</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The value of a title is a literal string (a nomen string).
+</div>
+
+<div className="guid">
+Record a value that is:
+  - a title that appears in a statement of title and responsibility that appears in the manifestation
+  - a title that appears in a statement of title and responsibility that is reproduced in the manifestation
+  - a title that is associated with the manifestation in an external source of information
+</div>
+
+#### String encoding schemes
+
+<div className="guid">
+For a manifestation that has a super-unit, a string encoding scheme for a compound title should combine values of a common title, a unit designation, and a unit title of the manifestation.
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSES1037">Compound title SES</InLink> is a string encoding scheme suggested by ISBD for Manifestation for a value of this element.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has appellation of manifestation | "The catalogue of shipwrecked books" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx042">Catalogue of shipwrecked books (2018; William Collins; volume; case binding)</InLink>. The value is a title of the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "90 vjet Bibliotekë Kombëtare" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx067">90 vjet Bibliotekë Kombëtare (2011; Biblioteka Kombëtare e Shqipërisë; object)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has variant title of manifestation | "NewScientist. The collection" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx056">New scientist. The collection (2014-; Reed Business Information Ltd; volume)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a single occurrence of the element that is selected from one or more values that are associated with the manifestation. Use the following order of preference:
+  
+  1. Nomen that is a title proper of the manifestation
+  2. Nomen that is a variant title of the manifestation
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  Record a value with the same wording as it appears in a statement of title and responsibility in the manifestation. Record a value with minor amendments to capitalisation and punctuation, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Varias antiguidades de Portugal" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "By the King, a proclamation for a general fast" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "一般动力学（ 动力学、振动与控制 ）最新进展" |
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that includes a name of an agent or a title of edition that is integrated linguistically with a title that appears in a statement of title and responsibility.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Shakespeare's Hamlet" |
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that excludes a name of an agent or a title of edition that is integrated linguistically with a title that appears in a statement of title and responsibility, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Hamlet" |
+  
+  *[Statement is "Shakespeare’s Hamlet".]*
+  </details>
+</div>
+
+<div className="stip">
+  If no title appears in any statement of title and responsibility, consider a name of an agent that appears in a statement to be a title.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "The Beatles" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Michigan Institute on the Teaching of Librarianship" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "徐悲鸿" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "수근김" |
+  </details>
+</div>
+
+<div className="stip">
+  If no title appears in any statement of title and responsibility or external source of information, and no name of an agent appears in a statement of title and responsibility, record a <InLink href="/docs/relationships/1234">has access point of manifestation</InLink> element that is based on a title that is assigned by a cataloguing agency instead of a title of the manifestation.
+</div>
+
+<div className="stip">
+  If an alternative title appears in a statement of title and responsibility, record a value that includes the title and all of the alternative titles with conjoining text and punctuation.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Eric, or, Little by little" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Un giorno di regno ossia Il finto Stanislao" |
+  </details>
+  
+  Record additional occurrences of the element for the title alone and for one or more of the alternative titles, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Eric" |
+  
+  | has title of manifestation | "Little by little" |
+  
+  *[An alternative title.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that has a media type of "computer", consider the filename to be a title.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "mapRDAEntity2LRM.nt" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is published or produced in more than one unit, record a value that is a common title of the sub-units. Omit a designation or title of a sub-unit.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "IFLA series on bibliographic control" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that has a super-unit, record a value that is a compound title that combines a common title, a designation of the unit, and a title of the unit, if and as available.
+  Record an additional occurrence of the element for the title of the unit, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "IFLA series on bibliographic control: vol 43: Functional requirements for subject authority data (FRSAD)" |
+  
+  | has title of manifestation | "Functional requirements for subject authority data (FRSAD)" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that has a super-unit, if a title of the unit is integrated linguistically with a title of the super-unit, record a value that is the integrated title.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Supplement to Hain's Repertorium bibliographicum" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an aggregate, and if a collective title appears in a statement of title and responsibility or external source of information, record a value that is the collective title.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "West Indian stories" |
+  
+  *[The value is a collective title for works with a common place of creation that are embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "The man from Snowy River and other versesquot; |
+  
+  *[The value is a collective title that is based on the title of the most famous work that is embodied in the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an aggregate, and if no collective title appears in a statement of title and responsibility or external source of information, record a value that is a compound title that combines, in the order of their appearance, the titles of aggregated expressions or works that appear in statements of title and responsibility. Include words and phrases that conjoin the titles but omit statements of responsibility. Do not indicate omissions.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Flash and filigree & The magic Christian" |
+  
+  *[The value includes the conjunction "&" (ampersand) that appears between the titles of distinct expressions "Flass and filigree" and "The magic Christian".]*
+  </details>
+  
+  If the number of individual titles is large, include the first few titles and indicate the omission of other titles at the end of the compound title.
+  If there are no words or phrases that conjoin two titles, add standard punctuation between the titles.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "Pride and prejudice + Wuthering Heights + Silas Marner" |
+  
+  *[The manifestation is a collected expressions aggregate. The value includes the titles of distinct expressions "Pride and prejudice", "Wuthering Heights", and "Silar Marner" in the order of their appearance in a single statement of title and responsibility. The value omits statements of responsibility and adds the punctuation " + " (space-plus-space) between titles for clarity]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "How to manage your friends + How to manage your enemies" |
+  
+  *[The manifestation is a collected expressions aggregate. The value includes the titles of distinct expressions "How to manage your friends" and "How to manage your enemies" in the order of their appearance in separate statements of title and responsibility. The value omits statements of responsibility and adds the punctuation " + " (space-plus-space) between titles for clarity]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title of manifestation | "El ratoncito pequeäno + The little mouse" |
+  
+  *[The manifestation is a parallel expressions aggregate. The value includes the titles of distinct expressions "El ratoncito pequeäno" and "The little mouse" in the order of their appearance in a statement of title and responsibility. The value omits statements of responsibility and adds the punctuation " + " (space-plus-space) between titles for clarity]*
+  </details>
+</div>

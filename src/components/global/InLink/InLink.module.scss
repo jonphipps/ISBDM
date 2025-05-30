@@ -1,0 +1,40 @@
+// InLink.module.scss
+
+.inLink {
+  display: inline;
+  background-color: #ffd6cc;
+  border: 1px solid #000000;
+  border-radius: 0.3rem;
+  color: #000000;
+  padding: 0.1rem 0.3rem;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  // Smart wrapping: prevent breaks except where we've added zero-width spaces
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  // Ensure the link can shrink when needed
+  word-break: normal;
+  
+  &:hover {
+    background-color: #e62e00;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  &:focus {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+  }
+  
+  // Maintain dark mode compatibility
+  [data-theme='dark'] & {
+    background-color: var(--ifm-color-danger-darker);
+    border-color: var(--ifm-color-gray-600);
+    color: var(--ifm-color-gray-100);
+    
+    &:hover {
+      background-color: var(--ifm-color-danger);
+      color: var(--ifm-color-white);
+    }
+  }
+}

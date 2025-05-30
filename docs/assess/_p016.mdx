@@ -1,0 +1,122 @@
+### Manifestation that embodies more than one expression {#p016}
+
+<section className="guid">
+
+A manifestation that embodies more than one expression is termed an "aggregate".
+
+</section>
+
+<section className="guid">
+
+Consider an aggregate manifestation to embody also an aggregating expression that realises an aggregating work. The aggregating work is the intention or plan to select the expressions that are embodied in the manifestation.
+
+Consider the aggregating expression as having no intrinsic characteristics that are useful to describe. The aggregating expression does not inherit the characteristics of the expressions that are aggregated, and the common characteristics of the expressions that are aggregated are included in the description of the aggregating work.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x007.png"
+  caption="Entity-relationship diagram of a general aggregate manifestation."
+  expandLink="/docs/fullimages/x007.html"
+/>
+
+The diagram shows that there is a choice of which expressions or works to describe as separate related expressions and works and which to include in manifestation statements or notes for the manifestation that is being described. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+At least one expression or work must be described as a separate entity and related to the manifestation.
+
+One and only one work that is embodied in the manifestation is the aggregating work. The corresponding aggregating expression is omitted for clarity.
+
+</section>
+
+<section className="guid">
+
+Select the methods to use to describe each expression or work from the following options:
+
+- Record the expression or work as a separate entity and record a relationship to it by recording a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element.
+- Record a <InLink href="/docs/attributes/1278">has extent of aggregated content</InLink> element for the kind of expression.
+- Record a <InLink href="/docs/notes/1267">has note on expression associated with manifestation</InLink> element or a <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> element that includes a description of the expression or work.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> or element sub-type that includes information about the expression or work.
+- Do not describe the expression or work.
+
+Describe the expression or work with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+
+| has expression embodied in manifestation | "Hamilton, Gill. Developing open licensing at the National Library of Scotland (text; English)" |
+| --- | --- |
+| has note on expression associated with manifestation | "Includes a case study of the National Library of Scotland." |
+| | [Full example: <InLink href="/docs/fullex/fx002">Open licensing for cultural heritage (2017; Facet Publishing; volume; perfect binding)</InLink>.] |
+
+---
+
+| has expression embodied in manifestation | "LCD Soundsystem. Give it up (performed music)" |
+| --- | --- |
+| has expression embodied in manifestation | "LCD Soundsystem. Tired (performed music)" |
+| has work embodied in manifestation | "LCD Soundsystem. Give it up b/w Tired" |
+| has extent of aggregated content | "2 recorded songs" |
+| has manifestation statement of title and responsibility | "lcd soundsystem \| a. written by james murphy b. by james murphy and pat mahoney \| a give it up \| james murphy: vocals, bass, drums, percussion, synthesizers, programming \| produce by the dfa \| b tired \| james murphy: vocals, bass, guitar; pat mahoney: drums, percussion; ems synthesizer \| produce by the dfa" |
+| | [Full example: <InLink href="/docs/fullex/fx058">Give it up b/w Tired (2002; Ouput Recordings; audio disc)</InLink>.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+The <OutLink href="https://repository.ifla.org/handle/20.500.14598/40.2">IFLA Library Reference Model</OutLink> identifies three distinct types of aggregate:
+
+- Collected expressions aggregate: A set of expressions of multiple independent works. The expressions may be selected according to a set of common characteristics that apply to the expressions or their works.
+- Augmented expression aggregate: An expression of a single independent work that is supplemented by expressions of one or more dependent works. The augmented expression is supplemented with additional content that is not integral to the original work and does not significantly change the expression.
+- Parallel expressions aggregate: A set of expressions of a single independent work.
+
+</section>
+
+<section className="guid">
+
+A manifestation may be a mix of types of aggregate that are determined by the intrinsic relationships between the expressions that are aggregated and the works that they realise.
+
+<details>
+<summary>Examples</summary>
+
+[Full example: <InLink href="/docs/fullex/fx050">Black Lizard big book of locked-room mysteries (2014; Vintage Books; volume; perfect binding)</InLink>. The manifestation embodies a collected set of text expressions, and text expressions that augment them.]
+
+</details>
+
+</section>
+
+<section className="guid">
+
+The main utility in describing an aggregating expression occurs when the same set of expressions is embodied in alternate manifestations or reproductions. Instead of relating each manifestation to each expression that is aggregated, the aggregating expression can be related to each expression that is aggregated via a shortcut Expression relationship element, and then related to each manifestation with a single has expression embodied in manifestation element.
+
+</section>
+
+<section className="guid">
+
+If the same set of expressions is embodied in more than one manifestation with the same layout of content but with different categories of carrier, record a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element for the aggregating expression. Do not record elements for the expressions that are aggregated; the expressions that are aggregated are related directly to the aggregating expression.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x008.png"
+  caption="Entity-relationship diagram of an aggregating expression."
+  expandLink="/docs/fullimages/x008.html"
+/>
+
+The diagram shows that it can be useful to describe an aggregating expression as a separate related expression if it is embodied in more than one alternate manifestation that is published at the same time, for example in different categories of carrier, or if the same set of expressions is published at a later time. The aggregating expression is related once to each expression that is aggregated, so each alternate or subsequent manifestation may then be related to only the aggregating expression and the direct relationships with the expressions that are aggregated can be omitted. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+<SeeAlso><InLink href="/docs/assess/p027">Manifestation that embodies augmented expressions</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/assess/p025">Manifestation that embodies collected expressions</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/assess/p026">Manifestation that embodies parallel expressions</InLink></SeeAlso>
+
+</section>

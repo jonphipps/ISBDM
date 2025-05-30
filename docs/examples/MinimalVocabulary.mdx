@@ -1,0 +1,32 @@
+---
+title: Minimal Vocabulary Example
+sidebar_label: Vocabulary Minimal Example
+vocabularyId: minimal-example
+description: This example shows how to create a vocabulary with minimal front matter, using global defaults.
+RDF:
+  values:
+  - value: First Term
+    definition: This is the definition of the first term.
+    scopeNote: This is an optional scope note for the first term.
+  - value: Second Term
+    definition: This is the definition of the second term.
+  - value: Third Term
+    definition: This is the definition of the third term.
+    scopeNote: This is an optional scope note for the third term.
+---
+
+# {frontMatter.title}
+
+This example demonstrates using the VocabularyTable component with minimal front matter. 
+All the following properties use default values from `docusaurus.config.ts`:
+
+- prefix: "isbdm"
+- startCounter: 1000
+- uriStyle: "numeric"
+- caseStyle: "kebab-case"
+- showFilter: true
+- filterPlaceholder: "Filter vocabulary terms..."
+- showTitle: false
+- RDF.rdf:type: ["skos:ConceptScheme"]
+
+<VocabularyTable {...frontMatter} />

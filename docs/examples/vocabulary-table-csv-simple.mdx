@@ -1,0 +1,75 @@
+---
+id: vocabulary-table-csv-simple
+title: Simple CSV Examples
+description: Basic examples of CSV-based vocabulary tables
+sidebar_label: Vocabulary - Simple CSV Examples
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Simple CSV Examples
+
+These examples demonstrate basic usage of the VocabularyTable component with CSV data sources.
+
+## Minimal CSV Loading
+
+The simplest way to load a CSV vocabulary - just provide the CSV file path:
+
+<VocabularyTable 
+  csvFile={useBaseUrl('/data/sensory-test.csv')}
+/>
+
+## CSV with Basic Metadata
+
+Add vocabulary-level information in the front matter:
+
+<VocabularyTable 
+  vocabularyId="sensory-basic"
+  title="Sensory Specification Terms"
+  description="Basic sensory content specifications"
+  csvFile={useBaseUrl('/data/sensory-test.csv')}
+  showTitle={true}
+/>
+
+## Glossary Style (No URIs)
+
+Perfect for documentation glossaries:
+
+<VocabularyTable 
+  vocabularyId="sensory-glossary"
+  title="Sensory Terms Glossary"
+  description="Quick reference for sensory content types"
+  csvFile={useBaseUrl('/data/sensory-test.csv')}
+  showTitle={true}
+  showURIs={false}
+  showLanguageSelector={false}
+/>
+
+## Multilingual Example
+
+Demonstrate language switching capabilities:
+
+<VocabularyTable 
+  vocabularyId="sensory-multilingual"
+  title="Vocabulaire de spécification sensorielle"
+  description="Termes multilingues pour les spécifications sensorielles"
+  csvFile={useBaseUrl('/data/sensory-test.csv')}
+  showTitle={true}
+  defaultLanguage="fr"
+  filterPlaceholder="Rechercher des termes..."
+/>
+
+## Production Data Example
+
+Using the full production vocabulary with extensive language support:
+
+<VocabularyTable 
+  vocabularyId="sensory-production"
+  title="Production Sensory Vocabulary"
+  description="Complete vocabulary used in library systems worldwide"
+  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  showTitle={true}
+  defaultLanguage="en"
+/>
+
+**Expected Results**: You should see vocabulary tables displaying sensory terms like "aural", "gustatory", "olfactory", "tactile", and "visual" with their definitions and additional properties where available.

@@ -1,0 +1,26 @@
+// SeeAlso.module.scss
+
+.seeAlso {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 4px solid var(--ifm-color-primary);
+  background-color: var(--ifm-color-emphasis-100);
+  
+  // Maintain dark mode compatibility
+  [data-theme='dark'] & {
+    background-color: var(--ifm-color-emphasis-200);
+  }
+}
+
+.seeAlsoText {
+  margin: 0;
+  display: block;  // Behave like a paragraph
+  font-size: 1rem; // Match paragraph size
+  line-height: var(--ifm-line-height-base); // Match paragraph line height
+  
+  i {
+    color: var(--ifm-color-primary);
+    font-weight: 600;
+    font-style: italic;
+  }
+}

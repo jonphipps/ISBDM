@@ -1,0 +1,91 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_label: has category of manifestation
+sidebar_level: 1
+sidebar_position: 2
+id: '1263'
+title: has category of manifestation
+RDF:
+  definition: Relates a manifestation to a grouping that is based on the common characteristics of a kind of manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1022
+    url: /docs/attributes/1022
+    label: has category of carrier
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1264
+    url: /docs/attributes/1264
+    label: has category of embodied content
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1024
+    url: /docs/attributes/1024
+    label: has intended audience of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1218
+    url: /docs/attributes/1218
+    label: has media type
+  elementSuperType: null
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has category of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element supports the user tasks to find, identify, select, and obtain the manifestation.
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1032">has manifestation statement of category</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1219">has note on category of manifestation</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Apply the <InLink href="/docs/attributes/general">General stipulations for attribute elements</InLink>.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific attribute.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has media type | "sans intermédiaire" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx028">Incendie (1954; Éditions du Seuil; volume; livre broché)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has category of carrier | "flipchart" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx061">National parks (2015; Ziga Media, LLC; flipchart)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has category of embodied content | "still image" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx066">Coffee (2003; Tate; card)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  If the manifestation embodies expressions of more than one category of manifestation, record a separate occurrence of the element for each distinct category that is considered to be useful for users of the metadata.
+</div>

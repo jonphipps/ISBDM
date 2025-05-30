@@ -1,0 +1,89 @@
+---
+slug: /relationships/1251
+sidebar_class_name: sidebar-level-3
+sidebar_label: has creator collective agent of manifestation
+sidebar_level: 3
+sidebar_position: 10
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '   │  ├─ '
+id: '1251'
+title: has creator collective agent of manifestation
+RDF:
+  definition: Relates a manifestation to a collective agent who is responsible for its manufacture, production, or publication.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Collective Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1252
+    url: /docs/relationships/1252
+    label: has manufacturer collective agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1253
+    url: /docs/relationships/1253
+    label: has producer collective agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1254
+    url: /docs/relationships/1254
+    label: has publisher collective agent
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1007
+    url: /docs/relationships/1007
+    label: has collective agent associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1019
+    url: /docs/relationships/1019
+    label: has creator agent of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has creator collective agent of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If one or more creator collective agents are associated with the manifestation, record at least one occurrence of the element. Use the following order of preference to select the value:
+  
+  1. Collective agent who is a publisher of the manifestation
+  2. Collective agent who is a producer of the manifestation
+  3. Collective agent who is a manufacturer of the manifestation
+  
+  <div className="stip">
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  </div>
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has publisher collective agent | "National Library of the Philippines" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx088">Relacion verda dera y breve de la persecucion y mortirios que padecieron por la confession de nuetra Santa Fee Catholica en Japon (2022; National Library of the Philippines; online resource)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manufacturer collective agent | "Нацiональна бiблiотека Украïнi iменi В.I. Веренадського" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx076">Видатнi вченi Нацiональноï академiï наук Украïнi (1998; Нацiональна бiблiотека Украïнi iменi В.I. Веренадського; том)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>

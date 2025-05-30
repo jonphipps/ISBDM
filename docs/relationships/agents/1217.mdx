@@ -1,0 +1,64 @@
+---
+slug: /relationships/1217
+sidebar_class_name: sidebar-level-3
+sidebar_label: has publisher agent
+sidebar_level: 3
+sidebar_position: 7
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '   │  └─ '
+id: '1217'
+title: has publisher agent
+RDF:
+  definition: Relates a manifestation to an agent who is responsible for organizing its creation by a mechanical process that is used by a manufacturer.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: A mechanical process includes a printing or digital manufacturing process.
+  range: Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1254
+    url: /docs/relationships/1254
+    label: has publisher collective agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1249
+    url: /docs/relationships/1249
+    label: has publisher person
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1019
+    url: /docs/relationships/1019
+    label: has creator agent of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has publisher agent
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a value for a publisher’s imprint.
+</div>
+
+<div className="stip">
+  Record a value for the owner of an imprint, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  If a statement of publication, production, distribution, or manufacture that appears in the manifestation indicates that the manifestation is manufactured for private distribution, record a value for the agent for whom the manifestation is manufactured.
+</div>

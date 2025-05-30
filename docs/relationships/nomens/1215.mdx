@@ -1,0 +1,64 @@
+---
+sidebar_class_name: sidebar-level-4
+slug: /relationships/1215
+sidebar_label: has fingerprint
+sidebar_level: 4
+sidebar_position: 12
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │  │  ├─ '
+id: '1215'
+title: has fingerprint
+RDF:
+  definition: Relates a manifestation to a nomen that is an identifier that is a sequence of characters that is derived from the text of the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that embodies text content.
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1111
+    url: /docs/relationships/1111
+    label: has identifier of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has fingerprint
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+A fingerprint is an identifier that can be used to detect variant settings of type in otherwise matching manifestations and to identify the reuse of the same setting in ostensibly different manifestations. It can also assist the identification of incomplete items that exemplify the same manifestation.
+</div>
+
+<div className="guid">
+There is more than one standard method for deriving a fingerprint.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use an element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a value that is extracted using a standard method from a statement that appears in the manifestation.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has fingerprint | "163704 - b1 A2 ,$en : b2 I2 a,$" |
+  </details>
+</div>

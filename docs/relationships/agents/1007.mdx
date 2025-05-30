@@ -1,0 +1,130 @@
+---
+slug: /relationships/1007
+sidebar_class_name: sidebar-level-2
+sidebar_label: has collective agent associated with manifestation
+sidebar_level: 2
+sidebar_position: 9
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1007'
+title: has collective agent associated with manifestation
+RDF:
+  definition: Relates a manifestation to a collective agent.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes a corporate body, a family, and a government.
+  range: Collective Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1251
+    url: /docs/relationships/1251
+    label: has creator collective agent of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1255
+    url: /docs/relationships/1255
+    label: has distributor collective agent
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1005
+    url: /docs/relationships/1005
+    label: has agent associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has collective agent associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+A collective agent may have a form of name that is usually associated with a person. The name may be qualified in an authorized access point to indicate that it is assigned to a collective agent.
+</div>
+
+<details>
+  <summary>Examples</summary>
+  
+    | Property | Value |
+    |:---------|:------|
+    | has collective agent associated with manifestation | "Jethro Tull (Musical group)" |
+</details>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords, or used to construct browsing lists.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme for an authorized access point of a collective agent should support several levels of identification and collation:
+  1. A name of the collective agent
+  2. A category of collective agent
+  3. Specific attributes of the collective agent
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSESCol">Collective Agent SES</InLink> is a string encoding scheme suggested by ISBD for Manifestation for an authorized access point of a collective agent.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has collective agent associated with manifestation | "United States. Works Progress Administration" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx061">National parks (2015; Ziga Media, LLC; flipchart)</InLink>. The value is an authorized access point of a collective agent who is an employer of the creators of collected works that are embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has collective agent associated with manifestation | "The Beatles" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx049">Revolver (2022; Apple Corps Limited; audio disc; 2 CD edition)</InLink>. The value is an authorized access point of a creator of an aggregating work and aggregated works that are embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has collective agent associated with manifestation | "National Commission for Culture and the Arts (Manila, Philippines)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx088">Relacion verda dera y breve de la persecucion y mortirios que padecieron por la confession de nuetra Santa Fee Catholica en Japon (2022; National Library of the Philippines; online resource)</InLink>. The value is an authorized access point of a sponsor of the project that created the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a single occurrence of the element that is selected from one or more values that are associated with the manifestation. Use the following order of preference:
+  
+  1. Collective agent who is a creator of the manifestation <ol class="al"> <li>Collective agent who is a publisher of the manifestation</li> <li>Collective agent who is a producer of the manifestation</li> <li>Collective agent who is a manufacturer of the manifestation</li> </ol>
+  2. Collective agent who is a distributor of the manifestation
+  3. Collective agent who is associated with an expression or work that is embodied in the manifestation
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has collective agent associated with manifestation | "Philip Glass Ensemble" |
+  | has collective agent associated with manifestation | "Lucinda Childs Dance Company" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx010">Einstein on the beach (2016; Opus Arte; videodisc; DVD)</InLink>. The values are authorized access points of creators of an expression that is embodied in the manifestation.]*
+  </details>
+</div>

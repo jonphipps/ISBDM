@@ -1,0 +1,117 @@
+---
+id: 'ISBDMDisplay'
+title: 'Display of ISBDM metadata'
+sidebar_position: 1
+slug: /ves/ISBDMDisplay
+---
+
+# Display of ISBDM metadata
+
+<div className="guid">
+**ISBD for Manifestation** does not prescribe a selection, order, layout, or punctuation for displaying the values of elements in a description of a manifestation.
+</div>
+
+<div className="guid">
+The choice of methods for displaying ISBDM metadata in an information retrieval application is influenced by the intended <InLink href="/docs/intro/i006">Metadata utility and processing</InLink> of ISBDM elements.
+</div>
+
+<div className="guid">
+The value of a has manifestation statement element or element sub-type is at a broad level of granularity, and it may overlap with the value of another similar element.
+</div>
+
+<div className="guid">
+Specific element labels may be omitted to simplify the display of a set of values.
+</div>
+
+<details>
+<summary>Examples</summary>
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | ""Jane Austen, Emma, edited with an introduction by Ronald Blythe. - Penguin English library. - Penguin Books Ltd, Harmondsworth … England, … Reprinted 1971. - ISBN 0 14 043.101 5."" |
+
+*[Full example: <InLink href="/docs/fullex/fx025">Emma (1971; Penguin Books; volume)</InLink>. The delimiting punctuation is ". - " (stop-space-hyphen-space).]*
+
+---
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | ""give it up b/w tired. - lcd soundsystem | a. written by james murphy b. by james murphy and pat mahoney | a give it up | james murphy: vocals, bass, drums, percussion, synthesizers, programming | produce by the dfa | b tired | james murphy: vocals, bass, guitar; pat mahoney: drums, percussion; ems synthesizer | produce by the dfa. - p+c dfa records 2002. - output recordings … london, - oprdfa004. - 45 rpm"" |
+
+*[Full example: <InLink href="/docs/fullex/fx058">Give it up b/w Tired (2002; Ouput Recordings; audio disc)</InLink>. The delimiting punctuation is ". - " (stop-space-hyphen-space).]*
+
+---
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | ""Henri Cartier-Bresson (1908-2004) / Truman Capote, ecrivain, USA, 1947 / courtesy Fondation HCB : © Nouvelles Images S.A. et H. Cartier-Bresson - Magnum Photos 2008 / 45700 Lombreuil, France : 764697001022, 764697150065"" |
+
+*[Full example: <InLink href="/docs/fullex/fx060">Truman Capote, ecrivain, USA, 1947 (2008; Nouvelles Images S.A.; card)</InLink>. The delimiting punctuation is " :" (space-colon-space).]*
+
+</details>
+
+<div className="guid">
+The controlled value of an attribute element can be displayed or otherwise output as a non-textual symbol.
+</div>
+
+<details>
+<summary>Examples</summary>
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | "Display the value "volume" of a has category of manifestation element as ." |
+
+---
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | "Display the value "microform" of a has media type element as ." |
+
+</details>
+
+<div className="guid">
+The controlled values of a <InLink href="/docs/attributes/1263">has category of manifestation</InLink> element and element sub-types can be concatenated into a single compound value and displayed with or without a generic "category" label to simplify the display of a set of values.
+</div>
+
+<details>
+<summary>Examples</summary>
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | ""volume; unmediated; still image; text"" |
+
+*[Full example: <InLink href="/docs/fullex/fx059">Asterix and the gowden heuk (2014; Itchy Coo; volume)</InLink>. The delimiting punctuation is "; " (semicolon-space).]*
+
+---
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | ""Type: audiocassette - spoken word"" |
+
+*[Full example: <InLink href="/docs/fullex/fx018">Harry Potter and the goblet of fire (2000; Listening Library; audiocassette)</InLink>. The delimiting punctuation is " - " (space-hyphen-space). The value of <InLink href="/docs/attributes/1218">has media type</InLink> is omitted for clarity. "Type" is used as a generic display label.]*
+
+</details>
+
+<div className="guid">
+The controlled values of a <InLink href="/docs/relationships/1019">has creator agent of manifestation</InLink>, has place of creation of manifestation, and has date of creation of manifestation elements and element sub-types can be concatenated into a single compound value and displayed with or without a generic "publication" label to simplify the display of a set of values.
+</div>
+
+<details>
+<summary>Examples</summary>
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | ""London (England) : Methuen Children’s Books, 1986"" |
+
+*[Full example: <InLink href="/docs/fullex/fx021">House at Pooh Corner (1986; Methuen Children’s Books; volume)</InLink>. The order of elements and delimiting punctuation conform to ISBD Area 4.]*
+
+---
+
+| Relation | Example |
+|----------|----------|
+| display of ISBDM metadata | ""Published: Cham (Switzerland); Springer (Cham, Switzerland); 2022-"" |
+
+*[Full example: <InLink href="/docs/fullex/fx039">Springer handbooks of political science and international relations (2022-; Springer; volume)</InLink>. The order of elements conforms to ISBD Area 4. The delimiting punctuation is "; " (semicolon-space). "Published" is used as a generic display label.]*
+
+</details>
+

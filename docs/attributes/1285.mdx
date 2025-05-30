@@ -1,0 +1,73 @@
+---
+sidebar_class_name: sidebar-level-4
+sidebar_label: has designation of number of sound channels
+sidebar_level: 4
+sidebar_position: 14
+customProps:
+  sidebar_prefix: '│  │  │  ├─ '
+id: '1285'
+title: has designation of number of sound channels
+RDF:
+  definition: Relates a manifestation to an extent of embodied content that is a standard configuration of distinct parallel streams that embody a single expression of audio content.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that embodies performed music, sounds, or spoken word content.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1277
+    url: /docs/attributes/1277
+    label: has extent of embodied content
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has designation of number of sound channels
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Record a designation for the number of channels that embody the content. Do not include recording tracks that are not used.
+</div>
+
+<SeeAlso><InLink href="/docs/attributes/1228">has number of recording tracks</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/attributes/1230">has number of sound channels</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a value that appears in the <InLink href="/docs/ves/1285">ISBDM Designation of Sound Channels value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has designation of number of sound channels | "stereo" |
+  | has designation of number of sound channels | "surround" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx010">Einstein on the beach (2016; Opus Arte; videodisc; DVD)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is a super-unit, record the value that applies to the largest number of sub-units.
+</div>
+
+<div className="stip">
+  For a manifestation that is a super-unit, and if no one value predominates, record separate occurrences of the element for each value that applies to the larger number of sub-units.
+</div>

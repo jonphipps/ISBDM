@@ -1,0 +1,780 @@
+/* In src/css/custom.css */
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url('./font-corrections.css');
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-h1-font-size: 1.3rem;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* No custom sidebar styling */
+
+/*
+ * Style for the Docusaurus <details> element to mimic IFLA's .xampleBlockGuid
+ * We are targeting <details> elements that are also Docusaurus "info" admonitions.
+ */
+.markdown details.alert.alert--info {
+  background-color: #e6f0ff !important;
+  /* From .guid style */
+  border-radius: 0.5rem;
+  /* From .guid style */
+  margin-bottom: 0.5rem;
+  /* From .guid style */
+  padding: .5rem .5rem .5rem .5rem;
+  /* Overall padding for the block */
+  border: none;
+  /* Remove default Docusaurus admonition border if any */
+}
+
+/* Remove Docusaurus's default left border for info admonitions, if present */
+.markdown details.alert.alert--info {
+  border-left-width: 0;
+}
+/* Style the <summary> element (the "Examples" title) to mimic IFLA's .linkEx */
+.markdown details.alert.alert--info summary {
+  background-color: #cce0ff !important;
+  /* From .linkEx style */
+  border: 1px solid #000000;
+  /* From .linkEx style */
+  border-radius: 0.5rem;
+  /* From .linkEx style */
+  color: #000000 !important;
+  /* From .linkEx style */
+  padding: .5rem;
+  margin-bottom: 0.75rem;
+  /* Space between summary and the content block below */
+  cursor: pointer;
+  font-weight: 600;
+  /* Typical for summaries, adjust if IFLA is different */
+  display: inline-block;
+  /* To make padding and other box properties apply well */
+  line-height: normal;
+  /* Ensure line height doesn't add extra space */
+
+  /* --- Aggressive triangle/marker suppression --- */
+  list-style-type: none !important;
+  /* Hide default list-style marker */
+}
+
+/* More specific selectors to hide browser-default markers */
+.markdown details.alert.alert--info summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.markdown details.alert.alert--info summary::marker {
+  display: none !important;
+}
+
+/* Attempt to hide any ::before or ::after pseudo-elements that might be the triangle */
+/* Docusaurus sometimes uses these for admonition icons/markers */
+.markdown details.alert.alert--info summary::before,
+.markdown details.alert.alert--info summary::after {
+  display: none !important;
+  /* If the above doesn't work, and you can identify the pseudo-element in dev tools,
+     you might need to make this more specific or override its content/styles.
+     For example:
+     content: "" !important;
+     background-image: none !important;
+     border: none !important;
+     width: 0 !important;
+     height: 0 !important;
+     margin: 0 !important;
+     padding: 0 !important;
+  */
+}
+
+/* Style the content area of the <details> block to mimic IFLA's .xamples */
+.markdown details.alert.alert--info .collapsibleContent_i85q>div {
+  background-color: #cce0ff !important;
+  /* From .xamples style (same as .linkEx) */
+  border: 1px solid #000000;
+  /* From .xamples style */
+  border-radius: 0.5rem;
+  /* From .xamples style */
+  color: #000000;
+  /* Default text color from .xamples */
+  padding: 1rem;
+  /* Sensible padding for the content area */
+}
+
+/* ----- Styling for content INSIDE the collapsible area ----- */
+
+.markdown details.alert.alert--info .collapsibleContent_i85q table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.markdown details.alert.alert--info .collapsibleContent_i85q th,
+.markdown details.alert.alert--info .collapsibleContent_i85q td {
+  border: 1px solid #333;
+  padding: 0.5rem;
+  text-align: left;
+  color: #000000;
+  font-size: 0.9rem;
+}
+
+.markdown details.alert.alert--info .collapsibleContent_i85q th {
+  background-color: #b8d6ff;
+  font-weight: 600;
+}
+
+.markdown details.alert.alert--info .collapsibleContent_i85q p {
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.markdown details.alert.alert--info .collapsibleContent_i85q p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown details.alert.alert--info .collapsibleContent_i85q em,
+.markdown details.alert.alert--info .collapsibleContent_i85q .editComment {
+  color: #336699 !important;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.markdown details.alert.alert--info .collapsibleContent_i85q a {
+  background-color: #ffd6cc !important;
+  border-radius: 0.3rem;
+  color: #000000 !important;
+  padding: 0.1rem 0.3rem;
+  text-decoration: none;
+  border: 1px solid #eea897;
+}
+
+.markdown details.alert.alert--info .collapsibleContent_i85q a:hover {
+  background-color: #e62e00 !important;
+  color: #ffffff !important;
+  border-color: #e62e00;
+}
+
+.guid,
+.stip {
+  border-radius: 0.33rem;
+  margin-bottom: 0.5rem;
+  padding: .5rem .5rem 0;
+}
+
+.markdown .guid {
+  background-color: #e6f0ff !important;
+  border: 1px solid #c4d7f4;
+  padding: .75rem .75rem 0;
+}
+/* In src/css/custom.css */
+
+/*
+ * Style for the parent <div class="stip"> container.
+ * This provides the outermost background and padding for the "stipulation" themed block.
+ */
+.markdown .stip {
+  background-color: #ffebe6 !important;
+  /* From isbdm.css .stip style */
+  /* Optional: Add a subtle border to the stip container itself if desired */
+  border: 1px solid #ffc3b3;
+  padding: .75rem .75rem 0;
+}
+
+/*
+ * Styles for the <details> block WHEN IT IS A DIRECT CHILD of div.stip.
+ * This <details> block itself becomes transparent to show the parent div.stip's background.
+ * Its border, padding, and margin are reset as its appearance is now defined by its summary and content area
+ * relative to the div.stip container.
+ */
+.markdown div.stip>details.alert.alert--info {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  /* Reset, as div.stip handles bottom margin */
+  border-radius: 0;
+  /* Summary and content will have their own radii */
+}
+
+/*
+ * <summary> element (the "Examples" title)
+ * WHEN INSIDE a <details> block that is a DIRECT CHILD of div.stip
+ */
+.markdown div.stip>details.alert.alert--info summary {
+  background-color: #ffd6cc !important;
+  /* Peach background from .xampleBlockStip .linkEx */
+  border: 1px solid #000000;
+  /* Black border */
+  border-radius: 0.5rem;
+  color: #000000 !important;
+  padding: .5rem;
+  margin-bottom: 0.75rem;
+  /* Space between summary and the content pane */
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  line-height: normal;
+  list-style-type: none !important;
+  /* Hide default marker / triangle */
+}
+
+/* Further ensure no markers/triangles on the summary */
+.markdown div.stip>details.alert.alert--info summary::-webkit-details-marker,
+.markdown div.stip>details.alert.alert--info summary::marker,
+.markdown div.stip>details.alert.alert--info summary::before,
+.markdown div.stip>details.alert.alert--info summary::after {
+  display: none !important;
+}
+
+/*
+ * Content area of the <details> block
+ * WHEN INSIDE a <details> block that is a DIRECT CHILD of div.stip
+ */
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q>div {
+  background-color: #ffd6cc !important;
+  /* Peach background from .xampleBlockStip .xamples */
+  border: 1px solid #000000;
+  /* Black border */
+  border-radius: 0.5rem;
+  color: #000000;
+  padding: 1rem;
+}
+
+/* ----- Styling for content INSIDE the collapsible area (links, table, p, em) ----- */
+/* These selectors are now also conditional on the div.stip parentage */
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q a {
+  background-color: #ffd6cc !important;
+  /* Matching .linkInline */
+  border-radius: 0.3rem;
+  color: #000000 !important;
+  padding: 0.1rem 0.3rem;
+  text-decoration: none;
+  border: 1px solid #eea897;
+  /* Subtle border for links on same-color background */
+}
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q a:hover {
+  background-color: #e62e00 !important;
+  color: #ffffff !important;
+  border-color: #e62e00;
+}
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q th,
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q td {
+  border: 1px solid #ccaba2;
+  /* Adjusted for peach theme */
+  padding: 0.5rem;
+  text-align: left;
+  color: #000000;
+  font-size: 0.9rem;
+}
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q th {
+  background-color: #ffc3b3;
+  /* Header shade for peach theme */
+  font-weight: 600;
+}
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q p {
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q em,
+.markdown div.stip>details.alert.alert--info .collapsibleContent_i85q .editComment {
+  color: #336699 !important;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Force h1 font size */
+h1 {
+  --ifm-h1-font-size: 1.7rem !important; /* Force the variable on h1 elements */
+  font-size: var(--ifm-h1-font-size) !important; /* Use the forced variable */
+}
+
+/* Fix spacing in nested lists */
+.markdown ul ul {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0 !important;
+  padding-left: 1.5rem !important; /* Adjust indentation of nested lists */
+}
+
+/* Ensure consistent spacing between list items at all levels */
+.markdown ul li {
+  margin-top: 0.5rem !important; 
+  margin-bottom: 0.5rem !important;
+}
+
+/* Add specific styling for the workflow list in docs/assess/_p019.mdx */
+.markdown section.guid > ul li {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Target nested lists within the .guid section specifically */
+.markdown section.guid > ul ul {
+  margin-top: 0.25rem !important;
+  padding-left: 1.5rem !important;
+}
+.detailTrigger_src-components-global-ExampleTable-styles-module {
+  background-color: #cce0ff !important;
+  border: 1px solid #c4d7f4;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: .5rem;
+}
+.guid,
+.stip {
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.guid {
+  background-color: #e6f0ff !important;
+}
+.stip {
+  background-color: #ffebe6 !important;
+}
+.seeAlsoAdd {
+}
+.tocNoLink {
+  font-style: italic;
+}
+.xampleBlockGuid,
+.xampleBlockStip {
+  padding-bottom: 1rem;
+}
+.xampleComment .linkEdco:link,
+.xampleComment .linkEdco:visited,
+.xampleComment .linkEdco:active,
+.xampleBlockGuid .xamples,
+.xampleBlockGuid .linkEx:link,
+.xampleBlockGuid .linkEx:visited,
+.xampleBlockGuid .linkEx:active,
+.xampleBlockGuid .linkEx:hover,
+.xampleBlockStip .xamples,
+.xampleBlockStip .linkEx:link,
+.xampleBlockStip .linkEx:visited,
+.xampleBlockStip .linkEx:active,
+.xampleBlockStip .linkEx:hover {
+  border: 1px solid #000000;
+  border-radius: 0.5rem;
+  color: #000000;
+  padding: 0.1rem;
+}
+.xampleComment .linkEdco:link,
+.xampleComment .linkEdco:visited,
+.xampleComment .linkEdco:active,
+.linkImage:link,
+.linkImage:visited,
+.linkImage:active,
+.linkOutline:link,
+.linkOutline:visited,
+.linkOutline:active,
+.xampleBlockGuid .xamples,
+.xampleBlockGuid .linkEx:link,
+.xampleBlockGuid .linkEx:visited,
+.xampleBlockGuid .linkEx:active,
+.xampleBlockGuid .linkEx:hover {
+  background-color: #cce0ff !important;
+}
+.linkInline:link,
+.linkInline:visited,
+.linkInline:active,
+.xampleBlockStip .xamples,
+.xampleBlockStip .linkEx:link,
+.xampleBlockStip .linkEx:visited,
+.xampleBlockStip .linkEx:active,
+.xampleBlockStip .linkEx:hover {
+  background-color: #ffd6cc !important;
+}
+.linkImage:link,
+.linkImage:visited,
+.linkImage:active,
+.linkInline:link,
+.linkInline:visited,
+.linkInline:active,
+.linkOutline:link,
+.linkOutline:visited,
+.linkOutline:active {
+  border-radius: 0.3rem;
+  color: #000000 !important;
+}
+.editComment {
+  font-style: italic;
+  text-align: left;
+  max-width: auto;
+}
+.xampleHeader {
+  font-style: italic;
+}
+.xampleComment {
+  text-align: center;
+}
+.xampleLabel {
+  text-align: left;
+}
+.xampleValue {
+  text-align: left;
+}
+.xampleNarrative {
+
+}
+/* Links (navigation): to ISBDM elements, internal/stipulation sections */
+* a {
+  text-decoration: none;
+}
+.linkMenuElement:link,
+.linkMenuElement:visited,
+.linkMenuElement:active,
+.linkMenuElement:hover,
+.linkMenuEntry:link,
+.linkMenuEntry:visited,
+.linkMenuEntry:active,
+.linkMenuEntry:hover,
+.linkPathEntry:link,
+.linkPathEntry:visited,
+.linkPathEntry:active,
+.linkPathEntry:hover {
+  padding: 0.1rem;
+  border-radius: 0.5rem;
+}
+.linkMenuElement:link,
+.linkMenuElement:visited,
+.linkMenuElement:active,
+.linkMenuElement:hover,
+.linkMenuEntry:link,
+.linkMenuEntry:visited,
+.linkMenuEntry:active,
+.linkMenuEntry:hover,
+.linkPathEntry:link,
+.linkPathEntry:visited,
+.linkPathEntry:active,
+.linkPathEntry:hover {
+  border: 1px solid #ffffff;
+}
+.linkFooter:link,
+.linkFooter:visited,
+.linkFooter:active {
+  padding: 0.1rem;
+  border-radius: 0.3rem;
+  color: #ffd6cc !important;
+}
+.linkMenuElement:link,
+.linkMenuElement:visited,
+.linkMenuElement:active,
+.linkMenuEntry:link,
+.linkMenuEntry:visited,
+.linkMenuEntry:active,
+.linkPathEntry:link,
+.linkPathEntry:visited,
+.linkPathEntry:active {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.linkFooter:hover,
+.linkInline:hover,
+.linkMenuElement:hover,
+.linkMenuEntry:hover,
+.linkPathEntry:hover {
+  background-color: #e62e00 !important;
+  color: #ffffff !important;
+}
+.linkOutline:hover {
+  background-color: #0000ff !important;
+  color: #ffffff !important;
+}
+/* src/css/custom.css */
+/* IFLA Docusaurus Sidebar Hierarchy Styles - Design 1 Implementation */
+/* Simple targeting of only the sidebar-level-* classes */
+
+/* Level 1: IFLA Navy - Top level categories */
+.sidebar-level-1 .menu__link {
+  background: transparent;
+  color: #002147 !important;
+  font-weight: 600;
+  margin-left: 0;
+  border-left: none;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.sidebar-level-1 .menu__link:hover {
+  background: #f7fafc;
+  transform: translateX(2px);
+}
+
+.sidebar-level-1 .menu__link:focus {
+  outline: 2px solid #fdb913;
+  outline-offset: 2px;
+}
+
+/* Level 2: Medium blue - Sub-categories */
+.sidebar-level-2 .menu__link {
+  margin-left: 16px;
+  background: linear-gradient(90deg, #1a4480 0%, #1a4480 3px, transparent 3px);
+  color: #1a4480 !important;
+  font-weight: 500;
+  border-left: 3px solid #e2e8f0;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.sidebar-level-2 .menu__link:hover {
+  background: linear-gradient(90deg, #1a4480 0%, #1a4480 3px, #f0f4f8 3px);
+  transform: translateX(2px);
+  border-left-color: #1a4480;
+}
+
+.sidebar-level-2 .menu__link:focus {
+  outline: 2px solid #fdb913;
+  outline-offset: 2px;
+}
+
+/* Level 3: Darker blue - Sub-sub categories */
+.sidebar-level-3 .menu__link {
+  margin-left: 32px;
+  background: linear-gradient(90deg, #2d5a87 0%, #2d5a87 3px, transparent 3px);
+  color: #2d5a87 !important;
+  font-weight: 400;
+  border-left: 3px solid #e2e8f0;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.sidebar-level-3 .menu__link:hover {
+  background: linear-gradient(90deg, #2d5a87 0%, #2d5a87 3px, #f0f6fa 3px);
+  transform: translateX(2px);
+  border-left-color: #2d5a87;
+}
+
+.sidebar-level-3 .menu__link:focus {
+  outline: 2px solid #fdb913;
+  outline-offset: 2px;
+}
+
+/* Level 4: Medium-dark blue - Deepest items */
+.sidebar-level-4 .menu__link {
+  margin-left: 48px;
+  background: linear-gradient(90deg, #4a6fa5 0%, #4a6fa5 3px, transparent 3px);
+  color: #4a6fa5 !important;
+  font-weight: 300;
+  border-left: 3px solid #e2e8f0;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  font-style: italic;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.sidebar-level-4 .menu__link:hover {
+  background: linear-gradient(90deg, #4a6fa5 0%, #4a6fa5 3px, #f5f8fb 3px);
+  transform: translateX(2px);
+  border-left-color: #4a6fa5;
+}
+
+.sidebar-level-4 .menu__link:focus {
+  outline: 2px solid #fdb913;
+  outline-offset: 2px;
+}
+
+/* Level 5: Dark blue - Deepest nested items */
+.sidebar-level-5 .menu__link {
+  margin-left: 64px;
+  background: linear-gradient(90deg, #1e3a63 0%, #1e3a63 3px, transparent 3px);
+  color: #1e3a63 !important;
+  font-weight: 300;
+  border-left: 3px solid #e2e8f0;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  font-style: italic;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.sidebar-level-5 .menu__link:hover {
+  background: linear-gradient(90deg, #1e3a63 0%, #1e3a63 3px, #f5f8fb 3px);
+  transform: translateX(2px);
+  border-left-color: #1e3a63;
+}
+
+.sidebar-level-5 .menu__link:focus {
+  outline: 2px solid #fdb913;
+  outline-offset: 2px;
+}
+
+/* Active page styling - enhanced with IFLA gold accent */
+.sidebar-level-1 .menu__link--active,
+.sidebar-level-2 .menu__link--active,
+.sidebar-level-3 .menu__link--active,
+.sidebar-level-4 .menu__link--active,
+.sidebar-level-5 .menu__link--active {
+  background: linear-gradient(90deg, #fdb913 0%, #fdb913 4px, #fff9e6 4px) !important;
+  color: #002147 !important;
+  font-weight: 700 !important;
+  border-left: 4px solid #fdb913 !important;
+  transform: none;
+}
+
+/* Dark mode support */
+[data-theme='dark'] .sidebar-level-1 .menu__link {
+  background: transparent;
+  color: #4a90e2 !important;
+}
+
+[data-theme='dark'] .sidebar-level-2 .menu__link {
+  background: linear-gradient(90deg, #6ba3f0 0%, #6ba3f0 3px, transparent 3px);
+  color: #6ba3f0 !important;
+  border-left-color: #374151;
+}
+
+[data-theme='dark'] .sidebar-level-3 .menu__link {
+  background: linear-gradient(90deg, #5a94d6 0%, #5a94d6 3px, transparent 3px);
+  color: #5a94d6 !important;
+  border-left-color: #374151;
+}
+
+[data-theme='dark'] .sidebar-level-4 .menu__link {
+  background: linear-gradient(90deg, #7ba7e8 0%, #7ba7e8 3px, transparent 3px);
+  color: #7ba7e8 !important;
+  border-left-color: #374151;
+}
+
+[data-theme='dark'] .sidebar-level-5 .menu__link {
+  background: linear-gradient(90deg, #4a7bc8 0%, #4a7bc8 3px, transparent 3px);
+  color: #4a7bc8 !important;
+  border-left-color: #374151;
+}
+
+[data-theme='dark'] .sidebar-level-1 .menu__link--active,
+[data-theme='dark'] .sidebar-level-2 .menu__link--active,
+[data-theme='dark'] .sidebar-level-3 .menu__link--active,
+[data-theme='dark'] .sidebar-level-4 .menu__link--active,
+[data-theme='dark'] .sidebar-level-5 .menu__link--active {
+  background: linear-gradient(90deg, #fdb913 0%, #fdb913 4px, rgba(253, 185, 19, 0.1) 4px) !important;
+  color: #fdb913 !important;
+  border-left-color: #fdb913 !important;
+}
+
+/* Hover effects for dark mode */
+[data-theme='dark'] .sidebar-level-1 .menu__link:hover {
+  background: rgba(74, 144, 226, 0.1);
+}
+
+[data-theme='dark'] .sidebar-level-2 .menu__link:hover {
+  background: linear-gradient(90deg, #6ba3f0 0%, #6ba3f0 3px, rgba(107, 163, 240, 0.1) 3px);
+  border-left-color: #6ba3f0;
+}
+
+[data-theme='dark'] .sidebar-level-3 .menu__link:hover {
+  background: linear-gradient(90deg, #5a94d6 0%, #5a94d6 3px, rgba(90, 148, 214, 0.1) 3px);
+  border-left-color: #5a94d6;
+}
+
+[data-theme='dark'] .sidebar-level-4 .menu__link:hover {
+  background: linear-gradient(90deg, #7ba7e8 0%, #7ba7e8 3px, rgba(123, 167, 232, 0.1) 3px);
+  border-left-color: #7ba7e8;
+}
+
+[data-theme='dark'] .sidebar-level-5 .menu__link:hover {
+  background: linear-gradient(90deg, #4a7bc8 0%, #4a7bc8 3px, rgba(74, 123, 200, 0.1) 3px);
+  border-left-color: #4a7bc8;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-level-1 .menu__link,
+  .sidebar-level-2 .menu__link,
+  .sidebar-level-3 .menu__link,
+  .sidebar-level-4 .menu__link,
+  .sidebar-level-5 .menu__link {
+    transition: none;
+  }
+
+  .sidebar-level-1 .menu__link:hover,
+  .sidebar-level-2 .menu__link:hover,
+  .sidebar-level-3 .menu__link:hover,
+  .sidebar-level-4 .menu__link:hover,
+  .sidebar-level-5 .menu__link:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .sidebar-level-1 .menu__link,
+  .sidebar-level-2 .menu__link,
+  .sidebar-level-3 .menu__link,
+  .sidebar-level-4 .menu__link,
+  .sidebar-level-5 .menu__link {
+    border-left-width: 4px;
+  }
+
+  .sidebar-level-1 .menu__link--active,
+  .sidebar-level-2 .menu__link--active,
+  .sidebar-level-3 .menu__link--active,
+  .sidebar-level-4 .menu__link--active,
+  .sidebar-level-5 .menu__link--active {
+    border-left-width: 6px !important;
+  }
+}

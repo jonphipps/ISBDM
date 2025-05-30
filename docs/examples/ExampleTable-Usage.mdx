@@ -1,0 +1,147 @@
+---
+title: Using the ExampleTable Component
+sidebar_label: ExampleTable Component
+---
+
+# Using the ExampleTable Component
+
+The `ExampleTable` component makes it easy to display bibliographic data with collapsible details. This is especially useful for ISBDM documentation.
+
+## Basic Usage
+
+```jsx
+import { ExampleTable } from '@site/src/components/global/ExampleTable';
+
+// In your MDX file:
+<ExampleTable 
+  entries={[
+    {
+      element: "has manifestation statement of title and responsibility",
+      elementUrl: "/docs/statements/1028.html",
+      value: "\"The biographical dictionary of Scottish women, from the earliest times to 2004, editors Elizabeth Ewan, Sue Innes, Sian Reynolds, co-ordinating editor Rose Pip\"",
+      detail: "[The value replaces whitespace with the punctuation \", \" (comma-space) for clarity.]"
+    },
+    {
+      element: "has manifestation statement of edition",
+      elementUrl: "/docs/statements/1029.html",
+      value: "\"First published in hardback by Edinburgh University Press in 2006.\""
+    }
+    // Add more entries as needed
+  ]}
+/>
+```
+
+## Example Output
+
+The component will render a table where each row shows:
+- The element name (linking to its documentation)
+- The element's value
+- A "⁇⁇" button for entries that have additional details
+
+When clicking the "⁇⁇" button, a details section will expand beneath the row, showing the additional information.
+
+## Component Props
+
+The `ExampleTable` component accepts these props:
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `entries` | ExampleEntry[] | No* | Array of entries to display (see below for structure) |
+| `caption` | string | No | Optional caption to display below the table |
+| `children` | ReactNode | No* | Alternative format using React children for direct MDX use |
+
+*Note: Either `entries` or `children` must be provided, but not both.
+
+### Entry Properties
+
+Each entry in the `entries` array should have these properties:
+
+| Property | Type | Required | Description |
+|----------|------|----------|-------------|
+| `element` | string | Yes | The name of the element to display |
+| `elementUrl` | string | Yes | URL to the element's documentation page |
+| `value` | string | Yes | The element's value to display |
+| `detail` | string | No | Optional details that can be expanded |
+
+## Using the Caption Prop
+
+You can add a caption to your table using the `caption` prop:
+
+```jsx
+<ExampleTable
+  caption="Table 1: Example bibliographic entries"
+  entries={[
+    // ... your entries
+  ]}
+/>
+```
+
+## Using Children Format
+
+For more flexibility in MDX files, you can use the children format instead of the entries array. This allows you to write table rows directly:
+
+```jsx
+<ExampleTable caption="Custom table example">
+  <tr>
+    <td className="elementColumn">
+      <a href="/docs/statements/1028.html">has manifestation statement</a>
+    </td>
+    <td className="valueColumn">
+      "The biographical dictionary of Scottish women"
+    </td>
+    <td className="detailColumn"></td>
+  </tr>
+  <tr>
+    <td className="elementColumn">
+      <a href="/docs/statements/1029.html">has edition statement</a>
+    </td>
+    <td className="valueColumn">
+      "First edition"
+    </td>
+    <td className="detailColumn"></td>
+  </tr>
+</ExampleTable>
+```
+
+When using children format:
+- The component won't render table headers automatically
+- You have full control over the table structure
+- You can mix different row types or add custom styling
+- Detail expansion functionality is not available in this format
+
+## Complete Example
+
+Here's a complete example showing the `ExampleTable` component with multiple entries and a caption:
+
+```jsx
+import { ExampleTable } from '@site/src/components/global/ExampleTable';
+
+# Biographical dictionary of Scottish women (2007; Edinburgh University Press; volume; perfect binding)
+
+This example describes a printed volume that embodies a biographical dictionary with multiple editors and contributors.
+
+The manifestation is published in a single unit.
+
+<ExampleTable
+  caption="Bibliographic data for this manifestation"
+  entries={[
+    {
+      element: "has manifestation statement of title and responsibility",
+      elementUrl: "/docs/statements/1028.html",
+      value: "\"The biographical dictionary of Scottish women, from the earliest times to 2004, editors Elizabeth Ewan, Sue Innes, Sian Reynolds, co-ordinating editor Rose Pip\"",
+      detail: "[The value replaces whitespace with the punctuation \", \" (comma-space) for clarity.]"
+    },
+    {
+      element: "has manifestation statement of edition",
+      elementUrl: "/docs/statements/1029.html",
+      value: "\"First published in hardback by Edinburgh University Press in 2006.\""
+    },
+    {
+      element: "has publisher collective agent",
+      elementUrl: "/docs/relationships/1254.html",
+      value: "\"Edinburgh University Press\"",
+      detail: "[The value is an authorized access point of a creator of the manifestation.]"
+    }
+  ]}
+/>
+```

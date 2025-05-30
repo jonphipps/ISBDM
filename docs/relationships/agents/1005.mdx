@@ -1,0 +1,135 @@
+---
+slug: /relationships/1005
+sidebar_class_name: sidebar-level-1
+sidebar_label: has agent associated with manifestation
+sidebar_level: 1
+sidebar_position: 3
+sidebar_category: agents
+id: '1005'
+title: has agent associated with manifestation
+RDF:
+  definition: Relates a manifestation to an agent.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1019
+    url: /docs/relationships/1019
+    label: has creator agent of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1021
+    url: /docs/relationships/1021
+    label: has distributor agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1007
+    url: /docs/relationships/1007
+    label: has collective agent associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1006
+    url: /docs/relationships/1006
+    label: has person associated with manifestation
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1291
+    url: /docs/relationships/1291
+    label: has entity associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has agent associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element supports the user tasks to find and identify the manifestation and to explore the context of the manifestation and its relationship to instances of the Agent entity.
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1031">has manifestation statement of issue or iteration</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/statements/1028">has manifestation statement of title and responsibility</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1266">has note on agent associated with manifestation</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords, or used to construct browsing lists.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme for an authorized access point of an agent should support several levels of identification and collation:
+  - A name of the agent
+  - A category of agent, including an indication of the entity sub-type Collective Agent or Person.
+  - Specific attributes of the agent
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSESAge">Agent SES</InLink> is a string encoding scheme suggested by ISBD for Manifestation for an authorized access point of an agent.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If one or more agents are associated with the manifestation, record at least one occurrence of the element or an element sub-type. Use the following order of preference to select the value:
+  
+  1. Agent who is a creator of the manifestation <ol class="al"> <li>Agent who is a publisher of the manifestation</li> <li>Agent who is a producer of the manifestation</li> <li>Agent who is a manufacturer of the manifestation</li> </ol>
+  2. Agent who is a distributor of the manifestation
+  3. Agent who is associated with an expression or work that is embodied in the manifestation
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  If more than one agent is named with the same association in a manifestation statement, record one or more occurrences of the element or an element sub-type, if it is considered to be useful for users of the metadata. Use the following order of preference to select the values:
+  
+  - The agents who are named most prominently in the typography and layout of the statement.
+  - The agent who is named first in the statement.
+  - The agents who are named in a language and script that is preferred by the cataloguing agency.
+  - All agents who are named.
+</div>
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has person associated with manifestation | "Capote, Truman, 1924-1984" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx060">Truman Capote, ecrivain, USA, 1947 (2008; Nouvelles Images S.A.; card)</InLink>. The agent is a person.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has collective agent associated with manifestation | "Städel Museum" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx065">Matisse Bonnard (2017; Städel Museum; volume)</InLink>. The agent is a collective agent.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-types unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has agent associated with manifestation | "Shakespeare, William, 1564-1616" |
+  
+  *[The value is an authorized access point of a related agent.]*
+  </details>
+</div>

@@ -1,0 +1,68 @@
+---
+sidebar_class_name: sidebar-level-4
+sidebar_label: has reduction ratio
+sidebar_level: 4
+sidebar_position: 18
+customProps:
+  sidebar_prefix: '│  │  │  └─ '
+id: '1243'
+title: has reduction ratio
+RDF:
+  definition: Relates a manifestation to an extent of embodied content that is the magnification factor that is required to view the content.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that embodies cartographic image, notated movement, notated music, still image, and text content.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1277
+    url: /docs/attributes/1277
+    label: has extent of embodied content
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has reduction ratio
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a quantitative value that consists of a whole number and a term for the unit of magnification.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has reduction ratio | "150x" |
+  
+  *[String from SES: `{number}` (magnification).]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a qualitative value that is a controlled term for a range of reduction ratios.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has reduction ratio | "high reduction" |
+  
+  *[String from value vocabulary; term for the range "31x" to "60"”.]*
+  </details>
+</div>

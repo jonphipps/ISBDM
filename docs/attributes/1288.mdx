@@ -1,0 +1,85 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has layout of embodied content
+sidebar_level: 2
+sidebar_position: 25
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1288'
+title: has layout of embodied content
+RDF:
+  definition: Relates a manifestation to a physical characteristic that is a designation that indicates the arrangement of content that is embodied in the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that embodies cartographic image, cartographic tactile image, notated movement, notated music, still image, tactile image, tactile notated movement, tactile notated music, or text content.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1242
+    url: /docs/attributes/1242
+    label: has physical characteristic
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has layout of embodied content
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Do not use this element for a manifestation that is a computer card, computer chip cartridge, computer disc, computer disc cartridge, computer tape cartridge, computer tape cassette, computer tape reel, or online resource in an encoding format that adapts the layout of the content to fit different sizes of display screen, except for dimensions.
+</div>
+
+<SeeAlso><InLink href="/docs/attributes/1277">has extent of embodied content</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a value that appears in the <InLink href="/docs/ves/1288">ISBDM Layout of Embodied Content value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has layout of embodied content | "tête-bêche" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx026">Wind, pinball (2015; Harvill Secker; volume)</InLink>. The manifestation embodies two novels.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has layout of embodied content | "pages" |
+  | has layout of embodied content | "columns" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx050">Black Lizard big book of locked-room mysteries (2014; Vintage Books; volume; perfect binding)</InLink>. The content of the manifestation is laid out in columns on pages.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has layout of embodied content | "frames" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx059">Asterix and the gowden heuk (2014; Itchy Coo; volume)</InLink>. The manifestation embodies a graphic novel.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is a super-unit, record the value that applies to the largest number of sub-units.
+</div>
+
+<div className="stip">
+  For a manifestation that is a super-unit, and if no one value predominates, record separate occurrences of the element for each value that applies to the larger number of sub-units.
+</div>

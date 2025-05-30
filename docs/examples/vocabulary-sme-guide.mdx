@@ -1,0 +1,293 @@
+---
+id: vocabulary-sme-guide
+title: "How to Create Vocabularies: SME Guide"
+description: Non-technical guide for subject matter experts to create and manage controlled vocabularies
+sidebar_label: Vocabulary - SME Guide
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# How to Create Vocabularies: A Guide for Subject Matter Experts
+
+*A practical, non-technical guide for librarians, catalogers, and domain experts*
+
+## What is a Controlled Vocabulary?
+
+A controlled vocabulary is a standardized list of terms used to describe library materials consistently. Think of it as an "official dictionary" for your domain - everyone uses the same words to mean the same things.
+
+**Examples of controlled vocabularies:**
+- **Media Types**: book, DVD, digital file, microfilm
+- **Content Types**: text, image, audio, video, multimedia  
+- **Subject Areas**: science, literature, history, technology
+- **Languages**: English, French, Spanish, German
+
+## Why Use Controlled Vocabularies?
+
+✅ **Consistency**: Everyone uses the same terms  
+✅ **Findability**: Users can locate materials more easily  
+✅ **Interoperability**: Systems can share and understand data  
+✅ **Quality**: Reduces errors and ambiguity  
+✅ **Multilingual**: Terms can be translated into multiple languages
+
+## Two Methods for Creating Vocabularies
+
+### Method 1: Simple Text Method 📝
+Best for small vocabularies (under 20 terms) or when you want everything in one document.
+
+### Method 2: Spreadsheet Method 📊  
+Best for larger vocabularies, team collaboration, or when you're comfortable with spreadsheets.
+
+---
+
+## Method 1: Text Method (Small Vocabularies)
+
+### Step 1: Plan Your Vocabulary
+
+Before you start, answer these questions:
+- **What domain does this cover?** (e.g., "content types," "media formats")
+- **Who will use this?** (catalogers, end users, systems)
+- **What terms do you need?** (make a rough list)
+- **Do you need multiple languages?**
+
+### Step 2: Create Your Documentation Page
+
+Create a new documentation file with this structure:
+
+```mdx
+---
+vocabularyId: "content-types"
+title: "Content Type Vocabulary"
+description: "Types of content found in library materials"
+concepts:
+  - value: "text"
+    definition: "Content expressed through written language"
+    scopeNote: "Includes books, articles, and written documents"
+  - value: "image"  
+    definition: "Visual content including photographs and illustrations"
+    scopeNote: "Both digital and physical images"
+  - value: "audio"
+    definition: "Sound content including music and spoken word"
+---
+
+# Content Type Vocabulary
+
+This vocabulary defines different types of content found in library materials.
+
+<VocabularyTable {...frontMatter} />
+```
+
+### Step 3: Add Your Terms
+
+For each term, provide:
+- **value**: The term itself (e.g., "text", "audio")
+- **definition**: What it means (1-2 sentences)
+- **scopeNote**: Additional clarification (optional)
+
+### Example: Library Sections Vocabulary
+
+<VocabularyTable 
+  vocabularyId="library-sections"
+  title="Library Section Vocabulary"
+  description="Common sections found in academic libraries"
+  showTitle={true}
+  showURIs={false}
+  concepts={[
+    {
+      value: "reference",
+      definition: "Materials that provide information to answer specific questions",
+      scopeNote: "Includes encyclopedias, dictionaries, handbooks, and databases"
+    },
+    {
+      value: "circulation", 
+      definition: "Materials that can be borrowed from the library",
+      scopeNote: "Books, DVDs, and other items with checkout periods"
+    },
+    {
+      value: "special collections",
+      definition: "Rare, unique, or historically significant materials",
+      scopeNote: "Often requires special access or handling procedures"
+    },
+    {
+      value: "periodicals",
+      definition: "Magazines, journals, and newspapers published regularly",
+      scopeNote: "May be in print or electronic format"
+    }
+  ]}
+/>
+
+---
+
+## Method 2: Spreadsheet Method (Larger Vocabularies)
+
+### Step 1: Create Your Spreadsheet
+
+Open Excel, Google Sheets, or similar software and create these columns:
+
+| Column Name | Required? | Description | Example |
+|-------------|-----------|-------------|---------|
+| `uri` | Yes | Unique ID for each term | `mediatype:T1001` |
+| `rdf:type` | Yes | Always use this exact value | `http://www.w3.org/2004/02/skos/core#Concept` |
+| `skos:prefLabel@en` | Yes | The term in English | `book` |
+| `skos:definition@en[0]` | Yes | Definition in English | `A written work published as printed pages` |
+| `skos:scopeNote@en[0]` | No | Additional context | `Includes both fiction and non-fiction` |
+
+### Step 2: Add Your Data
+
+Example spreadsheet content:
+
+| uri | rdf:type | skos:prefLabel@en | skos:definition@en[0] | skos:scopeNote@en[0] |
+|-----|----------|-------------------|----------------------|---------------------|
+| mediatype:T1001 | http://www.w3.org/2004/02/skos/core#Concept | book | A written work published as printed pages | Includes both fiction and non-fiction |
+| mediatype:T1002 | http://www.w3.org/2004/02/skos/core#Concept | DVD | Digital video disc containing movies or data | Includes commercial and educational content |
+| mediatype:T1003 | http://www.w3.org/2004/02/skos/core#Concept | digital file | Electronic content stored in computer format | Various file types like PDF, MP3, JPEG |
+
+### Step 3: Save and Upload
+
+1. Save your file as CSV format
+2. Give it a descriptive name (e.g., `media-types.csv`)
+3. Place it in the appropriate folder in your documentation system
+
+### Step 4: Create the Documentation Page
+
+```mdx
+---
+vocabularyId: "media-types"
+title: "Media Type Vocabulary" 
+description: "Physical and digital formats for library materials"
+prefix: "mediatype"
+uri: "http://library.org/vocabularies/media-types"
+---
+
+# Media Type Vocabulary
+
+<VocabularyTable 
+  {...frontMatter}
+  csvFile="vocabularies/media-types.csv" 
+/>
+```
+
+---
+
+## Adding Multiple Languages
+
+### For Text Method:
+
+```yaml
+concepts:
+  - value:
+      en: "book"
+      fr: "livre"
+      es: "libro"
+    definition:
+      en: "A written work published as printed pages"
+      fr: "Une œuvre écrite publiée sous forme de pages imprimées"  
+      es: "Una obra escrita publicada como páginas impresas"
+```
+
+### For Spreadsheet Method:
+
+Add columns for each language:
+
+| uri | rdf:type | skos:prefLabel@en | skos:prefLabel@fr | skos:prefLabel@es | skos:definition@en[0] | skos:definition@fr[0] | skos:definition@es[0] |
+|-----|----------|-------------------|-------------------|-------------------|----------------------|----------------------|----------------------|
+| mediatype:T1001 | ... | book | livre | libro | A written work... | Une œuvre écrite... | Una obra escrita... |
+
+---
+
+## Real-World Example: Sensory Content Types
+
+Here's how the sensory specification vocabulary appears with rich multilingual content:
+
+<VocabularyTable 
+  vocabularyId="sensory-example"
+  title="Sensory Content Specification"
+  description="How content is intended to be perceived by users"
+  csvFile={useBaseUrl('/data/sensory-test.csv')}
+  showTitle={true}
+  defaultLanguage="en"
+/>
+
+**Notice these features:**
+- **Search box**: Type to find specific terms
+- **Language selector**: Switch between English, French, Spanish
+- **Expandable details**: Click "+" to see examples, notes, and history
+- **Clean presentation**: Professional formatting suitable for publication
+
+---
+
+## Best Practices for SMEs
+
+### 1. Writing Good Definitions
+✅ **Do**: Use clear, simple language  
+✅ **Do**: Be specific and precise  
+✅ **Do**: Include essential distinguishing features  
+❌ **Don't**: Use the term in its own definition  
+❌ **Don't**: Assume specialized knowledge  
+
+**Good**: "A book is a written work published as bound printed pages"  
+**Poor**: "A book is a published book-like object"
+
+### 2. Using Scope Notes Effectively
+- Clarify edge cases: "Includes both physical and digital formats"
+- Provide examples: "Such as textbooks, novels, and reference works"
+- Explain relationships: "Broader than 'textbook,' narrower than 'publication'"
+
+### 3. Organizing Your Terms
+- Use consistent naming patterns
+- Consider alphabetical order for browsing
+- Group related terms logically
+- Plan for growth and evolution
+
+### 4. Quality Control
+- Have others review your definitions
+- Test with real examples
+- Check for overlaps or gaps
+- Validate with actual users
+
+---
+
+## Common Questions
+
+### "How many terms should I include?"
+Start small with core terms. You can always add more later. 10-20 terms is often a good starting point.
+
+### "What if terms overlap?"
+This is normal! Use scope notes to clarify boundaries. Consider hierarchical relationships.
+
+### "Should I include deprecated terms?"
+Yes, but mark them clearly with change notes explaining what to use instead.
+
+### "How often should I update vocabularies?"
+Review annually, update as needed. Document all changes with change notes.
+
+### "What about abbreviations and acronyms?"
+Include them as alternative labels rather than separate terms.
+
+---
+
+## Getting Started Checklist
+
+- [ ] Define your vocabulary's scope and purpose
+- [ ] Choose text method (small) or spreadsheet method (large)
+- [ ] Gather your initial list of terms
+- [ ] Write clear, consistent definitions
+- [ ] Add scope notes for clarification
+- [ ] Review and test with colleagues
+- [ ] Create your documentation page
+- [ ] Plan for maintenance and updates
+
+Remember: The goal is creating a useful tool for your community. Start simple, be consistent, and improve over time!
+
+---
+
+## Getting Help
+
+If you need assistance:
+
+1. **Start simple**: Begin with just a few terms to test the process
+2. **Use examples**: Copy and modify the examples above
+3. **Ask colleagues**: Have others review your definitions
+4. **Test with users**: Make sure terms make sense to your audience
+5. **Document decisions**: Keep notes about why you made certain choices
+
+The vocabulary tools are designed to be flexible and forgiving - focus on creating quality content, and the technical formatting will take care of itself!

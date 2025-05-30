@@ -1,0 +1,55 @@
+---
+sidebar_class_name: sidebar-level-4
+slug: /relationships/1249
+sidebar_label: has publisher person
+sidebar_level: 4
+sidebar_position: 19
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '      │  └─ '
+id: '1249'
+title: has publisher person
+RDF:
+  definition: Relates a manifestation to a person who is responsible for organizing its creation by a mechanical process that is used by a manufacturer.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: A mechanical process includes a printing or digital manufacturing process.
+  range: Person
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1246
+    url: /docs/relationships/1246
+    label: has creator person of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1217
+    url: /docs/relationships/1217
+    label: has publisher agent
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has publisher person
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-types unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has publisher person | "Knüeppel, Moritz" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx030">Definitive guide to PSM 1 (2021; Knüeppel, Moritz; volume; perfect binding)</InLink>.]*
+  </details>
+</div>

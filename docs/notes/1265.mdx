@@ -1,0 +1,108 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has note on entity associated with manifestation
+sidebar_level: 2
+sidebar_position: 4
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1265'
+title: has note on entity associated with manifestation
+RDF:
+  definition: Relates a manifestation to a note on manifestation that provides information about an entity that is related to the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Literal
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1266
+    url: /docs/notes/1266
+    label: has note on agent associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1267
+    url: /docs/notes/1267
+    label: has note on expression associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1268
+    url: /docs/notes/1268
+    label: has note on item associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1269
+    url: /docs/notes/1269
+    label: has note on manifestation associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1273
+    url: /docs/notes/1273
+    label: has note on nomen associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1271
+    url: /docs/notes/1271
+    label: has note on place associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1272
+    url: /docs/notes/1272
+    label: has note on time-span associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1270
+    url: /docs/notes/1270
+    label: has note on work associated with manifestation
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1207
+    url: /docs/notes/1207
+    label: has note on manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has note on entity associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/relationships/general">General stipulations for relationship elements</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific note.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific note.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on expression associated with manifestation | "Includes the original German version of the cantata, and the English translation by Henry S. Drinker." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx014">Was mir behagt, ist nur die muntre Jagd (2021; Carus; volume; full score)</InLink>. The note is about expressions embodied in the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a value that gives information about any uncertainty in values that are recorded for relationship elements.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on entity associated with manifestation | "Attributed to Jonathan Swift." |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on entity associated with manifestation | "Probably manufactured in Lisbon." |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies the expression of a diachronic work, record a value that gives information about a change in an entity that is related to the manifestations that embody expressions of issues or iterations of the work, including identification of the issue or iteration in which the change first appears.
+</div>
+
+<div className="stip">
+  For a manifestation that embodies the expression of a diachronic work, record a value that gives general information about multiple changes over time in an entity that is related to the manifestations that embody expressions of issues or iterations of the work, including identification of the issues or iterations in which the changes occur.
+</div>

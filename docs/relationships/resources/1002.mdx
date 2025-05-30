@@ -1,0 +1,99 @@
+---
+slug: /relationships/1002
+sidebar_class_name: sidebar-level-1
+sidebar_label: has expression associated with manifestation
+sidebar_level: 1
+sidebar_position: 3
+sidebar_category: resources
+id: '1002'
+title: has expression associated with manifestation
+RDF:
+  definition: Relates a manifestation to an expression.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Expression
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1012
+    url: /docs/relationships/1012
+    label: has expression embodied in manifestation
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1291
+    url: /docs/relationships/1291
+    label: has entity associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has expression associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element supports the user tasks to find and identify the manifestation and to explore the context of the manifestation and its relationship to instances of the Expression entity.
+</div>
+
+<SeeAlso><InLink href="/docs/notes/1267">has note on expression associated with manifestation</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords, or used to construct browsing lists.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme for an authorized access point of an expression should support several levels of identification and collation:
+  1. the work that is realized by the expression
+  2. a category of content of the expression
+  3. specific attributes of the expression
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSESExp">Expression SES</InLink> is a string encoding scheme suggested by <span class="thisem">ISBD for Manifestation</span> for an authorized access point of an expression.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has expression embodied in manifestation | "Goscinny, René, 1926-1977. Serpe d'or (text; Scots)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx059">Asterix and the gowden heuk (2014; Itchy Coo; volume)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has expression embodied in manifestation | "Austen, Jane, 1775-1817. Emma (text; English)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx053">Emma (1815; John Murray; volume)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-types unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record an expression that is associated with the manifestation. Do not record an expression that is known to be falsely associated with the manifestation.
+</div>
+
+<div className="stip">
+  Record a separate occurrence of the element for each distinct value that is considered to be useful for users of the metadata.
+</div>

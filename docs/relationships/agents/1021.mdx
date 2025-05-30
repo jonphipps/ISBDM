@@ -1,0 +1,60 @@
+---
+slug: /relationships/1021
+sidebar_class_name: sidebar-level-2
+sidebar_label: has distributor agent
+sidebar_level: 2
+sidebar_position: 8
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1021'
+title: has distributor agent
+RDF:
+  definition: Relates a manifestation to an agent who is responsible for its distribution.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes distribution by bookselling.
+  range: Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1255
+    url: /docs/relationships/1255
+    label: has distributor collective agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1250
+    url: /docs/relationships/1250
+    label: has distributor person
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1005
+    url: /docs/relationships/1005
+    label: has agent associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has distributor agent
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/statements/1030">has manifestation statement of publication, production, manufacture, or distribution</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record an agent who is named as a distributor in a statement of publication, production, distribution, or manufacture that appears in the manifestation, if it is considered to be useful for users of the metadata.
+</div>

@@ -1,0 +1,1167 @@
+---
+id: index
+title: Preliminary assessment
+sidebar_label: Assessment
+slug: /assess/index
+---
+
+<section className="guid">
+
+Carry out a preliminary assessment of the manifestation before recording a description.
+
+The assessment determines if the manifestation requires a separate description, and the granularity and completeness of the description that is required to meet the needs of the cataloguing agency.
+
+</section>
+
+<section className="guid">
+
+The granularity of a manifestation description is dependent on the number of carrier and content components that are present in the manifestation. The completeness of a manifestation description is dependent on the intention to publish or produce it in a single contiguous process or in a set of discrete processes over time.
+
+Assess the manifestation to determine the number and type of related resource entities, and to decide if they are to be associated with the manifestation, noted in the description, or omitted from the description.
+</section>
+
+<section className="guid">
+The number of items that exemplify a manifestation may be indeterminate and is not generally relevant to the description of a manifestation. An instance of an item describes only characteristics that are specific to the item, including modifications that are made after its publication or production.
+</section>
+
+<section className="guid">
+An instance of a manifestation may be published or produced in more than one physical or logical part.
+</section>
+
+<section className="guid">
+The preliminary assessment covers three distinct characteristics that apply to every manifestation:
+
+| Characteristic | Description |
+|----------------|-------------|
+| Units | A manifestation may be published or produced in one or more units. |
+| Expressions | A manifestation may embody one or more expressions that realise one or more works. |
+| Content Change | A manifestation may embody the content of a work that is planned to be static or to change over time. |
+</section>
+
+<section className="guid">
+Each characteristic meets one of two mutually exclusive conditions at the broadest level. One of the two conditions for each characteristic must apply to every manifestation:
+
+| Characteristic | Possible Conditions |
+|----------------|---------------------|
+| Units | A manifestation is in either one unit or more than one unit. |
+| Expressions | A manifestation embodies either one expression or more than one expression. |
+| Content Change | A manifestation embodies expressions of works that are either static or are planned to be embodied over time. |
+</section>
+
+<section className="guid">
+<Figure
+  src="/img/x011.png"
+  caption="Entity-relationship diagram of resource entities and relationships for a manifestation in an information resource."
+  expandLink="/docs/fullimages/x011.html"
+/>
+
+The diagram shows the possible instances of resource entities that may be related to an instance of a manifestation in an information resource.
+</section>
+
+<section className="guid">
+For each assessment characteristic, determine the number of resource entities that are associated with the manifestation. Apply any mandatory stipulations, and choose one or more of the following options for each instance of a resource entity:
+
+| Option | Description/Action |
+|--------|-------------------|
+| Relationship | Record an appropriate relationship element to associate the instance of a resource entity with the manifestation. |
+| Note | Record an appropriate note element to describe one or more instances of a resource entity within the manifestation description. |
+| Statement | Record an appropriate manifestation statement element to describe one or more instances of a resource entity within the manifestation description. |
+| Omission | Omit the instance of a resource entity from the manifestation description. |
+
+<SeeAlso><InLink href="/docs/intro/i022">Mandatory elements</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink></SeeAlso>
+</section>
+
+<section className="guid">
+The characteristics to be assessed are mutually independent and are analysed in separate stages. The order of analyses is not important; ISBDM recommends following the order given here.
+
+</section>
+
+## Manifestation boundaries {#p022}
+
+<section className="guid">
+
+The boundary of a manifestation is the set of elements and their sub-types that distinguish the manifestation from other manifestations.
+
+A difference in the information that is associated with these elements indicates a distinct manifestation that requires a separate description if it is to be fully described.
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is published and that embodies one or more expressions of one or more static works, consider the manifestation to be distinct from other manifestations if there is a significant difference in the characteristics of any of the following elements or their sub-types:
+
+- <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink>
+- <InLink href="/docs/attributes/1022">has category of carrier</InLink> and <InLink href="/docs/attributes/1218">has media type</InLink>
+- <InLink href="/docs/relationships/1217">has publisher agent</InLink>
+- <InLink href="/docs/relationships/1210">has date of publication</InLink>
+- <InLink href="/docs/attributes/1242">has physical characteristic</InLink>
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is produced and that embodies one or more expressions of one or more static works, consider the manifestation to be distinct from other manifestations if there is a difference in the characteristics of any of the following elements or their sub-types:
+
+- <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink>
+- <InLink href="/docs/relationships/1011">has item that exemplifies manifestation</InLink>
+- <InLink href="/docs/attributes/1022">has category of carrier</InLink> and <InLink href="/docs/attributes/1218">has media type</InLink>
+- <InLink href="/docs/relationships/1216">has producer agent</InLink>
+- <InLink href="/docs/relationships/1209">has date of production</InLink>
+- <InLink href="/docs/attributes/1242">has physical characteristic</InLink>
+
+</section>
+
+<section className="guid">
+
+For a manifestation that embodies the expression of a diachronic work, consider the manifestation to be distinct from other manifestations if there is a significant change in the characteristic of any of the following elements:
+
+- <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink>
+- <InLink href="/docs/attributes/1022">has category of carrier</InLink> and <InLink href="/docs/attributes/1218">has media type</InLink>
+- <InLink href="/docs/relationships/1038">has title proper</InLink>
+
+</section>
+
+## Number of units {#p010}
+
+<section className="guid">
+
+A manifestation may be published or produced in one or more logical or physical parts.
+
+A manifestation inherits the conceptual parts of a work by embodying expressions of the parts. There is no intrinsic relationship between the conceptual parts and the logical or physical parts.
+
+</section>
+
+<section className="guid">
+
+<details>
+<summary>Examples</summary>
+<div>
+
+A manifestation that is a single physical part and a manifestation that has two physical parts can each embody a work or expression that has three conceptual parts.
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+A logical or physical part is termed a "unit" for clarity. A unit is a logical part of an intangible manifestation or a physical part of a tangible manifestation.
+
+</section>
+
+<section className="guid">
+
+Assess the number and hierarchical structure of units of the manifestation.
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that is an "online resource" to have more than one logical part if distinct content has its own Uniform Resource Locator (URL) that is based on the root URL of the manifestation. Consider the manifestation to have only one logical part if all content has the root URL.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property              | Value                                                            |
+| :-------------------- | :--------------------------------------------------------------- |
+| has unitary structure | "multiple unit"                                                  |
+| has sub-unit          | "myScience Canada (2008-; Scimetrica; online resource; English)" |
+| has sub-unit          | "myScience Canada (2008-; Scimetrica; online resource; French)"  |
+
+_[Full example: <InLink href="/docs/fullex/fx015">myScience Canada (2008-; Scimetrica; online resource)</InLink>. The URLs of the English and French versions share the same root URL and are distinct: "https://www.myscience.ca/" (Home page in English); "https://www.myscience.ca/en" (English version sub-unit); "https://www.myscience.ca/fr" (French version sub-unit).]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is two or more unattached sheets, consider each sheet to be a part of the manifestation irrespective of the layout of the content that is embodied in the sheets.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property              | Value           |
+| :-------------------- | :-------------- |
+| has unitary structure | "multiple unit" |
+
+_[Full example: <InLink href="/docs/fullex/fx029">Burleska pro klarinet a klavír (1945-03-26; Vostřák, Zbyněk; sheet)</InLink>. The manifestation consists of three unbound folded sheets.]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies an issue of a successive diachronic work to be a sub-unit of the manifestation that embodies the incomplete diachronic work. The number of sub-units of the manifestation increases over time.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property       | Value                                                    |
+| :------------- | :------------------------------------------------------- |
+| has super-unit | "Biblioteka 42 (2000-; Naklada Jesenski i Turk; svezak)" |
+
+_[Full example: <InLink href="/docs/fullex/fx019">Hakerska etika i duh informacijskog doba (2002; Naklada Jesenski i Turk; svezak)</InLink>.]_
+
+| Property     | Value                                                                              |
+| :----------- | :--------------------------------------------------------------------------------- |
+| has sub-unit | "Hakerska etika i duh informacijskog doba (2002; Naklada Jesenski i Turk; svezak)" |
+
+_[Full example: <InLink href="/docs/fullex/fx020">Biblioteka 42 (2000-; Naklada Jesenski i Turk; svezak)</InLink>]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies an iteration of an integrating diachronic work to be the manifestation that embodies the incomplete diachronic work. The number of sub-units of the manifestation may increase or decrease over time.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+The publisher of a loose-leaf updating service may replace two binders with three binders when a specific iteration is published.
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+A manifestation may have no more than one super-unit that embodies a static work.
+
+</section>
+
+<section className="guid">
+
+A manifestation may have more than one super-unit that embodies a diachronic work.
+
+</section>
+
+<section className="guid">
+
+The structure of a multiple unit manifestation may form a hierarchy of super-units and sub-units.
+
+<Figure
+  src="/img/x010.png"
+  caption="Entity-relationship diagram of the unitary hierarchy of a manifestation."
+  expandLink="/docs/fullimages/x010.html"
+/>
+
+The diagram shows a model of the hierarchy of units in a multiple unit manifestation. A manifestation that has physical or logical parts is a super-unit, and a manifestation that is a physical or logical part is a sub-unit. A unit may have more than one direct sub-unit and a super-unit. A unit is related to a sub-unit with a *has sub-unit* element and to a super-unit with an inverse *has super-unit* element.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property       | Value                                                      |
+| :------------- | :--------------------------------------------------------- |
+| has super-unit | "Mojo (1993-; H Bauer Publishing Ltd.; volume + audio disc)" |
+| has sub-unit   | "Mojo 357 (2023; H Bauer Publishing Ltd.; volume)"         |
+| has sub-unit   | "Stax uncovered! (2023; H Bauer Publishing Ltd.; audio disc)" |
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+Record a value of <InLink href="/docs/attributes/1262">has unitary structure</InLink> to indicate that the manifestation is published or produced in one or more units.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property              | Value                                                              |
+| :-------------------- | :----------------------------------------------------------------- |
+| has unitary structure | "single unit"                                                      |
+
+_[Full example: <InLink href="/docs/fullex/fx030">Definitive guide to PSM 1 (2021; Knüeppel, Moritz; volume; perfect binding)</InLink>.]_
+
+| Property              | Value           |
+| :-------------------- | :-------------- |
+| has unitary structure | "multiple unit" |
+
+_[Full example: <InLink href="/docs/fullex/fx009">Lyceum Theatre, London, England, 5/26/72 (2022; Rhino Entertainment LLC; audio disc)</InLink>.]_
+
+</div>
+</details>
+
+</section>
+
+### Manifestation that is a single unit {#p023}
+
+<section className="guid">
+
+For a manifestation that is published or produced in only one unit, record a single description.
+
+</section>
+
+<section className="guid">
+
+Record a <InLink href="/docs/attributes/1022">has category of carrier</InLink> element. This is mandatory.
+
+Describe other physical characteristics of the unit by applying any of the following methods:
+
+- Record a <InLink href="/docs/attributes/1242">has physical characteristic</InLink> element or element sub-type.
+  - Record a <InLink href="/docs/attributes/1023">has extent of manifestation</InLink> element or element sub-type.
+- Record a <InLink href="/docs/notes/1284">has note on physical characteristic</InLink> element.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> element or element sub-type that includes information about the unit.
+
+Describe the unit with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property                                | Value                             |
+| :-------------------------------------- | :-------------------------------- |
+| has category of carrier                 | "volume"                          |
+| has extent of manifestation             | "1 volume (18 x 18 cm; 10 pages)" |
+| has dimensions                          | "18 x 18 cm"                      |
+| has extent of embodied content          | "10 pages"                        |
+| has manifestation statement of category | "A push, pull and slide book"     |
+
+_[Full example: <InLink href="/docs/fullex/fx017">Gruffalo (2020; Macmillan Children's Books; volume; board book binding)</InLink>.]_
+
+| Property                       | Value                  |
+| :----------------------------- | :--------------------- |
+| has category of carrier        | "том"                  |
+| has extent of manifestation    | "1 том (306 сторінки)" |
+| has extent of embodied content | "306 сторінки"         |
+
+_[Full example: <InLink href="/docs/fullex/fx076">Видатнi вченi Нацiональноï академiï наук Украïнi (1998; Нацiональна бiблiотека Украïнi iменi В.I. Веренадського; том)</InLink>.]_
+
+| Property                       | Value                                               |
+| :----------------------------- | :-------------------------------------------------- |
+| has category of carrier        | "audio disc"                                        |
+| has extent of manifestation    | "1 audio disc (15 recorded songs in 49 min 14 sec)" |
+| has playing time               | "49 min 14 sec"                                     |
+| has extent of embodied content | "15 recorded songs"                                 |
+
+_[Full example: <InLink href="/docs/fullex/fx034">Stax uncovered! (2023; H Bauer Publishing Ltd; audio disc)</InLink>.]_
+
+</div>
+</details>
+
+</section>
+
+### Manifestation that is more than one unit {#p024}
+
+<section className="guid">
+
+The units in a multiple unit manifestation are related in a hierarchical structure.
+
+<Figure
+  src="/img/x006.png"
+  caption="Entity-relationship diagram of a manifestation that is published or produced in more than one physical or logical unit."
+  expandLink="/docs/fullimages/x006.html"
+/>
+
+The diagram shows that for a multiple unit manifestation there is a choice of which manifestation units to describe as separate related manifestations and which to include in manifestation statements, extent attributes, or notes for the manifestation that is being described. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is published or produced in more than one unit, record at least one single description of the manifestation as a whole, or of one or more of its sub-units, or both.
+
+</section>
+
+<section className="guid">
+
+If the whole manifestation is being described, record a <InLink href="/docs/attributes/1022">has category of carrier</InLink> element of one or more of the sub-units. This is mandatory.
+
+Describe other physical characteristics of the sub-units of the manifestation by applying any of the following methods:
+
+- Record a <InLink href="/docs/relationships/1013">has sub-unit</InLink> element.
+- Record a <InLink href="/docs/attributes/1242">has physical characteristic</InLink> element or element sub-type.
+  - Record a <InLink href="/docs/attributes/1023">has extent of manifestation</InLink> element or element sub-type.
+
+- Record a <InLink href="/docs/notes/1269">has note on manifestation associated with manifestation</InLink> element for one or more sub-units.
+- Record a <InLink href="/docs/notes/1284">has note on physical characteristic</InLink> element that includes information about one or more sub-units.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> element or element sub-type that includes information about one or more sub-units.
+- Do not describe a sub-unit.
+
+Describe a sub-unit with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property                               | Value                                                                     |
+| :------------------------------------- | :------------------------------------------------------------------------ |
+| has category of carrier                | "audio disc"                                                              |
+| has category of carrier                | "volume"                                                                  |
+| has sub-unit                           | "Revolver (2022; Apple Corps Limited; audio disc; 2 CD edition; CD 1)"    |
+| has sub-unit                           | "Revolver (2022; Apple Corps Limited; audio disc; 2 CD edition; CD 2)"    |
+| has sub-unit                           | "Revolver (2022; Apple Corps Limited; audio disc; 2 CD edition; booklet)" |
+| has note on physical characteristic    | "2 CDs and a booklet in a slipcase."                                      |
+| has extent of unitary structure        | "2 audio discs"                                                           |
+| has extent of unitary structure        | "1 volume"                                                                |
+| has manifestation statement of edition | "2 CD edition"                                                            |
+
+_[Full example: <InLink href="/docs/fullex/fx049">Revolver (2022; Apple Corps Limited; audio disc; 2 CD edition)</InLink>.]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+If a sub-unit of a manifestation is being described, record a <InLink href="/docs/attributes/1022">has category of carrier</InLink> element of the sub-unit. This is mandatory.
+
+Describe other physical characteristics of the super-unit of the manifestation by applying any of the following methods:
+
+- Record a <InLink href="/docs/relationships/1014">has super-unit</InLink> element.
+- Record a <InLink href="/docs/notes/1269">has note on manifestation associated with manifestation</InLink> element for the super-unit.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> element or element sub-type that includes information about the super-unit.
+- Do not describe the super-unit.
+
+Describe a super-unit with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property       | Value                                                                       |
+| :------------- | :-------------------------------------------------------------------------- |
+| has super-unit | "IFLA series on bibliographic control (2004-2012; De Gruyter Saur; volume)" |
+
+| has manifestation statement of issue or iteration | "IFLA series on bibliographic control vol 44" |
+
+_[Full example: <InLink href="/docs/fullex/fx012">ISBD (2011; De Gruyter Saur; volume)</InLink>.]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+If no statement appears in the manifestation that distinguishes a sub-unit from other sub-units, describe the sub-unit, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property                        | Value           |
+| :------------------------------ | :-------------- |
+| has unitary structure           | "multiple unit" |
+| has extent of unitary structure | "1000 pieces"   |
+
+_[Full example: <InLink href="/docs/fullex/fx068">Library (2022; Corner Piece Puzzles; object)</InLink>. The manifestation is a jigsaw puzzle. No description of an individual piece of the puzzle is considered to be useful.]_
+
+</div>
+</details>
+
+</section>
+
+## Number of expressions {#p011}
+
+<section className="guid">
+
+A manifestation may embody one or more expressions that realise one or more works.
+
+</section>
+
+<section className="guid">
+
+Assess the number and dependencies of expressions that are embodied in the manifestation by using the guidance in this section. Decide which of the expressions to include in the description and the methods to use to describe them.
+
+</section>
+
+<section className="guid">
+
+Consider spoken word, tactile text, or text content that is embedded in the manifestation and its packaging in order to describe itself to be a source of information only, and not to be a distinct expression that is embodied in the manifestation.
+
+<SeeAlso><InLink href="/docs/intro/i004">The manifestation</InLink></SeeAlso>
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies all of the parts of a larger expression and no other expressions to embody a single whole expression.
+
+</section>
+
+<section className="guid">
+
+Describe the works that are realised by the expressions that are embodied in the manifestation, if it is considered to be useful for users of the metadata. Select the methods to use to describe each work from the following options:
+
+- Record the work as a separate work and record a relationship to it by recording a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element. This shortcut element implies the existence of the expression even though it is not identified.
+- Record a <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> element that includes a description of the work.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> element or element sub-type that includes information about the work.
+
+Describe the work with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property                           | Value                                                     |
+| :--------------------------------- | :-------------------------------------------------------- |
+| has work embodied in manifestation | "Grateful Dead. Lyceum Theatre, London, England, 5/26/72" |
+
+_[Full example: <InLink href="/docs/fullex/fx009">Lyceum Theatre, London, England, 5/26/72 (2022; Rhino Entertainment LLC; audio disc)</InLink>.]_
+
+| Property                           | Value            |
+| :--------------------------------- | :--------------- |
+| has work embodied in manifestation | "ISSN 1868-8438" |
+
+_[Full example: <InLink href="/docs/fullex/fx013">IFLA series on bibliographic control (2004-2012; De Gruyter Saur; volume)</InLink>.]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+Record at least one occurrence of a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element.
+
+</section>
+
+### Manifestation that embodies one expression {#p015}
+
+<section className="guid">
+
+<Figure
+  src="/img/x013.png"
+  caption="Entity-relationship diagram of a manifestation that embodies only one expression."
+  expandLink="/docs/fullimages/x013.html"
+/>
+
+The diagram shows that there is a choice of describing the expression or its work as separate related entities and which to include in manifestation statements or notes for the manifestation that is being described. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+Record a value of a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element, or record a value of <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> for the work that is realised by the expression. This is mandatory.
+
+Record both elements, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+
+| has expression embodied in manifestation | "IFLA ISBD Review Group. ISBD (text; English)" |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx012">ISBD (2011; De Gruyter Saur; volume)</InLink>.] |
+
+---
+
+| has work embodied in manifestation | "Ordnance Survey. Loch Morar & Mallaig (1:25000)" |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx048">Loch Morar & Mallaig (2015; Ordnance Survey Ltd; sheet)</InLink>.] |
+
+---
+
+| has expression embodied in manifestation | "Rowling, J.K., 1965-. Harry Potter and the goblet of fire (spoken word; English)" |
+| --- | --- |
+| has work embodied in manifestation | "Rowling, J.K., 1965-. Harry Potter and the goblet of fire" |
+| | [Full example: <InLink href="/docs/fullex/fx018">Harry Potter and the goblet of fire (2000; Listening Library; audiocassette)</InLink>.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+Record additional information about the expression or work by applying any of the following methods, if it is considered to be useful for users of the metadata:
+
+- Record a <InLink href="/docs/notes/1267">has note on expression associated with manifestation</InLink> element that includes a description of the expression or record a <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> element that includes a description of the work.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> or element sub-type that includes information about the expression or the work.
+
+Record additional information with more than one method, if it is considered to be useful for users of the metadata.
+
+</section>
+
+### Manifestation that embodies more than one expression {#p016}
+
+<section className="guid">
+
+A manifestation that embodies more than one expression is termed an "aggregate".
+
+</section>
+
+<section className="guid">
+
+Consider an aggregate manifestation to embody also an aggregating expression that realises an aggregating work. The aggregating work is the intention or plan to select the expressions that are embodied in the manifestation.
+
+Consider the aggregating expression as having no intrinsic characteristics that are useful to describe. The aggregating expression does not inherit the characteristics of the expressions that are aggregated, and the common characteristics of the expressions that are aggregated are included in the description of the aggregating work.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x007.png"
+  caption="Entity-relationship diagram of a general aggregate manifestation."
+  expandLink="/docs/fullimages/x007.html"
+/>
+
+The diagram shows that there is a choice of which expressions or works to describe as separate related expressions and works and which to include in manifestation statements or notes for the manifestation that is being described. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+At least one expression or work must be described as a separate entity and related to the manifestation.
+
+One and only one work that is embodied in the manifestation is the aggregating work. The corresponding aggregating expression is omitted for clarity.
+
+</section>
+
+<section className="guid">
+
+Select the methods to use to describe each expression or work from the following options:
+
+- Record the expression or work as a separate entity and record a relationship to it by recording a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element.
+- Record a <InLink href="/docs/attributes/1278">has extent of aggregated content</InLink> element for the kind of expression.
+- Record a <InLink href="/docs/notes/1267">has note on expression associated with manifestation</InLink> element or a <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> element that includes a description of the expression or work.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> or element sub-type that includes information about the expression or work.
+- Do not describe the expression or work.
+
+Describe the expression or work with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+
+| has expression embodied in manifestation | "Hamilton, Gill. Developing open licensing at the National Library of Scotland (text; English)" |
+| --- | --- |
+| has note on expression associated with manifestation | "Includes a case study of the National Library of Scotland." |
+| | [Full example: <InLink href="/docs/fullex/fx002">Open licensing for cultural heritage (2017; Facet Publishing; volume; perfect binding)</InLink>.] |
+
+---
+
+| has expression embodied in manifestation | "LCD Soundsystem. Give it up (performed music)" |
+| --- | --- |
+| has expression embodied in manifestation | "LCD Soundsystem. Tired (performed music)" |
+| has work embodied in manifestation | "LCD Soundsystem. Give it up b/w Tired" |
+| has extent of aggregated content | "2 recorded songs" |
+| has manifestation statement of title and responsibility | "lcd soundsystem \| a. written by james murphy b. by james murphy and pat mahoney \| a give it up \| james murphy: vocals, bass, drums, percussion, synthesizers, programming \| produce by the dfa \| b tired \| james murphy: vocals, bass, guitar; pat mahoney: drums, percussion; ems synthesizer \| produce by the dfa" |
+| | [Full example: <InLink href="/docs/fullex/fx058">Give it up b/w Tired (2002; Ouput Recordings; audio disc)</InLink>.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+The <OutLink href="https://repository.ifla.org/handle/20.500.14598/40.2">IFLA Library Reference Model</OutLink> identifies three distinct types of aggregate:
+
+- Collected expressions aggregate: A set of expressions of multiple independent works. The expressions may be selected according to a set of common characteristics that apply to the expressions or their works.
+- Augmented expression aggregate: An expression of a single independent work that is supplemented by expressions of one or more dependent works. The augmented expression is supplemented with additional content that is not integral to the original work and does not significantly change the expression.
+- Parallel expressions aggregate: A set of expressions of a single independent work.
+
+</section>
+
+<section className="guid">
+
+A manifestation may be a mix of types of aggregate that are determined by the intrinsic relationships between the expressions that are aggregated and the works that they realise.
+
+<details>
+<summary>Examples</summary>
+
+[Full example: <InLink href="/docs/fullex/fx050">Black Lizard big book of locked-room mysteries (2014; Vintage Books; volume; perfect binding)</InLink>. The manifestation embodies a collected set of text expressions, and text expressions that augment them.]
+
+</details>
+
+</section>
+
+<section className="guid">
+
+The main utility in describing an aggregating expression occurs when the same set of expressions is embodied in alternate manifestations or reproductions. Instead of relating each manifestation to each expression that is aggregated, the aggregating expression can be related to each expression that is aggregated via a shortcut Expression relationship element, and then related to each manifestation with a single has expression embodied in manifestation element.
+
+</section>
+
+<section className="guid">
+
+If the same set of expressions is embodied in more than one manifestation with the same layout of content but with different categories of carrier, record a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element for the aggregating expression. Do not record elements for the expressions that are aggregated; the expressions that are aggregated are related directly to the aggregating expression.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x008.png"
+  caption="Entity-relationship diagram of an aggregating expression."
+  expandLink="/docs/fullimages/x008.html"
+/>
+
+The diagram shows that it can be useful to describe an aggregating expression as a separate related expression if it is embodied in more than one alternate manifestation that is published at the same time, for example in different categories of carrier, or if the same set of expressions is published at a later time. The aggregating expression is related once to each expression that is aggregated, so each alternate or subsequent manifestation may then be related to only the aggregating expression and the direct relationships with the expressions that are aggregated can be omitted. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+<SeeAlso><InLink href="/docs/assess/p027">Manifestation that embodies augmented expressions</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/assess/p025">Manifestation that embodies collected expressions</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/assess/p026">Manifestation that embodies parallel expressions</InLink></SeeAlso>
+
+</section>
+
+#### Manifestation that embodies augmented expressions {#p027}
+
+<section className="guid">
+
+For a manifestation that is an augmented expression aggregate, record a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element for the augmented expression or work.
+
+<details>
+<summary>Examples</summary>
+
+| has work embodied in manifestation | "Moffat, Alistair, 1950-. The faded map" |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx003">Faded map (2010; Birlinn Limited; volume; case binding)</InLink>.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x004.png"
+  caption="Entity-relationship diagram of an augmented expression aggregate."
+  expandLink="/docs/fullimages/x004.html"
+/>
+
+The diagram shows the general case of an augmented expression aggregate. The augmented expression or its work is described as a separate related expression or work. This satisfies the mandatory requirement for a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element. There is a choice of which of the augmenting expressions or their works, or of the aggregating work, to describe separately, and which to include in manifestation statements or notes for the manifestation that is being described. The options for entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+Record additional occurrences of <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> or <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> elements for expressions or works that are aggregated, and of the aggregating work, if it is considered to be useful for users of the metadata. Use the following order of preference to select the expressions or works:
+
+1. The aggregating work that is embodied in the manifestation.
+2. Expressions that are named and given prominence in a statement of title and responsibility that appears in the manifestation.
+3. Expressions that are named in a statement of title and responsibility that appears in the manifestation.
+4. Expressions that are named in other statements that appear in the manifestation.
+5. Expressions that are identified in the manifestation or in external sources of information.
+6. Works that are realised by the expressions that are aggregated.
+
+<details>
+<summary>Examples</summary>
+
+| has expression embodied in manifestation | "Austen, Jane, 1775-1817. Emma (text; English)" |
+| --- | --- |
+| has expression embodied in manifestation | "Blythe, Ronald, 1922-2023. Introduction (Emma; text; English)" |
+| has work embodied in manifestation | "Blythe, Ronald, 1922-2023. Emma" |
+| | [Full example: <InLink href="/docs/fullex/fx025">Emma (1971; Penguin Books; volume)</InLink>. The augmenting expression and aggregating work are considered to be useful for users of the metadata, in addition to the augmented expression.] |
+
+</details>
+
+</section>
+
+#### Manifestation that embodies collected expressions {#p025}
+
+<section className="guid">
+
+For a manifestation that is a collected expressions aggregate, and if a collective title is given in a statement of title and responsibility, record a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element for the aggregating work that is embodied in the manifestation.
+
+<details>
+<summary>Examples</summary>
+
+| has work embodied in manifestation | "Greenberg, Jane. Knitting the Semantic Web" |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx005">Knitting the Semantic Web (2007; Howarth Information Press; volume)</InLink>. The manifestation is a collected expressions aggregate with a collective title] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x009.png"
+  caption="Entity-relationship diagram of a collected expressions aggregate with a collective title."
+  expandLink="/docs/fullimages/x009.html"
+/>
+
+The diagram shows the case when the collective title identifies the aggregating work that is embodied in a collected expressions aggregate. In general, the aggregating work is described as a separate related work. This satisfies the mandatory requirement for a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element. There is a choice of which of the collected aggregated expressions or their works to describe as separate related expressions and works, and which to include in manifestation statements or notes for the manifestation that is being described. The options for entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is a collected expressions aggregate, and if a collective title is not given in a statement of title and responsibility, record a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element for one of the expressions or works that are aggregated. Use the following order of preference to select the expression or work:
+
+1. The first expression or work that is named and given prominence in the typography and layout of a statement of title and responsibility that appears in the manifestation.
+2. The first expression or work that is named in a statement of title and responsibility that appears in the manifestation.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x005.png"
+  caption="Entity-relationship diagram of a collected expressions aggregate without a collective title."
+  expandLink="/docs/fullimages/x005.html"
+/>
+
+The diagram shows the case when the aggregating work that is embodied in a collected expressions aggregate is not specifically identified. In general, one of the aggregated collected expressions or their works is selected to be described as a separate related expression or work. This satisfies the mandatory requirement for a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element. There is a choice of which of the other aggregated collected expressions or their works to describe as separate related expressions and works, or the aggregating work to describe as a separate related work, and which to include in manifestation statements or notes for the manifestation that is being described. The options for entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is a collected expressions aggregate, record additional occurrences of <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> or <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> elements for expressions or works that are aggregated, and of the aggregating work, if it is considered to be useful for users of the metadata. Use the following order of preference to select the expressions or works:
+
+1. Expressions that are named and given prominence in a statement of title and responsibility that appears in the manifestation.
+2. Expressions that are named in a statement of title and responsibility that appears in the manifestation.
+3. Expressions that are named in other statements that appear in the manifestation.
+4. Expressions that are identified in the manifestation or in external sources of information.
+5. Works that are realised by the expressions that are aggregated.
+6. The aggregating work that is embodied in the manifestation without a collective title.
+
+<details>
+<summary>Examples</summary>
+
+| has work embodied in manifestation | "Eslin, Martin. Absurd drama" |
+| --- | --- |
+| has expression embodied in manifestation | "Ionesco, Eugène, 1909-1994. Amédée ou comment s'en débarrasser (text; English)" |
+| has expression embodied in manifestation | "Adamov, Arthur, 1908-1970. Professeur Taranne (text; English)" |
+| has expression embodied in manifestation | "Arrabal, Fernando, 1932-. Deux bourreaux (text; English)" |
+| has expression embodied in manifestation | "Albee, Edward, 1928-2016. Zoo Story (text; English)" |
+| has expression embodied in manifestation | "Eslin, Martin, Introduction (Absurd drama; text; English)" |
+| | [Full example: <InLink href="/docs/fullex/fx007">Absurd drama (1978; Penguin Books; volume)</InLink>. The manifestation has a collective title. The collected expressions and augmenting expression are considered to be useful for users of the metadata, in addition to the aggregating work.] |
+
+</details>
+
+</section>
+
+#### Manifestation that embodies parallel expressions {#p026}
+
+<section className="guid">
+
+For a manifestation that is a parallel expressions aggregate, record a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element for the work that is realised by the expressions that are aggregated.
+
+<details>
+<summary>Examples</summary>
+
+| has work embodied in manifestation | "Yamaha Corporation. Manual Development Group. CD-S303 owner's manual" |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx070">CD-S303 owner's manual (2021; Yamaha Corporation; online resource)</InLink>. The work is realized in 8 language expressions that are embodied in the manifestation.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x003.png"
+  caption="Entity-relationship diagram of a parallel expressions aggregate."
+  expandLink="/docs/fullimages/x003.html"
+/>
+
+The diagram shows the general case when the work that is realised by each of the expressions that are aggregated in a parallel expressions aggregate is described as a separate related work. This satisfies the mandatory requirement for a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element. There is a choice of which of the aggregated parallel expressions to include in manifestation statements or notes for the manifestation that is being described. The options for entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+## Completeness of content {#p012}
+
+<section className="guid">
+
+A manifestation embodies an expression of a work that is either static or diachronic. A static work is planned to be embodied in a single act of publication or production. A diachronic work is planned to be embodied in multiple acts of publication or production over time.
+
+</section>
+
+<section className="guid">
+
+Assess the static or diachronic nature of the work that is embodied in the manifestation by using the guidance in this section.
+
+</section>
+
+<section className="guid">
+
+A manifestation cannot embody expressions of both a static work and a diachronic work.
+
+</section>
+
+<section className="guid">
+
+An issue or iteration of a diachronic work is a static work. The manifestation that embodies an expression of an issue or iteration of a diachronic work is complete, and is a sub-unit or iteration of the incomplete manifestation that embodies the expression of the diachronic work.
+
+</section>
+
+<section className="guid">
+
+A manifestation that embodies an expression of an issue or iteration of a diachronic work may be indicated by a statement that appears in the manifestation:
+
+- a statement of issue or iteration
+- a common title that is included in a statement of title and responsibility
+
+</section>
+
+### Manifestation that embodies a static work {#p017}
+
+<section className="guid">
+
+A manifestation may embody expressions of one or more static works.
+
+</section>
+
+<section className="guid">
+
+A manifestation that embodies expressions of static works is complete and its characteristics will not change over time. It can be described to the level of completeness that is required by users of the metadata.
+
+<details>
+<summary>Examples</summary>
+
+[Full example: <InLink href="/docs/fullex/fx016">Emma (2014 ; Borough Press; volume)</InLink>. The manifestation embodies an expression of a static work.]
+
+---
+
+[Full example: <InLink href="/docs/fullex/fx048">Loch Morar & Mallaig (2015; Ordnance Survey Ltd; sheet)</InLink>. The manifestation embodies a map.]
+
+---
+
+[Full example: <InLink href="/docs/fullex/fx045">Treachery of images (ceci n'est pas une pipe) (1929; Magritte, René, 1898-1967; sheet)</InLink>. The manifestation embodies a reproduction of a painting.]
+
+---
+
+[Full example: <InLink href="/docs/fullex/fx055">Quantum world (2016; Reed Business Information Ltd; volume)</InLink>. The manifestation embodies an expression of an issue of a diachronic work.]
+
+</details>
+
+</section>
+
+### Manifestation that embodies an issue of a diachronic work {#p020}
+
+<section className="guid">
+
+Consider the manifestation that embodies an expression of an issue of a diachronic work to be a sub-unit of the incomplete manifestation that embodies the expression of the diachronic work.
+
+</section>
+
+<section className="guid">
+
+Select the methods to use to describe the manifestation of the diachronic work from the following options:
+
+1. Record the manifestation that embodies the diachronic work as a separate manifestation and record a relationship to it with a <InLink href="/docs/relationships/1014">has super-unit</InLink> element.
+2. Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> or element sub-type that includes information about the manifestation that embodies the diachronic work.
+3. Record a <InLink href="/docs/notes/1269">has note on manifestation associated with manifestation</InLink> element that includes a description of the manifestation that embodies the diachronic work.
+4. Do not describe the manifestation that embodies the diachronic work.
+
+Describe the manifestation of the diachronic work with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+
+| has super-unit | "New scientist. The collection (2014-; Reed Business Information Ltd; volume)" |
+| --- | --- |
+| has manifestation statement of issue or iteration | "Vol three / issue three, NewScientist, the collection" |
+| has manifestation statement of issue or iteration | "New Scientist The Collection is published four times per year … ISSN 2054-6386" |
+| | [Full example: <InLink href="/docs/fullex/fx055">Quantum world (2016; Reed Business Information Ltd; volume)</InLink>.] |
+
+---
+
+| has super-unit | "IFLA series on bibliographic control (2004-2012; De Gruyter Saur; volume)" |
+| --- | --- |
+| has manifestation statement of issue or iteration | "IFLA series on bibliographic control vol 44" |
+| | [Full example: <InLink href="/docs/fullex/fx012">ISBD (2011; De Gruyter Saur; volume)</InLink>.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+Record a <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> element that includes a description of the diachronic work, if it is considered to be useful for users of the metadata.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x002.png"
+  caption="Entity-relationship diagram of the manifestation that embodies an issue of a diachronic work."
+  expandLink="/docs/fullimages/x002.html"
+/>
+
+The diagram shows the issue of a diachronic work that is described as a separate related work. There is a choice to describe the manifestation that embodies the diachronic work as a separate related work, or to include the diachronic work or its manifestation in manifestation statements or notes for the manifestation that is being described. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+### Manifestation that embodies a diachronic work {#p018}
+
+<section className="guid">
+
+A manifestation cannot embody the expression of more than one diachronic work.
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies the expression of a diachronic work to be incomplete. The manifestation may be terminated by its producer or publisher before its intended completion.
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies the expression of a diachronic work that is known or assumed to have terminated to be a special case of an incomplete manifestation. The manifestation may be extended by its producer or publisher after its intended completion.
+
+</section>
+
+<section className="guid">
+
+Consider a description of a manifestation that embodies the expression of a diachronic work to be incomplete. The attributes and relationships associated with the manifestation may be changed over time by its producer or publisher.
+
+</section>
+
+<section className="guid">
+
+Record a <InLink href="/docs/notes/1207">has note on manifestation</InLink> element that indicates the intention and status of completeness.
+
+<details>
+<summary>Examples</summary>
+
+| has note on manifestation | "First issue published in 2004 as volume 26; last issue published in 2012 as volume 45." |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx013">IFLA series on bibliographic control (2004-2012; De Gruyter Saur; volume)</InLink>. The note also includes information about enumeration.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+Record statements, notes, attributes, and relationships that reflect changes to the attributes and relationships that are common to manifestations of expressions of issues or iterations of a diachronic work.
+
+</section>
+
+<section className="guid">
+
+Consider the manifestation that embodies the expression of a successive diachronic work to have complete sub-units that are the manifestations that embody the expressions of issues of the diachronic work.
+
+<SeeAlso><InLink href="/docs/assess/p010">Number of units</InLink></SeeAlso>
+
+</section>
+
+<section className="guid">
+
+Select the methods to use to describe each manifestation that embodies the expression of an issue or iteration of a diachronic work from the following options:
+
+- Record the manifestation that embodies the issue or iteration as a separate manifestation and record a relationship to it with a <InLink href="/docs/relationships/1013">has sub-unit</InLink> element.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> element or element sub-type that includes information about the manifestation that embodies the issue or iteration.
+- Record a <InLink href="/docs/notes/1269">has note on manifestation associated with manifestation</InLink> element that includes a description of one or more manifestations that embody issues or iterations.
+- Do not describe the manifestation that embodies the issue or iteration.
+
+Describe the manifestation that embodies the issue or iteration with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+
+| has sub-unit | "Quantum world (2016; Reed Business Information Ltd; volume)" |
+| --- | --- |
+| has note on manifestation associated with manifestation | "Volume 3, issue 3 has title The quantum world." |
+| | [Full example: <InLink href="/docs/fullex/fx056">New scientist. The collection (2014-; Reed Business Information Ltd; volume)</InLink>.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+Record a <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> element that includes a description of one or more issue works, if it is considered to be useful for users of the metadata.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x001.png"
+  caption="Entity-relationship diagram of the manifestation that embodies a diachronic work as a whole."
+  expandLink="/docs/fullimages/x001.html"
+/>
+
+The diagram shows the diachronic work that is described as a separate related work. There is a choice to describe the manifestations that embody the issues of the diachronic work as separate related manifestations, or to include the issue work or its manifestation in manifestation statements or notes for the manifestation that is being described. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+## Describing the manifestation {#p019}
+
+<section className="guid">
+
+The following workflow is recommended for the creation of a description of a single manifestation after preliminary assessment of a resource.
+
+</section>
+
+<section className="guid">
+
+1. How does the manifestation describe itself?
+   1. <Mandatory />Record <InLink href="/docs/statements/1025">has manifestation statement</InLink> elements
+      1. <Mandatory />Record <InLink href="/docs/statements/1028">has manifestation statement of title and responsibility</InLink> elements
+   2. Record <InLink href="/docs/notes/1200">has note on manifestation statement</InLink> elements
+
+2. What appellations are used to label the manifestation?
+   1. <Mandatory />Record <InLink href="/docs/relationships/1274">has appellation of manifestation</InLink> elements
+      1. Record <InLink href="/docs/relationships/1037">has title of manifestation</InLink> elements
+      2. Record <InLink href="/docs/relationships/1111">has identifier of manifestation</InLink> elements
+      3. Record <InLink href="/docs/relationships/1234">has access point of manifestation</InLink> elements
+         1. <Mandatory />Record <InLink href="/docs/relationships/1257">has authorized access point of manifestation</InLink> elements
+      4. Record <InLink href="/docs/notes/1273">has note on nomen associated with manifestation</InLink> elements
+
+3. What are the details of the creation of the manifestation?
+   1. Record <InLink href="/docs/relationships/1019">has creator agent of manifestation</InLink> elements
+   2. Record <InLink href="/docs/notes/1266">has note on agent associated with manifestation</InLink> elements
+   3. Record <InLink href="/docs/relationships/1236">has place of creation of manifestation</InLink> elements
+   4. Record <InLink href="/docs/notes/1271">has note on place associated with manifestation</InLink> elements
+   5. Record <InLink href="/docs/relationships/1235">has date of creation of manifestation</InLink> elements
+   6. Record <InLink href="/docs/notes/1272">has note on time-span associated with manifestation</InLink> elements
+
+4. What are the details of the carrier, including extent?
+   1. <Mandatory />Record a <InLink href="/docs/attributes/1262">has unitary structure</InLink> element
+   2. Record <InLink href="/docs/relationships/1013">has sub-unit</InLink> elements
+   3. Record <InLink href="/docs/relationships/1014">has super-unit</InLink> elements
+   4. <Mandatory />Record <InLink href="/docs/attributes/1022">has category of carrier</InLink> elements
+   5. <Mandatory />Record <InLink href="/docs/attributes/1218">has media type</InLink> elements
+   6. Record <InLink href="/docs/attributes/1242">has physical characteristic</InLink> elements
+   7. Record <InLink href="/docs/notes/1219">has note on category of manifestation</InLink> elements
+   8. Record <InLink href="/docs/attributes/1023">has extent of manifestation</InLink> elements
+   9. Record <InLink href="/docs/relationships/1011">has item that exemplifies manifestation</InLink> elements
+
+5. What are the details of the content that is embodied in the manifestation?
+   1. Record <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> elements
+   2. Record <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> elements
+   3. <Mandatory />Record <InLink href="/docs/attributes/1264">has category of embodied content</InLink> elements
+   4. Record <InLink href="/docs/notes/1267">has note on expression associated with manifestation</InLink> elements
+   5. Record <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> elements
+
+6. How is the manifestation related to other resource entities of the same resource?
+   1. <Mandatory />Record <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> elements
+   2. <Mandatory />Record <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> elements
+
+7. How is the manifestation related to other entities?
+   1. Record <InLink href="/docs/relationships/">relationship elements</InLink>
+      1. <Mandatory />Record <InLink href="/docs/relationships/1005">has agent associated with manifestation</InLink> elements
+         1. <Mandatory />Record <InLink href="/docs/relationships/1019">has creator agent of manifestation</InLink> elements
+            1. <Mandatory />Record <InLink href="/docs/relationships/1251">has creator collective agent of manifestation</InLink> elements
+            2. <Mandatory />Record <InLink href="/docs/relationships/1246">has creator person of manifestation</InLink> elements
+      2. <Mandatory />Record <InLink href="/docs/relationships/1009">has place associated with manifestation</InLink> elements
+         1. <Mandatory />Record <InLink href="/docs/relationships/1236">has place of creation of manifestation</InLink> elements
+      3. <Mandatory />Record <InLink href="/docs/relationships/1010">has time-span associated with manifestation</InLink> elements
+         1. <Mandatory />Record <InLink href="/docs/relationships/1235">has date of creation of manifestation</InLink> elements
+   2. Record other <InLink href="/docs/relationships/1291">has entity associated with manifestation</InLink> elements
+   3. Record <InLink href="/docs/notes/1265">has note on entity associated with manifestation</InLink> elements
+   4. Record a <InLink href="/docs/relationships/1293">is reference source of</InLink> element
+   5. Record a <InLink href="/docs/relationships/1292">is subject manifestation of</InLink> element
+
+8. What other information is considered to be useful for users of the metadata?
+   1. Record <InLink href="/docs/attributes/">attribute elements</InLink>
+   2. Record <InLink href="/docs/notes/1207">has note on manifestation</InLink> elements
+
+</section>

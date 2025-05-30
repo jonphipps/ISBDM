@@ -1,0 +1,59 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 7
+id: per
+title: Person SES
+slug: /ves/ISBDMSESPer
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for an authorized access point of a person who is related to the manifestation.
+
+The encoding scheme is applicable to the value of a <InLink href="/relationships/1006">has person associated with manifestation</InLink> element or element sub-type.
+
+</div>
+
+<div className="guid">
+
+The base access point of a person is a name of the person that is the most common in external sources of information.
+
+Apply the guidance for the language or country of origin of the name that is available in <a class="linkOutline" href="https://www.ifla.org/g/cataloguing/names-of-persons/" target="_blank">Names of persons</a>, if it is considered to be useful for users of the metadata.
+
+For a name of a person that includes a family name, transpose the family part of the name to the beginning so that the base appears in a browse index in order of the family name.
+
+The base access point may be followed by a set of qualifiers enclosed in brackets "(…)" and separated by semicolons "; ".
+
+The ISBDM string template is:
+
+transposed([name of the person]) + " (" + [qualifier] + "; " + [qualifier] + ")"
+
+</div>
+
+<div className="guid">
+
+Add qualifiers to disambiguate the base access point.
+
+Added qualifiers are conditional on specific characteristics of the person. They support a secondary collocation and sort order of authorized access points.
+
+Use the following strings as qualifiers of a base access point:
+
+- The date of birth of the person in a standard format
+- The date of death of the person in a standard format
+- A profession, occupation, or field of activity of the person
+- A period of activity that is associated with the profession, occupation, or field of activity of the person
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has person associated with manifestation | "Magritte, René, 1898-1967" |
+
+  *Full example*: <InLink href="/fullex/fx045">Treachery of images (ceci n'est pas
+                          une pipe) (1929; Magritte, René, 1898-1967; sheet)</InLink>. The base access
+                        point is transposed and is qualified by the dates of birth and death
+
+</details>
+</div>

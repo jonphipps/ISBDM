@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description"
+      content="ISBDM: International Standard Bibliographic Description for Manifestation." />
+    <meta name="author" content="ISBD Manifestation Task Force" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ISBD for Manifestation</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+      rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous" />
+    <link href="/ISBDM/styles/isbdm.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark navISBDMMain fixed-top"
+      aria-label="Navigation for ISBD for Manifestation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://www.ifla.org/"><img
+            src="/ISBDM/images/logo-ifla_black.png"
+            alt="Logo of the International Federation of Library Associations and Institutions"
+            height="50" />
+        </a>
+        <a class="navbar-brand" href="/ISBDM/">ISBD for Manifestation</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarISBDM" aria-controls="navbarISBDM" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarISBDM">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/intro/">Introduction</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/assess/">Assessment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/statements/">Statements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/notes/">Notes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/attributes/">Attributes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/ISBDM/docs/relationships/" aria-current="page"
+                >Relationships</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/ves/">Values</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/glossary/">Glossary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/fullex/">Examples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/ISBDM/docs/about/">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header class="container mt-3">
+      <div>
+        <div class="d-inline-flex flex-wrap"><h1><a href="/ISBDM/" class="linkPathEntry">ISBD for
+              Manifestation</a></h1></div>
+        <div class="d-inline-flex"><span class="hsep">&gt;</span></div>
+        <div class="d-inline-flex flex-wrap"><h2><a href="/ISBDM/docs/relationships/"
+              class="linkPathEntry">Relationship elements</a></h2></div>
+        <div class="d-inline-flex"><span class="hsep">&gt;</span></div>
+        <div class="d-inline-flex flex-wrap"><h2><a href="/ISBDM/docs/relationships/nomens.html"
+              class="linkPathEntry">Nomen entity</a></h2></div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="row my-2">
+        <div class="col-md-5">
+          <div class="row gx-0 me-4">
+            <div class="col-md-12">
+              <nav class="d-flex flex-column navISBDMSection"
+                aria-label="Navigation for attribute elements">
+                <div class="d-flex align-items-center">
+                  <a href="/ISBDM/docs/relationships/general.html" class="linkMenuEntry">[General
+                    stipulations]</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <a href="/ISBDM/docs/relationships/nomens.html" class="linkMenuEntry">Nomen
+                    entity</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1008.html">has nomen
+                    associated with manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1274.html">has
+                    appellation of manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1234.html">has access
+                    point of manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1257.html">has
+                    authorized access point of manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1258.html">has variant
+                    access point of manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1111.html">has
+                    identifier of manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1261.html">has
+                    catalogue number</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1260.html">has
+                    publisher number</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1116.html">has
+                    chronological designation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1215.html">has
+                    fingerprint</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1117.html">has numeric
+                    designation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1259.html">has plate
+                    number</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1286.html">has uniform
+                    resource locator</a>
+                </div>
+                <div class="d-flex align-items-center" aria-current="true">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-asterisk navISBDMSectionActive px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1037.html">has title of
+                    manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1038.html">has title
+                    proper</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1245.html">has variant
+                    title of manifestation</a>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-arrow-return-right px-1"></i>
+                  <a class="linkMenuElement" href="/ISBDM/docs/relationships/1293.html">is reference
+                    source of</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-7 border rounded">
+          <div class="row m-1">
+            <h3>has title of manifestation</h3>
+            <h4>Element reference</h4>
+            <div class="px-4">
+              <div class="row">
+                <div class="col-md-3 border elref">Definition</div>
+                <div class="col-md-9 border eltext">Relates a manifestation to a nomen that is an
+                  uncontrolled label.</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 border elref">Scope note</div>
+                <div class="col-md-9 border eltext">This element includes a title proper, a variant
+                  title, a collective title, a common title, a compound title, and a title of a
+                  sub-unit.</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 border elref">Domain</div>
+                <div class="col-md-9 border eltext">Manifestation</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 border elref">Range</div>
+                <div class="col-md-9 border eltext">Nomen</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 border elref">Element sub-type</div>
+                <div class="col-md-9 border eltext">
+                  <div class="d-flex flex-column navISBDMRef"
+                    aria-label="Navigation for related elements">
+                    <a class="linkMenuElement" href="/ISBDM/docs/relationships/1038.html">has title
+                      proper</a>
+                    <a class="linkMenuElement" href="/ISBDM/docs/relationships/1245.html">has
+                      variant title of manifestation</a>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-arrow-return-right px-1"></i>
+                    <a class="linkMenuElement" href="/ISBDM/docs/relationships/1293.html">is
+                      reference source of</a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 border elref">Element super-type</div>
+                <div class="col-md-9 border eltext">
+                  <div class="d-flex flex-column navISBDMRef"
+                    aria-label="Navigation for related elements">
+                    <a class="linkMenuElement" href="/ISBDM/docs/relationships/1274.html">has
+                      appellation of manifestation</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row m-1">
+            <h4>Additional information</h4>
+            <div class="guid">
+              <p>A title of a manifestation is assigned by an agent who creates the manifestation. A
+                title of manifestation may be based on a title that is assigned by an agent who
+                creates works and expressions that are embodied in the manifestation.</p>
+            </div>
+            <div class="guid">
+              <p>Consider a title that is assigned by an agent who owns the only item that
+                exemplifies the manifestation to be a title of the item and not a title of the
+                manifestation.</p>
+            </div>
+            <div class="guid">
+              <p>A title of manifestation may have one or more of the following characteristics:</p>
+              <ul class="bull">
+                <li>A title may be the same string as the name or title of another manifestation or
+                  of another entity.</li>
+                <li>A title may be a transliteration by the cataloguing agency from a script that
+                  cannot be transcribed.</li>
+                <li>A title may be given in different languages and scripts in statements that
+                  appear in the manifestation or in external sources. Consider each distinct value
+                  as a separate title.</li>
+                <li>A title may consist of or include an initialism or a transcription or
+                  transliteration of a logo or other image.</li>
+                <li>A title may include numbers, punctuation marks, and symbols.</li>
+                <li>A title may include a statement of responsibility or edition that is integrated
+                  linguistically with the title.</li>
+                <li>A title may reflect the characteristics of expressions or works that are
+                  embodied in the manifestation.</li>
+              </ul>
+              <div class="xampleBlockGuid">
+                <p><a class="linkEx" href="#isbdmex1" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex1">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex1">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Faust&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The value is a title of multiple distinct
+                        manifestations and works, and a name of multiple distinct agents.]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Album for the young&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Album für die Jugend&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The values are the same title in different
+                        languages.]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Alexandri Aphrodisiensis in Sophisticos
+                        Aristotelis elenchos commentaria&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Аλεξάνδρυ ̀Аφροδισίεως άποσημειόσεις εις
+                        τους σοφιστικὸυς έλέγχους&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The values are the same title in different
+                        scripts.]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Drawings&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The value is a collective title that reflects
+                        generic characteristics of aggregated expressions or worksthat are embodied
+                        in the manifestation.]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;IFLA journal&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The value is a title that includes an
+                        initialism.]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Le 01&quot;</div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;The Penguin book of Italian
+                      madrigals&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="guid">
+              <p>For an augmented expression aggregate, a collective title may be the same string as
+                a title of an augmented expression or work.</p>
+              <div class="xampleBlockGuid">
+                <p><a class="linkEx" href="#isbdmex2" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex2">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex2">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;The last of the Mohicans&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The value is a title of an augmented work that
+                        is embodied in the manifestation. The augmenting works are identified only
+                        as &quot;introduction and notes&quot; in a statement of title and
+                        responsibility.]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="seeAlsoAdd">
+              <p><i>See also</i>: <a class="linkMenuElement" href="/ISBDM/docs/statements/1028.html"
+                  >has manifestation statement of title and responsibility</a></p>
+            </div>
+          </div>
+          <div class="row m-1">
+            <h4>Element values</h4>
+            <div class="guid">
+              <p>The value of a title is a literal string (a nomen string).</p>
+            </div>
+            <div class="guid">
+              <p>Record a value that is:</p>
+              <ul class="bull">
+                <li>a title that appears in a statement of title and responsibility that appears in
+                  the manifestation</li>
+                <li>a title that appears in a statement of title and responsibility that is
+                  reproduced in the manifestation</li>
+                <li>a title that is associated with the manifestation in an external source of
+                  information</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row m-1">
+            <h4>String encoding schemes</h4>
+            <div class="guid">
+              <p>For a manifestation that has a super-unit, a string encoding scheme for a compound
+                title should combine values of a common title, a unit designation, and a unit title
+                of the manifestation.</p>
+            </div>
+            <div class="guid">
+              <p><a class="linkInline" href="/ISBDM/docs/ves/ISBDMSES1037.html">Compound title
+                  SES</a> is a string encoding scheme suggested by ISBD for Manifestation for a
+                value of this element.</p>
+            </div>
+          </div>
+          <div class="row m-1">
+            <h4>Stipulations</h4>
+            <div class="stip">
+              <p>Use the element super-type to record a less specific relationship.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex3" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex3">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex3">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has appellation of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;The catalogue of shipwrecked
+                        books&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[Full example: <a class="linkInline"
+                          href="/ISBDM/docs/fullex/fx042.html">Catalogue of shipwrecked books (2018;
+                          William Collins; volume; case binding)</a>. The value is a title of the
+                        manifestation.]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>Use an appropriate element sub-type to record a more specific relationship.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex4" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex4">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex4">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title proper</div>
+                      <div class="col-6 xampleValue">&quot;90 vjet Bibliotekë Kombëtare&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[Full example: <a class="linkInline"
+                          href="/ISBDM/docs/fullex/fx067.html">90 vjet Bibliotekë Kombëtare (2011;
+                          Biblioteka Kombëtare e Shqipërisë; object)</a>.]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has variant title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;NewScientist. The collection&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[Full example: <a class="linkInline"
+                          href="/ISBDM/docs/fullex/fx056.html">New scientist. The collection (2014-;
+                          Reed Business Information Ltd; volume)</a>.]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>Apply the stipulations for the element super-type unless indicated otherwise.</p>
+            </div>
+            <div class="stip">
+              <p>Record a single occurrence of the element that is selected from one or more values
+                that are associated with the manifestation. Use the following order of
+                preference:</p>
+              <ol class="num">
+                <li>Nomen that is a title proper of the manifestation</li>
+                <li>Nomen that is a variant title of the manifestation</li>
+              </ol>
+              <p>Record additional occurrences of the element, if it is considered to be useful for
+                users of the metadata.</p>
+            </div>
+            <div class="stip">
+              <p>Record a value with the same wording as it appears in a statement of title and
+                responsibility in the manifestation. Record a value with minor amendments to
+                capitalisation and punctuation, if it is considered to be useful for users of the
+                metadata.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex5" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex5">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex5">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Varias antiguidades de Portugal&quot;</div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;By the King, a proclamation for a general
+                      fast&quot;</div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;一般动力学（ 动力学、振动与控制 ）最新进展&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>Record a value that includes a name of an agent or a title of edition that is
+                integrated linguistically with a title that appears in a statement of title and
+                responsibility.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex6" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex6">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex6">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Shakespeare's Hamlet&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>Record a value that excludes a name of an agent or a title of edition that is
+                integrated linguistically with a title that appears in a statement of title and
+                responsibility, if it is considered to be useful for users of the metadata.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex7" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex7">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex7">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Hamlet&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[Statement is &quot;Shakespeare’s
+                        Hamlet&quot;.]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>If no title appears in any statement of title and responsibility, consider a name
+                of an agent that appears in a statement to be a title.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex8" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex8">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex8">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;The Beatles&quot;</div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Michigan Institute on the Teaching of
+                      Librarianship&quot;</div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;徐悲鸿&quot;</div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;수근김&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>If no title appears in any statement of title and responsibility or external source
+                of information, and no name of an agent appears in a statement of title and
+                responsibility, record a <a class="linkInline"
+                  href="/ISBDM/docs/relationships/1234.html">has access point of manifestation</a>
+                element that is based on a title that is assigned by a cataloguing agency instead of
+                a title of the manifestation.</p>
+            </div>
+            <div class="stip">
+              <p>If an alternative title appears in a statement of title and responsibility, record
+                a value that includes the title and all of the alternative titles with conjoining
+                text and punctuation.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex9" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex9">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex9">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Eric, or, Little by little&quot;</div>
+                  </div>
+                  <hr />
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Un giorno di regno ossia Il finto
+                      Stanislao&quot;</div>
+                  </div>
+                </div>
+              </div>
+              <p>Record additional occurrences of the element for the title alone and for one or
+                more of the alternative titles, if it is considered to be useful for users of the
+                metadata.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex10" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex10">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex10">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Eric&quot;</div>
+                  </div>
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Little by little&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[An alternative title.]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>For a manifestation that has a media type of &quot;computer&quot;, consider the
+                filename to be a title.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex11" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex11">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex11">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;mapRDAEntity2LRM.nt&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>For a manifestation that is published or produced in more than one unit, record a
+                value that is a common title of the sub-units. Omit a designation or title of a
+                sub-unit.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex12" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex12">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex12">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;IFLA series on bibliographic
+                      control&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>For a manifestation that has a super-unit, record a value that is a compound title
+                that combines a common title, a designation of the unit, and a title of the unit, if
+                and as available.</p>
+              <p>Record an additional occurrence of the element for the title of the unit, if it is
+                considered to be useful for users of the metadata.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex13" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex13">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex13">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;IFLA series on bibliographic control: vol
+                      43: Functional requirements for subject authority data (FRSAD)&quot;</div>
+                  </div>
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Functional requirements for subject
+                      authority data (FRSAD)&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>For a manifestation that has a super-unit, if a title of the unit is integrated
+                linguistically with a title of the super-unit, record a value that is the integrated
+                title.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex14" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex14">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex14">
+                  <div class="row px-2">
+                    <div class="col-6 xampleLabel">has title of manifestation</div>
+                    <div class="col-6 xampleValue">&quot;Supplement to Hain's Repertorium
+                      bibliographicum&quot;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>For a manifestation that is an aggregate, and if a collective title appears in a
+                statement of title and responsibility or external source of information, record a
+                value that is the collective title.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex15" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex15">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex15">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;West Indian stories&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The value is a collective title for works with a
+                        common place of creation that are embodied in the manifestation.]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;The man from Snowy River and other
+                        versesquot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The value is a collective title that is based on
+                        the title of the most famous work that is embodied in the
+                        manifestation.]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="stip">
+              <p>For a manifestation that is an aggregate, and if no collective title appears in a
+                statement of title and responsibility or external source of information, record a
+                value that is a compound title that combines, in the order of their appearance, the
+                titles of aggregated expressions or works that appear in statements of title and
+                responsibility. Include words and phrases that conjoin the titles but omit
+                statements of responsibility. Do not indicate omissions.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex16" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex16">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex16">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Flash and filigree &amp; The magic
+                        Christian&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The value includes the conjunction
+                        &quot;&amp;&quot; (ampersand) that appears between the titles of distinct
+                        expressions &quot;Flass and filigree&quot; and &quot;The magic
+                        Christian&quot;.]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p>If the number of individual titles is large, include the first few titles and
+                indicate the omission of other titles at the end of the compound title.</p>
+              <p>If there are no words or phrases that conjoin two titles, add standard punctuation
+                between the titles.</p>
+              <div class="xampleBlockStip">
+                <p><a class="linkEx" href="#isbdmex17" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="isbdmex17">Examples</a></p>
+                <div class="collapse xamples" id="isbdmex17">
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;Pride and prejudice + Wuthering Heights +
+                        Silas Marner&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The manifestation is a collected expressions
+                        aggregate. The value includes the titles of distinct expressions &quot;Pride
+                        and prejudice&quot;, &quot;Wuthering Heights&quot;, and &quot;Silar
+                        Marner&quot; in the order of their appearance in a single statement of title
+                        and responsibility. The value omits statements of responsibility and adds
+                        the punctuation &quot; + &quot; (space-plus-space) between titles for
+                        clarity]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;How to manage your friends + How to
+                        manage your enemies&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The manifestation is a collected expressions
+                        aggregate. The value includes the titles of distinct expressions &quot;How
+                        to manage your friends&quot; and &quot;How to manage your enemies&quot; in
+                        the order of their appearance in separate statements of title and
+                        responsibility. The value omits statements of responsibility and adds the
+                        punctuation &quot; + &quot; (space-plus-space) between titles for
+                        clarity]</div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div>
+                    <div class="row px-2">
+                      <div class="col-6 xampleLabel">has title of manifestation</div>
+                      <div class="col-6 xampleValue">&quot;El ratoncito pequeäno + The little
+                        mouse&quot;</div>
+                    </div>
+                    <div class="row px-2">
+                      <div class="col editComment">[The manifestation is a parallel expressions
+                        aggregate. The value includes the titles of distinct expressions &quot;El
+                        ratoncito pequeäno&quot; and &quot;The little mouse&quot; in the order of
+                        their appearance in a statement of title and responsibility. The value omits
+                        statements of responsibility and adds the punctuation &quot; + &quot;
+                        (space-plus-space) between titles for clarity]</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="container">
+      <div class="row my-1 py-1 navISBDMMain text-center">
+        <p class="m-0 p-0">&#10058;<a class="linkFooter" href="/ISBDM/docs/siteMap.html">Site
+            map</a>&#10058;</p>
+        <p class="m-1 p-0">
+          <a class="me-1" href="https://creativecommons.org/licenses/by/4.0/"><img
+              src="/ISBDM/images/cc0_by.png"
+              alt="Badge for Creative Commmons Attribution 4.0 International license" height="30"
+             /></a> Gordon Dunsire and Mirna Willer (Main design and content editors).</p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+## Collections
+
+<div className="guid">
+A collection is a set of items that are gathered together for some purpose. A collection includes:
+
+1. a library or cultural heritage collection that provides easy and contextual access to exemplars of manifestations with characteristics in common (such as category of carrier) or which embody content with similar characteristics or subjects (such as a common language or theme)
+2. a bound or boxed set of exemplars of more than one manifestation, manufactured by an agent for preservation or circulation of the items
+3. an exhibition that associates items for education, promotion, or entertainment
+
+The set of collected items may be fixed or it may change as a result of additions and withdrawals.
+
+The set of collected items may include specified sub-sets of items and may be a sub-set of a larger collection.
+</div>
+
+<div className="guid">
+Consider a collection to be an information resource that is a manifestation with only one exemplifier that embodies only one expression that realises a collecting work.
+
+Consider the expression that realises a collecting work as having no intrinsic characteristics that are useful to describe. The collecting expression does not inherit the characteristics of the expressions that are embodied in the manifestations that are exemplified by the collected items, and the common characteristics of those expressions are included in the description of the collecting work. There is no utility in describing the collecting expression.
+</div>
+
+<div className="guid">
+<Figure 
+  src="/img/x012.png"
+  alt="Entity-relationship diagram of resource entities and relationships for a collection" 
+  caption="Entity-relationship diagram of resource entities and relationships for a collection."
+  link="/docs/fullimages/x012.html"
+  linkText="[Expand image]"
+/>
+
+The diagram shows the resource entities and relationships that may be used to describe a collection manifestation.
+
+Use a <InLink href="/docs/relationships/1279.html">has holding</InLink> element to relate a collection manifestation to an item that is collected.
+
+Use a <InLink href="/docs/relationships/1014.html">has super-unit</InLink> element to relate a collection manifestation to a broader collection manifestation of which it is a part.
+</div>
+
+<div className="guid">
+Record a <InLink href="/docs/relationships/1290.html">has location of collection</InLink> element to relate a collection manifestation to a place where the collection is located.
+
+<details>
+<summary>Examples</summary>
+
+| has location of collection | "Bibliothèque nationale de France, département Cartes et plans (Paris; France)" |
+|----------------------------|--------------------------------------------------------------------------------|
+| [Full example: <InLink href="/docs/fullex/fx078.html">Collection (Bibliothèque nationale de France, département Cartes et plans)</InLink>.] | |
+
+</details>
+</div>
+
+<div className="guid">
+Record a <InLink href="/docs/relationships/1014.html">has super-unit</InLink> element or a <InLink href="/docs/relationships/1013.html">has sub-unit</InLink> element to relate a collection manifestation to the manifestation of a super-collection or a sub-collection, respectively.
+</div>

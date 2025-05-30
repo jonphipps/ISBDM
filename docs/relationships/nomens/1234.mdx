@@ -1,0 +1,121 @@
+---
+slug: /relationships/1234
+sidebar_class_name: sidebar-level-3
+sidebar_label: has access point of manifestation
+sidebar_level: 3
+sidebar_position: 5
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │  ├─ '
+id: '1234'
+title: has access point of manifestation
+RDF:
+  definition: Relates a manifestation to a nomen of the manifestation that is constructed using a string encoding scheme in an authority file.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes an authorized and variant access point.
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1257
+    url: /docs/relationships/1257
+    label: has authorized access point of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1258
+    url: /docs/relationships/1258
+    label: has variant access point of manifestation
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1274
+    url: /docs/relationships/1274
+    label: has appellation of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has access point of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+An access point of a manifestation is assigned by a cataloguing agency and constructed by applying a string encoding scheme to the values of attributes and relationships of the manifestation.
+</div>
+
+#### Element values
+
+<div className="guid">
+The value of an access point is a literal string (a nomen string).
+</div>
+
+<div className="guid">
+Record a value that is:
+  - a string that is an access point that appears in an authority file
+  - a string that is constructed with a string encoding scheme
+  - an IRI for the access point that appears in an authority file
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme should construct the base access point from a value of a <InLink href="/docs/relationships/1037">has title of manifestation</InLink> element or element sub-type. The scheme should omit leading articles and punctuation so that the base appears in a browse index in order of the first significant word.
+</div>
+
+<div className="guid">
+If no value of a <InLink href="/docs/relationships/1037">has title of manifestation</InLink> element is available, a string encoding scheme should construct the base access point from a title that is assigned by a cataloguing agency.
+</div>
+
+<div className="guid">
+A string encoding scheme should use values of the following elements as qualifiers of a base access point:
+  - <InLink href="/docs/attributes/1022">has category of carrier</InLink> element
+  - <InLink href="/docs/relationships/1217">has publisher agent</InLink> element or element sub-type
+  - <InLink href="/docs/relationships/1210">has date of publication</InLink> element
+</div>
+
+<div className="guid">
+A string encoding scheme should use values of any elements as qualifiers, if it is considered to be useful for users of the metadata.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has appellation of manifestation | "Catalogue of shipwrecked books (2018; William Collins; volume; case binding)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx042">Catalogue of shipwrecked books (2018; William Collins; volume; case binding)</InLink>. The value is an access point of the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a single occurrence of the element that is selected from one or more values that are associated with the manifestation. Use the following order of preference:
+  
+  1. Nomen that is an authorized access point of the manifestation
+  2. Nomen that is a variant access point of the manifestation
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  If the access point does not appear in an authority file, record a value that is constructed with a string encoding scheme.
+</div>
+
+<div className="stip">
+  For an access point that is based on a title of the manifestation, and if no title appears in any statement of title and responsibility in the manifestation or in external sources of information, record a value that is based on a title that is assigned by a cataloguing agency.
+  An assigned title should be concise and reflect the distinctive characteristics of the manifestation or its embodied content. An assigned title should be consistent with a language and script of the embodied text or a language and script that is preferred by the cataloguing agency.
+  Record a <InLink href="/docs/notes/1273">has note on nomen associated with manifestation</InLink> element that indicates that the title is assigned.
+</div>

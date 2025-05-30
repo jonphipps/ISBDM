@@ -1,0 +1,68 @@
+## Manifestation entity
+
+<div className="guid">
+
+Manifestation is one of four entities in the <OutLink href="https://repository.ifla.org/handle/20.500.14598/40.2">IFLA Library Reference Model</OutLink> (LRM) that represent distinct aspects of an information resource. The other resource entities are Work, Expression, and Item. Manifestation and Item describe the carrier components; Expression and Work describe the content components. An information resource is described fully by at least one instance of each resource entity, and may include more than one instance of a manifestation, expression, or work. An aspect of an information resource is described fully by an instance of a resource entity, and is associated with another instance of an entity by recording a relationship element.
+
+</div>
+
+<div className="guid">
+
+ISBDM provides specific relationship elements that associate an instance of a manifestation with instances of other resource entities that are aspects of the same information resource:
+
+- <InLink href="/docs/relationships/1011">has item that exemplifies manifestation</InLink>
+- <InLink href="/docs/relationships/1013">has sub-unit</InLink> and its inverse <InLink href="/docs/relationships/1014">has super-unit</InLink>
+- <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink>
+- <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink>
+
+<SeeAlso>
+  <InLink href="/docs/intro/i001">Entities related to manifestation</InLink>
+</SeeAlso>
+
+</div>
+
+<div className="guid">
+
+An instance of a manifestation describes characteristics that are common to all of the items that exemplify the manifestation.
+
+</div>
+
+<div className="guid">
+
+The number of instances of resource entities in an information resource is constrained by the LRM to ensure the integrity of a full description of an information resource. A manifestation is associated with:
+
+- at least one item that exemplifies the manifestation
+- none, or one or more identifiable sub-units of the manifestation
+- none, or only one super-unit of the manifestation that embodies a static work
+- none, or one or more super-units of the manifestation that embody diachronic works
+- at least one expression that is embodied in the manifestation, and therefore at least one work that is embodied in the manifestation
+
+</div>
+
+<div className="guid">
+
+A manifestation is either published or produced, depending on how the items that exemplify the manifestation are created.
+
+</div>
+
+<div className="guid">
+
+The items that exemplify a published manifestation have the typical characteristics:
+
+- There is more than one instance of item. This does not preclude a published manifestation that is exemplified by only one item
+- The items are created by using a mechanical process that results in identical copies
+
+</div>
+
+<div className="guid">
+
+The item that exemplifies a produced manifestation has the typical characteristics:
+
+- There is one and only one instance of item
+- The item is created by using an artisanal or hand-made process
+
+Consider a produced manifestation to be exemplified by one and only one item.
+
+Consider a manifestation that is created by using an artisanal or hand-made process that is augmented by a process that creates more than one item to be published.
+
+</div>

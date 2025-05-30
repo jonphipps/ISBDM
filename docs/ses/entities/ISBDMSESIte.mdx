@@ -1,0 +1,56 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 4
+id: ite
+title: Item SES
+slug: /ves/ISBDMSESIte
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for an authorized access point of an item that is related to the manifestation.
+
+The encoding scheme is applicable to the value of a <InLink href="/relationships/1004">has item associated with manifestation</InLink> element or element sub-type.
+
+</div>
+
+<div className="guid">
+
+The base access point of an item is a value of <InLink href="/relationships/1257">has authorized access point of manifestation</InLink>.
+
+The base access point is followed by a qualifier that is added to the qualifiers of the access point and separated by a semicolon "; ".
+
+The ISBDM string template is:
+
+`{has authorized access point of manifestation}` + insert before ")"("; " + [an identifier or shelfmark of the item])
+
+The qualifier supports a local secondary collocation and sort order of authorized access points of manifestations in a browse index for items.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has item reproduced by manifestation | "Evangelistarium Marci Maruli Spalatensis (1519; Officina Adamae Petri; svezak; tvrdi uvez; HR-ZaNSK, RIIF-8o-416)" |
+
+  *Full example*: <InLink href="/fullex/fx008">Evangelistarium Marci Maruli Spalatensis (201-; Nacionalna i sveučilišna knjižnica u Zagrebu; online jedinica građe)</InLink>
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has item reproduced by manifestation | "Libar Marca Marula Splichianina Uchomse vsdarsi Istoria Sfete vdouice Judit u versih haruacchi slosena (1522; Mirković, Jerolim; svezak; HR-ZaNSK, RIIC-8o-100 primj. a)" |
+
+  *Full example*: <InLink href="/fullex/fx027">Libar Marca Marula Splichianina Uchomse vsdarsi Istoria Sfete vdouice Judit u versih haruacchi slosena (1522; Mirković, Jerolim ; svezak)</InLink>
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has item that exemplifies manifestation | "Burleska pro klarinet a klavír (1945-03-26; Vostřák, Zbyněk; sheet; Library of Congress Music Division, ML96 .V67 no. 1 case)" |
+
+  *Full example*: <InLink href="/fullex/fx029">Burleska pro klarinet a klavír (1945-03-26; Vostřák, Zbyněk; sheet)</InLink>
+
+</details>
+</div>

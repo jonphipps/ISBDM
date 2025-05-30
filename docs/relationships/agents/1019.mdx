@@ -1,0 +1,100 @@
+---
+slug: /relationships/1019
+sidebar_class_name: sidebar-level-2
+sidebar_label: has creator agent of manifestation
+sidebar_level: 2
+sidebar_position: 4
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1019'
+title: has creator agent of manifestation
+RDF:
+  definition: Relates a manifestation to an agent who is responsible for its manufacture, production, or publication.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1020
+    url: /docs/relationships/1020
+    label: has manufacturer agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1216
+    url: /docs/relationships/1216
+    label: has producer agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1217
+    url: /docs/relationships/1217
+    label: has publisher agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1251
+    url: /docs/relationships/1251
+    label: has creator collective agent of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1246
+    url: /docs/relationships/1246
+    label: has creator person of manifestation
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1005
+    url: /docs/relationships/1005
+    label: has agent associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has creator agent of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Consider a manifestation that has a value of category of carrier of "online resource" to be published.
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1030">has manifestation statement of publication, production, manufacture, or distribution</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If one or more creator agents are associated with the manifestation, record at least one occurrence of the element. Use the following order of preference to select the value:
+  
+  1. Agent who is a publisher of the manifestation
+  2. Agent who is a producer of the manifestation
+  3. Agent who is a manufacturer of the manifestation
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has creator agent of manifestation | http://www.wikidata.org/entity/Q114713894 |
+  
+  *[Full example: <InLink href="/docs/fullex/fx041">Who I am (2012; HarperCollinsPublishers; volume; case binding)</InLink>. IRI of the publisher.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has creator agent of manifestation | "William Collins" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx042">Catalogue of shipwrecked books (2018; William Collins; volume; case binding)</InLink>. Authorized access point of the publisher.]*
+  </details>
+  
+  <div className="stip">
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  </div>
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>

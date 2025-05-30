@@ -1,0 +1,73 @@
+---
+slug: /relationships/1018
+sidebar_class_name: sidebar-level-2
+sidebar_label: has alternate manifestation
+sidebar_level: 2
+sidebar_position: 10
+sidebar_category: resources
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1018'
+title: has alternate manifestation
+RDF:
+  definition: Relates a manifestation to a manifestation that carries the same content and is published or produced at the same time as a distinct manifestation with different characteristics.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: Different characteristics include the category of carrier and publisher agent.
+  range: Manifestation
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1003
+    url: /docs/relationships/1003
+    label: has manifestation associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has alternate manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element is symmetric: it is its own inverse.
+A manifestation that has an alternate manifestation is an alternate of the other manifestation.
+</div>
+
+<div className="guid">
+Use a <InLink href="/docs/notes/1219">has note on category of manifestation</InLink> element to record information about the different characteristics of an alternate manifestation.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; HTML format)" |
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; EPUB3 format)" |
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; EPUB format)" |
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; Kindle format)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx046">Emma (1994; Project Gutenberg; online resource; plain text format)</InLink>. The manifestation is an online file that is available in multiple other formats.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has alternate manifestation | "New scientist. The collection (2014-; Reed Business Information Ltd; online resource)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx055">Quantum world (2016; Reed Business Information Ltd; volume)</InLink>. The manifestation is a printed issue of a successive diachronic work that is also available in e-book format.]*
+  </details>
+</div>

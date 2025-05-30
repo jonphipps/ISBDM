@@ -1,0 +1,108 @@
+---
+id: sensory-specification-vocabulary
+title: Sensory Specification Production Vocabulary
+description: Example vocabulary using sensory-specification.csv with multilingual support
+sidebar_label: Vocabulary - Multi-language Example
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Sensory Specification Production Vocabulary
+
+This example demonstrates the VocabularyTable component using the `sensory-specification.csv` file, which contains the production vocabulary with extensive multilingual support across 9 languages.
+
+## Features Demonstrated
+
+- **Production CSV Data**: Real vocabulary data used in production systems
+- **Extensive Multilingual Support**: Available in English, French, Spanish, Italian, Russian, Bulgarian, Chinese, Croatian, and Latvian
+- **Alternative Labels**: Multiple alternative labels in different languages
+- **Language Detection**: Automatic detection of available languages from CSV data
+- **Robust Internationalization**: Demonstrates real-world multilingual vocabulary management
+
+## Standard Display
+
+<VocabularyTable 
+  vocabularyId="sensory-specification"
+  title="Sensory Specification Vocabulary"
+  description="Standardized terms for describing the sensory characteristics of bibliographic content"
+  scopeNote="This vocabulary is used in production library systems worldwide"
+  prefix="sensoryspecfication"
+  uri="https://iflastandards.info/ns/isbd/terms/contentqualification/sensoryspecfication"
+  isDefinedBy="https://iflastandards.info/ns/isbd/terms/contentqualification/sensoryspecfication"
+  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  showTitle={true}
+  defaultLanguage="en"
+/>
+
+## French as Default Language
+
+<VocabularyTable 
+  vocabularyId="sensory-specification-fr"
+  title="Vocabulaire de spécification sensorielle"
+  description="Termes normalisés pour décrire les caractéristiques sensorielles du contenu bibliographique"
+  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  showTitle={true}
+  defaultLanguage="fr"
+  filterPlaceholder="Rechercher des termes..."
+/>
+
+## Chinese as Default Language
+
+<VocabularyTable 
+  vocabularyId="sensory-specification-zh"
+  title="感官规范词汇表"
+  description="用于描述书目内容感官特征的标准化术语"
+  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  showTitle={true}
+  defaultLanguage="zh"
+  filterPlaceholder="搜索术语..."
+/>
+
+## Compact Display (No URIs)
+
+<VocabularyTable 
+  vocabularyId="sensory-specification-compact"
+  title="Sensory Terms Reference"
+  description="Quick reference guide for sensory specification terms"
+  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  showTitle={true}
+  showURIs={false}
+  showLanguageSelector={true}
+  defaultLanguage="en"
+  filterPlaceholder="Find sensory terms..."
+/>
+
+## Language Coverage
+
+This vocabulary demonstrates comprehensive multilingual support:
+
+| Language | Code | Coverage |
+|----------|------|----------|
+| English | `en` | Complete (preferred labels, definitions) |
+| French | `fr` | Complete (preferred labels, definitions, alternative labels) |
+| Spanish | `es` | Complete (preferred labels, definitions, alternative labels) |
+| Italian | `it` | Complete (preferred labels, definitions) |
+| Russian | `ru` | Complete (preferred labels, definitions) |
+| Bulgarian | `bg` | Complete (preferred labels, definitions) |
+| Chinese | `zh` | Complete (preferred labels, definitions) |
+| Croatian | `hr` | Partial (alternative labels) |
+| Latvian | `lv` | Complete (preferred labels, definitions) |
+
+## Technical Details
+
+**CSV File**: `/static/data/sensory-specification.csv`
+
+**Key Features**:
+- Real-world production vocabulary data
+- Extensive multilingual coverage (9 languages)
+- Alternative labels for improved findability
+- Standardized SKOS structure
+- Used in international library systems
+
+**CSV Structure**:
+- Complex multilingual column structure with language-specific arrays
+- Alternative labels with indexed notation (`skos:altLabel@fr[0]`, `skos:altLabel@fr[1]`)
+- Comprehensive definition coverage across all major languages
+- Proper SKOS Concept typing and hierarchical relationships
+
+This example shows how the VocabularyTable component handles complex, real-world multilingual vocabulary data used in production library systems.

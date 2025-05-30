@@ -1,0 +1,105 @@
+### Granularity
+
+#### Element hierarchies
+
+<div className="guid">
+
+The elements of ISBD for Manifestation are arranged in semantic hierarchies. Each element may have none, one, or two element super-types with a broader meaning, or none, one, or more element sub-types with a finer meaning.
+
+</div>
+
+<div className="guid">
+
+The hierarchical structure is based on the definitions, scope notes, and entity range of the elements.
+
+The definition and scope note of an element super-type are inherited and refined by its sub-types.
+
+A refinement in an element sub-type is not applicable to its super-type.
+
+</div>
+
+<div className="guid">
+
+An element with no element super-type has the broadest level of granularity in its hierarchy. These elements are:
+
+- <InLink href="/docs/statements/1025">has manifestation statement</InLink>
+- <InLink href="/docs/notes/1207">has note on manifestation</InLink>
+- <InLink href="/docs/attributes/1263">has category of manifestation</InLink>
+- <InLink href="/docs/attributes/1242">has physical characteristic</InLink>
+- <InLink href="/docs/attributes/1027">has use rights</InLink>
+- <InLink href="/docs/relationships/1005">has agent associated with manifestation</InLink>
+- <InLink href="/docs/relationships/1002">has expression associated with manifestation</InLink>
+- <InLink href="/docs/relationships/1004">has item associated with manifestation</InLink>
+- <InLink href="/docs/relationships/1003">has manifestation associated with manifestation</InLink>
+- <InLink href="/docs/relationships/1001">has work associated with manifestation</InLink>
+- <InLink href="/docs/relationships/1009">has place associated with manifestation</InLink>
+- <InLink href="/docs/relationships/1010">has time-span associated with manifestation</InLink>
+- <InLink href="/docs/relationships/1008">has nomen associated with manifestation</InLink>
+
+</div>
+
+<div className="guid">
+
+An element with no element sub-types has the finest level of granularity in its hierarchy.
+
+</div>
+
+<div className="guid">
+
+The only elements with two element super-types are relationship elements with a range of Agent or its entity sub-types Collective Agent and Person. These elements are included in a poly-hierarchy that reflects the entity hierarchy of Agent as well as the basic semantic hierarchy of relationships.
+
+Other elements with only one element super-type are included in a mono-hierarchy that reflects the basic semantic hierarchy of the elements.
+
+</div>
+
+#### Element refinement
+
+<div className="guid">
+
+The granularity of ISBD for Manifestation element hierarchies accommodates general metadata for a wide range of carriers.
+
+If a finer level of granularity is required for specific kinds of carriers or if it is considered to be useful for users of the metadata, an ISBDM hierarchy can be extended by adding an element sub-type to the finest level ISBDM element in the hierarchy or as a sibling sub-type of an element above the finest level.
+
+</div>
+
+<div className="guid">
+
+An ISBDM element may be refined by an external element if the external element has a definition and scope note that indicate a finer level of granularity in its meaning relative to the ISBDM element.
+
+If the external element is a sibling of an ISBDM element, their semantics must not overlap.
+
+</div>
+
+#### Data granularity
+
+<div className="guid">
+
+A semantic hierarchy allows data to flow from a finer to a broader level of granularity.
+
+The inheritance of semantics from a broader element to a finer element means that the value of a finer element is also a value of a broader element, within each hierarchy.
+
+</div>
+
+<div className="guid">
+
+Metadata from an external refinement of an ISBDM element is interoperable with ISBDM at the level of granularity of the ISBDM element
+
+Metadata from ISBDM elements at different levels of granularity within a hierarchy is interoperable at the level of granularity of the broadest of the elements.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property | Value |
+| :------- | :---- |
+| has publisher collective agent | "Output Recordings" |
+| has collective agent associated with manifestation | "LCD Soundsytem" |
+
+_[Full example: <InLink href="/docs/fullex/fx058">Give it up b/w Tired (2002; Output Recordings; audio disc)</InLink>. The values are interoperable at the level of granularity of the broader element "has collective agent associated with manifestation".]_
+
+</div>
+</details>
+
+See also: <InLink href="/docs/intro/i006">Metadata utility and processing</InLink>
+
+</div>

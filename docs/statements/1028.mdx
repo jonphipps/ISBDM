@@ -1,0 +1,133 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has manifestation statement of title and responsibility
+sidebar_level: 2
+sidebar_position: 11
+customProps:
+  sidebar_prefix: '   └─ '
+id: '1028'
+title: has manifestation statement of title and responsibility
+RDF:
+  definition: Relates a manifestation to a manifestation statement that includes titles of the manifestation and the names, functions, and other details of agents who are responsible for the creation of works and expressions that are embodied in the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes titles proper and variant titles of the manifestation, and titles of works and expressions that are embodied in the manifestation.
+  range: Literal
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1025
+    url: /docs/statements/1025
+    label: has manifestation statement
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has manifestation statement of title and responsibility
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/relationships/1005">has agent associated with manifestation</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/relationships/1037">has title of manifestation</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1266">has note on agent associated with manifestation</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1273">has note on nomen associated with manifestation</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1206">has note on manifestation statement of title and responsibility</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If a statement of title and responsibility appears in the manifestation, record at least one occurrence of the element.
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific statement.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of title and responsibility | "Alan Alexander Milne, Medo Winnie zvani Pooh" |
+  | has manifestation statement of title and responsibility | "ilustrirao Ernest H. Shepard, prevela Mia Pervan-Plavec, stihove napisao Zvonimir Balog." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx004">Medo Winnie zvani Pooh (1986; Mladost; svezak)</InLink>. The first value is the most prominent; the second value is an extract from a fuller statement that is considered to have utility for users of the metadata.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of title and responsibility | "Welcome to RDA Toolkit" |
+  | has manifestation statement of title and responsibility | "The RDA Steering Committee (RSC) is authorized by the RDA Board with the responsibility for updating and maintaining the content of RDA." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx006">RDA toolkit (2020-; RDA Copyright Holders; online resource)</InLink>. The values appear on the home page and About page respectively. The home page statement is the most prominent; the About page statement is considered to have utility for users of the metadata.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of title and responsibility | "Einstein on the beach, an opera in four acts by Philip Glass / Robert Wilson" |
+  | has manifestation statement of title and responsibility | "Set and light design, Robert Wilson; music - lyrics, Philip Glass | Choreography by Lucinda Childs | with Helga Davis, Kate Moran, Antoine Silverman | Spoken text, Christopher Knowles, Samuel M. Johnson, Lucinda Childs | with The Lucinda Childs Dance Company, music performed by The Philip Glass Ensemble | Music director, Michael Riesman, directeur co-director Ann-Christin Rommen | Philip Glass Ensemble conducted by Michael Riesman | … Film director, Don Kent" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx010">Einstein on the beach (2016; Opus Arte; videodisc; DVD)</InLink>. The values appear on successive screens of credits. The first two credits are considered to be the most prominent statement, and the remaining credits are considered to have utility for users of the metadata. The values concatenate the successive credits. Whitespace between credits is replaced by a vertical bar "|" and whitespace within credits is replaced by a comma-space.]*
+  </details>
+</div>
+
+<div className="stip">
+  If a statement of title and responsibility that appears in the manifestation is lengthy, record a value that includes the first five or six words or ideographs and that omits part of the statement from the middle or end, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of title and responsibility | "Evangelistarium Marci Maruli Spalatensis …, opus uere euangelicum cultissimoque adornatum sermo, sub Fidei, Spei et Charitatis titulis, in septem partitu libros" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies cartographic image, cartographic tactile image, cartographic tactile three-dimensional form, cartographic three-dimensional form, still image, tactile image, tactile three-dimensional form, or three-dimensional form content, and if no distinct statement of title and responsibility appears in the manifestation, record a value that is a transcription of text that is embedded in the image or form.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of title and responsibility | "Ceci n’est pas une pipe." |
+  | has manifestation statement of title and responsibility | "Magritte" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx045">Treachery of images (ceci n'est pas une pipe) (1929; Magritte, René, 1898-1967; sheet)</InLink>. The values are a sentence and a signature that are embedded in a painting.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of title and responsibility | "Zadar does Banksy, Unauthorized exhibition, izložba, exhibition, 1/6-8/10, Kneževa palača, Rector’s Palace, II Palače, II Palaces, NMZ" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx043">Zadar does Banksy (2023; Narodni muzej Zadar; list)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies spoken word, tactile text, or text content, and if no distinct statement of title and responsibility appears in the manifestation, record a value that is a transcription of the beginning of the content.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of title and responsibility | "I am a jolly huntsman, My voice is shrill and clear" |
+  
+  *[Transcription of the first two lines of a poem.]*
+  </details>
+</div>

@@ -1,0 +1,83 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has unitary structure
+sidebar_level: 2
+sidebar_position: 35
+customProps:
+  sidebar_prefix: '│  └─ '
+id: '1262'
+title: has unitary structure
+RDF:
+  definition: Relates a manifestation to a physical characteristic that is its composition in one or more physical or logical parts.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1242
+    url: /docs/attributes/1242
+    label: has physical characteristic
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has unitary structure
+
+<Mandatory /><Unique /><br />
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element supports the user task to select the manifestation.
+</div>
+
+<SeeAlso><InLink href="/docs/assess/p010">Number of units</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/attributes/1275">has extent of unitary structure</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords.
+</div>
+
+<div className="guid">
+For a manifestation that is a super-unit, record a quantitative value for a category of carrier of sub-units of the manifestation as a value of <InLink href="/docs/attributes/1275">has extent of unitary structure</InLink>, if it is considered to be useful for users of the metadata.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Record only one occurrence of the element.
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a value that appears in the <InLink href="/docs/ves/1262">ISBDM Unitary Structure value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has unitary structure | "single unit" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has unitary structure | "multiple unit" |
+  </details>
+</div>

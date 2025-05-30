@@ -1,0 +1,252 @@
+---
+# Docusaurus-specific fields
+id: 1025
+title: has manifestation statement
+sidebar_position: 4  # determines the position in the sidebar and the section TOC
+sidebar_level: 1  # the level of subproperty relative to the base property. Used in building the section TOC
+aliases:
+  - /elements/P1025 # this will be used to redirect the URI by the client side redirect
+
+# Docusaurus defaults (can be overridden)
+# slug: defaults to the file path
+# sidebar_label: will default to the First header in the file, but can be overridden here
+
+# Core element metadata
+RDF:
+  # Required properties
+  id: 1025
+  # uri: will be assembled by concatenating the element_vocabulary_uri, 'P' for properties, 'C' for classes, and the id
+  # label: will default to the First header in the file, but can be overridden here
+  definition: Relates a manifestation to a statement that appears in a manifestation to represent aspects of itself.
+  domain: Manifestation
+  range: Literal
+  type: DatatypeProperty
+  # Optional properties
+  scopeNote: ""
+  
+  # Relationships with other elements (optional)
+  elementSubType:  # has no RDF equivalent. Used in the table
+    - uri: http://iflastandards.info/ns/isbdm/elements/P1029
+      url: /docs/statements/1029
+      label: has manifestation statement of edition
+    - uri: http://iflastandards.info/ns/isbdm/elements/P1280
+      url: /docs/statements/1280
+      label: has manifestation statement of extent
+    - uri: http://iflastandards.info/ns/isbdm/elements/P1034
+      url: /docs/statements/1034
+      label: has manifestation statement of identifier and terms of availability
+    - uri: http://iflastandards.info/ns/isbdm/elements/P1031
+      url: /docs/statements/1031
+      label: has manifestation statement of issue or iteration
+    - uri: http://iflastandards.info/ns/isbdm/elements/P1030
+      url: /docs/statements/1030
+      label: has manifestation statement of publication, production, manufacture, or distribution
+    - uri: http://iflastandards.info/ns/isbdm/elements/P1032
+      url: /docs/statements/1032
+      label: has manifestation statement of category
+    - uri: http://iflastandards.info/ns/isbdm/elements/P1028
+      url: /docs/statements/1028
+      label: has manifestation statement of title and responsibility
+  elementSuperType: # will convert to subPropertyOf in RDF
+  
+  equivalentProperty: []
+  inverseOf: []
+
+# Status and provenance
+#  status: "Published" will be maintained at the global vocabulary level
+#  isDefinedBy: will be maintained at the global vocabulary level
+  
+# Deprecation information (if applicable - all optional)
+deprecated: "" # Prospective value: true
+deprecatedInVersion: "" # Prospective value: "1.2.0"
+willBeRemovedInVersion: "" # Prospective value: "2.0.0"
+---
+
+# has manifestation statement
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+## Additional information
+
+<div className="guid">This element supports the user task to identify the manifestation.</div>
+
+<div className="guid">The same statement may be repeated in different languages or scripts in the manifestation.</div>
+
+<div className="guid">Consider Arabic numerals that appear in a statement in a specific language or script to be included in the statement.</div>
+
+<div className="guid">For a manifestation that is published or produced in more than one unit, a statement that appears in the manifestation may describe one or more of the sub-units as well as the manifestation as a unit.</div>
+
+<div className="guid">For a manifestation that has a super-unit, a statement that appears in the manifestation may describe the super-unit as well as the manifestation as a unit.</div>
+
+<div className="guid">For a manifestation that embodies the expression of an issue of a diachronic work, a statement that describes the manifestation that embodies the expression of the diachronic work as a super-unit may vary from similar statements that appear in manifestations that embody expressions of previous issues.</div>
+
+<div className="guid">For a manifestation that embodies content that is not spoken word, tactile text, or text, and if no distinct statement appears in the manifestation, consider text that is embedded in the content as a statement.</div>
+
+<div className="guid">For a manifestation that embodies performed music, sounds, spoken word, performed movement, or two-dimensional moving image content, statements may be separated from the content or be superimposed on the content. Consider statements of the same type that appear in succession as multiple distinct statements or as components of a single statement.</div>
+
+<div className="guid">If no unmodified item that exemplifies an older printed sheet or volume is available, consider an imperfect item to be an error in publication.</div>
+
+<SeeAlso>[has note on manifestation statement](docs/notes/1200)</SeeAlso>
+
+## Element values
+
+<div className="guid">The values of this element may be indexed for uncontrolled keywords to support the user task to find the manifestation.</div>
+
+## Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If one or more statements appear in the manifestation in a script that can be transcribed by the cataloguing agency, record at least one occurrence of the element. Use the following order of preference to select the value:
+  
+    1. Statement of title and responsibility
+    2. Statement of publication, production, manufacture, or distribution
+    3. Statement of issue or iteration
+    4. Statement of identifier and terms of availability
+    5. Statement of edition
+    6. Statement of specific category
+  
+  If a statement appears in a script that cannot be transcribed by the cataloguing agency, record a <InLink href="docs/notes/1200">has note on manifestation statement</InLink> element or element sub-type that gives a transliteration of the statement in a script of choice of the cataloguing agency, including identification of the script that appears in the manifestation.
+  
+  <details>
+    <summary>Examples</summary>
+    
+      | Property | Value |
+      |:---------|:------|
+      | has note on manifestation statement of title and responsibility | "Transliteracija s kurzivne glagoljice na prednjem omotu: Mrtvi pisani unutra, Žman." |
+      *[Full example: <InLink href="docs/fullex/fx037">Mrtvi pisani unutra, Žman (1607-1612; Radinić, Pavao, 1549-1611; svezak)</InLink>. The value includes a transliteration from a script that cannot be transcribed by the cataloguing agency.]*
+      
+  </details>
+</div>
+
+<div className="stip">
+  Apply the <InLink href="docs/statements/general">General stipulations for statement elements</InLink>.
+  
+  <details>
+    <summary>Examples</summary>
+    
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "This catalogue is published in conjunction with the exhibition Matisse – Bonnard. “Long Live Painting!”, Städel Museum, Frankfurt am Main, 13 September 2017 – 14 January 2018" |
+      *[Full example: <InLink href="docs/fullex/fx065">Matisse Bonnard (2017; Städel Museum; volume)</InLink>.]*
+      <hr />
+      
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "Pete Townshend, Who I am" |
+      *[The value is a statement of title and responsibility.]*
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "First published by HarperCollinsPublishers 2012" |
+      *[The value is a statement of publication, production, manufacture, or distribution.]*
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "HarperCollinsPublishers … London" |
+      *[The value is a statement of publication, production, manufacture, or distribution.]*
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "HP ISBN 978-0-00-746603-0, TPB ISBN 978-0-00-746604-7, EB ISBN 978-0-00-746687-0" |
+      *[The value is a statement of identifier and terms of availability.]*
+      *[Full example: <InLink href="docs/fullex/fx041">Who I am (2012; HarperCollinsPublishers; volume; case binding)</InLink>.]*
+      <hr />
+      
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "80-рiччю Нацiональноï академiï наук Украïни та Нацiональноï бiблiотеки Украïнi iменi В.I. Веренадського присвячуэться" |
+      *[Full example: <InLink href="docs/fullex/fx076">Видатнi вченi Нацiональноï академiï наук Украïнi (1998; Нацiональна бiблiотека Украïнi iменi В.I. Веренадського; том)</InLink>.]*
+      
+  </details>
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific manifestation statement.
+  
+  <details>
+    <summary>Examples</summary>
+    
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement of title and responsibility | "Editor, Ying Ding, Paul Groth, Founding Editor Emeritus, James Hendler" |
+      *[Full example: <InLink href="docs/fullex/fx069">Synthesis lectures on data, semantics, and knowledge (2021-; Morgan & Claypool Publishers; volume)</InLink>. The value is a statement of responsibility.]*
+      <hr />
+      
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement of publication, production, manufacture, or distribution | "First published in Great Britain … 2023" |
+      *[Full example: <InLink href="docs/fullex/fx051">In a flight of starlings (2023; Allen Lane; volume)</InLink>. The value is a statement of publication.]*
+      <hr />
+      
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement of issue or iteration | "Uniwersytet im. Adama Mickiewicza w Poznaniu, Seria Historia Sztuki, NR 27" |
+      *[Full example: <InLink href="docs/fullex/fx035">Pałac papieski na Watykanie od końca V do początku XVI wieku (1999; Wydawnictwo Naukowe Uniwersytetu im. Adama Mickiewicza; wolumin)</InLink>. The value is a statement of issue of a diachronic work.]*
+      <hr />
+      
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement of identifier and terms of availability | "ISBN 0 416 59680 0" |
+      *[Full example: <InLink href="docs/fullex/fx021">House at Pooh Corner (1986; Methuen Children’s Books; volume)</InLink>. The value is a statement of identifier.]*
+      
+  </details>
+</div>
+
+<div className="stip">
+  Do not record any value if the manifestation does not make any statements about any aspects of itself.
+</div>
+
+<div className="stip">
+  Transcribe a statement that appears in the manifestation. Apply the <InLink href="docs/statements/transcription">Rules for transcribing a manifestation statement</InLink>.
+</div>
+
+<div className="stip">
+  Record a separate occurrence of the element for each script in which a statement appears. Avoid mixing different scripts in a single element and omit parts of a statement that are in a different script.
+</div>
+
+<div className="stip">
+  Record a separate occurrence of the element for each language in which a statement appears, if it is considered to be useful for users of the metadata. Omit parts of a statement that are in a different language.
+</div>
+
+<div className="stip">
+  Transcribe a statement that is a pious invocation, a device, an epigram, a dedication, a motto, a statement of patronage or award, or similar, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  Transcribe a statement that is known to be **inaccurate** as it appears on the manifestation. An inaccurate statement may be the result of an error in publication or production, an innocent mistake, or a deliberate intention to conceal information or misrepresent the manifestation.
+  
+  <details>
+    <summary>Examples</summary>
+    
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "Looser takes all" |
+      *[Misprint of "Loser takes all".]*
+      <hr />
+      
+      | Property | Value |
+      |:---------|:------|
+      | has manifestation statement | "Chansons créés et interprétés" |
+      
+  </details>
+</div>
+
+<div className="stip">
+  Transcribe a statement that is known to be **fictitious** as it appears on the manifestation.
+</div>
+
+<div className="stip">
+  For a manifestation that embodies performed music, sounds, spoken word, performed movement, or two-dimensional moving image content, transcribe a statement that appears in succession as a single statement, if it is considered to be useful for users of the metadata. Add punctuation to indicate successive components. Do not add a punctuation mark that is the same as one that is transcribed in the statement.
+</div>
+
+<div className="stip">
+  Record a <InLink href="docs/notes/1200">has note on manifestation statement</InLink> element or element sub-type that gives the following kinds of information, if it is considered to be useful for users of the metadata:
+  
+    - A correction to inaccurate or fictitious information that appears in the value of a statement.
+    - An expansion of an abbreviation or initialism that appears in the value of a statement.
+    - An indication of a conjectural expansion of an abbreviation or initialism that appears in the value of a statement of a manifestation that is an older printed sheet or volume.
+    - An explanation or description of the symbol or sign that is replaced in the value of a statement.
+    - An explanation or description of a symbol or sign that is omitted in the value of a statement.
+    - An explanation or description of a character, word, or ideograph that is intentionally left blank in a statement.
+    - An explanation or description of a character, ideograph, or punctuation mark that appears inverted or turned in a statement.
+</div>
+

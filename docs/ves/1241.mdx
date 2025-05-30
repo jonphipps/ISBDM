@@ -1,0 +1,58 @@
+---
+sidebar_class_name: menu-item-html-level-1 sidebar-level-1
+sidebar_label: ISBDM Binding value vocabulary
+sidebar_level: 1
+sidebar_position: 2
+vocabularyId: '1241'
+title: ISBDM Binding value vocabulary
+uri: http://iflastandards.info/ns/isbdm/values/1241
+description: This value vocabulary is a source of values for a has binding element.
+isDefinedBy: http://iflastandards.info/ns/isbdm/values/1241
+scopeNote: The vocabulary does not cover the full scope of the element and may be extended with additional values.
+concepts:
+- value: board book binding
+  definition: A type of binding for sheets of thick paperboard with covers that are folded and bound to form a spine.
+  scopeNote: The binding is durable and often used for manifestations for children. Outer covers are of the same thickness of paperboard as the sheets.
+- value: case binding
+  definition: A type of binding that sews or glues sheets into sections that are glued together to form a flat spine and that are attached to endpapers which are in turn attached to a stiff outer casing.
+  scopeNote: Sheets may be folded to form gatherings. The outer casing of the volume is usually made of board, wood, plastic, or some other rigid material.
+- value: closed ring binding
+  definition: A type of binding that uses two or more rings of metal or plastic that are threaded through holes along the edge of each sheet.
+  scopeNote: The rings are widely spaced and require a spine to maintain the spacing. Outer covers may be attached directly to the spine, or threaded by the rings.
+- value: comb binding
+  definition: A type of binding that uses multiple closely-spaced curved flaps of metal or plastic that are threaded through holes along the edge of each sheet.
+  scopeNote: The binding flaps usually form a curved spine. Outer covers are generally threaded by the flaps.
+- value: dos-a-dos binding
+  definition: A type of binding that uses two outer casings and an inner casing that is shared between two sets of sheets to form two spines.
+  scopeNote: One spine faces outwards and the other spine faces inwards, depending on how the volume is oriented.
+- value: open ring binding
+  definition: A type of binding that uses two or more rings of metal or plastic that are threaded through holes along the edge of each sheet, and that can be opened to allow the removal or insertion of any sheet.
+  scopeNote: The rings are widely spaced and require a spine to maintain the spacing. Outer covers may be attached directly to the spine or threaded by the rings.
+- value: perfect binding
+  definition: A type of binding that glues sheets together and to a flexible outer casing to form a spine.
+  scopeNote: Sheets may be folded to form gatherings. The outer casing of the volume is usually made of thin card, plastic, or some other flexible material.
+- value: saddle stitch binding
+  definition: A type of binding that folds sheets and staples them along the fold to form a spine.
+  scopeNote: The staples may be made of metal, plastic, or textile. Outer covers made of a flexible material are also folded and stapled to the sheets.
+- value: slide binding
+  definition: A type of binding that uses a single length of metal or plastic bent into a C cross-section which slides over the edge of each sheet to hold it in place.
+  scopeNote: Outer covers of the volume may be made of a thin flexible material that can be inserted as a sheet into the binding strip.
+- value: spiral binding
+  definition: A type of binding that uses a continuous wire or plastic coil that is threaded through holes along the edge of each sheet.
+  scopeNote: Outer covers of the volume may be made of a rigid or flexible material, and may be attached directly to the coil or threaded by the coil
+- value: springback binding
+  definition: A type of binding that clamps the edge of each sheet in a metal spring that is directly attached to a spine and outer covers, and that can be opened to allow the removal or insertion of any sheet.
+---
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# {frontMatter.title}
+
+For use with element: [has binding](/docs/attributes/1241.html)
+
+<VocabularyTable 
+  {...frontMatter} 
+  showTitle={false}
+  filterPlaceholder="Filter vocabulary terms..."
+/>
+
+export const toc = VocabularyTable.generateTOC(frontMatter);

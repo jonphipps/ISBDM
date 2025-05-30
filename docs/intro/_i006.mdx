@@ -1,0 +1,114 @@
+## Metadata utility and processing
+
+<div className="guid">
+The value of an ISBDM element is intended for use as metadata in an information retrieval application. ISBDM metadata supports **linked open data** and **relational database** applications.
+</div>
+
+<div className="guid">
+The utility of the value of an ISBDM element is reflected in its source of information and how the value can be processed to support basic methods of retrieval and display.
+</div>
+
+<div className="guid">
+A value that is a text string or an identifier string can be processed for direct display in the description of the manifestation. A value that is an IRI can be dereferenced, usually, to obtain text strings for display in the description.
+</div>
+
+<div className="guid">
+ISBDM supports the following basic retrieval methods:
+
+* keyword index
+  * controlled keyword index
+  * uncontrolled keyword index
+* browse index 
+  * access point index
+  * identifier index
+* contextual link
+</div>
+
+<div className="guid">
+The categories of <InLink href="/docs/intro/i021.html">Manifestation elements</InLink> indicate which retrieval methods are applicable to an element value.
+</div>
+
+<div className="guid">
+A value that is an uncontrolled text string can be processed to extract words and phrases for an uncontrolled keyword index. This is applicable to the value of a manifestation statement element, and to a free-text value of a note or attribute element.
+</div>
+
+<div className="guid">
+A value that is a controlled text string can be processed to extract words and phrases for a controlled keyword index. This is applicable to a controlled value of a note or attribute element, and to a value of a relationship element that is an authorized access point.
+</div>
+
+<div className="guid">
+A value that is an access point can be included in an access point browse index. This is applicable to a value of a relationship element that is an authorized access point or an access point that is constructed by applying a string encoding scheme.
+</div>
+
+<div className="guid">
+A value that is an identifier string can be included in an identifier browse index. This is applicable to a value of a relationship element that is an authorized access point or an access point that is constructed by applying a string encoding scheme.
+</div>
+
+<div className="guid">
+A value that is an authorized access point or an identifier string can be used to link two entities in a **relational database** application. This is applicable to a string value of a relationship element.
+</div>
+
+<div className="guid">
+A value that is an IRI can be used to link two entities in a **linked open data** application. This is applicable to a value of an element that is an IRI.
+</div>
+
+<div className="guid">
+
+| Retrieval method | Statement | Note | Attribute | Relationship |
+|------------------|-----------|------|-----------|--------------|
+| Uncontrolled keyword | ✓ | ✓ | ✓ | |
+| Controlled keyword | | ✓ | ✓ | ✓ |
+| Browse value | | | ✓ | ✓ |
+| Link value | | | | ✓ |
+
+Table 1: Data retrieval processes for categories of ISBDM elements.
+
+Table 1 summarises the applicability of the ISBDM element categories to basic information retrieval methods.
+</div>
+
+<div className="guid">
+A value of an element is inferred to be a value of all of its element super-types. This is a consequence of the semantic hierarchy of elements.
+
+<details>
+<summary>Examples</summary>
+
+| has person associated with manifestation | "Shakespeare, William, 1564-1616" |
+|------------------------------------------|-----------------------------------|
+| also states | |
+
+| has agent associated with manifestation | "Shakespeare, William, 1564-1616" |
+|------------------------------------------|-----------------------------------|
+| [Inferred.] | |
+
+---
+
+| has publisher collective agent | "HarperCollinsPublishers" |
+|--------------------------------|----------------------------|
+| also states | |
+
+| has creator collective agent of manifestation | "HarperCollinsPublishers" |
+|----------------------------------------------|----------------------------|
+| [Inferred.] | |
+
+| has collective agent associated with manifestation | "HarperCollinsPublishers" |
+|---------------------------------------------------|----------------------------|
+| [Inferred.] | |
+
+| has agent associated with manifestation | "HarperCollinsPublishers" |
+|------------------------------------------|----------------------------|
+| [Inferred.] | |
+
+</details>
+
+The interoperability of ISBDM metadata is maximised when the finest element sub-type that is applicable is used to record a value, to allow the greatest number of inferences to be made.
+
+See also: <InLink href="/docs/intro/i026.html">Granularity</InLink>
+</div>
+
+<div className="guid">
+ISBDM makes the "Open World Assumption" for linked open data. The absence of an element value in a description of a manifestation implies neither that the element is not applicable to the manifestation nor that the value is unknowable. An element value may be added to the description in due course.
+</div>
+
+<div className="guid">
+Use a <InLink href="/docs/notes/1207.html">has note on manifestation</InLink> element or element sub-type to indicate the reason for the absence of an element value, if it is considered to be useful for users of the metadata.
+</div>

@@ -1,0 +1,89 @@
+---
+slug: /relationships/1246
+sidebar_class_name: sidebar-level-3
+sidebar_label: has creator person of manifestation
+sidebar_level: 3
+sidebar_position: 16
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '      ├─ '
+id: '1246'
+title: has creator person of manifestation
+RDF:
+  definition: Relates a manifestation to a person who is responsible for its manufacture, production, or publication.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Person
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1247
+    url: /docs/relationships/1247
+    label: has manufacturer person
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1248
+    url: /docs/relationships/1248
+    label: has producer person
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1249
+    url: /docs/relationships/1249
+    label: has publisher person
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1019
+    url: /docs/relationships/1019
+    label: has creator agent of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1006
+    url: /docs/relationships/1006
+    label: has person associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has creator person of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If one or more creator persons are associated with the manifestation, record at least one occurrence of the element. Use the following order of preference to select the value:
+  
+  1. Person who is a publisher of the manifestation
+  2. Person who is a producer of the manifestation
+  3. Person who is a manufacturer of the manifestation
+  
+  <div className="stip">
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  </div>
+</div>
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has producer person | "Mujadžić, Omer, 1903-1991" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx071">Pogled na Akademijin vrt (195-; Mujadžić, Omer, 1903-1991; sheet)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manufacturer person | "Benali, Bernardino, 1483-1543" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx027">Libar Marca Marula Splichianina Uchomse vsdarsi Istoria Sfete vdouice Judit u versih haruacchi slosena (1522; Mirković, Jerolim ; svezak)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-types unless indicated otherwise.
+</div>

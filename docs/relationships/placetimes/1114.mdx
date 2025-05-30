@@ -1,0 +1,52 @@
+---
+slug: /relationships/1114
+sidebar_class_name: sidebar-level-3
+sidebar_label: has date of manufacture
+sidebar_level: 3
+sidebar_position: 13
+sidebar_category: placetimes
+customProps:
+  sidebar_prefix: '   │  ├─ '
+id: '1114'
+title: has date of manufacture
+RDF:
+  definition: Relates a manifestation to a time-span during which the manifestation is manufactured.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes manufacture by printing.
+  range: Time-span
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1235
+    url: /docs/relationships/1235
+    label: has date of creation of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has date of manufacture
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of manufacture | "1519" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx022">Evangelistarium Marci Maruli Spalatensis (1519; Officina Adamae Petri; svezak)</InLink>. The date is a year when the manifestation is printed.]*
+  </details>
+</div>

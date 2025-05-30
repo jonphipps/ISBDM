@@ -1,0 +1,65 @@
+---
+sidebar_class_name: menu-item-html-level-1 sidebar-level-1
+sidebar_label: ISBDM Extent of Aggregated Content value vocabulary
+sidebar_level: 1
+sidebar_position: 6
+vocabularyId: '1278'
+title: ISBDM Extent of Aggregated Content value vocabulary
+uri: http://iflastandards.info/ns/isbdm/values/1278
+description: This value vocabulary is a source of values for a has extent of aggregated content element.
+isDefinedBy: http://iflastandards.info/ns/isbdm/values/1278
+scopeNote: The vocabulary does not cover the full scope of the element and may be extended with additional values.
+concepts:
+- value: chart
+  definition: A unit of extent of aggregated content that is a still image that is a representation of data in graphic or tabular form.
+- value: diagram
+  definition: A unit of extent of aggregated content that is a still image that is a representation of numeric data, or of an action or process.
+- value: drawing
+  definition: A unit of extent of aggregated content that is a still image that is composed of lines that represent the delineation of form.
+- value: icon
+  definition: A unit of extent of aggregated content that is a still image that portrays a sacred entity and that is itself regarded as sacred.
+- value: map
+  definition: A unit of extent of aggregated content that is a cartographic image that represents an area on the surface of the earth, another celestial body, or an imaginary place.
+- value: part
+  definition: A unit of extent of aggregated content that is notated music.
+- value: performed dance
+  definition: A unit of extent of aggregated content that is performed movement that is recorded in a live performance.
+- value: performed song
+  definition: A unit of extent of aggregated content that is performed music that is recorded in a live performance.
+- value: photograph
+  definition: A unit of extent of aggregated content that is a still image that is captured by a lens.
+- value: profile
+  definition: A unit of extent of aggregated content that is a cartographic image.
+- value: radiograph
+  definition: A unit of extent of aggregated content that is a still image produced by radiation.
+- value: recorded song
+  definition: A unit of extent of aggregated content that is performed music that is recorded in a studio.
+- value: remote-sensing image
+  definition: A unit of extent of aggregated content that is a cartographic image that is captured by a remote-sensing instrument.
+- value: score
+  definition: A unit of extent of aggregated content that is notated music.
+- value: section
+  definition: A unit of extent of aggregated content that is a cartographic image that represents a slice through the surface of the earth or some other celestial body.
+- value: spoken text
+  definition: A unit of extent of aggregated content that is spoken word that is a recitation of a text.
+- value: technical drawing
+  definition: A unit of extent of aggregated content that is a still image that represents a cross section of an object or part of an object for use in an engineering or other technical context.
+- value: view
+  definition: A unit of extent of aggregated content that is a still image that represents a landscape from an oblique point of view.
+  scopeNote: A bird's-eye view, panorama, panoramic drawing, worm's-eye view, etc., are included.
+- value: vocal score
+  definition: A unit of extent of aggregated content that is notated music.
+---
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# {frontMatter.title}
+
+For use with element: [has extent of aggregated content](/docs/attributes/1278.html)
+
+<VocabularyTable 
+  {...frontMatter} 
+  showTitle={false}
+  filterPlaceholder="Filter vocabulary terms..."
+/>
+
+export const toc = VocabularyTable.generateTOC(frontMatter);

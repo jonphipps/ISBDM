@@ -1,0 +1,55 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 1
+id: 1116
+title: Chronological designation SES
+slug: /ves/ISBDMSES1116
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for a value of a <InLink href="/relationships/1116">has chronological designation</InLink> element.
+
+</div>
+
+<div className="guid">
+
+For a manifestation that embodies the expression of a diachronic work, a value for the first chronological designation in the sequence is followed by a hyphen "-" to indicate an open sequence.
+
+The ISBDM string template is:
+
+first in sequence(`{has chronological designation}`) + "-"
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has chronological designation | "2009-" |
+
+  *Full example*: <InLink href="/fullex/fx052">Journal für Facility Management
+                          (2009-; Technische Universität Wien‏; online resource)</InLink>
+
+</details>
+</div>
+
+<div className="guid">
+
+For a manifestation that embodies the expression of a diachronic work, and if there is a change in the sequence of chronological designations of issues or iterations, values for the first and last chronological designations in the old sequence are separated by a hyphen "-" to indicate sequence range, followed by a value for new open sequence. Sequences are separated with semi-colons "; ".
+
+The ISBDM string template is:
+
+first in old sequence(`{has chronological designation}`) + "-" + last in old sequence(`{has chronological designation}`) + "; " + first in new sequence(`{has chronological designation}`) + "-"
+
+</div>
+
+<div className="guid">
+
+For a manifestation that embodies the expression of a diachronic work that is known or assumed to have terminated, values for the first and last chronological designations in the sequence are separated by a hyphen "-" to indicate sequence range.
+
+The ISBDM string template is:
+
+first in sequence(`{has chronological designation}`) + "-" + last in sequence(`{has chronological designation}`)
+
+</div>

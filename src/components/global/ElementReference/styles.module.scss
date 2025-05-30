@@ -1,0 +1,145 @@
+// src/components/global/ElementReference/styles.module.scss
+
+.elementReference {
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .deprecationWarning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+
+    p {
+      margin: 0;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+  
+  .errorMessage {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+
+    p {
+      margin: 0;
+      &:first-child {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .referenceTable {
+    padding: 0;
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+
+    .row {
+      display: flex;
+      border: 1px solid var(--ifm-toc-border-color);
+
+      &:not(:last-child) {
+        border-bottom: none;
+      }
+
+      .label {
+        width: 30%;
+        border-right: 1px solid var(--ifm-toc-border-color);
+        padding: 0.5rem;
+        font-style: italic;
+        background-color: var(--ifm-table-head-background);
+      }
+
+      .value {
+        width: 70%;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .elementLinks {
+    display: flex;
+    flex-direction: column;
+
+    .elementLink {
+      text-decoration: none;
+      margin: 0.1rem 0;
+      padding: 0.1rem;
+      border-radius: 0.25rem;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #e62e00;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .attributeValueTable {
+    border: 1px solid var(--ifm-toc-border-color);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+
+    .attributeRow {
+      display: flex;
+      padding: 0.5rem;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--ifm-toc-border-color);
+      }
+
+      .attribute {
+        width: 30%;
+        padding-right: 1rem;
+      }
+
+      .attributeValue {
+        width: 70%;
+        word-break: break-word;
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .elementReference {
+    .deprecationWarning {
+      background-color: rgba(255, 243, 205, 0.1);
+      color: #ffeeba;
+      border-color: rgba(255, 238, 186, 0.2);
+    }
+    
+    .errorMessage {
+      background-color: rgba(248, 215, 218, 0.1);
+      color: #f5c6cb;
+      border-color: rgba(245, 198, 203, 0.2);
+    }
+
+    .referenceTable {
+      .row {
+        .label {
+          background-color: var(--ifm-color-emphasis-200);
+        }
+      }
+    }
+  }
+}

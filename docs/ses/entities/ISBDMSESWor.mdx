@@ -1,0 +1,76 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 10
+id: wor
+title: Work SES
+slug: ves/ISBDMSESWor
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for an authorized access point of a work that is related to the manifestation.
+
+The encoding scheme is applicable to the value of a <InLink href="/relationships/1001">has work associated with manifestation</InLink> element or element sub-type.
+
+</div>
+
+<div className="guid">
+
+The base access point of a work is a combination of a value of an authorized access point of a creator agent of the work and a value of a preferred title of the work.
+
+The ISBDM string template is:
+
+[authorized access point of a creator agent of the work] + ". " + [preferred title of the work]
+
+</div>
+
+<div className="guid">
+
+For a work that is anonymous, apply the guidance for the language or country of origin of the name that is available in <OutLink href="https://www.ifla.org/g/cataloguing/anonymous-classics/">Anonymous classics</OutLink>, if it is considered to be useful for users of the metadata.
+
+</div>
+
+<div className="guid">
+
+The base access point may be followed by a set of qualifiers enclosed in brackets "(...)" and separated by semicolons "; ".
+
+Add qualifiers to the sequence to disambiguate the basic qualified access point.
+
+Added qualifiers are conditional on specific characteristics of the work that are recorded as attribute elements, including representative expression attributes. They support a tertiary collocation and sort order of authorized access points.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has work embodied in manifestation | "Bonnard, Pierre, 1867-1947. Café" |
+
+  *Full example*: <InLink href="/fullex/fx066">Coffee (2003; Tate; card)</InLink>. The base access point is not qualified.
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has work embodied in manifestation | "Gayford, Martin, 1952-. Spring cannot be cancelled (text)" |
+
+  *Full example*: <InLink href="/fullex/fx063">Spring cannot be cancelled (2022; Thames & Hudson; volume)</InLink>. The base access point is qualified by a value of a category of content of a representative expression.
+
+</details>
+</div>
+
+<div className="guid">
+
+For a work that is an augmenting work that is embodied in an aggregate manifestation, and if the preferred title of the work is a generic title, qualify the base access point with a preferred title of the augmented work.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has work associated with manifestation | "Blythe, Ronald, 1922-2023. Introduction (Emma)" |
+
+  The work augments another work that is embodied in the same manifestation.
+
+</details>
+</div>

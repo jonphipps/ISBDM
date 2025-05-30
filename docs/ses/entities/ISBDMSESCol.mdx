@@ -1,0 +1,67 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 2
+id: col
+title: Collective Agent SES
+slug: /ves/ISBDMSESCol
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for an authorized access point of a collective agent who is related to the manifestation.
+
+The encoding scheme is applicable to the value of a <InLink href="/relationships/1007">has collective agent associated with manifestation</InLink> element or element sub-type.
+
+</div>
+
+<div className="guid">
+
+The base access point of a collective agent is a name of the collective agent that is the most common in external sources of information.
+
+The base access point may be followed by a set of qualifiers enclosed in brackets "(…)" and separated by semicolons "; ".
+
+The ISBDM string template is:
+
+[name of the collective agent] + " (" + [qualifier] + "; " + [qualifier] + ")"
+
+</div>
+
+<div className="guid">
+
+Add qualifiers to disambiguate the base access point.
+
+Added qualifiers are conditional on specific characteristics of the collective agent. They support a secondary collocation and sort order of authorized access points.
+
+Use the following strings as qualifiers of a base access point:
+
+- A controlled term for a category of the collective agent
+- A field of activity of the collective agent
+- A period of activity of the collective agent, including the date of a conference, meeting, or voyage
+- A place of activity of the collective agent, including the location of a conference, meeting, or voyage.
+- A number or other sequence designator of a conference, meeting, or voyage
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has publisher collective agent | "Thames & Hudson" |
+
+  *Full example*: <InLink href="/fullex/fx072">Charles Rennie Mackintosh (2002;
+                          Thames & Hudson; volume; perfect binding)</InLink>. The base access point is not
+                        qualified
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has publisher collective agent | "Springer (Firm)" |
+
+  *Full example*: <InLink href="/fullex/fx069">Synthesis lectures on data,
+                          semantics, and knowledge (2021-; Morgan & Claypool Publishers;
+                          volume)</InLink>. The base access point is qualified by a category of
+                        collective agent
+
+</details>
+</div>

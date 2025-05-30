@@ -1,0 +1,58 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 8
+id: pla
+title: Place SES
+slug: /ves/ISBDMSESPla
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for an authorized access point of a place that is related to the manifestation.
+
+The encoding scheme is applicable to the value of a <InLink href="/relationships/1009">has place associated with manifestation</InLink> element or element sub-type.
+
+</div>
+
+<div className="guid">
+
+The base access point of a place is a name of the place that is the most common in external sources of information.
+
+The base access point may be followed by a set of qualifiers enclosed in brackets "(...)" and separated by semicolons "; ".
+
+The ISBDM string template is:
+
+[name of the place] + " (" + [qualifier] + "; " + [qualifier] + ")"
+
+</div>
+
+<div className="guid">
+
+Add qualifiers to disambiguate the base access point.
+
+Added qualifiers are conditional on specific characteristics of the place. They support a secondary collocation and sort order of authorized access points.
+
+Use the following strings as qualifiers of a base access point:
+- A name of a larger place that includes the place
+- A category of place
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has place of publication | "Edinburgh (Scotland)" |
+
+  *Full example*: <InLink href="/fullex/fx059">Asterix and the gowden heuk (2014; Itchy Coo; volume)</InLink>. The base access point is qualified by the name of a larger place.
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has place of publication | "Alger (Algerie)" |
+
+  *Full example*: <InLink href="/fullex/fx040">Algerie a travers les ages (2000; Cerist; disque informatique; version française)</InLink>. The base access point is qualified by the name of a larger place.
+
+</details>
+</div>

@@ -1,0 +1,54 @@
+---
+sidebar_class_name: menu-item-html-level-1 sidebar-level-1
+sidebar_label: ISBDM Media Type value vocabulary
+sidebar_level: 1
+sidebar_position: 9
+vocabularyId: '1218'
+title: ISBDM Media Type value vocabulary
+uri: http://iflastandards.info/ns/isbdm/values/1218
+description: This value vocabulary is a source of values for a has media type element.
+isDefinedBy: http://iflastandards.info/ns/isbdm/values/1218
+scopeNote: The vocabulary covers the full scope of the element and will not be extended with additional values.
+concepts:
+- value: audio
+  definition: A media type used to store recorded sound, designed for use with a playback device such as a turntable, audiocassette player, CD player, or MP3 player.
+  scopeNote: Media used to store digitally encoded as well as analog sound are included.
+- value: computer
+  definition: A media type used to store electronic files, designed for use with a computer.
+  scopeNote: Media that are accessed remotely through file servers as well as direct-access media such as computer tapes and discs are included.
+- value: microform
+  definition: A media type used to store reduced-size images not readable to the human eye, designed for use with a device such as a microfilm or microfiche reader.
+  scopeNote: Both transparent and opaque micrographic media are included.
+- value: microscopic
+  definition: A media type used to store minute objects, designed for use with a device such as a microscope to reveal details invisible to the naked eye.
+- value: projected
+  definition: A media type used to store moving or still images, designed for use with a projection device such as a motion picture film projector, slide projector, or overhead projector.
+  scopeNote: Media designed to project both two-dimensional and three-dimensional images are included.
+- value: stereographic
+  definition: A media type used to store pairs of still images, designed for use with a device such as a stereoscope or stereograph viewer to give the effect of three dimensions.
+- value: unmediated
+  definition: A media type used to store content designed to be perceived directly through one or more of the human senses without the aid of an intermediating device.
+  scopeNote: Media containing visual or tactile content produced using processes such as printing, engraving, lithography, etc., embossing, texturing, etc., or by means of handwriting, drawing, painting, etc., are included. Media used to convey three-dimensional forms such as sculptures, models, etc., are also included.
+- value: video
+  definition: A media type used to store moving or still images, designed for use with a playback device such as a videocassette player or DVD player.
+  scopeNote: Media used to store digitally encoded as well as analog images are included.
+---
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# {frontMatter.title}
+
+For use with element: [has media type](/docs/attributes/1218.html)
+
+<VocabularyTable 
+  {...frontMatter} 
+  showTitle={false}
+  filterPlaceholder="Filter vocabulary terms..."
+/>
+
+---
+
+<div className="guid">
+<p>The values, definitions, and scope notes in this vocabulary are derived from the <OutLink href="https://www.rdaregistry.info/termList/RDAMediaType/">RDA Media Type</OutLink> value vocabulary licensed under a Creative Commons Attribution 4.0 International License, copyright © 2020 American Library Association, Canadian Federation of Library Associations, and CILIP: Chartered Institute of Library and Information Professionals.</p>
+</div>
+
+export const toc = VocabularyTable.generateTOC(frontMatter);

@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "generatedAt": "2025-05-10T00:25:16.876Z",
+    "tasksAnalyzed": 10,
+    "thresholdScore": 5,
+    "projectName": "Your Project Name",
+    "usedResearch": false
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Setup Project Repository and Environment",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Break down the Docusaurus v3.7 project setup task into detailed technical subtasks, including Node v22 configuration, Yarn Berry setup, SASS integration, Vitest configuration, directory structure creation, GitHub Actions CI pipeline setup, and accessibility testing initialization. Include specific commands, configuration file contents, and validation steps for each subtask.",
+      "reasoning": "This task involves multiple technical setup steps with modern tooling. While each component is well-defined, integrating Docusaurus with SASS and setting up GitHub Actions requires careful configuration. The task has clear boundaries but requires expertise with multiple technologies."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Create Core Conversion Framework",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Detail the implementation of a Node.js and Cheerio-based HTML-to-MDX conversion framework, including the architecture of the base converter class, pipeline flow design, utility functions for handling common patterns, logging mechanisms, CLI interface, and content verification system. Include code structure, key methods, error handling strategies, and test cases.",
+      "reasoning": "This is a complex architectural task requiring deep understanding of both HTML parsing and MDX generation. Creating an extensible framework that can handle various content types demands careful design. The conversion pipeline needs robust error handling and verification mechanisms to ensure content integrity."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Implement Directory-Specific Converters",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Create a detailed plan for implementing specialized HTML-to-MDX converters for each content directory, including analysis methodology for identifying unique HTML patterns, converter class implementation details, handling of special cases like .guid wrappers, test fixture creation, and command implementation. Include specific examples of directory-unique patterns and how they'll be handled.",
+      "reasoning": "This task requires analyzing multiple directory structures and creating specialized converters for each. The complexity comes from handling unique structural quirks across different content types while maintaining a consistent conversion approach. Extensive testing will be needed to ensure all edge cases are handled."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Develop React Component Integration",
+      "complexityScore": 7,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Detail the implementation of React components to replace Bootstrap elements in the converted MDX content, including component specifications for InLink, OutLink, Figure, Mandatory, and YamlBlock components, component mapping system architecture, Storybook setup, SASS styling approach, dark/light mode implementation, and accessibility compliance testing. Include component props, styling details, and integration methods.",
+      "reasoning": "Creating React components that match Bootstrap functionality while enhancing MDX capabilities requires both design and technical skills. The component mapping system adds complexity, as does ensuring accessibility compliance and proper styling across light/dark modes. Storybook integration adds another layer of complexity."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "Implement YAML-to-RDF Conversion Pipeline",
+      "complexityScore": 8,
+      "recommendedSubtasks": 6,
+      "expansionPrompt": "Create a detailed implementation plan for converting YAML frontmatter to RDF triples in Turtle/JSON-LD format, including library evaluation criteria, CLI tool architecture, output directory structure, JSON-LD context generation from DCTAP, pipeline integration, and build command implementation. Include data flow diagrams, sample transformations, and validation methods.",
+      "reasoning": "This task involves complex semantic web technologies and requires deep understanding of both YAML and RDF data models. The conversion process needs to handle various metadata patterns and generate valid RDF output. JSON-LD context generation from DCTAP adds significant complexity."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Develop DCTAP Profiles and Validation",
+      "complexityScore": 7,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Detail the implementation of DCTAP profiles for content validation and SHACL validation integration, including profile creation methodology, command implementation for generating CSV and TTL files, SHACL validation setup, CI pipeline integration, error reporting system, spreadsheet template generation, and documentation creation. Include sample profiles, validation rules, and error handling approaches.",
+      "reasoning": "Creating DCTAP profiles requires deep domain knowledge of metadata standards. Implementing SHACL validation adds technical complexity. The integration with CI pipeline and error reporting mechanisms further increases the complexity. This task bridges technical implementation with metadata engineering standards."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "Implement Table to YAML Block Conversion",
+      "complexityScore": 6,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Create a detailed implementation plan for converting HTML tables to YAML blocks, including detection algorithm for identifying tables that should be converted, table-to-YAML conversion logic, formatting specifications, YamlBlock component integration, handling of edge cases like nested tables and rowspans, and preservation of styling and accessibility attributes. Include pseudocode for key algorithms and test cases.",
+      "reasoning": "This task involves pattern recognition to identify tables that should be converted to YAML, and then implementing the conversion algorithm. Handling edge cases like nested tables and preserving accessibility adds complexity. Integration with the YamlBlock component requires coordination with the component development task."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Set Up Visual Regression Testing",
+      "complexityScore": 6,
+      "recommendedSubtasks": 5,
+      "expansionPrompt": "Detail the implementation of a visual regression testing system using Playwright, including baseline snapshot creation methodology, comparison logic for converted pages, threshold configuration, CI pipeline integration, reporting system design, and light/dark mode testing setup. Include configuration files, test scripts, and reporting output examples.",
+      "reasoning": "Setting up visual regression testing requires configuring Playwright, creating baseline snapshots, and implementing comparison logic. The complexity comes from handling both light and dark modes, setting appropriate thresholds, and integrating with the CI pipeline. The reporting system adds another layer of complexity."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "Implement Internationalization Support",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Create a detailed plan for implementing internationalization support with Crowdin integration, including MDX content preparation with translation markers, React component i18n handling, Crowdin configuration file creation, directory structure for translated content, test workflow for round-trip translation, documentation for translators, and frontmatter language attribute handling. Include code examples and configuration details.",
+      "reasoning": "While i18n is a well-understood domain, implementing it properly requires careful planning. The complexity is moderate as the task involves configuring existing systems rather than building new ones. The main challenges are ensuring React components handle i18n properly and setting up the directory structure for translated content."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "Create Comprehensive Documentation and Handoff Materials",
+      "complexityScore": 5,
+      "recommendedSubtasks": 4,
+      "expansionPrompt": "Detail the creation of comprehensive documentation and handoff materials for the conversion project, including conversion process documentation, MDX editing workflow guides, component usage documentation with examples, RDF generation and validation documentation, troubleshooting guides, CI pipeline documentation, i18n phase handoff materials, and DCTAP profile documentation. Include document structure, example content, and delivery format.",
+      "reasoning": "Documentation is time-consuming but conceptually straightforward. The complexity comes from the breadth of topics to cover and ensuring the documentation is clear for different audiences (developers, SMEs, maintainers). The task requires deep understanding of all other project components to document them effectively."
+    }
+  ]
+}

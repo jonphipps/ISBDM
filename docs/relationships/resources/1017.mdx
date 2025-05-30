@@ -1,0 +1,64 @@
+---
+slug: /relationships/1017
+sidebar_class_name: sidebar-level-2
+sidebar_label: has item reproduced by manifestation
+sidebar_level: 2
+sidebar_position: 7
+sidebar_category: resources
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1017'
+title: has item reproduced by manifestation
+RDF:
+  definition: Relates a manifestation to an item that exemplifies a previous manifestation and whose content is carried by the new manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to an item that has been modified.
+  range: Item
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1004
+    url: /docs/relationships/1004
+    label: has item associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has item reproduced by manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+For a manifestation that does not include modifications of an item that exemplifies the manifestation that is copied, use a <InLink href="/docs/relationships/1015">has manifestation reproduced by manifestation</InLink> element.
+</div>
+
+<div className="guid">
+Use a <InLink href="/docs/relationships/1003">has manifestation associated with manifestation</InLink> element to record the manifestation that is exemplified by the item that is copied.
+</div>
+
+<SeeAlso><InLink href="/docs/intro/i014">Reproductions</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has item reproduced by manifestation | "Evangelistarium Marci Maruli Spalatensis (1519; Officina Adamae Petri; svezak; HR-ZaNSK, RIIF-8o-416)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx008">Evangelistarium Marci Maruli Spalatensis (201-; Nacionalna i sveučilišna knjižnica u Zagrebu; online jedinica građe)</InLink>.]*
+  </details>
+</div>

@@ -1,0 +1,79 @@
+---
+slug: /relationships/1210
+sidebar_class_name: sidebar-level-3
+sidebar_label: has date of publication
+sidebar_level: 3
+sidebar_position: 15
+sidebar_category: placetimes
+customProps:
+  sidebar_prefix: '   │  └─ '
+id: '1210'
+title: has date of publication
+RDF:
+  definition: Relates a manifestation to a time-span during which the manifestation is published.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Time-span
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1235
+    url: /docs/relationships/1235
+    label: has date of creation of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has date of publication
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Record a date that appears in a statement of copyright as a date of publication, if it is considered to be useful for users of the metadata.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of publication | http://www.wikidata.org/entity/Q25245 |
+  
+  *[Full example: <InLink href="/docs/fullex/fx036">Secret library (2016; Michael O’Mara Books Limited; volume; case binding)</InLink>. The value is an IRI for the year "2016".]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of publication | "2011" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx012">ISBD (2011; De Gruyter Saur; volume)</InLink>. The value is an authorized access point for the year when the manifestation is published.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of publication | "2022-" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx039">Springer handbooks of political science and international relations (2022-; Springer; volume)</InLink>. The value is a time-span that is incomplete and ongoing.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of publication | "1957-1998" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx011">Biblioteka Vjeverica (1957-1998, Mladost; svezak)</InLink>. The value is a time-span that is complete and terminated.]*
+  </details>
+</div>

@@ -1,0 +1,58 @@
+// OutLink.module.scss
+
+.outLink {
+  display: inline-flex;
+  align-items: center;
+  background-color: #cce0ff;
+  border: 1px solid #000000;
+  border-radius: 0.3rem;
+  color: #000000;
+  padding: 0.1rem 0.3rem;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  
+  &:hover {
+    background-color: #0000ff;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  &:focus {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+  }
+  
+  // Maintain dark mode compatibility
+  [data-theme='dark'] & {
+    background-color: var(--ifm-color-primary-darker);
+    border-color: var(--ifm-color-gray-600);
+    color: var(--ifm-color-gray-100);
+    
+    &:hover {
+      background-color: var(--ifm-color-primary-darkest);
+      color: var(--ifm-color-white);
+    }
+  }
+}
+
+.outLinkExternal {
+  padding-right: 0.4rem;
+}
+
+.externalIcon {
+  display: inline-flex;
+  margin-left: 0.3rem;
+  position: relative;
+  top: 1px;
+}
+
+.iconSvg {
+  height: 0.8em;
+  width: 0.8em;
+  
+  // Ensure icon is visible in both light and dark modes
+  [data-theme='dark'] & {
+    fill: var(--ifm-color-gray-100);
+  }
+}

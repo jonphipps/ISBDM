@@ -1,0 +1,42 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 9
+id: tim
+title: Time-span SES
+slug: /ves/ISBDMSESTim
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for an authorized access point of a time-span that is related to the manifestation.
+
+The encoding scheme is applicable to the value of a <InLink href="/relationships/1010">has time-span associated with manifestation</InLink> element or element sub-type.
+
+</div>
+
+<div className="guid">
+
+The base access point of a time-span is a name of the time-span that is the most common in external sources of information.
+
+`{name of the time-span}`
+
+The base access point may be followed by a set of qualifiers enclosed in brackets "(…)" and separated by semicolons "; ".
+
+The ISBDM string template is:
+
+[name of the time-span] + " (" + [qualifier] + "; " + [qualifier] + ")"
+
+</div>
+
+<div className="guid">
+
+Add qualifiers to disambiguate the base access point.
+
+Added qualifiers are conditional on specific characteristics of the time-span. They support a secondary collocation and sort order of authorized access points.
+
+Use the following strings as qualifiers of a base access point:
+
+- A category of time-span
+
+</div>

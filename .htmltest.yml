@@ -1,0 +1,44 @@
+# HTMLTest configuration for checking internal links and anchors
+DirectoryPath: "build"
+TestFilesConcurrently: true
+DocumentConcurrencyLimit: 16
+CheckDoctype: false
+CheckAnchors: true
+CheckLinks: true
+CheckImages: true
+CheckScripts: false
+CheckExternal: false
+CheckInternal: true
+CheckInternalHash: true
+CheckMailto: false
+IgnoreDirectoryMissingTrailingSlash: true
+IgnoreCanonicalBrokenLinks: true
+IgnoreAltMissing: true
+IgnoreEmptyHref: false
+IgnoreInternalEmptyHash: false
+
+# Ignore patterns
+IgnoreURLs:
+  - "^#"  # Ignore same-page anchors
+  - "^javascript:"
+  - "localhost"
+  - "/fr/"  # Ignore French version
+  - "/es/"  # Ignore Spanish version
+  - "/de/"  # Ignore German version
+  - "/blog/"  # Ignore blog links
+  
+IgnoreDirs:
+  - "assets"
+  - "_next"
+  - "fr"  # Ignore French locale directory
+  - "es"  # Ignore Spanish locale directory
+  - "de"  # Ignore German locale directory
+  - "blog"
+
+# Only test files in the default/English directories
+TestFilesPath: "build/ISBDM/(?!fr/|es/|de/).*\\.html$"
+
+# Output
+LogLevel: 2  # 0=Error, 1=Warning, 2=Info, 3=Debug
+OutputDir: "tmp/htmltest"
+OutputCacheFile: "htmltest-cache.txt"

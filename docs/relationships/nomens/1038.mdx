@@ -1,0 +1,318 @@
+---
+sidebar_class_name: sidebar-level-4
+slug: /relationships/1038
+sidebar_label: has title proper
+sidebar_level: 4
+sidebar_position: 17
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │     ├─ '
+id: '1038'
+title: has title proper
+RDF:
+  definition: Relates a manifestation to a nomen that is a title of the manifestation that is selected for preference.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1037
+    url: /docs/relationships/1037
+    label: has title of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has title proper
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+A title proper is selected as the chief name of the manifestation from all of the titles that appear in the manifestation and external sources of information.
+</div>
+
+<div className="guid">
+A title proper is normally the basis of the value of a <InLink href="/docs/relationships/1257">has authorized access point of manifestation</InLink> element.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "90 vjet Bibliotekë Kombëtare" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx067">90 vjet Bibliotekë Kombëtare (2011; Biblioteka Kombëtare e Shqipërisë; object)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "The biographical dictionary of Scottish women" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx085">Biographical dictionary of Scottish women (2007; Edinburgh University Press; volume; perfect binding)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that is selected from one or more values of the element super-type. Use the following order of preference:
+  
+  1. The title that is made most prominent by typography in the manifestation.
+  2. The title that is the fullest.
+  3. The title that is in the same language or script as the spoken word, tactile text, or text content that is embodied in the manifestation.
+  4. The title that is given in the language or script of choice of the cataloguing agency.
+  5. The title that appears first in a prominent manifestation statement when there is no collective title.
+  6. The title that appears in the manifestation that embodies the expression of the earlist issue or iteration of a diachronic work that is known to the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Was mir behagt, ist nur die muntre Jagd" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx014">Was mir behagt, ist nur die muntre Jagd (2021; Carus; volume; full score)</InLink>. There is no collective title; the value is the first prominent title.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "The Paris apartment" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx001">Paris apartment (2022; HarperCollinsPublishers; volume; case binding)</InLink>. The value is the only title that appears in manifestation statements.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Voyage extraordinaire au coeur de l’atome + Voyage extraordinaire aux limites de l’univers" |
+  | has title proper | "Voyage extraordinaire aux limites de l’univers + Voyage extraordinaire au coeur de l’atome" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx086">Voyage extraordinaire au coeur de l’atome + Voyage extraordinaire aux limites de l’univers (1996; Editions Casterman; volume)</InLink>. The manifestation has a tête-bêche layout that embodies two expressions with distinct titles that have equal prominence in statements of title and responsibility.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Journal of construction automation and robotics" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx079">Journal of construction automation and robotics (2022-; Korean Society of Automation and Robotics in Construction; online resource)</InLink>. The value is in the language of the cataloguing agency.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that includes a name of an agent or a title of edition that is integrated linguistically with a title that appears in a statement of title and responsibility.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Report of the Expert Group on Special Care for Babies" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "The post-humous works of Robert Hooke" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Charles Aznavour présente ses plus grands succès" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "The compact edition of the Oxford English dictionary" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "鲁迅全集" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies cartographic moving image, moving image, performed movement, or three-dimensional moving image content, record a value that omits a name that is integrated linguistically with a title that appears in a statement of title and responsibility and that is the name of an agent who is associated with the creation of the content.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Star wars" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Thief" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies notated music, performed music, or tactile notated music content, and if there is no distinctive title in the statement, record a value that includes a type of composition and the key, numbering, date of composition, or medium of performance that appear in a statement of title and responsibility.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "String quintet no. 1, A major, op. 18" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Sinfonia 1 (1970)" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "降B大调第一弦乐五重奏, 作品第K174号" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that has a media type of "computer", and if no title appears in the manifestation or external sources of information, record the filename.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "notes23.txt" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that has a super-unit, and if no specific title of the unit appears in any statement of title and responsibility or external source of information, or if the specific title is dependent on a common title of the super-unit, record a value that is a compound title.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Dick’s picks, volume one, Tampa Florida 12/19/73" |
+  
+  *[A title of the sub-unit is the place and date of a recorded music performance.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an aggregate, record a value that is a collective title that appears in a statement of title and responsibility.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "The Black Lizard big book of locked-room mysteries" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx050">Black Lizard big book of locked-room mysteries (2014; Vintage Books; volume; perfect binding)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "كليلة ودمنة" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx024">كليلة ودمنة (1973؛ الشركة الوطنية للنشر والتوزيع؛ مجلد؛ غلاف مقوى)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Wind, pinball" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx026">Wind, pinball (2015; Harvill Secker; volume)</InLink>. The collective title proper appears on the spine of a volume that embodies two novels in a tête-bêche layout.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Synthesis lectures on data, semantics, and knowledge" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx069">Synthesis lectures on data, semantics, and knowledge (2021-; Morgan & Claypool Publishers; volume)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an aggregate, and if no collective title appears in any statement of title and responsibility or external source of information, record a distinct value of the title that appears first in a statement of title and responsibility.
+</div>
+
+<div className="stip">
+  For a manifestation that embodies the expression of a diachronic work, record a value that omits designations of issue or iteration from a common title that appears in statements of title and responsibility in manifestations that embody issues or iterations of the work.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Report on the … Conference on Development Objectives and Strategy" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "La sidérurgie française en …" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "IFLA series on bibliographic control" |
+  
+  *[[Full example: <InLink href="/docs/fullex/fx013">IFLA series on bibliographic control (2004-2012; De Gruyter Saur; volume)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies the expression of a diachronic work, do not record a value that is an insignificant change from an earlier common title. An insignificant change includes:
+  
+  - a difference in the representation of a character, word, ideograph, or punctuation mark, including abbreviation or expansion, spelling, and grammar
+  - a difference in the presence or absence of a character, word, or ideograph that expresses grammatical relationship, including articles, prepositions, and conjunctions
+  - a difference in the presence, absence, or order of characters, words, ideographs, or punctuation that are associated with the name of a collective agent or a kind of diachronic work
+  - a difference in the presence, absence, or order of characters, words, ideographs, or punctuation that indicates the same subject coverage of the diachronic work that is embodied by the manifestation
+  
+  If there is a significant change from an earlier common title, consider the manifestation to embody the expression of a new diachronic work and to be distinct from the earlier manifestation.
+  *See also*: <InLink href="/docs/assess/p022">Manifestation boundaries</InLink>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies an expression of an issue or iteration of a diachronic work, record a value that includes designations of issue or iteration in a common title that appears in a statement of title and responsibility.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Mojo 357" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx033">Mojo 357 (2023; H Bauer Publishing Ltd; volume)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Report on the 2nd Conference on Development Objectives and Strategy" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has title proper | "Orkney archaeology review 2021" |
+  </details>
+</div>

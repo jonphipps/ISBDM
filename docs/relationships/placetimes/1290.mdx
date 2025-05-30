@@ -1,0 +1,56 @@
+---
+slug: /relationships/1290
+sidebar_class_name: sidebar-level-2
+sidebar_label: has location of collection
+sidebar_level: 2
+sidebar_position: 4
+sidebar_category: placetimes
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1290'
+title: has location of collection
+RDF:
+  definition: Relates a manifestation to a place where the manifestation is stored.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that is a collection manifestation.
+  range: Place
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1009
+    url: /docs/relationships/1009
+    label: has place associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has location of collection
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/relationships/1236">has place of creation of manifestation</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has location of collection | "Bibliothèque nationale de France, département Cartes et plans (Paris; France)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx078">Collection (Bibliothèque nationale de France, département Cartes et plans)</InLink>.]*
+  </details>
+</div>

@@ -1,0 +1,64 @@
+---
+slug: /relationships/1013
+sidebar_class_name: sidebar-level-2
+sidebar_label: has sub-unit
+sidebar_level: 2
+sidebar_position: 13
+sidebar_category: resources
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1013'
+title: has sub-unit
+RDF:
+  definition: Relates a manifestation to a manifestation that is a physical or logical part of the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Manifestation
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1003
+    url: /docs/relationships/1003
+    label: has manifestation associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has sub-unit
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/assess/p010">Number of units</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has sub-unit | "Mojo 357 (2023; H Bauer Publishing Ltd.; volume + audio disc)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx031">Mojo (1993-; H Bauer Publishing Ltd.; volume + audio disc)</InLink>. The sub-unit is the manifestation of an issue of a diachronic work.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has sub-unit | "Mojo 357 (2023; H Bauer Publishing Ltd.; volume)" |
+  | has sub-unit | "Stax uncovered! (2023; H Bauer Publishing Ltd.; audio disc)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx032">Mojo (1993-; H Bauer Publishing Ltd.; volume + audio disc)</InLink>. The manifestation consists of a magazine and a CD.]*
+  </details>
+</div>

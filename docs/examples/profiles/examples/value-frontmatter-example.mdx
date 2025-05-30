@@ -1,0 +1,73 @@
+```markdown
+---
+# Required properties
+vocabularyId: "1275"
+title: "ISBDM Extent of Unitary Structure value vocabulary"
+uri: "http://iflastandards.info/ns/isbdm/values/1275"
+description: "This value vocabulary is a source of values for a has extent of unitary structure element."
+
+# Optional properties with defaults provided by docusaurus.config.ts
+prefix: "isbdm"                             # Default: "isbdm"
+type: "Vocabulary"                          # Typically "Vocabulary"
+scopeNote: "The vocabulary does not cover the full scope of the element and may be extended with additional values."
+isDefinedBy: "http://iflastandards.info/ns/isbdm/values/1275"
+startCounter: 1000                          # Default: 1000
+uriStyle: "numeric"                         # Default: "numeric", alternative: "slug"
+caseStyle: "kebab-case"                     # Default: "kebab-case", alternatives: "snake_case", "camelCase", "PascalCase"
+
+# RDF metadata (required)
+RDF:
+  # RDF type information
+  rdf:type:
+    - "skos:ConceptScheme"
+
+  # Language-specific metadata
+  skos:prefLabel:
+    en: "ISBDM Extent of Unitary Structure value vocabulary"
+  skos:definition:
+    en: "This value vocabulary is a source of values for a has extent of unitary structure element."
+  skos:scopeNote:
+    en: "The vocabulary does not cover the full scope of the element and may be extended with additional values."
+
+  # Additional optional RDF properties
+  # skos:changeNote:
+  #   en: "Updated term definitions in October 2023."
+  # skos:historyNote:
+  #   en: "Originally developed as part of the ISBDM 1.0 specification."
+  # skos:editorialNote:
+  #   en: "Terms in this vocabulary should follow the naming pattern established in the first batch."
+
+  # Required vocabulary values
+  values:
+    - value: "activity card"
+      definition: "A unit of extent of unitary structure that is a card to be used as a basis for performing a specific activity."
+      scopeNote: "An activity card may be part of a set of cards, and usually embodies a text or a still image."
+      # Optional properties for terms
+      # notation: "AC"
+      # example: "Educational flashcards for learning mathematics."
+      # changeNote: "Definition clarified in 2023."
+
+    - value: "coin"
+      definition: "A unit of extent of unitary structure that is an object that is a piece of metal stamped by government authority for use as money."
+      # scopeNote: "Optional scope note would go here."
+
+# VocabularyTable component options (optional with defaults)
+# showTitle: false                          # Default: false
+# showFilter: true                          # Default: true
+# filterPlaceholder: "Filter terms..."      # Default: "Filter vocabulary terms..."
+---
+
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# {frontMatter.title}
+
+For use with element: [has extent of unitary structure](/docs/attributes/1275.html)
+
+<VocabularyTable 
+  {...frontMatter} 
+  showTitle={false}
+  filterPlaceholder="Filter vocabulary terms..."
+/>
+
+export const toc = VocabularyTable.generateTOC(frontMatter);
+```

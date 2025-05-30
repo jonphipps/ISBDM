@@ -1,0 +1,127 @@
+---
+id: outlink-component
+title: OutLink Component
+description: Component for external links with proper accessibility features
+---
+
+import OutLink from '@site/src/components/global/OutLink';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# OutLink Component
+
+The `OutLink` component provides a standardized way to create external links throughout the ISBDM documentation. It automatically adds proper security attributes and visual indicators for external links.
+
+## Basic Usage
+
+<OutLink href="https://www.ifla.org">IFLA Website</OutLink>
+
+```jsx
+<OutLink href="https://www.ifla.org">IFLA Website</OutLink>
+```
+
+## Internal Link
+
+<OutLink href="/docs/intro" external={false}>Introduction</OutLink>
+
+```jsx
+<OutLink href="/docs/intro" external={false}>Introduction</OutLink>
+```
+
+## External Link (Forced)
+
+<OutLink href="/docs/example" external={true}>Example Page (External)</OutLink>
+
+```jsx
+<OutLink href="/docs/example" external={true}>Example Page (External)</OutLink>
+```
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `href` | string | Yes | - | URL to link to (processed through useBaseUrl for internal links) |
+| `external` | boolean | No | Auto-detected | Whether link opens in new tab (automatic for external URLs) |
+| `children` | ReactNode | Yes | - | Link content |
+| `className` | string | No | - | Additional CSS class name |
+
+## Accessibility Features
+
+The `OutLink` component is built with WCAG 2.1/2.2 Level AA compliance in mind:
+
+- Properly labeled external links with `aria-label` indicating they open in a new tab
+- External link icon is visually indicated but hidden from screen readers (`aria-hidden="true"`)
+- Sufficient color contrast in both light and dark modes
+- Visible focus indicators for keyboard navigation
+- Proper security attributes (`rel="noopener noreferrer"`) for external links
+
+## URL Auto-Detection
+
+The component automatically detects external URLs by checking for:
+- URLs beginning with `http://` or `https://`
+- URLs beginning with `www.`
+- URLs containing a domain extension (e.g., `example.com`)
+
+If any of these patterns are detected, the link will automatically be treated as external, adding the appropriate attributes and indicators.
+
+## Usage Guidelines
+
+1. **Use for Standards and References**: Use `OutLink` when linking to standards, specifications, or external references.
+
+2. **Provide Descriptive Link Text**: Always use meaningful text that describes the destination, not "click here" or "link".
+
+3. **Be Explicit with `external` When Needed**: If you need to override the automatic detection, use the `external` prop explicitly.
+
+4. **Internal Navigation**: For internal documentation links, set `external={false}` to ensure proper behavior.
+
+## Internationalization
+
+The component automatically adapts to RTL languages and supports translation functions for link text.
+
+## Examples with Code
+
+<Tabs>
+  <TabItem value="basic" label="Basic External">
+    ```jsx
+    <OutLink href="https://ifla.org">
+      IFLA Website
+    </OutLink>
+    ```
+  </TabItem>
+  <TabItem value="internal" label="Internal Link">
+    ```jsx
+    <OutLink href="/docs/intro" external={false}>
+      Introduction to ISBDM
+    </OutLink>
+    ```
+  </TabItem>
+  <TabItem value="custom" label="With Custom Class">
+    ```jsx
+    <OutLink 
+      href="https://example.org"
+      className="special-link"
+    >
+      Special Link
+    </OutLink>
+    ```
+  </TabItem>
+</Tabs>
+
+## Migration from HTML
+
+The `OutLink` component replaces the following HTML structure:
+
+```html
+<a class="linkOutline" href="https://example.com" target="_blank" rel="noopener noreferrer">
+  Link text
+</a>
+```
+
+When migrating content, use the following mapping:
+
+| HTML Element/Attribute | Component Prop |
+|------------------------|----------------|
+| `a href` | `href` |
+| `target="_blank"` presence | `external` (auto-detected) |
+| `a` content | `children` |
+| Additional classes | `className` |

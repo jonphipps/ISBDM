@@ -1,0 +1,66 @@
+---
+sidebar_class_name: sidebar-level-3
+sidebar_label: has base material
+sidebar_level: 3
+sidebar_position: 29
+customProps:
+  sidebar_prefix: '│  │  └─ '
+id: '1222'
+title: has base material
+RDF:
+  definition: Relates a manifestation to the kind of substance of which its underlying carrier is composed.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1221
+    url: /docs/attributes/1221
+    label: has material
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has base material
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a separate occurrence of the element for each distinct value that is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has base material | "canvas" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx045">Treachery of images (ceci n'est pas une pipe) (1929; Magritte, René, 1898-1967; sheet)</InLink>. The manifestation is a painting.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has base material | "papir" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx037">Mrtvi pisani unutra, Žman (1607-1612; Radinić, Pavao, 1549-1611; svezak)</InLink>. The manifestation is a manuscript.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has base material | "180g vinyl" |
+  </details>
+</div>

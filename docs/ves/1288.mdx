@@ -1,0 +1,38 @@
+---
+sidebar_class_name: menu-item-html-level-1 sidebar-level-1
+sidebar_label: ISBDM Layout of Embodied Content value vocabulary
+sidebar_level: 1
+sidebar_position: 8
+vocabularyId: '1288'
+title: ISBDM Layout of Embodied Content value vocabulary
+uri: http://iflastandards.info/ns/isbdm/values/1288
+description: This value vocabulary is a source of values for a has layout of embodied content element.
+isDefinedBy: http://iflastandards.info/ns/isbdm/values/1288
+scopeNote: The vocabulary does not cover the full scope of the element and may be extended with additional values.
+concepts:
+- value: columns
+  definition: A layout of embodied content where content is arranged in two or more vertical sections on a page, separated by vertical gutters.
+  scopeNote: This value applies to a manifestation that is a card, sheet, or volume.
+- value: frames
+  definition: A layout of embodied content where content is arranged in two or more blockes on a page, separated by horizontal or vertical gutters.
+  scopeNote: This value applies to a manifestation that is an aperture card, card, film roll, filmslip, filmstrip, filmstrip cartridge, microfiche, microfiche cassette, microfilm cartridge, microfilm cassette, microfilm reel, microfilm roll, microfilm slip, microopaque, sheet, stereograph disc, or volume.
+- value: pages
+  definition: A layout of embodied content where content is embodied in both sides of a leaf or sheet.
+  scopeNote: This value applies to a manifestation that is a card, sheet, or volume.
+- value: tête-bêche
+  definition: A layout of embodied content that is two sets of content embodied in a volume where the sets are rotated 180° relative to each other so that one set is accessed from the front of the binding and the other from the back.
+  scopeNote: This value applies to a manifestation that is a volume.
+---
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# {frontMatter.title}
+
+For use with element: [has layout of embodied content](/docs/attributes/1288.html)
+
+<VocabularyTable 
+  {...frontMatter} 
+  showTitle={false}
+  filterPlaceholder="Filter vocabulary terms..."
+/>
+
+export const toc = VocabularyTable.generateTOC(frontMatter);

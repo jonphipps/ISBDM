@@ -1,0 +1,116 @@
+---
+slug: /relationships/1236
+sidebar_class_name: sidebar-level-2
+sidebar_label: has place of creation of manifestation
+sidebar_level: 2
+sidebar_position: 5
+sidebar_category: placetimes
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1236'
+title: has place of creation of manifestation
+RDF:
+  definition: Relates a manifestation to a place in which the manifestation is manufactured, produced, or published.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Place
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1214
+    url: /docs/relationships/1214
+    label: has place of manufacture
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1212
+    url: /docs/relationships/1212
+    label: has place of production
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1213
+    url: /docs/relationships/1213
+    label: has place of publication
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1009
+    url: /docs/relationships/1009
+    label: has place associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has place of creation of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Consider a manifestation that has a value of category of carrier of "online resource" to be published.
+</div>
+
+<SeeAlso><InLink href="/docs/relationships/1290">has location of collection</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If one or more places of creation are associated with the manifestation, record at least one occurrence of the element. Use the following order of preference to select the value:
+  
+  1. Place of publication of manifestation
+  2. Place of production of manifestation
+  3. Place of manufacture of manifestation
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has place of creation of manifestation | http://www.wikidata.org/entity/Q84 |
+  
+  *[Full example: <InLink href="/docs/fullex/fx941">Who I am (2012; HarperCollinsPublishers; volume; case binding)</InLink>. IRI of place of publication.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has place of creation of manifestation | "London (England)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx042">Catalogue of shipwrecked books (2018; William Collins; volume; case binding)</InLink>. The value is an authorized access point of the place of publication.]*
+  </details>
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has place of publication | "London (England)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx072">Charles Rennie Mackintosh (2002; Thames & Hudson; volume; perfect binding)</InLink>. The associated place is the city where the manifestation is published.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has place of production | "Zagreb (Croatia)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx071">Pogled na Akademijin vrt (195-; Mujadžić, Omer, 1903-1991; sheet)</InLink>. The associated place is the city where the manifestation is produced.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has place of manufacture | "Basel (Švicarska)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx022">Evangelistarium Marci Maruli Spalatensis (1519; Officina Adamae Petri; svezak)</InLink>. The associated place is the city where the manifestation is printed.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>

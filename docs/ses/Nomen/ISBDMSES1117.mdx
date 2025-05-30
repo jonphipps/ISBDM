@@ -1,0 +1,65 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 3
+id: 1117
+title: Numeric designation SES
+slug: /ves/ISBDMSES1117
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for a value of a <InLink href="/relationships/1117">has numeric designation</InLink> element.
+
+</div>
+
+<div className="guid">
+
+For a manifestation that embodies the expression of a diachronic work, a value for the first numeric designation in the sequence is followed by a hyphen "-" to indicate an open sequence.
+
+The ISBDM string template is:
+
+first in sequence(`{has numeric designation}`) + "-"
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has numeric designation | "Heft 1-" |
+
+  *Full example*: <InLink href="/fullex/fx052">Journal für Facility Management
+                          (2009-; Technische Universität Wien‏; online resource)</InLink>
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has numeric designation | "Lecture #1-" |
+
+  *Full example*: <InLink href="/fullex/fx069">Synthesis lectures on data,
+                          semantics, and knowledge (2021-; Morgan & Claypool Publishers;
+                          volume)</InLink>
+
+</details>
+</div>
+
+<div className="guid">
+
+For a manifestation that embodies the expression of a diachronic work, and if there is a change in the sequence of numeric designations of issues or iterations, values for the first and last numeric designations in the old sequence are separated by a hyphen "-" to indicate sequence range, followed by a value for new open sequence. Sequences are separated with semi-colons "; ".
+
+The ISBDM string template is:
+
+first in old sequence(`{has numeric designation}`) + "-" + last in old sequence(`{has numeric designation}`) + "; " + first in new sequence(`{has numeric designation}`) + "-"
+
+</div>
+
+<div className="guid">
+
+For a manifestation that embodies the expression of a diachronic work that is known or assumed to have terminated, values for the first and last numeric designations in the sequence are separated by a hyphen "-" to indicate sequence range.
+
+The ISBDM string template is:
+
+first in sequence(`{has numeric designation}`) + "-" + last in sequence(`{has numeric designation}`)
+
+</div>

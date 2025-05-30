@@ -1,0 +1,62 @@
+---
+sidebar_class_name: sidebar-level-4
+slug: /relationships/1252
+sidebar_label: has manufacturer collective agent
+sidebar_level: 4
+sidebar_position: 11
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '   │  │  ├─ '
+id: '1252'
+title: has manufacturer collective agent
+RDF:
+  definition: Relates a manifestation to a collective agent who is responsible for its creation by using a mechanical process.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: A mechanical process includes a printing or digital manufacturing process.
+  range: Collective Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1251
+    url: /docs/relationships/1251
+    label: has creator collective agent of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1020
+    url: /docs/relationships/1020
+    label: has manufacturer agent
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has manufacturer collective agent
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-types unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manufacturer collective agent | "Officina Adamae Petri" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx022">Evangelistarium Marci Maruli Spalatensis (1519; Officina Adamae Petri; svezak)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manufacturer collective agent | "Argjendari Pirro (Tiranë)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx067">90 vjet Bibliotekë Kombëtare (2011; Biblioteka Kombëtare e Shqipërisë; object)</InLink>.]*
+  </details>
+</div>

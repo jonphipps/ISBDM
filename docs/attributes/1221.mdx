@@ -1,0 +1,87 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has material
+sidebar_level: 2
+sidebar_position: 27
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1221'
+title: has material
+RDF:
+  definition: Relates a manifestation to a physical characteristic that is the kind of substance of which the manifestation is composed.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1223
+    url: /docs/attributes/1223
+    label: has applied material
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1222
+    url: /docs/attributes/1222
+    label: has base material
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1242
+    url: /docs/attributes/1242
+    label: has physical characteristic
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has material
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element supports the user tasks to find, identify, select, and obtain the manifestation.
+</div>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific attribute.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has applied material | "pastel" |
+  | has base material | "canvas" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx071">Pogled na Akademijin vrt (195-; Mujadžić, Omer, 1903-1991; sheet)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has material | "acrylic paint on canvas" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has material | "paper" |
+  </details>
+</div>

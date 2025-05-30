@@ -1,0 +1,157 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 5
+id: man
+title: Manifestation SES
+slug: /ves/ISBDMSESMan
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for an authorized access point of the manifestation and of a manifestation that is related to the manifestation.
+
+The encoding scheme is applicable to the value of a <InLink href="/relationships/1234">has access point of manifestation</InLink> element or element sub-type or a <InLink href="/relationships/1003">has manifestation associated with manifestation</InLink> element or element sub-type.
+
+</div>
+
+<div className="guid">
+
+The encoding scheme uses values that are based on the elements that indicate that a manifestation is distinct.
+
+See also: <InLink href="/assess/p022">Manifestation boundaries</InLink>.
+
+</div>
+
+<div className="guid">
+
+The base access point of a manifestation is a normalized value of <InLink href="/relationships/1038">has title proper</InLink>. If there is no such value, a title supplied by the cataloguing agency may be used.
+
+The base access point is followed by a set of qualifiers enclosed in brackets "(...)" and separated by semicolons "; ".
+
+The ISBDM string template is:
+
+normalised(`{has title proper}`)|[supplied title] + " (" + `{has date of creation of manifestation}`|`{has date of copyright of manifestation}` + "; " + `{has creator agent of manifestation}` + "; " + `{has category of carrier}` + ")"
+
+If a value of a qualifier is not known, omit the qualifier from the access point.
+
+If a qualifier has more than one value, use a concatenation of the values separated by " + " (space-plus-space). Order the values by prominence and quantity.
+
+The sequence of qualifiers supports a standard secondary collocation and sort order of authorized access points in a browse index for manifestations.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Desserte rouge 1908 (1993; Editions du Centre Pompidou; sheet)" |
+
+  *Full example*: <InLink href="/fullex/fx044">Desserte rouge 1908 (1993; Editions du Centre Pompidou; sheet)</InLink>
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Corso delli fiumi Drino, e Boiana nella Dalmatia (1688; fletë)" |
+
+  *Full example*: <InLink href="/fullex/fx074">Corso delli fiumi Drino, e Boiana nella Dalmatia (1688; fletë)</InLink>. The publisher is not known
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Съкровищница (2018; Народна библиотека "Св. св. Кирил и Методий"; том + компютърен диск)" |
+
+  *Full example*: <InLink href="/fullex/fx075">Съкровищница (2018; Народна библиотека "Св. св. Кирил и Методий"; том + компютърен диск)</InLink>. The manifestation has sub-units that have different categories of carrier
+
+</details>
+</div>
+
+<div className="guid">
+
+Add qualifiers to the sequence to disambiguate the basic qualified access point.
+
+Added qualifiers are conditional on specific characteristics of the manifestation that are recorded as attribute elements. They support a tertiary collocation and sort order of authorized access points.
+
+</div>
+
+<div className="guid">
+
+Qualify a value of <InLink href="/attributes/1022">has category of carrier</InLink> that is "volume" with a value of <InLink href="/attributes/1241">has binding</InLink>.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Paris apartment (2022; HarperCollinsPublishers; volume; case binding)" |
+
+  *Full example*: <InLink href="/fullex/fx001">Paris apartment (2022; HarperCollinsPublishers; volume; case binding)</InLink>
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Biographical dictionary of Scottish women (2007; Edinburgh University Press; volume; perfect binding)" |
+
+  *Full example*: <InLink href="/fullex/fx085">Biographical dictionary of Scottish women (2007; Edinburgh University Press; volume; perfect binding)</InLink>
+
+</details>
+</div>
+
+<div className="guid">
+
+Qualify a value of <InLink href="/attributes/1022">has category of carrier</InLink> that is "online resource" with a value of <InLink href="/attributes/1289">has encoding format</InLink>.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Emma (1994; Project Gutenberg; online resource; plain text format)" |
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; HTML format)" |
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; EPUB3 format)" |
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; EPUB format)" |
+  | has alternate manifestation | "Emma (1994; Project Gutenberg; online resource; Kindle format)" |
+
+  *Full example*: <InLink href="/fullex/fx046">Emma (1994; Project Gutenberg; online resource; plain text format)</InLink>
+
+</details>
+</div>
+
+<div className="guid">
+
+Qualify a value of <InLink href="/attributes/1022">has category of carrier</InLink> that is "videodisc" with a controlled term for a finer level of granularity of the category of carrier.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Einstein on the beach (2016; Opus Arte; videodisc; DVD)" |
+  | has alternate manifestation | "Einstein on the beach (2016; Opus Arte; videodisc; BD)" |
+
+  *Full example*: <InLink href="/fullex/fx010">Einstein on the beach (2016; Opus Arte; videodisc; DVD)</InLink>
+
+</details>
+</div>
+
+<div className="guid">
+
+Qualify a value of <InLink href="/relationships/1038">has title proper</InLink> that is a generic title with an authorized access point of an agent who is responsible for the creation of works and expressions that are embodied in the manifestation.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has authorized access point of manifestation | "Summary records (Unesco. Executive Board. 215th session; 2022; Paris) (2023; Unesco Executive Board; svezak)" |
+
+</details>
+</div>
+
+<div className="guid">
+
+Apply the same string encoding scheme to an authorized access point of a related manifestation.
+
+</div>

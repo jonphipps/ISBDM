@@ -1,0 +1,18 @@
+{
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+    "types": [
+      "docusaurus-plugin-sass",
+      "@docusaurus/theme-classic",
+      "@docusaurus/types"
+    ],
+    "paths": {
+      "@site/plugins/*": ["./plugins/*"]
+    }
+  },
+
+  "exclude": [".docusaurus", "build"]
+}

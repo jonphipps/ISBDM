@@ -1,0 +1,449 @@
+---
+id: index
+title: About
+---
+
+import OutLink from '@site/src/components/global/OutLink';
+import InLink from '@site/src/components/global/InLink';
+
+# About ISBD for Manifestation
+
+## About ISBDM
+
+## Scope and purpose
+
+The primary aim of ISBD for Manifestation is to provide the stipulations for
+creating metadata description sets for the manifestation entity of the IFLA Library
+Reference Model. The primary purpose is to create metadata that are compatible
+world-wide, in order to aid the international exchange of metadata between and
+throughout the international library and information community.
+
+**ISBD for Manifestation** (ISBDM) is a partial
+implementation of the <OutLink href="https://repository.ifla.org/handle/20.500.14598/40.2">IFLA
+Library Reference Model</OutLink> (LRM).
+
+ISBDM covers only the Manifestation entity of the LRM.
+
+ISBDM provides stipulations and guidance for describing a single manifestation and
+relating it to other manifestations and to other LRM entities.
+
+ISBDM is designed for stand-alone use in an entity-based cataloguing
+environment.
+
+It may also be used in conjunction with other partial or complete implementations
+of the LRM to provide fuller descriptions of bibliographic resources.
+
+ISBDM metadata is intended to be interoperable with metadata from other
+implementations of the LRM and LRM entities.
+
+ISBDM has similar coverage to the consolidated ISBD which has a primary focus on
+the Manifestation entity, with secondary coverage of the other LRM resource entities
+Work, Expression, and Item. Most of the information recorded in a consolidated ISBD
+description can be recorded in an ISBDM description, albeit in a different
+structure.
+
+## Layout and use {#abUse}
+
+The content of ISBDM is optimised for online access. It caters for browsing in the
+sequence of its presentation, for browsing in a sequence determined by a cataloguing
+agency, and for instant ad hoc access to any part of its content from within and
+from external documentation such as application profiles and agency policies.
+
+The main navigation menu at the top of every page reflects the functional structure
+of the standard. The introduction is followed by the four functional categories of
+element, with augmentations coming last. Augmentations include controlled
+terminologies (values), a glossary, and full examples.
+
+These main components have their own internal navigation menus that are displayed
+on each page. The "click-distance" between any two sections is just 2; one
+click on the main menu, and another click on the sub-menu. Each section or page is
+directly accessible and has a unique identifier in the form of a URL.
+
+The sections of the introduction are arranged in order of general and theoretical
+to operational. A major section is on preliminary assessment of a manifestation
+before any metadata is created. This reflects the complex relationships between the
+WEMI components of a resource and their impact on the stand-alone description of the
+Manifestation component.
+
+The element categories are arranged by general source of information: the
+manifestation itself (statements), the cataloguer's interpretation of how the
+manifestation describes itself (notes), the manifestion's intrinsic characteristics
+described with pre-coordinate terminologies or notes (attributes), and the wider
+consensus on how the manifestation relates to other library entities.
+
+This is also reflected in the quantity and granularity of elements in each
+category, from a small number of elements with shallow hierarchies for statements
+and notes to a larger number of elements with deeper hierarchies for attributes and
+relationships.
+
+The four categories of elements and their stipulations have the same internal
+layout: general stipulations for the category are followed by stipulations for each
+element. The elements are arranged in alphabetical order of their English labels,
+within their semantic hierarchies.
+
+A standard layout is used for the content of each element.
+
+An element reference card gives the definition, scope note, domain, and range of
+the element, and its immediate sub-types and super-types in the hierarchy.
+
+This may be followed by additional reference information.
+
+The stipulations are arranged in order of general to specific.
+
+Linking to a broader stipulation is preferred to duplicating a stipulation. The
+element hierarchy is used to reduce repetition.
+
+Stipulations are given in a standard format. A condition, if any, is stated first,
+and an indication of optionality is stated last.
+
+Examples for a specific stipulation are displayed in a standard format. Examples
+can be opened and closed for display by the user. This helps to avoid page clutter
+and speeds up the browsing of stipulations.
+
+## Application {#abApp}
+
+ISBDM stipulations support two distinct applications of entity-based
+cataloguing:
+
+- linked open data applications
+- relational database applications
+
+ISBDM stipulations assume a three-part data format for each distinct metadata
+value, corresponding to the " triple" subject-predicate-object syntax used
+in linked open data and the table row-column-value structure used in relational
+databases.
+
+In a single-entity standalone ISBDM cataloguing environment, the triple subject or
+database table row always references an instance of the ISBDM Manifestation
+entity.
+
+***See also***: <InLink href="/ISBDM/docs/intro/i006.html">Metadata
+utility and processing</InLink>
+
+ISBDM is self-contained. It does not require the use of elements, stipulations, or
+guidance from other standards.
+
+Links to other standards are given for additional information.
+
+A linked data namespace for the ISBDM elements will be available for open access in
+the <OutLink href="https://www.iflastandards.info/">IFLA Namespaces registry</OutLink>.
+
+This includes an IRI for each element, with an RDF/SKOS definition and scope notes
+and hierarchical links to element super-types and sub-types.
+
+## Related standards {#abStan}
+
+ISBDM is related to several bibliographic metadata standards that are maintained by
+IFLA or are based on an IFLA standard.
+
+ISBDM is a content standard and element set that implements the IFLA Library
+Reference Model entity-relationship model for the Manifestation entity. ISBDM
+metadata is designed to be encoded in UNIMARC or the ISBDM linked data element sets
+and value vocabularies in the IFLA namespace.
+
+ISBDM metadata is designed to be interoperable with RDA: resource description and
+access.
+
+ISBDM stipulations correspond to implementation scenarios A (Linked open data) and
+B (Relational or object-oriented data) of RDA.
+
+All ISBDM elements are mapped to RDA elements, with minor differences in
+granularity that arise from the more restricted scope of ISBDM.
+
+### IFLA Library Reference Model
+
+The <OutLink href="https://repository.ifla.org/handle/20.500.14598/40.2">IFLA
+Library Reference Model</OutLink> is the basis of the ISBDM ontology that includes the
+Manifestation entity, its attributes, and its relationships to other LRM entities.
+The standard is maintained by the IFLA BCM Review Group.
+
+### International Cataloguing Principles
+
+The <OutLink href="https://repository.ifla.org/handle/20.500.14598/80">Statement of international cataloguing principles (ICP)</OutLink> underpins the
+stipulations and guidance for determining the selection and values of attributes and
+relationships. The standard is maintained by the IFLA Cataloguing Section.
+
+### ISBD consolidated edition
+
+The <OutLink href="https://repository.ifla.org/handle/123456789/1939">ISBD
+International Standard Bibliographic Description consolidated edition</OutLink> is the
+basis of refinements to the LRM attributes and relationships in the ISBDM ontology
+with associated stipulations and guidance. The standard is maintained by the IFLA
+ISBD Review Group.
+
+### Names of persons
+
+<OutLink href="https://www.ifla.org/g/cataloguing/names-of-persons/">Names of persons</OutLink> provides additional guidance for determining
+the values of access points for related persons. The standard is maintained by the
+IFLA Cataloguing Section.
+
+### Anonymous classics
+
+<OutLink href="https://www.ifla.org/g/cataloguing/anonymous-classics/">Anonymous classics</OutLink> provides additional guidance for determining the values of
+access points for related works that have no known creator. The standard is
+maintained by the IFLA Cataloguing Section.
+
+### UNIMARC
+
+The <OutLink href="https://repository.ifla.org/handle/20.500.14598/2880.2">UNIMARC Bibliographic Format Manual 1.1.0</OutLink> is the basis of refinements to the
+LRM attributes and relationships in the ISBDM ontology. The standard is maintained
+by the IFLA Permanent UNIMARC Committee.
+
+### RDA: resource description and access
+
+The <OutLink href="https://www.rdatoolkit.org/">RDA
+Toolkit</OutLink> and <OutLink href="https://www.rdaregistry.info/">RDA Registry</OutLink> are the basis of refinements to the LRM
+attributes and relationships in the ISBDM ontology with associated stipulations and
+guidance. The standard is maintained by the RDA Steering Committee.
+
+### RDA/ONIX Framework for Resource Categorization
+
+The <OutLink href="https://www.rdatoolkit.org/archivedsite/docs/5chair10.pdf">RDA/ONIX Framework for Resource Categorization</OutLink> is the basis of the <InLink href="/ISBDM/docs/ves/1022.html">ISBDM Category of Carrier
+value vocabulary</InLink> and the <InLink href="/ISBDM/docs/ves/1264.html">ISBDM Category of Content value vocabulary</InLink>.
+The standard is maintained by the RDA Steering Committee.
+
+## Background and history {#abBack}
+
+International Standard Bibliographic Description, or ISBD, has been positioned,
+from its very conception, at the centre of IFLA's programme Universal Bibliographic
+Control (UBC), and as such has been charged with the task of responding to changes
+in the information environment. The first standard edition of ISBD was ISBD(M):
+International Standard Bibliographic Description for Monographic Publications. It
+was published in 1971 as a result of international agreement on the form – printed
+catalogue card, and content – areas of data elements, achieved at the International
+Meeting of Cataloguing Experts in Copenhagen in 1969.
+
+In the fifty years since, ISBD underwent constant development by expansion to cover
+different types of material, from printed and manuscript publications to electronic
+and web resources. The latest version was published in 2022. During this period of
+change, ISBD became instrumental in the development of MARC (Machine Readable
+Cataloguing) formats, and in particular to the IFLA UNIMARC: UNIversal MAchine
+Readable Cataloguing Format which was first published in 1977, by providing a
+content standard for its encoding structure.
+
+The publication in 1998 of the conceptual model Functional Requirements for
+Bibliographic Records (FRBR) marked the beginning of a new conceptualisation of the
+bibliographic universe of UBC in sync with an entity-relationship framework as a
+response to the changing technological environment. FRBR created two basic points of
+departure from ISBD: the grouping of metadata around entities that reflect user
+tasks and points of interest in the bibliographic universe as opposed to the linear
+presentation of ISBD data; and the use of four entities (Work, Expression,
+Manifestation, and Item, or WEMI) in place of a monolithic object of bibliographic
+description (ISBD's "resource").
+
+ISBD responded to the second challenge in its 2011 consolidated edition, by
+including a full section in its Introduction on "ISBD and FRBR
+relationship". Apart from conforming ISBD data elements with FRBR ones with
+respect to mandatory and optional status, further steps in this direction were not
+possible because the concepts and their terminology had become an obstacle. That is,
+ISBD could not easily adopt the WEMI concepts and terms, and resolved instead to
+retain "resource", as its specific terminology. In terms of FRBR,
+"the ISBD is applied to describe manifestations, by means of description of the
+item in hand as an exemplar of the entire manifestation".
+
+However, ISBD did respond, within its scope, to the new technological changes. In
+the section on "Purpose of the ISBD", a new aim was added, to
+"enhance the portability of bibliographic data in the Semantic Web environment
+and the interoperability of the ISBD with other content standards". This was a
+result of activities initiated by the ISBD Review Group in 2008, and was realised by
+including a list of the ISBD data elements in a special table at the end of the
+"Outline of the ISBD" section. This list became the basis for publishing
+an ISBD element set in Resource Description Framework (RDF), the basic syntax of the
+Semantic Web, initially in the <OutLink href="http://metadataregistry.org/">Open Metadata Registry</OutLink> in
+2015 and since 2020 as the ISBD Vocabularies in the <OutLink href="https://www.iflastandards.info/">IFLA Namespaces
+registry</OutLink>. The decision to encompass the new online information environment and
+to react to it within the scope of its purpose, so that ISBD elements can be used to
+encode bibliographic data as linked open data in the Semantic web environment,
+empowered ISBD's position as a relevant international content standard, not only for
+human but also for machine use.
+
+The publication in 2017 of the IFLA Library Reference Model (LRM) that superseded
+the FR family of models, including FRBR, marked the full conformance of the IFLA's
+conceptual model for the bibliographic universe with the current technology to
+support semantic linked data. It became obvious, following the release of LRM's
+draft versions, that the new model would have a significant impact on the ISBD,
+which would have to undergo a major reconstruction as well as reconceptualization in
+order to position itself as an implementation of the LRM. The position of the ISBD
+in relation to the FRBR WEMI entities, the core entities of the LRM, was already
+acknowledged in the 2011 edition. What was required was an understanding of the
+direction of a "reconstruction as well as reconceptualization" of the
+standard.
+
+The ISBD Review Group set up the ISBD Manifestation Task Force in 2019 to develop
+the ISBD, with the following terms of reference and deliverables:
+
+Terms of reference
+
+- Complete an alignment of the ISBD to the LRM at the Manifestation level, working
+out an element set for that alignment.
+
+- Analyse the gaps, i.e. the elements of the 2021 Update of the ISBD Consolidated
+edition 2011; that in the cited alignment have been excluded, and that are
+considered mandatory, mandatory if the information is available, or optional.
+
+Deliverables
+
+- The ISBD for Manifestation. That is a document consisting of:
+
+- the ISBD to LRM Manifestation Elements Set
+
+- a set of stipulations for describing a manifestation according to LRM
+
+- Reflection on Transforming the ISBD into a Full Implementation of the LRM, a
+working document that will constitute the basis of the future work encompassing
+all of the LRM elements and other components, and which would entail rethinking
+the structure of the ISBD.
+
+The ISBD for Manifestation presents the result of the first deliverable.
+
+The work on draft versions of the ISBD for Manifestation and issues to be solved
+were presented at IFLA WLIC conferences from 2021 to 2023. Consultation was carried
+out via webinars and by publishing an online "demonstrator" of an
+interactive and adaptive view of the working content.
+
+Presentations from the January 2023 webinar are available at <OutLink href="https://repository.ifla.org/handle/20.500.14598/2507">From
+ISBD to ISBDM – a bibliographic standard in transformation</OutLink>.
+
+A separate review phase for experts from related standards was added to the review
+process, preceded by a webinar for invited experts held in February 2024.
+
+The review time-frame of the ISBDM was as follows:
+
+| Review Phase | Timeframe |
+|--------------|-----------|
+| ISBDM Task Force Review | from mid July until the end of September 2023 |
+| ISBD Review Group Review | beginning of November until end of December 2023 |
+| Experts Review | from mid February until mid April 2024 |
+| Official World-wide Review | from 15 May until 15 July 2024 |
+
+Following the ISBD Review Group members' individual review, at its January 2024
+meeting the ISBD Review Group approved of the draft ISBD for Manifestation and
+decided to forward it to the review of the wider interested communities.
+
+The ISBD Review Group and the ISBD for Manifestation Task Force received responses
+from 8 institutions with about 160 comments containing feedback from the expert's
+and World-wide reviews. The Task Force did not see anything in the feedback delaying
+the planned submission of the ISBDM to the internal IFLA standards approval process,
+and the ISBD Review Group submitted the draft version of ISBD for Manifestation to
+the Committee on Standards on 17th October 2024. 
+
+To meet the second deliverable the submission to the Committee on Standards
+included the document "Transforming the ISBD into a Full Implementation of the
+LRM. Phase 2 alignment: ISBD for LRM. Report to the Advisory Committee on Standards,
+October 2024". The report finds that, although the ISBDM can be used as a
+standalone single-entity standard, the advantages for a multiple-entity ISBD
+overweighs those of a single-entity ISBD, and proposes to set up a new task force
+for a phase 2 of the alignment project. The report also proposes a phase 2 project
+output, and a working method developed by the first phase.
+
+The ISBD Review Group received the review with comments from the Committee on
+Standards on January 2025 with recommendation to review and resubmit. The ISBD for
+Manifestation Task Force edited the standard following given comments, and
+resubmitted it on March 2025 to the IFLA Committee on Standards for endorsement by
+the IFLA Professional Committee.
+
+## Credits and acknowledgements {#abCred}
+
+ISBD for Manifestation was developed by the ISBD Manifestation Task Force as a
+project of the ISBD Review Group.
+
+### ISBD for Manifestation Task Force, 2019-2025
+
+| Name | Institution | Country |
+|------|------------|---------|
+| Elena Escolano Rodriguez (2019-2022) | Ministerio de Asuntos Económicos y Transformación Digital | Spain |
+| Gordon Dunsire (main design and content editor) | | United Kingdom |
+| Mikael Wetterstrom | National Library of Sweden | Sweden |
+| Mirna Willer (main design and content editor) | | Croatia |
+| Rehab Ouf | Bibliotheca Alexandrina | Egypt |
+| Renate Behrens (chair) | Deutsche Nationalbibliothek | Germany |
+| Saeedeh Akbari-Daryan | National Library of Iran | Iran |
+| Szabina Ilácsa (2019-2022) | National Széchényi Library | Hungary |
+
+#### Prescription and Granularity Task and Finish Group
+
+| Name | Institution | Country |
+|------|------------|---------|
+| Chris Holden | Library of Congress | USA |
+| Fatma Zahra Ali Pacha | | Algiers |
+| Gordon Dunsire (group moderator) | | United Kingdom |
+| Irena Kavčič | National and University Library | Slovenia |
+| Maliheh Dorkhosh | | Iran |
+| María Camila Restrepo Fernández | | Colombia |
+| Mihwa Lee | Kongju National University | Republic of Korea |
+
+#### Examples Task and Finish Group
+
+| Name | Institution | Country |
+|------|------------|---------|
+| Aicha Afaf Saha | University of Algiers | Algeria |
+| Antonin Benoit Diouf | | Senegal |
+| Ederina Demo | National Library of Albania | Albania |
+| Elia Ekinović Micak | National and University Library in Zagreb | Croatia |
+| Honor Moody | Harvard University Library | USA |
+| Hyejin Kim | National Assembly Library of Korea | Republic of Korea |
+| Jennifer B. Dimasaca | National Library of the Philippines | Philippines |
+| Mirna Willer (group moderator) | | Croatia |
+| Mounira Hattab | University of Algiers | Algeria |
+| Priscilla Pun | University of Macau Library | China |
+| Rosinda Ferreira | | Spain |
+| Saeedeh Akbari-Daryan | National Library of Iran | Iran |
+
+### ISBD Review Group
+
+| Name | Institution | Country |
+|------|------------|---------|
+| Anisatul Wahidah Abdul Wahid | National Library of Malaysia | Malaysia |
+| Ederina Demo | National Library of Albania | Albania |
+| Elena Escolano Rodriguez | Ministerio de Asuntos Económicos y Transformación Digital | Spain |
+| Hyejin Kim | National Assembly Library of Korea | Republic of Korea |
+| Jennifer B. Dimasaca | National Library of the Philippines | Philippines |
+| Judit Fejes | University Library and Archives of Eötvös Loránd University (ELTE) | Hungary |
+| Madireng Monyela | University of Limpopo | South Africa |
+| Mihwa Lee | Kongju National University | Republic of Korea |
+| Mikael Wetterstrom (chair; 2023- | National Library of Sweden | Sweden |
+| Rehab Ouf (chair; 2019-2023) | Bibliotheca Alexandrina | Egypt |
+| Renate Behrens | Deutsche Nationalbibliothek | Germany |
+| Saeedeh Akbari-Daryan | National Library of Iran | Iran |
+| Szabina Ilácsa | National Széchényi Library | Hungary |
+
+### Liaisons of ISBD Review Group / ISBD for Manifestation Task Force
+
+| Name | Organization |
+|------|-------------|
+| Gordon Dunsire | IFLA Bibliographic Conceptual Models (BCM) Review Group |
+| Isabel Garcia-Monge | IFLA Rare Books and Special Collections Section (RBSCS) |
+| Juan Ignacio Modenes | ISSN International Centre (2024-) |
+| Mikael Wetterstrom | ISSN International Centre (2019-2024) |
+| Mirna Willer | IFLA Permanent UNIMARC Committee (PUC) |
+| Renate Behrens | RDA Steering Committee (RSC) |
+
+### Expert advisors of ISBD Review Group
+
+| Name | Country |
+|------|---------|
+| Ben Gu | China |
+| Massimo Gentili-Tedeschi | Italy |
+
+## Status {#abStat}
+
+ISBD for Manifestation is pending approval by the IFLA Committee on Standards and
+endorsement by the IFLA Professional Committee.
+
+The March 2025 version of the ISBD for Manifestation elements is based on version
+1.0.0 of the pending ISBDM namespace.
+
+## Feedback and maintenance {#abFeed}
+
+The ISBD Review Group welcomes comments and suggestions for improving ISBD for
+Manifestation, including notification of errors.
+
+Please contact the <OutLink href="https://www.ifla.org/units/isbd-rg/committee/">Chair of the
+ISBD Review Group</OutLink>.
+
+ISBDM is updated when the need arises.
+
+A version of ISBDM is designated by the month and year of the last update.
+
+This is separate from the semantic versioning of the ISBDM element set in the IFLA
+namespaces.

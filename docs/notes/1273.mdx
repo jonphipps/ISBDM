@@ -1,0 +1,79 @@
+---
+sidebar_class_name: sidebar-level-3
+sidebar_label: has note on nomen associated with manifestation
+sidebar_level: 3
+sidebar_position: 9
+customProps:
+  sidebar_prefix: '   │  ├─ '
+id: '1273'
+title: has note on nomen associated with manifestation
+RDF:
+  definition: Relates a manifestation to a note on entity associated with manifestation that provides information about a nomen that is related to the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: A nomen includes a title, access point, or identifier.
+  range: Literal
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1265
+    url: /docs/notes/1265
+    label: has note on entity associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has note on nomen associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/relationships/1008">has nomen associated with manifestation</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific note.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on nomen associated with manifestation | "Numeric designation of the first issue is subsequently converted to 1 XR/SR 1." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx062">Summary records (1946-; Unesco. Executive Board; volume)</InLink>. The designation is applied retrospectively to the issues that begin the series.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on nomen associated with manifestation | "Title from obverse of the medal." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx067">90 vjet Bibliotekë Kombëtare (2011; Biblioteka Kombëtare e Shqipërisë; object</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that indicates that an access point of the manifestation is based on a title that is assigned by a cataloguing agency or an owner of the only item that exemplifies the manifestation.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on nomen associated with manifestation | "The authorized access point is based on a title assigned by the owner of the painting." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx071">Pogled na Akademijin vrt (195-; Mujadžić, Omer, 1903-1991; sheet)</InLink>. The manifestation embodies a painting that does not include a signature, title, caption, or other text.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a nomen that is associated with an entity other than the manifestation, record a <InLink href="/docs/notes/1265">has note on entity associated with manifestation</InLink> element or appropriate element sub-type for the entity.
+</div>

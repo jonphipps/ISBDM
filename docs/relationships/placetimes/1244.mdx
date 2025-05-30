@@ -1,0 +1,101 @@
+---
+slug: /relationships/1244
+sidebar_class_name: sidebar-level-2
+sidebar_label: has date of copyright of manifestation
+sidebar_level: 2
+sidebar_position: 11
+sidebar_category: placetimes
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1244'
+title: has date of copyright of manifestation
+RDF:
+  definition: Relates a manifestation to a time-span during which the manifestation or its content is legally registered.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes the assignment of a phonogram, a license for an unpublished manifestation, or a privilege to print.
+  range: Time-span
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1010
+    url: /docs/relationships/1010
+    label: has time-span associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has date of copyright of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of copyright of manifestation | "2004" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx083">Homazh për De Radën: DVD 2 (2004; Università della Calabria; videodisk)</InLink>. The value is a year.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of copyright of manifestation | "2022" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx068">Library (2022; Corner Piece Puzzles; object)</InLink>. The value is a year.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of copyright of manifestation | "2003" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx066">Coffee (2003; Tate; card)</InLink>. The value is a year.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record only the date and omit words, phrases, or symbols that indicate copyright or other forms of legal registration.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of copyright of manifestation | "2016" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx010">Einstein on the beach (2016; Opus Arte; videodisc; DVD)</InLink>. The value omits the copyright symbol and the name of the copyright holder.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record the latest date that is selected from more than one date of copyright associated with the manifestation.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of copyright of manifestation | "2022" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx009">Lyceum Theatre, London, England, 5/26/72 (2022; Rhino Entertainment LLC; audio disc)</InLink>. The value is the later date of two given in a manifestation statement of publication, production, manufacture, or distribution.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of copyright of manifestation | "2007" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx085">Biographical dictionary of Scottish women (2007; Edinburgh University Press; volume; perfect binding)</InLink>. The value is the later date of two given in a manifestation statement of publication, production, manufacture, or distribution.]*
+  </details>
+</div>

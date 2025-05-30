@@ -1,0 +1,76 @@
+#### Manifestation that embodies collected expressions {#p025}
+
+<section className="guid">
+
+For a manifestation that is a collected expressions aggregate, and if a collective title is given in a statement of title and responsibility, record a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element for the aggregating work that is embodied in the manifestation.
+
+<details>
+<summary>Examples</summary>
+
+| has work embodied in manifestation | "Greenberg, Jane. Knitting the Semantic Web" |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx005">Knitting the Semantic Web (2007; Howarth Information Press; volume)</InLink>. The manifestation is a collected expressions aggregate with a collective title] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x009.png"
+  caption="Entity-relationship diagram of a collected expressions aggregate with a collective title."
+  expandLink="/docs/fullimages/x009.html"
+/>
+
+The diagram shows the case when the collective title identifies the aggregating work that is embodied in a collected expressions aggregate. In general, the aggregating work is described as a separate related work. This satisfies the mandatory requirement for a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element. There is a choice of which of the collected aggregated expressions or their works to describe as separate related expressions and works, and which to include in manifestation statements or notes for the manifestation that is being described. The options for entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is a collected expressions aggregate, and if a collective title is not given in a statement of title and responsibility, record a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element for one of the expressions or works that are aggregated. Use the following order of preference to select the expression or work:
+
+1. The first expression or work that is named and given prominence in the typography and layout of a statement of title and responsibility that appears in the manifestation.
+2. The first expression or work that is named in a statement of title and responsibility that appears in the manifestation.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x005.png"
+  caption="Entity-relationship diagram of a collected expressions aggregate without a collective title."
+  expandLink="/docs/fullimages/x005.html"
+/>
+
+The diagram shows the case when the aggregating work that is embodied in a collected expressions aggregate is not specifically identified. In general, one of the aggregated collected expressions or their works is selected to be described as a separate related expression or work. This satisfies the mandatory requirement for a <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> element or a <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> element. There is a choice of which of the other aggregated collected expressions or their works to describe as separate related expressions and works, or the aggregating work to describe as a separate related work, and which to include in manifestation statements or notes for the manifestation that is being described. The options for entities, manifestation statements, and notes are outlined by dashes.
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is a collected expressions aggregate, record additional occurrences of <InLink href="/docs/relationships/1012">has expression embodied in manifestation</InLink> or <InLink href="/docs/relationships/1220">has work embodied in manifestation</InLink> elements for expressions or works that are aggregated, and of the aggregating work, if it is considered to be useful for users of the metadata. Use the following order of preference to select the expressions or works:
+
+1. Expressions that are named and given prominence in a statement of title and responsibility that appears in the manifestation.
+2. Expressions that are named in a statement of title and responsibility that appears in the manifestation.
+3. Expressions that are named in other statements that appear in the manifestation.
+4. Expressions that are identified in the manifestation or in external sources of information.
+5. Works that are realised by the expressions that are aggregated.
+6. The aggregating work that is embodied in the manifestation without a collective title.
+
+<details>
+<summary>Examples</summary>
+
+| has work embodied in manifestation | "Eslin, Martin. Absurd drama" |
+| --- | --- |
+| has expression embodied in manifestation | "Ionesco, Eugène, 1909-1994. Amédée ou comment s'en débarrasser (text; English)" |
+| has expression embodied in manifestation | "Adamov, Arthur, 1908-1970. Professeur Taranne (text; English)" |
+| has expression embodied in manifestation | "Arrabal, Fernando, 1932-. Deux bourreaux (text; English)" |
+| has expression embodied in manifestation | "Albee, Edward, 1928-2016. Zoo Story (text; English)" |
+| has expression embodied in manifestation | "Eslin, Martin, Introduction (Absurd drama; text; English)" |
+| | [Full example: <InLink href="/docs/fullex/fx007">Absurd drama (1978; Penguin Books; volume)</InLink>. The manifestation has a collective title. The collected expressions and augmenting expression are considered to be useful for users of the metadata, in addition to the aggregating work.] |
+
+</details>
+
+</section>

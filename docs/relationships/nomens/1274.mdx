@@ -1,0 +1,77 @@
+---
+slug: /relationships/1274
+sidebar_class_name: sidebar-level-2
+sidebar_label: has appellation of manifestation
+sidebar_level: 2
+sidebar_position: 4
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1274'
+title: has appellation of manifestation
+RDF:
+  definition: Relates a manifestation to a nomen of the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes a title, access point, or identifier of the manifestation.
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1234
+    url: /docs/relationships/1234
+    label: has access point of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1111
+    url: /docs/relationships/1111
+    label: has identifier of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1037
+    url: /docs/relationships/1037
+    label: has title of manifestation
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1008
+    url: /docs/relationships/1008
+    label: has nomen associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has appellation of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Record at least one occurrence of the element. Use the following order of preference to select the value:
+  
+  1. Nomen that is a title proper of the manifestation
+  2. Nomen that is an authorized access point of the manifestation
+  3. Nomen that is an identifier of the manifestation
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  *[Full example: <InLink href="/docs/fullex/fx941">Who I am (2012; HarperCollinsPublishers; volume; case binding)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has identifier of manifestation | "978822836866" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx064">René Magritte (2007; Taschen; volume)</InLink>. The appellation is an identifier that is a normalized ISBN.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>

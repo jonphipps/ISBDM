@@ -1,0 +1,120 @@
+---
+sidebar_class_name: sidebar-level-4
+slug: /relationships/1257
+sidebar_label: has authorized access point of manifestation
+sidebar_level: 4
+sidebar_position: 6
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │  │  ├─ '
+id: '1257'
+title: has authorized access point of manifestation
+RDF:
+  definition: Relates a manifestation to a nomen that is an access point of the manifestation that is selected for preference in an authority file.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1234
+    url: /docs/relationships/1234
+    label: has access point of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has authorized access point of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+An authorized access point is selected as the primary access point of the manifestation from all of the possible access points of the manifestation.
+</div>
+
+#### Element values
+
+<div className="guid">
+Record a value that is:
+  - a string that is an authorized access point that appears in an authority file
+  - a string that is constructed with a string encoding scheme
+  - an IRI for the authorized access point that appears in an authority file
+</div>
+
+<div className="guid">
+Record a value that is selected from one or more values of the element super-type. Use the following order of preference:
+  1. The access point that is unique to the manifestation.
+  2. An access point that is qualified with the most information that is available.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme should construct the base access point from a value of <InLink href="/docs/relationships/1038">has title proper</InLink> element. The scheme should omit leading articles and punctuation so that the base appears in a browse index in order of the first significant word.
+</div>
+
+<div className="guid">
+If no value of a <InLink href="/docs/relationships/1038">has title proper</InLink> element is available, a string encoding scheme should construct the base access point from a title that is assigned by a cataloguing agency.
+</div>
+
+<div className="guid">
+If no value of a <InLink href="/docs/relationships/1038">has title proper</InLink> element is available, and if there is only one item that exemplifies the manifestation, a string encoding scheme should construct the base access point from a title that is assigned to the item by an owner.
+<details>
+  <summary>Examples</summary>
+  
+    | Property | Value |
+    |:---------|:------|
+    | has authorized access point of manifestation manifestation | "Pogled na Akademijin vrt (195-; Mujadžić, Omer, 1903-1991; sheet)" |
+    
+    *[Full example: <InLink href="/docs/fullex/fx071">Pogled na Akademijin vrt (195-; Mujadžić, Omer, 1903-1991; sheet)</InLink>. The manifestation embodies a painting that does not include a signature, title, caption, or other text.]*
+</details>
+</div>
+
+<div className="guid">
+A string encoding scheme should use values of the following elements as qualifiers of a base access point:
+  - <InLink href="/docs/attributes/1241">has binding</InLink> element
+  - <InLink href="/docs/attributes/1022">has category of carrier</InLink> element
+  - <InLink href="/docs/relationships/1235">has date of creation of manifestation</InLink> element or element sub-type or <InLink href="/docs/relationships/1244">has date of copyright of manifestation</InLink> element
+  - <InLink href="/docs/relationships/1217">has publisher agent</InLink> element or element sub-type
+</div>
+
+<div className="guid">
+A string encoding scheme should use values of any elements as qualifiers, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="guid">
+For a manifestation that embodies an expression of an issue or iteration of a diachronic work, a string encoding scheme should construct the base access point from a compound title that consists of a common title and a designation and title of the sub-unit or iteration, and use a value of a <InLink href="/docs/attributes/1022">has category of carrier</InLink> element as a qualifier.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  If one or more authorized access points are assigned to the manifestation, record at least one occurrence of the element.
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  For a manifestation that embodies an expression of an issue or iteration of a diachronic work, record a value that includes a common title, a designation and title of the sub-unit or iteration, and a category of carrier.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has authorized access point of manifestation | "New scientist. The collection. Volume 3, issue 3 [volume]" |
+  </details>
+</div>

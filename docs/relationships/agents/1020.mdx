@@ -1,0 +1,56 @@
+---
+slug: /relationships/1020
+sidebar_class_name: sidebar-level-3
+sidebar_label: has manufacturer agent
+sidebar_level: 3
+sidebar_position: 5
+sidebar_custom_props:
+  sidebar_prefix: '   │  ├─ '
+sidebar_category: agents
+id: '1020'
+title: has manufacturer agent
+RDF:
+  definition: Relates a manifestation to an agent who is responsible for its creation by using a mechanical process.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: A mechanical process includes a printing or digital manufacturing process.
+  range: Agent
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1252
+    url: /docs/relationships/1252
+    label: has manufacturer collective agent
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1247
+    url: /docs/relationships/1247
+    label: has manufacturer person
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1019
+    url: /docs/relationships/1019
+    label: has creator agent of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has manufacturer agent
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/attributes/1256">has manufacturing process</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>

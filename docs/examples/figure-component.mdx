@@ -1,0 +1,154 @@
+---
+id: figure-component
+title: Figure Component
+description: Component for displaying figures and diagrams with captions
+sidebar_label: Figure Component
+---
+
+import Figure from '@site/src/components/global/Figure';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Figure Component
+
+The `Figure` component provides a standardized way to display images with captions and optional "expand image" links throughout the ISBDM documentation.
+
+## Basic Usage
+
+<Figure 
+  src="/img/entity-diagram.png"
+  caption="Entity-relationship diagram showing manifestation relationships"
+  alt="Diagram showing relationships between manifestation entities"
+/>
+
+```jsx
+<Figure 
+  src="/img/entity-diagram.png"
+  caption="Entity-relationship diagram showing manifestation relationships"
+  alt="Diagram showing relationships between manifestation entities"
+/>
+```
+
+## With Expand Link
+
+<Figure 
+  src="/img/x001.png"
+  caption="Simplified entity-relationship diagram"
+  expandLink="/img/large-diagram.png"
+/>
+
+```jsx
+<Figure 
+  src="/img/x001.png"
+  caption="Simplified entity-relationship diagram"
+  expandLink="/img/large-diagram.png"
+/>
+```
+
+## With Custom Expand Text
+
+<Figure 
+  src="/img/x001.png"
+  caption="Compact view of entity relationships"
+  expandLink="/img/detailed-diagram.png"
+  expandText="[View detailed version]"
+/>
+
+```jsx
+<Figure 
+  src="/img/x001.png"
+  caption="Compact view of entity relationships"
+  expandLink="/img/detailed-diagram.png"
+  expandText="[View detailed version]"
+/>
+```
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `src` | string | Yes | - | Image source path (will be processed through useBaseUrl) |
+| `caption` | string | Yes | - | Primary caption text for the figure |
+| `alt` | string | No | Same as caption | Alternative text for the image |
+| `expandLink` | string | No | - | URL for the expanded view of the image |
+| `expandText` | string | No | "[Expand image]" | Text for the expand link |
+
+## Accessibility Features
+
+The `Figure` component is built to comply with WCAG 2.1/2.2 Level AA standards:
+
+- Semantic HTML structure using `<figure>` and `<figcaption>` elements
+- Proper alt text for screen readers
+- ARIA attributes to establish relationships between elements
+- Focus indicators for keyboard navigation
+- Color contrast meeting WCAG standards
+- Responsive design that works across all screen sizes
+
+## Usage Guidelines
+
+1. **Always provide meaningful alt text**: The `alt` prop should describe what the image shows, not just repeat the caption.
+
+2. **Use concise captions**: Captions should be brief yet descriptive, explaining what the figure demonstrates.
+
+3. **Provide expand links for complex diagrams**: When including detailed diagrams, provide an expandable version for users who need to see a larger version.
+
+4. **Maintain proper image dimensions**: Ensure images are appropriately sized before importing them. The component handles responsiveness, but starting with properly sized images improves performance.
+
+5. **Consider mobile users**: Test how figures appear on mobile devices to ensure content remains readable.
+
+## Internationalization
+
+The component supports internationalization in two ways:
+
+1. All text content (caption and expand text) can be wrapped in translation functions if needed.
+2. The component respects RTL text direction automatically.
+
+## Examples with Code
+
+<Tabs>
+  <TabItem value="basic" label="Basic Usage">
+    ```jsx
+    <Figure 
+      src="/img/x001.png"
+      caption="Basic entity diagram"
+    />
+    ```
+  </TabItem>
+  <TabItem value="complete" label="Complete Example">
+    ```jsx
+    <Figure 
+      src="/img/complex-diagram"
+      caption="Complex entity-relationship diagram showing all ISBDM properties"
+      alt="Detailed technical diagram with nodes representing all ISBDM entity types and connecting lines showing relationships"
+      expandLink="/img/complex-diagram-large.png"
+      expandText="[View full size diagram]"
+    />
+    ```
+  </TabItem>
+</Tabs>
+
+## Migration from HTML
+
+The `Figure` component replaces the following HTML structure:
+
+```html
+<div class="col-md-12 my-2 text-center">
+  <figure class="figure border border-dark p-2 rounded-2 text-center">
+    <img src="/ISBDM/images/x006.png" class="figure-img img-fluid rounded" alt="Diagram description" />
+    <figcaption class="figure-caption">Caption text.</figcaption>
+    <figcaption class="figure-caption">
+      <a href="/ISBDM/docs/fullimages/x006.html" class="linkImage">[Expand image]</a>
+    </figcaption>
+  </figure>
+</div>.png
+```
+
+When migrating content, use the following mapping:
+
+| HTML Element/Attribute | Component Prop |
+|------------------------|----------------|
+| `img src` | `src` |
+| First `figcaption` text | `caption` |
+| `img alt` | `alt` |
+| Second `figcaption a href` | `expandLink` |
+| Second `figcaption a` text | `expandText` |

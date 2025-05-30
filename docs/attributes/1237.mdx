@@ -1,0 +1,190 @@
+---
+sidebar_class_name: sidebar-level-4
+sidebar_label: has dimensions
+sidebar_level: 4
+sidebar_position: 21
+customProps:
+  sidebar_prefix: '│  │  │  ├─ '
+id: '1237'
+title: has dimensions
+RDF:
+  definition: Relates a manifestation to an extent of unit that is a set of measurements of the size of the unit
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: Dimensions include height, width, and depth.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1276
+    url: /docs/attributes/1276
+    label: has extent of unit
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has dimensions
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element does not apply to a manifestation that is an online resource.
+</div>
+
+<div className="guid">
+An overall measurement includes a wrapper, binding, container, frame, mounting, or other component that is published or produced with the unit that does not embody content.
+</div>
+
+#### Element values
+
+<div className="guid">
+The value of this element is a set of two or three whole numbers that measure two or three dimensions and a controlled term or standard symbol for a unit of length.
+Use the same unit of length for each dimension.
+Round a fraction of the unit of length to the nearest whole number.
+Record a <InLink href="/docs/notes/1284">has note on physical characteristic</InLink> element that gives a more precise measurement, if it is considered to be useful for users of the metadata.
+Record the number for each dimension in the stipulated order, and separate the numbers by the symbol "x" and spaces. Add the unit of length after the set of numbers.
+<details>
+  <summary>Examples</summary>
+  
+    | Property | Value |
+    |:---------|:------|
+    | has dimensions | "5 x 4 x 3 cm" |
+    
+    *[Unit is 5 cm in height, 4 cm in width, and 3 cm in depth.]*
+</details>
+</div>
+
+<div className="guid">
+A diameter represents the height and width dimensions with the same measurement.
+</div>
+
+<div className="guid">
+A length of a cylinder represents the depth dimension.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  For a manifestation that is an aperture card, card, computer card, filmslip, filmstrip, microfiche, microfilm slip, microopaque, microscope slide, overhead transparency, sheet, slide, or stereograph card, record a value for the overall height and width of the unit.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "70 x 50 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx043">Zadar does Banksy (2023; Narodni muzej Zadar; list)</InLink>. The sheet is 70 cm in height and 50 cm in width.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "50 x 80 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx044">Desserte rouge 1908 (1993; Editions du Centre Pompidou; sheet)</InLink>. The sheet is 50 cm in height and 80 cm in width.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is a sheet, and if the sheet is folded for publication or production, record a value for the overall height and width of the folded sheet or its wrapper or other container.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "23 x 13 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx048">Loch Morar & Mallaig (2015; Ordnance Survey Ltd; sheet)</InLink>. The manifestation is a folded map.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "28 x 15 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx054">Bridget Riley (2019; National Galleries of Scotland; sheet)</InLink>. The manifestation is a folded exhibition guide.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is a sheet, and if the sheet is folded for publication or production, and if the sheet is intended to be unfolded for access to the content that is embodied, record a value for the overall height and width of the unfolded sheet.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "100 x 90 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx048">Loch Morar & Mallaig (2015; Ordnance Survey Ltd; sheet)</InLink>. The manifestation is a folded map.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "28 x 59 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx054">Bridget Riley (2019; National Galleries of Scotland; sheet)</InLink>. The manifestation is a folded exhibition guide.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an audio belt, audio cartridge, audiocassette, computer chip cartridge, computer tape cartridge, computer tape cassette, film cartridge, film cassette, filmstrip cartridge, microfiche cassette, microfilm cartridge, microfilm cassette, video cartridge, videocassette, or volume, record a value for the overall height and width of the unit. Include a value for the overall depth of the unit, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  For a manifestation that is an audio cylinder or computer disc cartridge, record a value for the overall diameter and length of the unit.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "62 x 110 mm" |
+  
+  *[Unit is 62 mm in diameter and 110 mm in length.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an audio disc, computer disc, stereograph disc, or videodisc, record a value for the diameter of the disc, excluding a container or mounting.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "12 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx040">Algerie a travers les ages (2000; Cerist; disque informatique; version française)</InLink>. The disc is 12 cm in diameter.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an audio roll, audio wire reel, audiotape reel, computer tape reel, film reel, film roll, microfilm reel, microfilm roll, roll, sound-track reel, or videotape reel, record a value for the overall diameter and depth of the reel or roll.
+</div>
+
+<div className="stip">
+  For a manifestation that is an object, record a value for the overall height, width, and depth of the object.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "75 x 75 x 4 mm" |
+  
+  *[[Full example: <InLink href="/docs/fullex/fx067">90 vjet Bibliotekë Kombëtare (2011; Biblioteka Kombëtare e Shqipërisë; object)</InLink>. The manifestation is a round medal that is 75 mm in diameter (height and width) and 4 mm in depth.]*
+  </details>
+</div>

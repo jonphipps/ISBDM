@@ -1,0 +1,76 @@
+---
+sidebar_class_name: sidebar-level-4
+sidebar_label: has playing time
+sidebar_level: 4
+sidebar_position: 17
+customProps:
+  sidebar_prefix: '│  │  │  ├─ '
+id: '1287'
+title: has playing time
+RDF:
+  definition: Relates a manifestation to an extent of embodied content that is the duration of dynamic content.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that embodies cartographic moving image, performed music, sounds, spoken word, three-dimensional moving image, two-dimensional moving image, or performed music content.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1277
+    url: /docs/attributes/1277
+    label: has extent of embodied content
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has playing time
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Record the total playing time of the content.
+</div>
+
+<SeeAlso><InLink href="/docs/attributes/1224">has playing speed</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a quantitative value that consists of whole numbers and controlled terms or standard symbols for units of time in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has playing time | "222 min" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx009">Lyceum Theatre, London, England, 5/26/72 (2022; Rhino Entertainment LLC; audio disc)</InLink>. The value is the combined playing times of four audio discs and uses a standard symbol for the unit of time.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has playing time | "264 min" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx010">Einstein on the beach (2016; Opus Arte; videodisc; DVD)</InLink>. The value is taken from a manifestation statement and uses a standard symbol for the unit of time.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has playing time | "20 hours 52 minutes" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx018">Harry Potter and the goblet of fire (2000; Listening Library; audiocassette)</InLink>. The value is taken from a manifestation statement and uses standard terms for units of time.]*
+  </details>
+</div>

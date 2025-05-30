@@ -1,0 +1,124 @@
+---
+sidebar_class_name: sidebar-level-3
+sidebar_label: has extent of aggregated content
+sidebar_level: 3
+sidebar_position: 12
+customProps:
+  sidebar_prefix: '│  │  ├─ '
+id: '1278'
+title: has extent of aggregated content
+RDF:
+  definition: Relates a manifestation to an extent of manifestation that is the number of expressions of the same kind that are embodied in the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that is an aggregate.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1023
+    url: /docs/attributes/1023
+    label: has extent of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has extent of aggregated content
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Record an uncounted kind of expression that is embodied in the manifestation as a value of <InLink href="/docs/attributes/1264">has category of embodied content</InLink> or as a value of <InLink href="/docs/notes/1267">has note on expression associated with manifestation</InLink>.
+</div>
+
+<div className="guid">
+For a manifestation that embodies only one expression, consider the extent to be derived as the quantity "1" of a value that is recorded for the <InLink href="/docs/attributes/1264">has category of embodied content</InLink> element.
+</div>
+
+<SeeAlso><InLink href="/docs/attributes/1264">has category of embodied content</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1267">has note on expression associated with manifestation</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a quantitative value that consists of a whole number and a term that appears in the <InLink href="/docs/ves/1264">ISBDM Category of Content value vocabulary</InLink> for the category of content that is counted, if it is considered to be useful for users of the metadata.
+  For a finer level of granularity, record a quantitative value that consists of a whole number and a term that appears in the <InLink href="/docs/ves/1278">ISBDM Extent of Aggregated Content value vocabulary</InLink> for the kind of content that is counted, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "8 texts" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx002">Open licensing for cultural heritage (2017; Facet Publishing; volume; perfect binding)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "4 teksta" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx019">Hakerska etika i duh informacijskog doba (2002; Naklada Jesenski i Turk; svezak)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "34 performed songs" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx009">Lyceum Theatre, London, England, 5/26/72 (2022; Rhino Entertainment LLC; audio disc)</InLink>. The manifestation embodies a recording of a performance by a popular music band. The category of content is "performed music"]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "2 recorded songs" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx058">Give it up b/w Tired (2002; Ouput Recordings; audio disc)</InLink>. The manifestation is a "single" that embodies a studio recording on both sides of the disc by a popular music band. The category of content is "performed music"]*
+  </details>
+</div>
+
+<div className="stip">
+  If the manifestation embodies expressions of more than one category of content, record a separate occurrence of the element for each distinct category that is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "3 texts" |
+  | has extent of aggregated content | "1 map" |
+  | has extent of aggregated content | "25 photographs" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx003">Faded map (2010; Birlinn Limited; volume; case binding)</InLink>. The manifestation is an augmented expression aggregate that embodies a main text and secondary texts and still images.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "4 texts" |
+  | has extent of aggregated content | "142 still images" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx063">Spring cannot be cancelled (2022; Thames & Hudson; volume)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of aggregated content | "50 vizatime" |
+  | has extent of aggregated content | "249 foto" |
+  | has extent of aggregated content | "3 tekste" |
+  | has extent of aggregated content | "1 imazh i lëvizshëm dypërmasor" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx082">Homazh për De Radën: DVD 1 (2004; Università della Calabria; videodisk)</InLink>.]*
+  </details>
+</div>

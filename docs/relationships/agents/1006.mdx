@@ -1,0 +1,120 @@
+---
+slug: /relationships/1006
+sidebar_class_name: sidebar-level-2
+sidebar_label: has person associated with manifestation
+sidebar_level: 2
+sidebar_position: 15
+sidebar_category: agents
+customProps:
+  sidebar_prefix: '   └─ '
+id: '1006'
+title: has person associated with manifestation
+RDF:
+  definition: Relates a manifestation to a person.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Person
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1246
+    url: /docs/relationships/1246
+    label: has creator person of manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1250
+    url: /docs/relationships/1250
+    label: has distributor person
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1005
+    url: /docs/relationships/1005
+    label: has agent associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has person associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+A person may have a form of name that is usually associated with a collective agent. The name may be qualified in an authorized access point to indicate that it is assigned to a person.
+</div>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords, or used to construct browsing lists.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme for an authorized access point of a person should support several levels of identification and collation:
+  1. A name of the person grouped by family
+  2. The dates of birth and death of the person
+  3. Specific attributes of the person
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSESPer">Person SES</InLink> is a string encoding scheme suggested by ISBD for Manifestation for an authorized access point of a person.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a single occurrence of the element that is selected from one or more values that are associated with the manifestation. Use the following order of preference:
+  
+  1. Person who is a creator of the manifestation<ol class="al"> <li>Person who is a publisher of the manifestation</li> <li>Person who is a producer of the manifestation</li> <li>Person who is a manufacturer of the manifestation</li> </ol>
+  2. Person who is a distributor of the manifestation
+  3. Person who is associated with an expression or work that is embodied in the manifestation
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has person associated with manifestation | http://viaf.org/viaf/168386789 |
+  
+  *[Full example: <InLink href="/docs/fullex/fx036">Secret library (2016; Michael O’Mara Books Limited; volume; case binding)</InLink>. The person is the author of a work that is embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has person associated with manifestation | "Greenberg, Jane" |
+  | has person associated with manifestation | "Méndez, Eva" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx005">Knitting the Semantic Web (2007; Howarth Information Press; volume)</InLink>. The persons are editors of the aggregating work that is embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has person associated with manifestation | "Милн, Алан Александер, 1882-1956 = Milne, Alan Alexander, 1882-1956" |
+  | has person associated with manifestation | "Семеновић, Лука = Semenović, Luka" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx023">Кућа на Пуовом углу (1952; Дечја књига; свеска; картон)</InLink>. The persons are the author of a work and a translator of an expression that is embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has person associated with manifestation | "Knüeppel, Moritz" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx030">Definitive guide to PSM 1 (2021; Knüeppel, Moritz; volume; perfect binding)</InLink>. The person is the author of a work that is embodied in the manifestation and a publisher of the manifestation.]*
+  </details>
+</div>

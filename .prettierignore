@@ -1,0 +1,15 @@
+# Ignore MDX files to avoid formatting issues with MDX v3
+*.mdx
+*.md
+
+# Ignore build directories
+build/
+.docusaurus/
+.cache/
+node_modules/
+
+# Ignore auto-generated files
+docs/**/*.md
+docs/**/*.mdx
+src/.generated/
+.yarn

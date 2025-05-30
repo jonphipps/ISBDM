@@ -1,0 +1,166 @@
+---
+slug: /relationships/1111
+sidebar_class_name: sidebar-level-3
+sidebar_label: has identifier of manifestation
+sidebar_level: 3
+sidebar_position: 8
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │  ├─ '
+id: '1111'
+title: has identifier of manifestation
+RDF:
+  definition: Relates a manifestation to a nomen that is a designation that is assigned in an identifier system.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1261
+    url: /docs/relationships/1261
+    label: has catalogue number
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1116
+    url: /docs/relationships/1116
+    label: has chronological designation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1215
+    url: /docs/relationships/1215
+    label: has fingerprint
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1117
+    url: /docs/relationships/1117
+    label: has numeric designation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1259
+    url: /docs/relationships/1259
+    label: has plate number
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1286
+    url: /docs/relationships/1286
+    label: has uniform resource locator
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1274
+    url: /docs/relationships/1274
+    label: has appellation of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has identifier of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+An identifier of a manifestation is assigned by a cataloguing agency or other organisation by applying a machine-readable enumeration or encoding system.
+</div>
+
+<div className="guid">
+Consider a stringified IRI for a manifestation to be an identifier of the manifestation. Do not confuse this with an IRI for an identifier string.
+</div>
+
+<div className="guid">
+Consider an International Standard Serial Number (ISSN) to be an identifier of a diachronic work that is embodied in the manifestation, and not as an identifier of the manifestation.
+</div>
+
+<div className="guid">
+Record a value that uniquely identifies the manifestation. Do not record a value that identifies a sub-unit or super-unit of the manifestation, or that identifies an alternate manifestation.
+</div>
+
+<div className="guid">
+Do not record a value that appears in a statement of identifier and terms of availability in the manifestation if it identifies a separate manifestation that is published in a different format or binding.
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1034">has manifestation statement of identifier and terms of availability</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The value of an identifier is a literal string (a nomen string).
+</div>
+
+<div className="guid">
+Record a value that is:
+  - a string that is an identifier that appears in an authority file
+  - a string that is assigned by an enumeration or encoding system
+  - an IRI of an identifier that appears in an authority file, enumeration system, or encoding system
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has appellation of manifestation | "9780008146221" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx042">Catalogue of shipwrecked books (2018; William Collins; volume; case binding)</InLink>. The value is an identifier of the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has uniform resource locator | "https://gallica.bnf.fr/ark:/12148/btv1b5962250h.pdf" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx077">Corso delli Fiumi Drino e Boiana nella Dalmatia (2007; Bibliothèque nationale de France; online resource; PDF)</InLink>. The identifier is an online location of the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has catalogue number | "OPRDFA004" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx058">Give it up b/w Tired (2002; Ouput Recordings; audio disc)</InLink>. The identifier is a catalogue number of the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has identifier of manifestation | "VEW4060" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx070">CD-S303 owner's manual (2021; Yamaha Corporation; online resource)</InLink>. The value appears in a statement of identifier and terms of availability in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has identifier of manifestation | "9960205376" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx070">Видатнi вченi Нацiональноï академiï наук Украïнi (1998; Нацiональна бiблiотека Украïнi iменi В.I. Веренадського; том)</InLink>. The value is a normalized ISBN that appears in a statement of identifier and terms of availability in the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that appears in an authority file.
+</div>
+
+<div className="stip">
+  Record a single occurrence of the element that is selected from one or more values that are associated with the manifestation. Use any order of preference.
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has identifier of manifestation | "9788789035912" |
+  | has identifier of manifestation | "078903591X" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx005">Knitting the Semantic Web (2007; Howarth Information Press; volume)</InLink>. The values are normalized 13 and 10 digit ISBNs that appear in a statement of identifier and terms of availability in the manifestation.]*
+  <hr />
+  </details>
+</div>

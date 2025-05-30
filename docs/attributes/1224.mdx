@@ -1,0 +1,63 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has playing speed
+sidebar_level: 2
+sidebar_position: 31
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1224'
+title: has playing speed
+RDF:
+  definition: Relates a manifestation to a physical characteristic that is the rate of movement of the carrier that is required to access dynamic content.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that embodies cartographic moving image, performed music, sounds, spoken word, three-dimensional moving image, two-dimensional moving image, and performed music content.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1242
+    url: /docs/attributes/1242
+    label: has physical characteristic
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has playing speed
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/attributes/1287">has playing time</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a quantitative value that consists of a whole number and a controlled term or standard symbol for the unit of measurement of speed in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has playing speed | "45 rpm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx058">Give it up b/w Tired (2002; Ouput Recordings; audio disc)</InLink>. The manifestation is a vinyl single.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has playing speed | "19 cm/s" |
+  </details>
+</div>

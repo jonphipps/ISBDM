@@ -1,0 +1,29 @@
+2025-05-17 18:41:33,721 [INFO] __main__ - html_to_mdx_v10.py:934 - Starting conversion from '/Users/jonphipps/Code/ISBDM/ISBDM/docs/statements' to '/Users/jonphipps/Code/ISBDM/docs/statements'
+2025-05-17 18:41:33,721 [INFO] __main__ - html_to_mdx_v10.py:936 - Logging to: /Users/jonphipps/Code/ISBDM/src/tests/fixtures/elements/conversion_log.txt at level INFO
+2025-05-17 18:41:33,721 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1031.html
+2025-05-17 18:41:33,721 [INFO] __main__.1031_html - html_to_mdx_v10.py:1017 - No cached sidebar map for /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements. Building from: 1031.html
+2025-05-17 18:41:33,733 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1031.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1031.mdx
+2025-05-17 18:41:33,734 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/index.html
+2025-05-17 18:41:33,736 [WARNING] __main__.index_html - html_to_mdx_v10.py:219 - index.html: Sidebar metadata for key 'index' (from filename 'index.html') not found in map. Defaulting. Map keys available: ['general', 'transcription', 'transcriptex', '1025', '1032', '1029', '1280', '1034', '1031', '1030', '1028']
+2025-05-17 18:41:33,737 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/index.html -> /Users/jonphipps/Code/ISBDM/docs/statements/index.mdx
+2025-05-17 18:41:33,737 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/transcription.html
+2025-05-17 18:41:33,742 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/transcription.html -> /Users/jonphipps/Code/ISBDM/docs/statements/transcription.mdx
+2025-05-17 18:41:33,742 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1030.html
+2025-05-17 18:41:33,754 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1030.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1030.mdx
+2025-05-17 18:41:33,754 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1280.html
+2025-05-17 18:41:33,762 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1280.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1280.mdx
+2025-05-17 18:41:33,762 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/transcriptex.html
+2025-05-17 18:41:33,772 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/transcriptex.html -> /Users/jonphipps/Code/ISBDM/docs/statements/transcriptex.mdx
+2025-05-17 18:41:33,772 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1034.html
+2025-05-17 18:41:33,782 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1034.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1034.mdx
+2025-05-17 18:41:33,782 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1025.html
+2025-05-17 18:41:33,798 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1025.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1025.mdx
+2025-05-17 18:41:33,798 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1029.html
+2025-05-17 18:41:33,807 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1029.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1029.mdx
+2025-05-17 18:41:33,807 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1028.html
+2025-05-17 18:41:33,819 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1028.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1028.mdx
+2025-05-17 18:41:33,819 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/general.html
+2025-05-17 18:41:33,824 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/general.html -> /Users/jonphipps/Code/ISBDM/docs/statements/general.mdx
+2025-05-17 18:41:33,824 [INFO] __main__ - html_to_mdx_v10.py:955 - Processing: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1032.html
+2025-05-17 18:41:33,832 [INFO] __main__ - html_to_mdx_v10.py:1039 - Successfully converted: /Users/jonphipps/Code/ISBDM/ISBDM/docs/statements/1032.html -> /Users/jonphipps/Code/ISBDM/docs/statements/1032.mdx
+2025-05-17 18:41:33,832 [INFO] __main__ - html_to_mdx_v10.py:1044 - Conversion process finished. 12 file(s) processed.

@@ -1,0 +1,80 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has terms of availability
+sidebar_level: 2
+sidebar_position: 37
+customProps:
+  sidebar_prefix: '   └─ '
+id: '1238'
+title: has terms of availability
+RDF:
+  definition: Relates a manifestation to a statement of how an exemplar of the manifestation may be obtained.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes limitations on the number of exemplars, the cost, or an indication that there is no cost, of purchasing or borrowing an exemplar, and the categories of agent to whom the terms apply.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1027
+    url: /docs/attributes/1027
+    label: has use rights
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has terms of availability
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+For a manifestation that embodies the expression of a diachronic work, consider information about the frequency and pattern of issues to be publication metadata and not terms of availability
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1034">has manifestation statement of identifier and terms of availability</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has terms of availability | "Free to educational institutions." |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has terms of availability | "Free (members only)." |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has terms of availability | "Not for sale." |
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that gives the price of the manifestation with the international standard code for the currency that appears in ISO 4217, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has terms of availability | "GBP 2.05" |
+  </details>
+</div>

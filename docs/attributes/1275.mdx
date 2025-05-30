@@ -1,0 +1,104 @@
+---
+sidebar_class_name: sidebar-level-3
+sidebar_label: has extent of unitary structure
+sidebar_level: 3
+sidebar_position: 23
+customProps:
+  sidebar_prefix: '│  │  └─ '
+id: '1275'
+title: has extent of unitary structure
+RDF:
+  definition: Relates a manifestation to an extent of manifestation that is the number of sub-units of the same category of carrier of the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that has sub-units.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1023
+    url: /docs/attributes/1023
+    label: has extent of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has extent of unitary structure
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+For a manifestation that has no sub-units, consider the extent to be derived as the quantity "1" of a value that is recorded for the <InLink href="/docs/attributes/1022">has category of carrier</InLink> element.
+</div>
+
+<SeeAlso><InLink href="/docs/attributes/1022">has category of carrier</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1284">has note on physical characteristic</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/attributes/1262">has unitary structure</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a quantitative value that consists of a whole number and a term that appears in the <InLink href="/docs/ves/1022">ISBDM Category of Carrier value vocabulary</InLink> for the category of carrier of the sub-unit that is counted, if it is considered to be useful for users of the metadata.
+  For a finer level of granularity, record a quantitative value that consists of a whole number and a term that appears in the <InLink href="/docs/ves/1275">ISBDM Extent of Unitary Structure value vocabulary</InLink> for the kind of carrier of the sub-unit that is counted, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unitary structure | "3 sheets" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx029">Burleska pro klarinet a klavír (1945-03-26; Vostřák, Zbyněk; sheet)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unitary structure | "12 audiocassettes" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx018">Harry Potter and the goblet of fire (2000; Listening Library; audiocassette)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unitary structure | "3 volumes" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx053">Emma (1815; John Murray; volume)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  If the manifestation has sub-units of more than one category or kind of carrier, record a separate occurrence of the element for each distinct category that is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unitary structure | "2 videodiscs" |
+  | has extent of unitary structure | "1 volume" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx010">Einstein on the beach (2016; Opus Arte; videodisc; DVD)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unitary structure | "2 audio discs" |
+  | has extent of unitary structure | "1 volume" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx049">Revolver (2022; Apple Corps Limited; audio disc; 2 CD edition)</InLink>.]*
+  </details>
+</div>

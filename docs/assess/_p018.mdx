@@ -1,0 +1,95 @@
+### Manifestation that embodies a diachronic work {#p018}
+
+<section className="guid">
+
+A manifestation cannot embody the expression of more than one diachronic work.
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies the expression of a diachronic work to be incomplete. The manifestation may be terminated by its producer or publisher before its intended completion.
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies the expression of a diachronic work that is known or assumed to have terminated to be a special case of an incomplete manifestation. The manifestation may be extended by its producer or publisher after its intended completion.
+
+</section>
+
+<section className="guid">
+
+Consider a description of a manifestation that embodies the expression of a diachronic work to be incomplete. The attributes and relationships associated with the manifestation may be changed over time by its producer or publisher.
+
+</section>
+
+<section className="guid">
+
+Record a <InLink href="/docs/notes/1207">has note on manifestation</InLink> element that indicates the intention and status of completeness.
+
+<details>
+<summary>Examples</summary>
+
+| has note on manifestation | "First issue published in 2004 as volume 26; last issue published in 2012 as volume 45." |
+| --- | --- |
+| | [Full example: <InLink href="/docs/fullex/fx013">IFLA series on bibliographic control (2004-2012; De Gruyter Saur; volume)</InLink>. The note also includes information about enumeration.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+Record statements, notes, attributes, and relationships that reflect changes to the attributes and relationships that are common to manifestations of expressions of issues or iterations of a diachronic work.
+
+</section>
+
+<section className="guid">
+
+Consider the manifestation that embodies the expression of a successive diachronic work to have complete sub-units that are the manifestations that embody the expressions of issues of the diachronic work.
+
+<SeeAlso><InLink href="/docs/assess/p010">Number of units</InLink></SeeAlso>
+
+</section>
+
+<section className="guid">
+
+Select the methods to use to describe each manifestation that embodies the expression of an issue or iteration of a diachronic work from the following options:
+
+- Record the manifestation that embodies the issue or iteration as a separate manifestation and record a relationship to it with a <InLink href="/docs/relationships/1013">has sub-unit</InLink> element.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> element or element sub-type that includes information about the manifestation that embodies the issue or iteration.
+- Record a <InLink href="/docs/notes/1269">has note on manifestation associated with manifestation</InLink> element that includes a description of one or more manifestations that embody issues or iterations.
+- Do not describe the manifestation that embodies the issue or iteration.
+
+Describe the manifestation that embodies the issue or iteration with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+
+| has sub-unit | "Quantum world (2016; Reed Business Information Ltd; volume)" |
+| --- | --- |
+| has note on manifestation associated with manifestation | "Volume 3, issue 3 has title The quantum world." |
+| | [Full example: <InLink href="/docs/fullex/fx056">New scientist. The collection (2014-; Reed Business Information Ltd; volume)</InLink>.] |
+
+</details>
+
+</section>
+
+<section className="guid">
+
+Record a <InLink href="/docs/notes/1270">has note on work associated with manifestation</InLink> element that includes a description of one or more issue works, if it is considered to be useful for users of the metadata.
+
+</section>
+
+<section className="guid">
+
+<Figure
+  src="/img/x001.png"
+  caption="Entity-relationship diagram of the manifestation that embodies a diachronic work as a whole."
+  expandLink="/docs/fullimages/x001.html"
+/>
+
+The diagram shows the diachronic work that is described as a separate related work. There is a choice to describe the manifestations that embody the issues of the diachronic work as separate related manifestations, or to include the issue work or its manifestation in manifestation statements or notes for the manifestation that is being described. Optional entities, manifestation statements, and notes are outlined by dashes.
+
+</section>

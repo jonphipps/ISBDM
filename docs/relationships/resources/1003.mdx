@@ -1,0 +1,161 @@
+---
+slug: /relationships/1003
+sidebar_class_name: sidebar-level-1
+sidebar_label: has manifestation associated with manifestation
+sidebar_level: 1
+sidebar_position: 9
+sidebar_category: resources
+id: '1003'
+title: has manifestation associated with manifestation
+RDF:
+  definition: Relates a manifestation to a manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Manifestation
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1018
+    url: /docs/relationships/1018
+    label: has alternate manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1015
+    url: /docs/relationships/1015
+    label: has manifestation reproduced by manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1016
+    url: /docs/relationships/1016
+    label: has manifestation that reproduces manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1013
+    url: /docs/relationships/1013
+    label: has sub-unit
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1014
+    url: /docs/relationships/1014
+    label: has super-unit
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1291
+    url: /docs/relationships/1291
+    label: has entity associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has manifestation associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element is symmetric: it is its own inverse.
+A manifestation that has an associated manifestation is an associated manifestation of the other manifestation.
+</div>
+
+<div className="guid">
+This element supports the user tasks to find and identify the manifestation and to explore the context of the manifestation and its relationship to other instances of the Manifestation entity.
+</div>
+
+<SeeAlso><InLink href="/docs/statements/1029">has manifestation statement of edition</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1269">has note on manifestation associated with manifestation</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+The values of this element may be indexed for uncontrolled or controlled keywords, or used to construct browsing lists.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+Use a string encoding scheme that is applied to a <InLink href="/docs/relationships/1257">has authorized access point of manifestation</InLink> element.
+</div>
+
+<div className="guid">
+A string encoding scheme for an authorized access point of a manifestation should support several levels of identification and collation:
+  1. a title that is assigned by an agent who is responsible for the creation of the manifestation or by a cataloguing agency
+  2. a date, agent, and place of creation of the manifestation
+  3. specific attributes of the manifestation
+</div>
+
+<div className="guid">
+<InLink href="/docs/ves/ISBDMSESMan">Manifestation SES</InLink> is a string encoding scheme suggested by <span class="thisem">ISBD for Manifestation</span> for an authorized access point of a manifestation.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use an appropriate element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has alternate manifestation | "Black Lizard big book of locked-room mysteries (2014; Vintage Books; online resource)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx050">Black Lizard big book of locked-room mysteries (2014; Vintage Books; volume; perfect binding)</InLink>. The associated manifestation is a different category of carrier that embodies the same content.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has sub-unit | "Hakerska etika i duh informacijskog doba (2002; Naklada Jesenski i Turk; svezak)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx020">Biblioteka 42 (2000-; Naklada Jesenski i Turk; svezak)</InLink>. The associated manifestation embodies an issue of a diachronic work that is embodied in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has super-unit | "Biblioteka Vjeverica (1957-1998, Mladost; svezak)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx004">Medo Winnie zvani Pooh (1986; Mladost; svezak)</InLink>. The associated manifestation embodies a diachronic work that has an issue that is embodied in the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-types unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation associated with manifestation | "Corso delli fiumi Drino, e Boiana nella Dalmatia (1688; fletë)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx073">Corso delli fiumi Drino, e Boiana nella Dalmatia (2011; Biblioteka Kombëtare e Shqipërisë; burim online)</InLink>. The associated manifestation is exemplified by an item that is reproduced by the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation associated with manifestation | "Corso delli fiumi Drino, e Boiana nella Dalmatia (2011; Biblioteka Kombëtare e Shqipërisë; burim online)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx074">Corso delli fiumi Drino, e Boiana nella Dalmatia (1688; fletë)</InLink>. The associated manifestation is a reproduction of an item that exemplifies the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation associated with manifestation | "Zbornik Pravnog fakulteta u Zagrebu (1948-; Izdavački zavod Jugoslavenske akademije znanosti i umjetnosti; svezak)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx080">Zbornik Pravnog fakulteta u Zagrebu (1948-; Izdavački zavod Jugoslavenske akademije znanosti i umjetnosti; svezak)</InLink>. The associated manifestation embodies the source of the offprint that is embodied in the manifestation.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a separate occurrence of the element for each distinct value that is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation associated with manifestation | "myScience Switzerland (2008-; Scimetrica; online resource)" |
+  | has manifestation associated with manifestation | "myScience Belgium (2008-; Scimetrica; online resource)" |
+  | has manifestation associated with manifestation | "myScience United Kingdom (2008-; Scimetrica; online resource)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx015">myScience Canada (2008-; Scimetrica; online resource)</InLink>. The associated manifestations embody diachronic works that are related to the diachronic work that is embodied in the manifestation.]*
+  </details>
+</div>

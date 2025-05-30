@@ -1,0 +1,104 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has note on category of manifestation
+sidebar_level: 2
+sidebar_position: 3
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1219'
+title: has note on category of manifestation
+RDF:
+  definition: Relates a manifestation to a note on manifestation that provides information about specific categories to which the manifestation belongs.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Literal
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1207
+    url: /docs/notes/1207
+    label: has note on manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has note on category of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/attributes/1263">has category of manifestation</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific note.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  For a manifestation that is a computer card, computer chip cartridge, computer disc, computer disc cartridge, computer tape cartridge, computer tape cassette, or computer tape reel, record a value that gives information about the hardware and software that is required to access the content that is embodied in the manifestation. Precede the information with the phrase "System requirements:".
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on category of manifestation | "System requirements: UNIX workstation with Mosaic software." |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an online resource, record a value that gives information about the service that is required to access the content that is embodied in the manifestation. Precede the information with the phrase "Mode of access:".
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on category of manifestation | "Mënyra e aksesit: World Wide Web." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx073">Corso delli fiumi Drino, e Boiana nella Dalmatia (2011; Biblioteka Kombëtare e Shqipërisë; burim online)</InLink>.*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an online resource that is accessed via a web page that provides indirect access to more than one manifestation, record a value that gives information about the URL of the web page.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on category of manifestation | "Web page: https://www.springer.com/series/17014." |
+  
+  *[Full example: <InLink href="/docs/fullex/fx038">Springer handbooks of political science and international relations (2022-; Springer; online resource)”</InLink>. The web page covers the e-book and printed book series.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an overhead transparency, record a value that gives information about overlays.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has note on category of manifestation | "With 4 unattached overlays." |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies the expression of a diachronic work, record a value that gives information about a change in an attribute that is common to the manifestations that embody expressions of issues or iterations of the work, including identification of the issue or iteration in which the change first appears.
+</div>
+
+<div className="stip">
+  For a manifestation that embodies the expression of a diachronic work, record a value that gives general information about multiple changes over time in an attribute that is common to the manifestations that embody expressions of issues or iterations of the work, including identification of the issues or iterations in which the changes occur, if it is considered to be useful for users of the metadata.
+</div>

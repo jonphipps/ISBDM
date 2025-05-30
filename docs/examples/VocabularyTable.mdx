@@ -1,0 +1,504 @@
+---
+id: vocabulary-table
+title: VocabularyTable Component - Developer Guide
+description: Complete developer guide for the VocabularyTable component
+sidebar_label: VocabularyTable Component (Developer)
+---
+
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# VocabularyTable Component - Developer Guide
+
+The `VocabularyTable` component displays controlled vocabularies in a professional, searchable format with multilingual support and CSV data loading capabilities.
+
+## Important Note on Imports
+
+The `VocabularyTable` component is **globally registered** and available in all MDX files without import for JSX usage:
+
+```mdx
+<VocabularyTable {...frontMatter} />
+```
+
+However, if you need to access **static methods** like `generateTOC`, you must import the component:
+
+```mdx
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+export const toc = VocabularyTable.generateTOC(frontMatter);
+```
+
+## Usage
+
+The component is designed to work directly with Docusaurus front matter and supports global defaults from docusaurus.config.ts:
+
+### Global Defaults
+
+The component uses defaults from `customFields.vocabularyDefaults` in docusaurus.config.ts:
+
+```typescript
+// docusaurus.config.ts
+const config = {
+  // ...other config
+  customFields: {
+    vocabularyDefaults: {
+      prefix: "isbdm",
+      startCounter: 1000,
+      uriStyle: "numeric",
+      caseStyle: "kebab-case",
+      showFilter: true,
+      filterPlaceholder: "Filter vocabulary terms...",
+      showTitle: false,
+      RDF: {
+        "rdf:type": ["skos:ConceptScheme"]
+      }
+    }
+  }
+};
+```
+
+These defaults are used when the corresponding props are not provided in the front matter, reducing duplication across vocabulary pages.
+
+```mdx
+---
+vocabularyId: "1275"
+title: ISBDM Extent of Unitary Structure value vocabulary
+uri: http://iflastandards.info/ns/isbdm/values/1275
+type: Vocabulary
+description: This value vocabulary is a source of values for a has extent of unitary structure element.
+scopeNote: The vocabulary does not cover the full scope of the element and may be extended with additional values.
+isDefinedBy: http://iflastandards.info/ns/isbdm/values/1275
+RDF:
+  skos:prefLabel:
+    en: ISBDM Extent of Unitary Structure value vocabulary
+  skos:definition:
+    en: This value vocabulary is a source of values for a has extent of unitary structure element.
+  values:
+    - value: term1
+      definition: Definition of first term
+      scopeNote: Additional notes about the first term
+    - value: term2
+      definition: Definition of second term
+---
+
+# {frontMatter.title}
+
+<VocabularyTable {...frontMatter} />
+```
+
+Note how common properties like `prefix`, `startCounter`, `uriStyle`, `caseStyle`, `showTitle`, `showFilter`, and `filterPlaceholder` don't need to be specified in every file since they'll use the defaults from the site configuration.
+
+### Overriding Defaults
+
+You can override any default value in your front matter:
+
+```mdx
+---
+vocabularyId: "special-vocab"
+title: Special Vocabulary
+prefix: "special"  # Override the default "isbdm" prefix
+uriStyle: "slug"   # Override the default "numeric" style
+caseStyle: "camelCase"  # Override the default "kebab-case"
+showFilter: false  # Disable filtering
+RDF:
+  values:
+    - value: "Term One"
+      definition: "Definition of first term"
+---
+```
+
+## Props
+
+The component accepts the entire front matter structure:
+
+| Prop | Type | Required | Description |
+|------|------|----------|-------------|
+| `vocabularyId` | string | Yes | Unique identifier for the vocabulary |
+| `title` | string | No | The title of the vocabulary |
+| `prefix` | string | No | Namespace prefix for URIs (default: 'isbdm') |
+| `uri` | string | No | The base URI of the vocabulary |
+| `type` | string | No | The type of the vocabulary |
+| `description` | string | No | The main description of the vocabulary |
+| `scopeNote` | string | No | Additional notes about the vocabulary's scope |
+| `isDefinedBy` | string | No | URI that defines the vocabulary |
+| `RDF` | RDFMetadata | No* | RDF metadata and vocabulary values (legacy format) |
+| `concepts` | ConceptProps[] | No* | Array of concepts (alternative to RDF.values) |
+| `startCounter` | number | No | Starting number for term IDs (default: 1000) |
+| `uriStyle` | 'numeric' \| 'slug' | No | Method for generating URIs (default: 'numeric') |
+| `caseStyle` | UriCaseStyle | No | Case style for slug URIs (default: 'kebab-case') |
+| `showTitle` | boolean | No | Whether to display the title in the component (default: false) |
+| `showFilter` | boolean | No | Whether to display the filter input (default: true) |
+| `showURIs` | boolean | No | Whether to display URIs in the value column (default: true) |
+| `filterPlaceholder` | string | No | Placeholder text for the filter input (default: 'Filter values...') |
+
+*Note: Either `RDF.values` or `concepts` must be provided, but not both. The `concepts` format is the newer, simpler format.
+
+## Page Title Handling
+
+By default, the component doesn't display the title from the front matter (`showTitle={false}`). Instead, you should add the title as an H1 heading in your MDX file to avoid duplicate titles:
+
+```mdx
+# {frontMatter.title}
+
+<VocabularyTable {...frontMatter} />
+```
+
+If you need the component to display the title (for example, if it's used inside another component), you can set `showTitle={true}`.
+
+## Filter Functionality
+
+The component includes a search filter above the table that allows users to quickly find terms by filtering on:
+
+- Term values
+- Definitions
+- Scope notes
+
+The filter is case-insensitive and matches any part of the text in these fields. If no matches are found, a "No matching terms found" message is displayed.
+
+## Expandable Details
+
+The component now includes an expandable details feature. When a concept has additional SKOS properties beyond the main three displayed columns (value, definition, scope note), a "+" button appears in the leftmost column. Clicking this button expands a details row that displays:
+
+- **Notation** - The concept's notation/code
+- **Example** - Usage examples
+- **Change note** - Notes about changes to the concept
+- **History note** - Historical information about the concept
+- **Editorial note** - Editorial guidance or notes
+
+The expanded details provide a clean way to access additional metadata without cluttering the main table view.
+
+You can customize the filter with these props:
+
+- `showFilter`: Set to `false` to hide the filter (default: `true`)
+- `filterPlaceholder`: Customize the placeholder text (default: 'Filter values...')
+
+## UriStyle Options
+
+- `numeric`: Generates URIs like `prefix:vocabularyId#t1000`
+- `slug`: Generates URIs like `prefix:vocabularyId#term-name`
+
+## CaseStyle Options (for slug URIs)
+
+- `kebab-case`: Words separated by hyphens (e.g., `term-name`)
+- `snake_case`: Words separated by underscores (e.g., `term_name`)
+- `camelCase`: First word lowercase, others capitalized (e.g., `termName`)
+- `PascalCase`: All words capitalized (e.g., `TermName`)
+
+## Data Interfaces
+
+### ConceptProps Interface (Recommended)
+
+The newer, simpler format for defining concepts:
+
+```ts
+interface ConceptProps {
+  value: string;           // Maps to skos:prefLabel
+  definition: string;      // Maps to skos:definition
+  scopeNote?: string;      // Maps to skos:scopeNote
+  notation?: string;       // Maps to skos:notation
+  example?: string;        // Maps to skos:example
+  changeNote?: string;     // Maps to skos:changeNote
+  historyNote?: string;    // Maps to skos:historyNote
+  editorialNote?: string;  // Maps to skos:editorialNote
+}
+```
+
+### RDFMetadata Interface (Legacy)
+
+The original format that embeds values within an RDF structure:
+
+```ts
+interface RDFMetadata {
+  'rdf:type'?: string[];
+  'skos:prefLabel'?: {
+    [lang: string]: string;
+  };
+  'skos:definition'?: {
+    [lang: string]: string;
+  };
+  'skos:scopeNote'?: {
+    [lang: string]: string;
+  };
+  values: ConceptProps[];  // Uses the same ConceptProps structure
+}
+```
+
+### TOCItem Interface
+
+Used by the `generateTOC` static method:
+
+```ts
+interface TOCItem {
+  value: string;
+  id: string;
+  children: TOCItem[];
+  level: number; // Required by Docusaurus, defaults to 3
+}
+```
+
+## URL Fragment Navigation
+
+Each term row has an HTML ID attribute matching the URI fragment, allowing direct access via URL fragments:
+
+```
+# For numeric style
+https://yoursite.org/vocabulary-page#t1000
+
+# For slug style
+https://yoursite.org/vocabulary-page#activity-card
+```
+
+## SKOS Relationships
+
+The component automatically generates SKOS relationships for each concept:
+
+- `rdf:type`: Set to `skos:Concept`
+- `skos:inScheme`: Links to the vocabulary using `prefix:vocabularyId`
+- `skos:topConceptOf`: Links to the vocabulary (all concepts are top concepts by default)
+
+These relationships are embedded in the component's data attributes for RDF extraction but are not directly displayed in the UI.
+
+## Using the generateTOC Method
+
+The component provides a static `generateTOC` method for generating a table of contents from vocabulary data. This is particularly useful for glossaries where you want the terms to appear in the Docusaurus sidebar:
+
+```mdx
+export const toc = VocabularyTable.generateTOC(frontMatter);
+```
+
+## Examples
+
+### Basic Usage with Concepts Array (Recommended)
+
+```mdx
+---
+vocabularyId: "example"
+title: "My Vocabulary"
+description: "Example using the simpler concepts format"
+concepts:
+  - value: "term one"
+    definition: "Definition of first term"
+    scopeNote: "Additional context for term one"
+  - value: "term two"
+    definition: "Definition of second term"
+    notation: "T2"
+    example: "Example usage of term two"
+---
+
+# {frontMatter.title}
+
+<VocabularyTable {...frontMatter} />
+```
+
+### Basic Usage with RDF Format (Legacy)
+
+```mdx
+---
+vocabularyId: "example"
+title: "My Vocabulary"
+RDF:
+  values: [
+    {
+      value: "term one",
+      definition: "Definition of first term"
+    },
+    {
+      value: "term two", 
+      definition: "Definition of second term"
+    }
+  ]
+---
+
+# {frontMatter.title}
+
+<VocabularyTable {...frontMatter} />
+```
+
+### Using Additional SKOS Properties
+
+```mdx
+---
+vocabularyId: "detailed-example"
+title: "Vocabulary with Full SKOS Properties"
+concepts:
+  - value: "aggregate"
+    definition: "A manifestation that embodies more than one discrete expression"
+    scopeNote: "Used for collections and compilations"
+    notation: "AGG"
+    example: "A book containing multiple novels"
+    changeNote: "Definition clarified in 2024"
+    historyNote: "Introduced in version 2.0"
+    editorialNote: "Consider relationship to collection concepts"
+---
+
+# {frontMatter.title}
+
+<VocabularyTable {...frontMatter} />
+```
+
+In this example, a "+" button appears in the first column for the "aggregate" term. Clicking it reveals the additional SKOS properties in an expanded details section below the main row.
+
+### Without Filter
+
+```mdx
+<VocabularyTable 
+  {...frontMatter}
+  showFilter={false} 
+/>
+```
+
+### Without URIs (for glossaries)
+
+For glossaries, you'll typically want to hide URIs but still show the table of contents:
+
+```mdx
+---
+vocabularyId: "glossary"
+title: "Glossary"
+description: "Glossary of terms used throughout the documentation"
+showURIs: false
+concepts: [
+  // your glossary terms...
+]
+---
+
+# Glossary
+
+<VocabularyTable {...frontMatter} />
+
+// Export the toc to generate the right sidebar TOC from the glossary terms
+export const toc = VocabularyTable.generateTOC(frontMatter);
+```
+
+Or when using the component directly:
+
+```mdx
+<VocabularyTable 
+  {...frontMatter}
+  showURIs={false} 
+/>
+```
+
+### With Custom Filter Placeholder
+
+```mdx
+<VocabularyTable 
+  {...frontMatter}
+  filterPlaceholder="Search for terms..." 
+/>
+```
+
+### With Component-Rendered Title
+
+<VocabularyTable 
+  vocabularyId="example"
+  title="Component-Rendered Title"
+  description="When showTitle is true, the component renders the title"
+  showTitle={true}
+  RDF={{
+    values: [
+      {
+        value: "example term",
+        definition: "This is just an example"
+      }
+    ]
+  }}
+/>
+
+### Numeric URIs (Default)
+
+<VocabularyTable 
+  vocabularyId="example"
+  title="Numeric URI Example"
+  description="Using numeric URIs with startCounter=1000"
+  startCounter={1000}
+  uriStyle="numeric"
+  RDF={{
+    values: [
+      {
+        value: "term one",
+        definition: "Definition of first term"
+      },
+      {
+        value: "term two",
+        definition: "Definition of second term"
+      }
+    ]
+  }}
+/>
+
+### Slug URIs
+
+<VocabularyTable 
+  vocabularyId="example"
+  title="Kebab Case URIs"
+  description="Using slug URIs with kebab-case"
+  uriStyle="slug"
+  caseStyle="kebab-case"
+  RDF={{
+    values: [
+      {
+        value: "term one", 
+        definition: "Definition of first term"
+      },
+      {
+        value: "term two",
+        definition: "Definition of second term"
+      }
+    ]
+  }}
+/>
+
+### Without URIs (Example)
+
+<VocabularyTable 
+  vocabularyId="glossary"
+  title="Glossary Example"
+  description="Example of a glossary with hidden URIs"
+  showURIs={false}
+  RDF={{
+    values: [
+      {
+        value: "aggregate",
+        definition: "A manifestation that embodies more than one discrete expression."
+      },
+      {
+        value: "dataset",
+        definition: "An aggregation of metadata that describes instances of specific entities.",
+        scopeNote: "Each instance has a discrete description. A dataset may include instances of more than one type of entity."
+      }
+    ]
+  }}
+/>
+
+### Expandable Details (Live Example)
+
+The following example demonstrates the expandable details feature. Notice the "+" button appears for terms that have additional SKOS properties:
+
+<VocabularyTable 
+  vocabularyId="details-demo"
+  title="Expandable Details Demo"
+  description="Click the + button to see additional properties"
+  concepts={[
+    {
+      value: "monograph",
+      definition: "A resource that is complete in one part or intended to be completed within a finite number of parts.",
+      scopeNote: "Typically used for books and similar publications",
+      notation: "MON",
+      example: "A single-volume novel, a three-volume biography",
+      historyNote: "Term adopted from traditional library cataloging"
+    },
+    {
+      value: "serial",
+      definition: "A resource issued in successive parts, usually having numbering, that has no predetermined conclusion.",
+      scopeNote: "Includes periodicals, newspapers, annual reports, journals, etc."
+    },
+    {
+      value: "integrating resource",
+      definition: "A resource that is added to or changed by means of updates that do not remain discrete but are integrated into the whole.",
+      notation: "IR",
+      changeNote: "Definition updated in 2024 to clarify scope",
+      editorialNote: "Consider relationship with continuing resources",
+      example: "A website that is continuously updated, a loose-leaf manual"
+    }
+  ]}
+/>

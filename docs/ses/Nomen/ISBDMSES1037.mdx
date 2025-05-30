@@ -1,0 +1,77 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_level: 1
+sidebar_position: 2
+id: 1037
+title: Compound title SES
+slug: /ves/ISBDMSES1037
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for a value of a <InLink href="/relationships/1037">has title of manifestation</InLink> element that is a compound title.
+
+</div>
+
+<div className="guid">
+
+For a manifestation that has a super-unit, the string encoding scheme combines values of strings that are taken from statements of title and responsibility that appear in the manifestation, in the following order:
+
+The component strings are separate by a colon and space ": ".
+
+The ISBDM string template is:
+
+[common title] + ": " + [unit designation} + ": " + [unit title]
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has title proper | "Homazh për De Radën: DVD 1" |
+
+  *Full example*: <InLink href="/fullex/fx082">Homazh për De Radën: DVD 1 (2004;
+                          Università della Calabria; videodisk)</InLink>. The value uses a common title
+                        and a unit designation; there is no unit title
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has variant title of manifestation | "New scientist. The collection: Vol three
+                        / issue three: The quantum world" |
+
+  *Full example*: <InLink href="/fullex/fx055">Quantum world (2016; Reed Business
+                          Information Ltd; volume)</InLink>. The value uses a common title, a unit
+                        designation, and a unit title
+
+</details>
+</div>
+
+<div className="guid">
+
+For a manifestation that is an aggregate, the string encoding scheme combines values of strings that are titles of distinct expressions or works that are taken from statements of title and responsibility that appear in the manifestation, in the order of appearance.
+
+The component strings are separate by a space, plus sign, and space " + ".
+
+The ISBDM string template is:
+
+[first title of expression] + " +: " + [second title of expression} + " + " + [third title of expression] …
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has title proper | "Voyage extraordinaire au coeur de l'atome
+                        + Voyage extraordinaire aux limites de l'univers" |
+  | has title proper | "Voyage extraordinaire aux limites de
+                        l'univers + Voyage extraordinaire au coeur de l'atome" |
+
+  *Full example*: <InLink href="/fullex/fx086">Voyage extraordinaire au coeur de
+                          l'atome + Voyage extraordinaire aux limites de l'univers (1996; Editions
+                          Casterman; volume)</InLink>. The values use the distinct titles of expressions
+                        that are embodied in the manifestation in a tête-bêche layout.
+
+</details>
+</div>

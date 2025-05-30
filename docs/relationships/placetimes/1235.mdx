@@ -1,0 +1,116 @@
+---
+slug: /relationships/1235
+sidebar_class_name: sidebar-level-2
+sidebar_label: has date of creation of manifestation
+sidebar_level: 2
+sidebar_position: 12
+sidebar_category: placetimes
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1235'
+title: has date of creation of manifestation
+RDF:
+  definition: Relates a manifestation to a time-span during which the manifestation is created.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Place
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1114
+    url: /docs/relationships/1114
+    label: has date of manufacture
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1209
+    url: /docs/relationships/1209
+    label: has date of production
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1210
+    url: /docs/relationships/1210
+    label: has date of publication
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1010
+    url: /docs/relationships/1010
+    label: has time-span associated with manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has date of creation of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Consider a manifestation that has a value of category of carrier of "online resource" to be published.
+</div>
+
+<SeeAlso><InLink href="/docs/relationships/1116">has chronological designation</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  <Mandatory />
+  
+  Record a single occurrence of the element that is selected from one or more values that are associated with the manifestation. Use the following order of preference:
+  
+  1. Date of publication of manifestation
+  2. Date of production of manifestation
+  3. Date of manufacture of manifestation
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of creation of manifestation | http://www.wikidata.org/entity/Q1990 |
+  
+  *[Full example: <InLink href="/docs/fullex/fx941">Who I am (2012; HarperCollinsPublishers; volume; case binding)</InLink>. IRI of date of publication.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of creation of manifestation | "2018" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx042">Catalogue of shipwrecked books (2018; William Collins; volume; case binding)</InLink>. Authorized access point of the date of publication.]*
+  </details>
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of publication | "1951" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx080">Pravna zaštita maloljetnika u našem porodičnom zakonodavstvu (1951; Izdavački zavod Jugoslavenske akademije znanosti i umjetnosti; svezak)</InLink>. The date is a year when the manifestation is published.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of manufacture | "1954" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx028">Incendie (1954; Éditions du Seuil; volume; livre broché)</InLink>. The date is a year when the manifestation is printed.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has date of production | "195-" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx071">Pogled na Akademijin vrt (195-; Mujadžić, Omer, 1903-1991; sheet)</InLink>. The date is a decade when the manifestation is painted. The year is not known.]*
+  </details>
+</div>

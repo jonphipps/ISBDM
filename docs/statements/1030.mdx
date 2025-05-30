@@ -1,0 +1,154 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has manifestation statement of publication, production, manufacture, or distribution
+sidebar_level: 2
+sidebar_position: 10
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1030'
+title: has manifestation statement of publication, production, manufacture, or distribution
+RDF:
+  definition: Relates a manifestation to a manifestation statement that includes dates and places of publication, production, manufacture, or distribution of the manifestation, and the names and functions of agents who are responsible for publication, production, manufacture, or distribution of the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes roles of agents who are involved in any aspect of the creation and distribution of a manifestation. Creation roles include printing and other forms of mechanical reproduction. Distribution roles include bookselling and other forms of product retail. This element includes statements of copyright, license, or privilege.
+  range: Literal
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1025
+    url: /docs/statements/1025
+    label: has manifestation statement
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has manifestation statement of publication, production, manufacture, or distribution
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/relationships/1019">has creator agent of manifestation</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/relationships/1021">has distributor agent</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1203">has note on manifestation statement of publication, production, manufacture, or distribution</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific statement.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of publication, production, manufacture, or distribution | "Дечја књига, Издавачко предузеће НР Србиjе, Београд, 1952" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx023">Кућа на Пуовом углу (1952; Дечја књига; свеска; картон)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of publication, production, manufacture, or distribution | "... الشركة الوطنية للنشر والتوزيع ... الجزائر، دار الشروق بيروت ... " |
+  
+  *[Full example: <InLink href="/docs/fullex/fx024">كليلة ودمنة (1973؛ الشركة الوطنية للنشر والتوزيع؛ مجلد؛ غلاف مقوى)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of publication, production, manufacture, or distribution | "Penguin Books Ltd, Harmondsworth … England, … Reprinted 1971" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx025">Emma (1971; Penguin Books; volume)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a single occurrence of the element that is selected from one or more values that are associated with the manifestation. Use the following order of preference:
+  
+  1. A statement about the publication of the manifestation.
+  2. A statement about the production of the manifestation.
+  3. A statement about the manufacture of the manifestation.
+  4. A statement about the distribution of the manifestation.
+  
+  Record additional occurrences of the element, if it is considered to be useful for users of the metadata.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of publication, production, manufacture, or distribution | "Facet Publishing" |
+  | has manifestation statement of publication, production, manufacture, or distribution | "Published by Facet Publishing … London …" |
+  | has manifestation statement of publication, production, manufacture, or distribution | "First published 2017" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx002">Open licensing for cultural heritage (2017; Facet Publishing; volume; perfect binding)</InLink>. The value of the most prominent statement does not include a place or date of publication.]*
+  </details>
+</div>
+
+<div className="stip">
+  Include information about only one of the aspects of publication, production, manufacture, and distribution if more than one aspect is covered by the statement in the manifestation. Use the same order of preference.
+</div>
+
+<div className="stip">
+  Include a name, place, and time-span that is associated with an agent who is responsible for publication, production, manufacture, or distribution of the manifestation.
+</div>
+
+##### Agents
+
+<div className="stip">
+  Include a name that is associated in a manifestation statement with an agent who is responsible for publication, production, manufacture, or distribution of the manifestation.
+</div>
+
+##### Places
+
+<div className="stip">
+  Include a place that is associated in a manifestation statement with an agent who is responsible for publication, production, manufacture, or distribution of the manifestation.
+</div>
+
+<div className="stip">
+  Include a place that is selected from more than one place that is associated with a single instance of an agent in a manifestation statement using the following order of preference:
+  
+  1. A place that is made more prominent by typography.
+  2. The first place that appears in the statement.
+  3. Places that are considered to be useful for users of the metadata.
+  4. All places.
+</div>
+
+<div className="stip">
+  Include an address of a publisher, producer, manufacturer, or distributor, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  Include a name of a larger place of publication, production, manufacture, or distribution such as a country, state, etc., if it is considered to be useful for users of the metadata.
+</div>
+
+##### Time-spans
+
+<div className="stip">
+  Include a date that is associated in a manifestation statement with the publication, production, manufacture, or distribution of the manifestation.
+</div>
+
+<div className="stip">
+  Include all dates of publication, production, manufacture, or distribution in different calendars that appear in a manifestation.
+</div>
+
+<div className="stip">
+  Include the year of date of publication, production, manufacture, or distribution. Include finer levels of date of publication, production, manufacture, or distribution such as day and month, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  Include a statement of date of copyright when it is different from the date of publication, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="stip">
+  Include a statement of the latest date of copyright if more than one date of copyright appears in the manifestation.
+</div>

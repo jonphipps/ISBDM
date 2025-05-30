@@ -1,0 +1,130 @@
+---
+id: seealso-component
+title: SeeAlso Component
+description: Component for linking to related content in documentation
+---
+
+import SeeAlso from '@site/src/components/global/SeeAlso';
+import InLink from '@site/src/components/global/InLink';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# SeeAlso Component
+
+The `SeeAlso` component provides a standardized way to reference related content throughout the ISBDM documentation. It creates a visually distinct section that helps readers discover connected information.
+
+## Basic Usage
+
+<SeeAlso>
+  <InLink href="/docs/attributes/1277">has extent of embodied content</InLink>
+</SeeAlso>
+
+```jsx
+<SeeAlso>
+  <InLink href="/docs/attributes/1277">has extent of embodied content</InLink>
+</SeeAlso>
+```
+
+## Multiple Links
+
+<SeeAlso>
+  <InLink href="/docs/attributes/1277">has extent of embodied content</InLink> and <InLink href="/docs/attributes/1023">has extent of manifestation</InLink>
+</SeeAlso>
+
+```jsx
+<SeeAlso>
+  <InLink href="/docs/attributes/1277">has extent of embodied content</InLink> and <InLink href="/docs/attributes/1023">has extent of manifestation</InLink>
+</SeeAlso>
+```
+
+## With Plain Text
+
+<SeeAlso>
+  See the section on extent measurements.
+</SeeAlso>
+
+```jsx
+<SeeAlso>
+  See the section on extent measurements.
+</SeeAlso>
+```
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `children` | ReactNode | Yes | - | Content to display after "See also:" |
+| `className` | string | No | - | Additional CSS class name |
+
+## Accessibility Features
+
+The `SeeAlso` component is built with WCAG 2.1/2.2 Level AA compliance in mind:
+
+- Semantic structure for related content
+- Sufficient color contrast for text and background
+- Visual distinction through border and background color
+- Preserves link accessibility from child elements
+
+## Usage Guidelines
+
+1. **Related Content Only**: Use only for truly related content that adds value for the reader.
+
+2. **Position Consistently**: Place the component at the end of a section, before moving to a new topic.
+
+3. **Keep Content Concise**: Include only the most relevant links or a brief note about related content.
+
+4. **Use with InLink**: For internal documentation links, combine with the `InLink` component for consistent styling.
+
+## Internationalization
+
+The component can be adapted for internationalization:
+
+- The "See also:" text can be replaced with a translated version if needed
+- Supports RTL languages through Docusaurus's i18n system
+
+## Examples with Code
+
+<Tabs>
+  <TabItem value="basic" label="Basic Usage">
+    ```jsx
+    <SeeAlso>
+      <InLink href="/docs/attributes/1277">has extent of embodied content</InLink>
+    </SeeAlso>
+    ```
+  </TabItem>
+  <TabItem value="multiple" label="Multiple Links">
+    ```jsx
+    <SeeAlso>
+      <InLink href="/docs/attributes/1277">has extent of embodied content</InLink>
+      {' and '}
+      <InLink href="/docs/attributes/1023">has extent of manifestation</InLink>
+    </SeeAlso>
+    ```
+  </TabItem>
+  <TabItem value="custom" label="With Custom Class">
+    ```jsx
+    <SeeAlso className="highlighted-reference">
+      <InLink href="/docs/important-section">Important related information</InLink>
+    </SeeAlso>
+    ```
+  </TabItem>
+</Tabs>
+
+## Migration from HTML
+
+The `SeeAlso` component replaces the following HTML structure:
+
+```html
+<div class="seeAlso">
+  <p><i>See also</i>: <a class="linkInline" href="/ISBDM/docs/assess/p016.html">Manifestation that embodies more than one expression</a></p>
+</div>
+```
+
+When migrating content, use the following mapping:
+
+| HTML Element/Attribute | Component Prop/Child |
+|------------------------|----------------------|
+| `div.seeAlso` | `<SeeAlso>` component |
+| `a.linkInline` | `<InLink>` component inside `<SeeAlso>` |
+| Link text | Children of `<InLink>` |
+| Additional classes | `className` |

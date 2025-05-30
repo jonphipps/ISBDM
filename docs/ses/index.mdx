@@ -1,0 +1,59 @@
+---
+id: index
+title: ISBDM string encoding schemes
+slug: /ves/ISBDMSES
+---
+
+<div className="guid">
+
+This is a set of suggested string encoding schemes for authorized access points for the manifestation and related entities that are applied to the <InLink href="docs/fullex/">Examples</InLink> in ISBD for Manifestation.
+
+</div>
+
+<div className="guid">
+
+The sources of component strings, their order, added punctuation, and added boilerplate strings are given in an ISBDM string template.
+
+- The source of a component string that is an ISBDM element is given as an element name in curly brackets "{}". For example, "`{has title proper}`".
+- The source of a component string that is not an ISBDM element is given in square brackets "[]". For example, "[supplied title]"
+- An action that is applied to a component string is named and followed by the component string enclosed in round brackets "()". For example, "normalised(`{has title proper}`)"
+- A choice of sources of a component string is indicated by a vertical bar "|" and given in order of availability. For example, "`{has title proper}`|[supplied title]".
+- Added punctuation and boilerplate strings are given in quotation marks "". For example, "; ".
+- The concatenation of component strings is indicated by a sign of addition "+". For example, "`{has category of carrier}` + ")"".
+
+</div>
+
+<div className="guid">
+
+A value of an element sub-type may be used as the source of a component string.
+
+A value of a component string should be normalised to ensure consistent collocation and display. Normalisation of a name or title value removes a leading definite or indefinite article.
+
+</div>
+
+<div className="guid">
+
+The suggested string encoding schemes for entities are:
+
+- <InLink href="/ves/ISBDMSESage">Agent SES</InLink>
+- <InLink href="/ves/ISBDMSEScol">Collective Agent SES</InLink>
+- <InLink href="/ves/ISBDMSESexp">Expression SES</InLink>
+- <InLink href="/ves/ISBDMSESite">Item SES</InLink>
+- <InLink href="/ves/ISBDMSESman">Manifestation SES</InLink>
+- <InLink href="/ves/ISBDMSESper">Person SES</InLink>
+- <InLink href="/ves/ISBDMSESpla">Place SES</InLink>
+- <InLink href="/ves/ISBDMSEStim">Time-span SES</InLink>
+- <InLink href="/ves/ISBDMSESwor">Work SES</InLink>
+
+</div>
+
+<div className="guid">
+
+The suggested string encoding schemes for elements are:
+
+- <InLink href="/ves/ISBDMSES1116">Chronological designation SES</InLink>
+- <InLink href="/ves/ISBDMSES1037">Compound title SES</InLink>
+- <InLink href="/ves/ISBDMSES1023">Extent of manifestation SES</InLink>
+- <InLink href="/ves/ISBDMSES1117">Numeric designation SES</InLink>
+
+</div>

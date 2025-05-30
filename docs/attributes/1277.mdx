@@ -1,0 +1,223 @@
+---
+sidebar_class_name: sidebar-level-3
+sidebar_label: has extent of embodied content
+sidebar_level: 3
+sidebar_position: 13
+customProps:
+  sidebar_prefix: '│  │  ├─ '
+id: '1277'
+title: has extent of embodied content
+RDF:
+  definition: Relates a manifestation to an extent of manifestation that is a measurement of the layout of content that is embodied in the manifestation.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1285
+    url: /docs/attributes/1285
+    label: has designation of number of sound channels
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1281
+    url: /docs/attributes/1281
+    label: has image resolution
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1230
+    url: /docs/attributes/1230
+    label: has number of sound channels
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1287
+    url: /docs/attributes/1287
+    label: has playing time
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1243
+    url: /docs/attributes/1243
+    label: has reduction ratio
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1023
+    url: /docs/attributes/1023
+    label: has extent of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has extent of embodied content
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<SeeAlso><InLink href="/docs/attributes/1288">has layout of embodied content</InLink></SeeAlso>
+
+#### Element values
+
+<div className="guid">
+For an extent of a cartographic image, cartographic tactile image, still image, or tactile image, round a fraction of the unit of length to the nearest whole number.
+Record a <InLink href="/docs/notes/1284">has note on physical characteristic</InLink> element that gives a more precise measurement, if it is considered to be useful for users of the metadata.
+<details>
+  <summary>Examples</summary>
+  
+    | Property | Value |
+    |:---------|:------|
+    | has extent of embodied content | "60 cm × 81 cm" |
+    | has note on physical characteristic | "Dimensions of still image: 60.33 cm × 81.12 cm" |
+    
+    *[Full example: <InLink href="/docs/fullex/fx045">Treachery of images (ceci n'est pas une pipe) (1929; Magritte, René, 1898-1967; sheet)</InLink>.]*
+</details>
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific attribute.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has number of sound channels | "6 channels" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx047">Lady Bird (2018; Universal Pictures Home Entertainment; videodisc; BD)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has playing time | "49 min 14 sec" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx034">Stax uncovered! (2023; H Bauer Publishing Ltd; audio disc)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a quantitative value that consists of a whole number and a controlled term that appears in the <InLink href="/docs/ves/1288">ISBDM Layout of Embodied Content value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "44 pages" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx030">Definitive guide to PSM 1 (2021; Knüeppel, Moritz; volume; perfect binding)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is an aperture card, film roll, filmslip, filmstrip, filmstrip cartridge, microfiche, microfiche cassette, microfilm cartridge, microfilm cassette, microfilm reel, microfilm roll, microfilm slip, microopaque, or stereograph disc, record the number of frames of content. Record a quantitative value that consists of a whole number and the term "frame" that appears in the <InLink href="/docs/ves/1288">ISBDM Layout of Embodied Content value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "12 frames" |
+  </details>
+  
+  <SeeAlso><InLink href="/docs/attributes/1239">has frame alignment</InLink></SeeAlso>
+</div>
+
+<div className="stip">
+  For a manifestation that is a card, sheet, or volume, record the total number of pages of content. Record a quantitative value that consists of a whole number and the term "page" that appears in the <InLink href="/docs/ves/1288">ISBDM Layout of Embodied Content value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "256 pages" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx036">Secret library (2016; Michael O’Mara Books Limited; volume; case binding)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "322 stron" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx035">Pałac papieski na Watykanie od końca V do początku XVI wieku (1999; Wydawnictwo Naukowe Uniwersytetu im. Adama Mickiewicza; wolumin)</InLink>. The language of cataloguing is Polish.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "189 страници" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx035">Съкровищница (2018; Народна библиотека “Св. св. Кирил и Методий”; том + компютърен диск)</InLink>. The language of cataloguing is Bulgarian.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is a computer card, computer chip cartridge, computer disc, computer disc cartridge, computer tape cartridge, computer tape cassette, computer tape reel, or online resource, record the number of bytes of content. Record a quantitative value that consists of a whole number and a controlled term or standard symbol for a unit of binary data.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "912 KB" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx046">Emma (1994; Project Gutenberg; online resource; plain text format)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "638 KB" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx077">Corso delli Fiumi Drino e Boiana nella Dalmatia (2007; Bibliothèque nationale de France; online resource; PDF)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is a computer card, computer chip cartridge, computer disc, computer disc cartridge, computer tape cartridge, computer tape cassette, computer tape reel, or online resource that embodies a cartographic image, cartographic tactile image, still image, or tactile image in an encoding format that preserves the layout, record a quantitative value that consists of a whole number and a controlled term that appears in the <InLink href="/docs/ves/1288">ISBDM Layout of Embodied Content value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "180 pages" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx070">CD-S303 owner's manual (2021; Yamaha Corporation; online resource)</InLink>. The encoding format allows the content to fit within the size of a display screen but does not change the relative layout.]*
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that embodies a cartographic image, cartographic tactile image, still image, or tactile image, record the height and width of the image in whole numbers of the same unit of length. Record the number for the height followed by "x" followed by the number for the width, followed by a controlled term or standard symbol for the unit of length.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "70 x 50 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx043">Zadar does Banksy (2023; Narodni muzej Zadar; list)</InLink>. The value is for an image that is the same size as one side of sheet.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "40 x 48 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx044">Desserte rouge 1908 (1993; Editions du Centre Pompidou; sheet)</InLink>. The value is for an image that is smaller than one side of a sheet.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "94 x 164 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx048">Loch Morar & Mallaig (2015; Ordnance Survey Ltd; sheet)</InLink>. The value is for an image that is larger than one side but smaller than both sides of a sheet.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of embodied content | "10 x 14 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx060">Truman Capote, ecrivain, USA, 1947 (2008; Nouvelles Images S.A.; card)</InLink>. The value is for an image that is smaller than one side of a card.]*
+  </details>
+</div>

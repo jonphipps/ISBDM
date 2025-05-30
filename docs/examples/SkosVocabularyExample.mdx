@@ -1,0 +1,110 @@
+---
+title: SKOS Vocabulary Component Example
+description: Example of using the VocabularyTable component with proper SKOS structure
+sidebar_label: Vocabulary - SKOS Example
+---
+
+# SKOS Vocabulary Component
+
+This example demonstrates how to use the VocabularyTable component with a proper SKOS structure, separating the component configuration from the conceptual model.
+
+## Component Structure
+
+The VocabularyTable component now better aligns with the SKOS data model:
+
+- Each vocabulary is a `skos:ConceptScheme`
+- Each term/value is a `skos:Concept` 
+- Terms are related to their vocabulary via `skos:inScheme` and `skos:topConceptOf`
+- The vocabulary relates to its terms via `skos:hasTopConcept`
+
+## Front Matter Example
+
+Here's how to structure your MDX front matter for value vocabularies:
+
+```yaml
+---
+vocabularyId: "1275"
+title: "ISBDM Extent of Unitary Structure value vocabulary"
+uri: "http://iflastandards.info/ns/isbdm/values/1275"
+description: "A vocabulary of terms for describing the extent of the unitary structure."
+scopeNote: "Use for physical description of the item."
+# Component configuration (doesn't appear in RDF)
+startCounter: 1275001
+uriStyle: "numeric"
+showTitle: true
+# The actual concepts/terms - language will be derived from Docusaurus i18n
+concepts:
+  - value: "activity card"
+    definition: "A card or other small sheet with printed text, images, or both, used for teaching, information, or entertainment."
+    scopeNote: "Use only for cards that are intended for activities."
+  - value: "atlas"
+    definition: "A bound volume of maps, charts, or plates."
+    scopeNote: "For other types of cartographic resources, see related vocabularies."
+  - value: "board book"
+    definition: "A book printed on thick paperboard with a binding appropriate for young children."
+    scopeNote: "Board books typically have simple content and durable construction."
+---
+
+<VocabularyTable
+  vocabularyId={frontMatter.vocabularyId}
+  title={frontMatter.title}
+  uri={frontMatter.uri}
+  description={frontMatter.description}
+  scopeNote={frontMatter.scopeNote}
+  startCounter={frontMatter.startCounter}
+  uriStyle={frontMatter.uriStyle}
+  showTitle={frontMatter.showTitle}
+  concepts={frontMatter.concepts}
+/>
+```
+
+## SKOS RDF Output Example
+
+When serialized to RDF, the vocabulary would look something like this (simplified Turtle format):
+
+```turtle
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix isbdm: <http://iflastandards.info/ns/isbdm/values/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+# The ConceptScheme (vocabulary)
+# The language tag (@en) would be derived from Docusaurus's current locale
+isbdm:1275 a skos:ConceptScheme ;
+    skos:prefLabel "ISBDM Extent of Unitary Structure value vocabulary"@en ;
+    skos:definition "A vocabulary of terms for describing the extent of the unitary structure."@en ;
+    skos:hasTopConcept isbdm:1275#t1275001, isbdm:1275#t1275002, isbdm:1275#t1275003 .
+
+# The Concepts (terms)
+isbdm:1275#t1275001 a skos:Concept ;
+    skos:prefLabel "activity card"@en ;
+    skos:definition "A card or other small sheet with printed text, images, or both, used for teaching, information, or entertainment."@en ;
+    skos:scopeNote "Use only for cards that are intended for activities."@en ;
+    skos:inScheme isbdm:1275 ;
+    skos:topConceptOf isbdm:1275 .
+
+isbdm:1275#t1275002 a skos:Concept ;
+    skos:prefLabel "atlas"@en ;
+    skos:definition "A bound volume of maps, charts, or plates."@en ;
+    skos:scopeNote "For other types of cartographic resources, see related vocabularies."@en ;
+    skos:inScheme isbdm:1275 ;
+    skos:topConceptOf isbdm:1275 .
+
+isbdm:1275#t1275003 a skos:Concept ;
+    skos:prefLabel "board book"@en ;
+    skos:definition "A book printed on thick paperboard with a binding appropriate for young children."@en ;
+    skos:scopeNote "Board books typically have simple content and durable construction."@en ;
+    skos:inScheme isbdm:1275 ;
+    skos:topConceptOf isbdm:1275 .
+```
+
+## Implementation Notes
+
+1. The component configuration properties (`startCounter`, `uriStyle`, etc.) only affect the UI display and don't appear in the RDF.
+
+2. The `vocabularyId` and other properties about the vocabulary itself are properties of the ConceptScheme.
+
+3. The `concepts` array contains individual SKOS concepts with their own properties.
+
+4. Language tags for literals are automatically handled by the component using Docusaurus's current locale.
+
+5. The component automatically generates the proper SKOS relationships between each concept and its concept scheme.

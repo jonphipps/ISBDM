@@ -1,0 +1,62 @@
+---
+sidebar_class_name: menu-item-html-level-1 sidebar-level-1
+sidebar_label: ISBDM Regional Encoding value vocabulary
+sidebar_level: 1
+sidebar_position: 11
+vocabularyId: '1283'
+title: ISBDM Regional Encoding value vocabulary
+uri: http://iflastandards.info/ns/isbdm/values/1283
+description: This value vocabulary is a source of values for a has regional encoding element.
+isDefinedBy: http://iflastandards.info/ns/isbdm/values/1283
+scopeNote: The vocabulary does not cover the full scope of the element and may be extended with additional values.
+concepts:
+- value: all regions
+  definition: A regional encoding for a videodisc or video game carrier that indicates that playback is permitted on devices worldwide.
+- value: Region 1
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it in the United States, Canada, Bermuda, and U.S. territories.
+- value: Region 2
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it in Japan, Europe, South Africa, and the Middle East, including Egypt.
+- value: Region 3
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it in Southeast Asia and East Asia, including Hong Kong.
+- value: Region 4
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it in Australia, New Zealand, Pacific Islands, Central America, South America, and the Caribbean.
+- value: Region 5
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it in Eastern Europe, Baltic States, Russia, Central and South Asia, Indian subcontinent, Africa, North Korea, and Mongolia.
+- value: Region 6
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it in China.
+- value: Region 7
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it for special uses, such as playing protected copies sent to film industry professionals or to the media.
+- value: Region 8
+  definition: A regional encoding for a DVD videodisc encoded for playback by devices configured to decode it in international venues such as aircraft, cruise ships, spacecraft, etc.
+- value: Region A
+  definition: A regional encoding for a Blu-ray videodisc encoded for playback by devices configured to decode it in North America, Central America, South America, Japan, North Korea, South Korea, Taiwan, Hong Kong, and Southeast Asia.
+- value: Region B
+  definition: A regional encoding for a Blu-ray videodisc encoded for playback by devices configured to decode it in Europe, Greenland, French territories, Middle East, Africa, Australia, and New Zealand.
+- value: Region C (Blu-ray)
+  definition: A regional encoding for a Blu-ray videodisc encoded for playback by devices configured to decode it in India, Nepal, mainland China, Russia, Central Asia, and South Asia.
+- value: Region C (video game)
+  definition: A regional encoding for a video game carrier encoded for playback by devices configured to decode it in China.
+- value: Region J
+  definition: A regional encoding for a video game carrier encoded for playback by devices configured to decode it in Japan, South Korea, Taiwan, Hong Kong, Macau, and Southeast Asia.
+- value: Region U/C
+  definition: A regional encoding for a video game carrier encoded for playback by devices configured to decode it in the United States, Canada, Mexico, and South America.
+---
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# {frontMatter.title}
+
+For use with element: [has regional encoding](/docs/attributes/1283.html)
+
+<VocabularyTable
+  {...frontMatter}
+  showTitle={false}
+  filterPlaceholder="Filter vocabulary terms..."
+/>
+
+---
+
+<div className="guid">
+<p>The values, definitions, and scope notes in this vocabulary are derived from the <OutLink href="https://www.rdaregistry.info/termList/RDARegionalEncoding/">RDA Regional Encoding</OutLink> value vocabulary licensed under a Creative Commons Attribution 4.0 International License, copyright © 2020 American Library Association, Canadian Federation of Library Associations, and CILIP: Chartered Institute of Library and Information Professionals.</p>
+</div>
+
+export const toc = VocabularyTable.generateTOC(frontMatter);

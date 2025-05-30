@@ -1,0 +1,72 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has binding
+sidebar_level: 2
+sidebar_position: 8
+customProps:
+  sidebar_prefix: '│  ├─ '
+id: '1241'
+title: has binding
+RDF:
+  definition: Relates a manifestation to a physical characteristic that is the method of attaching more than one sheet to form a single unit.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element applies to a manifestation that is a volume.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1242
+    url: /docs/attributes/1242
+    label: has physical characteristic
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has binding
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Stipulations
+
+<div className="stip">
+  Record only one occurrence of the element.
+</div>
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  Record a value that appears in the <InLink href="/docs/ves/1241">ISBDM Binding value vocabulary</InLink>, in the language or script of choice of the cataloguing agency.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has binding | "board book binding" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx017">Gruffalo (2020; Macmillan Children's Books; volume; board book binding)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has binding | "картон" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx023">Кућа на Пуовом углу (1952; Дечја књига; свеска; картон)</InLink>. The language of cataloguing is Serbian; the script of cataloguing is Serbian Cyrillic.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has binding | "case binding" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx001">Paris apartment (2022; HarperCollinsPublishers; volume; case binding)</InLink>.]*
+  </details>
+</div>

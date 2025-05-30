@@ -1,0 +1,178 @@
+## Number of units {#p010}
+
+<section className="guid">
+
+A manifestation may be published or produced in one or more logical or physical parts.
+
+A manifestation inherits the conceptual parts of a work by embodying expressions of the parts. There is no intrinsic relationship between the conceptual parts and the logical or physical parts.
+
+</section>
+
+<section className="guid">
+
+<details>
+<summary>Examples</summary>
+<div>
+
+A manifestation that is a single physical part and a manifestation that has two physical parts can each embody a work or expression that has three conceptual parts.
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+A logical or physical part is termed a "unit" for clarity. A unit is a logical part of an intangible manifestation or a physical part of a tangible manifestation.
+
+</section>
+
+<section className="guid">
+
+Assess the number and hierarchical structure of units of the manifestation.
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that is an "online resource" to have more than one logical part if distinct content has its own Uniform Resource Locator (URL) that is based on the root URL of the manifestation. Consider the manifestation to have only one logical part if all content has the root URL.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property              | Value                                                            |
+| :-------------------- | :--------------------------------------------------------------- |
+| has unitary structure | "multiple unit"                                                  |
+| has sub-unit          | "myScience Canada (2008-; Scimetrica; online resource; English)" |
+| has sub-unit          | "myScience Canada (2008-; Scimetrica; online resource; French)"  |
+
+_[Full example: <InLink href="/docs/fullex/fx015">myScience Canada (2008-; Scimetrica; online resource)</InLink>. The URLs of the English and French versions share the same root URL and are distinct: "https://www.myscience.ca/" (Home page in English); "https://www.myscience.ca/en" (English version sub-unit); "https://www.myscience.ca/fr" (French version sub-unit).]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+For a manifestation that is two or more unattached sheets, consider each sheet to be a part of the manifestation irrespective of the layout of the content that is embodied in the sheets.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property              | Value           |
+| :-------------------- | :-------------- |
+| has unitary structure | "multiple unit" |
+
+_[Full example: <InLink href="/docs/fullex/fx029">Burleska pro klarinet a klavír (1945-03-26; Vostřák, Zbyněk; sheet)</InLink>. The manifestation consists of three unbound folded sheets.]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies an issue of a successive diachronic work to be a sub-unit of the manifestation that embodies the incomplete diachronic work. The number of sub-units of the manifestation increases over time.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property       | Value                                                    |
+| :------------- | :------------------------------------------------------- |
+| has super-unit | "Biblioteka 42 (2000-; Naklada Jesenski i Turk; svezak)" |
+
+_[Full example: <InLink href="/docs/fullex/fx019">Hakerska etika i duh informacijskog doba (2002; Naklada Jesenski i Turk; svezak)</InLink>.]_
+
+| Property     | Value                                                                              |
+| :----------- | :--------------------------------------------------------------------------------- |
+| has sub-unit | "Hakerska etika i duh informacijskog doba (2002; Naklada Jesenski i Turk; svezak)" |
+
+_[Full example: <InLink href="/docs/fullex/fx020">Biblioteka 42 (2000-; Naklada Jesenski i Turk; svezak)</InLink>]_
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+Consider a manifestation that embodies an iteration of an integrating diachronic work to be the manifestation that embodies the incomplete diachronic work. The number of sub-units of the manifestation may increase or decrease over time.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+The publisher of a loose-leaf updating service may replace two binders with three binders when a specific iteration is published.
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+A manifestation may have no more than one super-unit that embodies a static work.
+
+</section>
+
+<section className="guid">
+
+A manifestation may have more than one super-unit that embodies a diachronic work.
+
+</section>
+
+<section className="guid">
+
+The structure of a multiple unit manifestation may form a hierarchy of super-units and sub-units.
+
+<Figure
+  src="/img/x010.png"
+  caption="Entity-relationship diagram of the unitary hierarchy of a manifestation."
+  expandLink="/docs/fullimages/x010.html"
+/>
+
+The diagram shows a model of the hierarchy of units in a multiple unit manifestation. A manifestation that has physical or logical parts is a super-unit, and a manifestation that is a physical or logical part is a sub-unit. A unit may have more than one direct sub-unit and a super-unit. A unit is related to a sub-unit with a *has sub-unit* element and to a super-unit with an inverse *has super-unit* element.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property       | Value                                                      |
+| :------------- | :--------------------------------------------------------- |
+| has super-unit | "Mojo (1993-; H Bauer Publishing Ltd.; volume + audio disc)" |
+| has sub-unit   | "Mojo 357 (2023; H Bauer Publishing Ltd.; volume)"         |
+| has sub-unit   | "Stax uncovered! (2023; H Bauer Publishing Ltd.; audio disc)" |
+
+</div>
+</details>
+
+</section>
+
+<section className="guid">
+
+Record a value of <InLink href="/docs/attributes/1262">has unitary structure</InLink> to indicate that the manifestation is published or produced in one or more units.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property              | Value                                                              |
+| :-------------------- | :----------------------------------------------------------------- |
+| has unitary structure | "single unit"                                                      |
+
+_[Full example: <InLink href="/docs/fullex/fx030">Definitive guide to PSM 1 (2021; Knüeppel, Moritz; volume; perfect binding)</InLink>.]_
+
+| Property              | Value           |
+| :-------------------- | :-------------- |
+| has unitary structure | "multiple unit" |
+
+_[Full example: <InLink href="/docs/fullex/fx009">Lyceum Theatre, London, England, 5/26/72 (2022; Rhino Entertainment LLC; audio disc)</InLink>.]_
+
+</div>
+</details>
+
+</section>

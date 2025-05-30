@@ -1,0 +1,120 @@
+---
+id: mandatory-component
+title: Mandatory Component
+description: Component for indicating required elements in documentation
+---
+
+import Mandatory from '@site/src/components/global/Mandatory';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Mandatory Component
+
+The `Mandatory` component provides a standardized way to indicate required elements throughout the ISBDM documentation. It displays a symbol with consistent styling and links to information about mandatory fields.
+
+## Basic Usage
+
+<Mandatory /> Record title
+
+```jsx
+<Mandatory /> Record title
+```
+
+## Custom Symbol
+
+<Mandatory symbol="!" /> Required field
+
+```jsx
+<Mandatory symbol="!" /> Required field
+```
+
+## Custom Tooltip
+
+<Mandatory tooltipText="This field is required" /> Required element
+
+```jsx
+<Mandatory tooltipText="This field is required" /> Required element
+```
+
+## Custom Link
+
+<Mandatory link="/docs/custom-path" /> See custom documentation
+
+```jsx
+<Mandatory link="/docs/custom-path" /> See custom documentation
+```
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `link` | string | No | "/docs/intro/i022" | URL to documentation about mandatory fields |
+| `symbol` | string | No | "✽" | Symbol to display as indicator |
+| `tooltipText` | string | No | "Mandatory" | Text for the tooltip and screen readers |
+| `className` | string | No | - | Additional CSS class name |
+
+## Accessibility Features
+
+The `Mandatory` component is built with WCAG 2.1/2.2 Level AA compliance in mind:
+
+- Proper title attribute for tooltip information
+- ARIA label for screen readers
+- Sufficient color contrast (>4.5:1) with the background
+- Keyboard-accessible link with visible focus indicators
+- Descriptive aria-label on the link element
+
+## Usage Guidelines
+
+1. **Consistent Placement**: Place the `Mandatory` component before the element name or label it applies to.
+
+2. **Appropriate Context**: Only use for truly mandatory elements that must be included in valid metadata.
+
+3. **Use with Form Labels**: When used with form fields, ensure it's associated with the field label.
+
+4. **Documentation Link**: The default link points to the general documentation about mandatory fields. Only change this if you need to point to more specific guidance.
+
+## Internationalization
+
+The component can be adapted for internationalization:
+
+- The `tooltipText` prop can be wrapped in a translation function
+- Symbol can be changed if needed for different locales
+
+## Examples with Code
+
+<Tabs>
+  <TabItem value="basic" label="Basic Usage">
+    ```jsx
+    <Mandatory /> Title
+    ```
+  </TabItem>
+  <TabItem value="custom" label="All Custom Props">
+    ```jsx
+    <Mandatory 
+      link="/docs/requirements" 
+      symbol="*" 
+      tooltipText="Required Element"
+      className="highlight"
+    /> Title
+    ```
+  </TabItem>
+</Tabs>
+
+## Migration from HTML
+
+The `Mandatory` component replaces the following HTML structure:
+
+```html
+<span class="mandatory mx-1 px-2" title="Mandatory">
+  <a href="/ISBDM/docs/intro/i022.html">&#10045;</a>
+</span>
+```
+
+When migrating content, use the following mapping:
+
+| HTML Element/Attribute | Component Prop |
+|------------------------|----------------|
+| `span title` | `tooltipText` |
+| `a href` | `link` |
+| `a` content | `symbol` |
+| Additional classes | `className` |

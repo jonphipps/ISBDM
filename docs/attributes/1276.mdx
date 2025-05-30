@@ -1,0 +1,117 @@
+---
+sidebar_class_name: sidebar-level-3
+sidebar_label: has extent of unit
+sidebar_level: 3
+sidebar_position: 19
+customProps:
+  sidebar_prefix: '│  │  ├─ '
+id: '1276'
+title: has extent of unit
+RDF:
+  definition: Relates a manifestation to an extent of manifestation that is a measurement of a component or characteristic of the manifestation or a sub-unit that is available to embody content.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: The measurement includes components or characteristics that do not embody content.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1240
+    url: /docs/attributes/1240
+    label: has bibliographic format
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1237
+    url: /docs/attributes/1237
+    label: has dimensions
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1228
+    url: /docs/attributes/1228
+    label: has number of recording tracks
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1023
+    url: /docs/attributes/1023
+    label: has extent of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has extent of unit
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+For a manifestation that is an overhead transparency, record information about overlays as a value of <InLink href="/docs/notes/1219">has note on category of manifestation</InLink>.
+</div>
+
+<SeeAlso><InLink href="/docs/notes/1219">has note on category of manifestation</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific attribute.
+</div>
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific attribute.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has dimensions | "11 x 15 cm" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx060">Truman Capote, ecrivain, USA, 1947 (2008; Nouvelles Images S.A.; card)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has bibliographic format | "8vo" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx027">Libar Marca Marula Splichianina Uchomse vsdarsi Istoria Sfete vdouice Judit u versih haruacchi slosena (1522; Mirković, Jerolim ; svezak)</InLink>.]*
+  </details>
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+</div>
+
+<div className="stip">
+  For a manifestation that is an audio belt, audio cartridge, audio roll, audio wire reel, audiocassette, audiotape reel, computer tape cartridge, computer tape cassette, computer tape reel, film cartridge, film cassette, film reel, film roll, filmslip, filmstrip, filmstrip cartridge, microfilm cartridge, microfilm cassette, microfilm reel, microfilm roll, microfilm slip, roll, sound-track reel, video cartridge, videocassette, or videotape reel, record the total length of belt, film, tape, or wire in the carrier. Record a quantitative value that consists of a whole number and a term for a unit of length.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unit | "32 cm" |
+  
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unit | "3600 feet" |
+  </details>
+</div>
+
+<div className="stip">
+  For a manifestation that is a flipchart or volume, record the total number of sheets that are bound in the carrier. Record a quantitative value that consists of a whole number and the term "leaf".
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unit | "208 leaves" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx001">Paris apartment (2022; HarperCollinsPublishers; volume; case binding)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has extent of unit | "14 leaves" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx069">National parks (2015; Ziga Media, LLC; flipchart)</InLink>.]*
+  </details>
+</div>

@@ -1,0 +1,105 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_level: 2
+sidebar_position: 6
+id: 1023
+title: Extent of manifestation SES
+slug: /ves/ISBDMSES1023
+---
+
+<div className="guid">
+
+This is a suggested string encoding scheme for a value of a <InLink href="/attributes/1023">has extent of manifestation</InLink> element.
+
+</div>
+
+<div className="guid">
+
+The string encoding scheme combines values of the element sub-types in the following order:
+
+1. <InLink href="/attributes/1275">has extent of unitary structure</InLink>
+2. <InLink href="/attributes/1276">has extent of unit</InLink>
+3. <InLink href="/attributes/1278">has extent of aggregated content</InLink>
+4. <InLink href="/attributes/1277">has extent of embodied content</InLink>
+
+The ISBDM string template is:
+
+`{has extent of unitary structure}` + "(" + `{has extent of unit}` + "; " + `{has extent of aggregated content}` + " in " + `{has extent of embodied content}` + ")"
+
+The boilerplate string " in " is a short form of " embodied in ".
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has extent of manifestation | "3 volumes (124 leaves; 150 photographs in 200 pages)" |
+  | has extent of manifestation | "3 volumes (150 photographs in 200 pages)" |
+  | has extent of manifestation | "3 volumes (200 pages)" |
+
+</details>
+</div>
+
+<div className="guid">
+
+For a manifestation that has no sub-units, use the string that is the number "1" followed by a value for the <InLink href="/attributes/1022">has category of carrier</InLink> element as a substitute for a value of <InLink href="/attributes/1275">has extent of unitary structure</InLink>.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has extent of manifestation | "1 list (70 x 50 cm; 1 plakat na 70 x 50
+                        cm)" |
+
+  *Full example*: <InLink href="/fullex/fx043">Zadar does Banksy (2023; Narodni
+                          muzej Zadar; list)</InLink>
+
+</details>
+</div>
+
+<div className="guid">
+
+For a manifestation that is a super-unit, a string encoding scheme may combine values of element sub-types for sub-units of the manifestation.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has extent of manifestation | "1 volume (122 pages) + 1 audio disc (15
+                        performed songs in 49 min 14 sec)" |
+
+  *Full example*: <InLink href="/fullex/fx032">Mojo 357 (2023; H Bauer Publishing
+                          Ltd.; volume + audio disc)</InLink>
+
+</details>
+</div>
+
+<div className="guid">
+
+For a manifestation that embodies only one expression, use the string that is the number "1" followed by a value for the <InLink href="/attributes/1264">has category of embodied content</InLink> element or a controlled term for a finer level of granularity of the category as a substitute for a value of <InLink href="/attributes/1278">has extent of aggregated content</InLink>.
+
+<details>
+  <summary>Examples</summary>
+
+  | Relation | Example |
+  |----------|----------|
+  | has extent of manifestation | "3 volumes (1 text in 363
+                        pages)" |
+
+  *Full example*: <InLink href="/fullex/fx053">Emma (1815; John Murray; volume)</InLink>. The manifestation is a single novel that is embodied in three
+                        volumes
+
+  ---
+
+  | Relation | Example |
+  |----------|----------|
+  | has extent of manifestation | "1 hartë" |
+
+  *Full example*: <InLink href="/fullex/fx073">Corso delli fiumi Drino, e Boiana
+                          nella Dalmatia (2011; Biblioteka Kombëtare e Shqipërisë; burim
+                        online)</InLink>
+
+</details>
+</div>

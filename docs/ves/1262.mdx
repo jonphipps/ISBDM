@@ -1,0 +1,36 @@
+---
+sidebar_class_name: menu-item-html-level-1 sidebar-level-1
+sidebar_label: ISBDM Unitary Structure value vocabulary
+sidebar_level: 1
+sidebar_position: 12
+vocabularyId: '1262'
+title: ISBDM Unitary Structure value vocabulary
+uri: http://iflastandards.info/ns/isbdm/values/1262
+description: This value vocabulary is a source of values for a has unitary structure element.
+isDefinedBy: http://iflastandards.info/ns/isbdm/values/1262
+scopeNote: The vocabulary covers the full scope of the element and will not be extended with additional values.
+concepts:
+- value: multiple unit
+  definition: A unitary structure that is two or more parts.
+- value: single unit
+  definition: A unitary structure that is a whole.
+---
+import VocabularyTable from '@site/src/components/global/VocabularyTable';
+
+# {frontMatter.title}
+
+For use with element: [has unitary structure](/docs/attributes/1262.html)
+
+<VocabularyTable 
+  {...frontMatter} 
+  showTitle={false}
+  filterPlaceholder="Filter vocabulary terms..."
+/>
+
+---
+
+<div className="guid">
+<p>The values, definitions, and scope notes in this vocabulary are derived from the <OutLink href="https://www.rdaregistry.info/termList/ModeIssue/">RDA Mode of Issuance</OutLink> value vocabulary licensed under a Creative Commons Attribution 4.0 International License, copyright © 2020 American Library Association, Canadian Federation of Library Associations, and CILIP: Chartered Institute of Library and Information Professionals.</p>
+</div>
+
+export const toc = VocabularyTable.generateTOC(frontMatter);

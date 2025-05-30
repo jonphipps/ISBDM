@@ -1,0 +1,104 @@
+---
+sidebar_class_name: sidebar-level-2
+sidebar_label: has manifestation statement of edition
+sidebar_level: 2
+sidebar_position: 6
+customProps:
+  sidebar_prefix: '   ├─ '
+id: '1029'
+title: has manifestation statement of edition
+RDF:
+  definition: Relates a manifestation to a manifestation statement that indicates that the manifestation is a version of another manifestation, and the names, functions, and other details of agents who are responsible for the creation of works and expressions that are embodied in the version.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: This element includes editions and drafts, presentation and layout versions, and stages in the manufacture of another manifestation.
+  range: Literal
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1025
+    url: /docs/statements/1025
+    label: has manifestation statement
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has manifestation statement of edition
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+Consider a statement that includes the terms "edition", "issue", "printing", etc. and their equivalents in other languages to be an insufficient indication of a statement of edition, unless the term is accompanied by a qualification such as a number or a word or phrase that indicates a difference from other editions.
+</div>
+
+<div className="guid">
+For a manifestation that embodies notated movement or notated music content, consider a statement that includes the layout or form of presentation of the notation to be an indication of a statement of edition.
+</div>
+
+<SeeAlso><InLink href="/docs/relationships/1003">has manifestation associated with manifestation</InLink></SeeAlso>
+
+<SeeAlso><InLink href="/docs/notes/1201">has note on manifestation statement of edition</InLink></SeeAlso>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific statement.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of edition | "Partitur" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx014">Was mir behagt, ist nur die muntre Jagd (2021; Carus; volume; full score)</InLink>. Other kinds of score are issued by the same publisher in separate manifestations.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of edition | "édition revue et corrigé" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx028">Incendie (1954; Éditions du Seuil; volume; livre broché)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of edition | "طبعة جديدة منقحة" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx024">كليلة ودمنة (1973؛ الشركة الوطنية للنشر والتوزيع؛ مجلد؛ غلاف مقوى)</InLink>.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of edition | "Naslov originala, Alan Alexander Milne, Winnie-the-Pooh, Printed in Great Britain by Richard Clay (The Chaucer Press) Ltd., Bungay, Suffolk, Prvo izdanje objavljeno 1926 godine" |
+  | has manifestation statement of edition | "Prvo izdanje u ovoj biblioteci" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx004">Medo Winnie zvani Pooh (1986; Mladost; svezak)</InLink>. Each statement concerns a different edition.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of edition | "… Huile sur toile, 180 x 220 cm - Musée de l'Ermitage, Saint-Pétersbourg" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx044">Desserte rouge 1908 (1993; Editions du Centre Pompidou; sheet)</InLink>. The statement refers to the original painting that is reproduced in the manifestation.]*
+  <hr />
+  
+  | Property | Value |
+  |:---------|:------|
+  | has manifestation statement of edition | "… co-published simultaneously as Cataloging & classification quarterly, volume 43, numbers 3/4 2007" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx005">Knitting the Semantic Web (2007; Howarth Information Press; volume)</InLink>. The statement refers to a separate manifestation that embodies an issue of a diachroic work.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a <InLink href="/docs/notes/1201">has note on manifestation statement of edition</InLink> element that gives information about a statement of edition that does not apply to the manifestation as a whole.
+</div>

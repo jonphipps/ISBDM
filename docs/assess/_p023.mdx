@@ -1,0 +1,57 @@
+### Manifestation that is a single unit {#p023}
+
+<section className="guid">
+
+For a manifestation that is published or produced in only one unit, record a single description.
+
+</section>
+
+<section className="guid">
+
+Record a <InLink href="/docs/attributes/1022">has category of carrier</InLink> element. This is mandatory.
+
+Describe other physical characteristics of the unit by applying any of the following methods:
+
+- Record a <InLink href="/docs/attributes/1242">has physical characteristic</InLink> element or element sub-type.
+  - Record a <InLink href="/docs/attributes/1023">has extent of manifestation</InLink> element or element sub-type.
+
+- Record a <InLink href="/docs/notes/1284">has note on physical characteristic</InLink> element.
+- Record a <InLink href="/docs/statements/1025">has manifestation statement</InLink> element or element sub-type that includes information about the unit.
+
+Describe the unit with more than one method, if it is considered to be useful for users of the metadata.
+
+<details>
+<summary>Examples</summary>
+<div>
+
+| Property                                | Value                             |
+| :-------------------------------------- | :-------------------------------- |
+| has category of carrier                 | "volume"                          |
+| has extent of manifestation             | "1 volume (18 x 18 cm; 10 pages)" |
+| has dimensions                          | "18 x 18 cm"                      |
+| has extent of embodied content          | "10 pages"                        |
+| has manifestation statement of category | "A push, pull and slide book"     |
+
+_[Full example: <InLink href="/docs/fullex/fx017">Gruffalo (2020; Macmillan Children's Books; volume; board book binding)</InLink>.]_
+
+| Property                       | Value                  |
+| :----------------------------- | :--------------------- |
+| has category of carrier        | "том"                  |
+| has extent of manifestation    | "1 том (306 сторінки)" |
+| has extent of embodied content | "306 сторінки"         |
+
+_[Full example: <InLink href="/docs/fullex/fx076">Видатнi вченi Нацiональноï академiï наук Украïнi (1998; Нацiональна бiблiотека Украïнi iменi В.I. Веренадського; том)</InLink>.]_
+
+| Property                       | Value                                               |
+| :----------------------------- | :-------------------------------------------------- |
+| has category of carrier        | "audio disc"                                        |
+| has extent of manifestation    | "1 audio disc (15 recorded songs in 49 min 14 sec)" |
+| has playing time               | "49 min 14 sec"                                     |
+| has extent of embodied content | "15 recorded songs"                                 |
+
+_[Full example: <InLink href="/docs/fullex/fx034">Stax uncovered! (2023; H Bauer Publishing Ltd; audio disc)</InLink>.]_
+
+</div>
+</details>
+
+</section>

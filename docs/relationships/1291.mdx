@@ -1,0 +1,75 @@
+---
+sidebar_class_name: sidebar-level-1
+sidebar_label: has entity associated with manifestation
+sidebar_level: 1
+sidebar_position: 2
+id: '1291'
+title: has entity associated with manifestation
+RDF:
+  definition: Relates a manifestation to an entity.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: An entity includes an instance of any entity with an authoritative definition.
+  range: ''
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1005
+    url: /docs/relationships/1005
+    label: has agent associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1002
+    url: /docs/relationships/1002
+    label: has expression associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1004
+    url: /docs/relationships/1004
+    label: has item associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1003
+    url: /docs/relationships/1003
+    label: has manifestation associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1008
+    url: /docs/relationships/1008
+    label: has nomen associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1009
+    url: /docs/relationships/1009
+    label: has place associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1010
+    url: /docs/relationships/1010
+    label: has time-span associated with manifestation
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1001
+    url: /docs/relationships/1001
+    label: has work associated with manifestation
+  elementSuperType: null
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has entity associated with manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+This element relates a manifestation to an entity at the broadest level of granularity. The related entity may be defined in the <InLink href="https://repository.ifla.org/handle/20.500.14598/40.2">IFLA Library Reference Model</InLink> or in any other entity-relationship model.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use an appropriate element sub-type to record a more specific relationship between a manifestation and an entity.
+</div>
+
+<div className="stip">
+  Apply the <InLink href="/docs/relationships/general">General stipulations for relationship elements</InLink>.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has entity associated with manifestation | http://www.wikidata.org/entity/Q7620503 |
+  
+  *[Full example: <InLink href="/docs/fullex/fx059">Asterix and the gowden heuk (2014; Itchy Coo; volume)</InLink>. The value is an IRI of a comics character in a work that is embodied in the manifestation.]*
+  </details>
+</div>

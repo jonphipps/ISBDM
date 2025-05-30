@@ -1,0 +1,106 @@
+/* Styles for the example table component */
+
+.tableContainer {
+  margin-bottom: 1.5rem;
+}
+
+.exampleTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.5rem;
+  table-layout: fixed;
+  font-size: 0.95rem;
+  line-height: 1.4;
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    vertical-align: top;
+  }
+  
+  /* Support for dark mode */
+  [data-theme='dark'] & td {
+    border-color: #444;
+  }
+}
+
+.elementColumn {
+  width: 30%;
+}
+
+.valueColumn {
+  width: 60%;
+}
+
+.detailColumn {
+  width: 10%;
+  text-align: center;
+}
+
+.detailTrigger {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-weight: bold;
+  
+  /* Support for dark mode */
+  [data-theme='dark'] & {
+    background-color: #333;
+    border-color: #555;
+    color: #fff;
+  }
+}
+
+.detailRow {
+  background-color: #f8f9fa;
+  
+  /* Support for dark mode */
+  [data-theme='dark'] & {
+    background-color: #2d2d2d;
+  }
+}
+
+.detailCell {
+  padding: 0 !important;
+  border-top: none !important;
+}
+
+.detailContent {
+  padding: 0.75rem 1.5rem;
+  font-style: italic;
+  font-size: 0.9em;
+  color: #336699;
+  line-height: 1.4;
+
+  /* Support for dark mode */
+  [data-theme='dark'] & {
+    color: #6699cc;
+  }
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.25rem;
+  font-style: italic;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  
+  /* Improved background styling */
+  background-color: #f8f9fa;
+  border-left: 3px solid #ddd;
+  border-radius: 0 4px 4px 0;
+  
+  /* Make the caption text wrap properly */
+  word-break: normal;
+  overflow-wrap: break-word;
+  
+  /* Support for dark mode */
+  [data-theme='dark'] & {
+    color: #aaa;
+    background-color: #2d2d2d;
+    border-left-color: #444;
+  }
+}

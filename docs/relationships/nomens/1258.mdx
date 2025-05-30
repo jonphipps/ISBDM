@@ -1,0 +1,106 @@
+---
+sidebar_class_name: sidebar-level-4
+slug: /relationships/1258
+sidebar_label: has variant access point of manifestation
+sidebar_level: 4
+sidebar_position: 7
+sidebar_category: nomens
+customProps:
+  sidebar_prefix: '   │  │  └─ '
+id: '1258'
+title: has variant access point of manifestation
+RDF:
+  definition: Relates a manifestation to a nomen that is an access point of the manifestation that is not selected for preference in an authority file.
+  domain: Manifestation
+  type: DatatypeProperty
+  scopeNote: ''
+  range: Nomen
+  equivalentProperty: []
+  inverseOf: []
+  elementSubType: []
+  elementSuperType:
+  - uri: http://iflastandards.info/ns/isbdm/elements/P1234
+    url: /docs/relationships/1234
+    label: has access point of manifestation
+deprecated: null
+deprecatedInVersion: null
+willBeRemovedInVersion: null
+---
+# has variant access point of manifestation
+
+## Element Reference
+<ElementReference frontMatter={frontMatter} />
+
+#### Additional information
+
+<div className="guid">
+A variant access point is selected as a secondary access point of the manifestation from all of the possible access points of the manifestation.
+</div>
+
+#### Element values
+
+<div className="guid">
+Record a value that is:
+  - a string that is a variant access point that appears in an authority file
+  - a string that is constructed with a string encoding scheme
+  - an IRI for the variant access point that appears in an authority file
+</div>
+
+<div className="guid">
+A variant access point cannot have the same value as the authorized access point of the manifestation.
+</div>
+
+##### String encoding schemes
+
+<div className="guid">
+A string encoding scheme should construct the base access point from a value of a <InLink href="/docs/relationships/1038">has title proper</InLink> element, if it is considered to be useful for users of the metadata.
+</div>
+
+<div className="guid">
+A string encoding scheme should construct the base access point from a value of a <InLink href="/docs/relationships/1245">has variant title of manifestation</InLink> element, if it is considered to be useful for users of the metadata. The scheme should omit leading articles and punctuation so that the base appears in a browse index in order of the first significant word, if it is considered to be useful for users of the metadata.
+<details>
+  <summary>Examples</summary>
+  
+    | Property | Value |
+    |:---------|:------|
+    | has variant access point of manifestation | "Mojo 357: Stax uncovered! (2023; H Bauer Publishing Ltd; audio disc)" |
+    
+    *[Full example: <InLink href="/docs/fullex/fx034">Stax uncovered! (2023; H Bauer Publishing Ltd; audio disc)</InLink>.]*
+    <hr />
+    
+    | Property | Value |
+    |:---------|:------|
+    | has variant access point of manifestation | "Omaggio de Rada: DVD 3 (2004; Università della Calabria; videodisk)" |
+    | has variant access point of manifestation | "Homazh për Jeronim De Radën: 3/3 (2004; Università della Calabria; videodisk)" |
+    
+    *[Full example: <InLink href="/docs/fullex/fx084">Homazh për De Radën: DVD 3 (2004; Università della Calabria; videodisk)</InLink>.]*
+</details>
+</div>
+
+<div className="guid">
+If no value of a <InLink href="/docs/relationships/1037">has title of manifestation</InLink> element is available, a string encoding scheme should construct the base access point from a title that is assigned by a cataloguing agency, if it is considered to be useful for users of the metadata.
+</div>
+
+#### Stipulations
+
+<div className="stip">
+  Use the element super-type to record a less specific relationship.
+</div>
+
+<div className="stip">
+  Apply the stipulations for the element super-type unless indicated otherwise.
+  
+  <details>
+  <summary>Examples</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | has variant access point of manifestation | "Treasury (2018; National Library “St. St. Cyril and Methodius”; volume + computer disc)" |
+  
+  *[Full example: <InLink href="/docs/fullex/fx075">Съкровищница (2018; Народна библиотека “Св. св. Кирил и Методий”; том + компютърен диск)</InLink>. The value is based on a parallel statement of title and responsibility.]*
+  </details>
+</div>
+
+<div className="stip">
+  Record a value that is selected from one or more values of the element super-type, if it is considered to be useful for users of the metadata.
+</div>

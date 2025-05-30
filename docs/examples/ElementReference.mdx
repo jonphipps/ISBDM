@@ -1,0 +1,222 @@
+---
+title: ElementReference
+description: A component that displays element reference information from YAML front matter
+sidebar_label: ElementReference Component
+---
+
+# ElementReference Component
+
+The `ElementReference` component displays bibliographic element reference information from the YAML front matter in a structured table format, similar to the original HTML layout. It also provides a tabbed interface for viewing the RDF data in different serialization formats.
+
+## Component Features
+
+- Renders element metadata in a tabbed interface
+- Displays element reference information in the first tab
+- Shows deprecation warnings when elements are deprecated
+- Provides tabbed view of RDF representations (Attribute:Value, JSON-LD, Turtle, RDF/XML)
+- Handles empty values and optional fields
+- Fully supports dark mode
+- Internationalization ready
+
+## Installation
+
+The ElementReference component should be registered in the MDXComponents file:
+
+```jsx
+// src/theme/MDXComponents.js
+import ElementReference from '@site/src/components/global/ElementReference';
+
+export default {
+  // Other components...
+  ElementReference,
+};
+```
+
+## Usage
+
+The ElementReference component accepts a single `frontMatter` prop which is typically passed from the Docusaurus page context:
+
+```jsx
+<ElementReference frontMatter={frontMatter} />
+```
+
+### Basic Example
+
+```mdx
+---
+# RDF metadata in front matter
+RDF:
+  label: "has manifestation statement"
+  definition: "Relates a manifestation to a statement that appears in a manifestation to represent aspects of itself."
+  domain: "Manifestation"
+  range: "Literal"
+  uri: "http://iflastandards.info/ns/isbd/isbdm/elements/1025"
+  type: "DatatypeProperty" 
+---
+
+# has manifestation statement
+
+<ElementReference frontMatter={frontMatter} />
+
+## Additional information
+
+This element supports the user task to identify the manifestation.
+```
+
+## Front Matter Structure
+
+The component expects an RDF object in the front matter with the following structure. Note that `isDefinedBy` and `subPropertyOf` fields will only appear in RDF output, not in the HTML table view:
+
+```yaml
+---
+# Docusaurus-specific fields
+id: "1025"
+title: "has manifestation statement"
+sidebar_position: 4
+sidebar_label: "has manifestation statement"
+
+# Core element metadata
+RDF:
+  # Required properties
+  definition: "Relates a manifestation to a statement that appears in a manifestation to represent aspects of itself."
+  domain: "Manifestation"
+  type: "DatatypeProperty"
+  
+  # Optional properties
+  scopeNote: ""
+  range: "Literal"
+  equivalentProperty: []
+  inverseOf: []
+  
+  # Relationships with other elements (optional)
+  elementSubType:
+    - uri: "http://iflastandards.info/ns/isbdm/elements/P1029"
+      url: "/docs/statements/1029"
+      label: "has manifestation statement of edition"
+  elementSuperType: []
+  
+  # These fields appear only in RDF output, not in the table display
+  isDefinedBy: "http://iflastandards.info/ns/isbdm/elements/"
+  subPropertyOf: ["http://iflastandards.info/ns/isbdm/elements/P1000"]
+  status: "Published"
+
+# Deprecation information (if applicable - all optional)
+deprecated: false
+deprecatedInVersion: ""
+willBeRemovedInVersion: ""
+---
+```
+
+### Field Definitions
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `language` | string | Language code (default: "en") |
+| `label` | string | The display name of the element |
+| `definition` | string | The element definition |
+| `scopeNote` | string | Additional scope information |
+| `domain` | string | The domain of the element |
+| `range` | string | The range of the element |
+| `elementSubType` | array | Sub-types of this element |
+| `elementSuperType` | array | Super-types of this element |
+| `uri` | string | The URI identifier of the element |
+| `type` | string | The RDF type ("ObjectProperty" or "DatatypeProperty") |
+| `subPropertyOf` | array | URIs of parent properties (appears only in RDF output, not in table display) |
+| `equivalentProperty` | array | URIs of equivalent properties |
+| `inverseOf` | array | URIs of inverse properties |
+| `status` | string | Publication status (e.g., "Published", "Draft") |
+| `isDefinedBy` | string | The namespace URI (appears only in RDF output, not in table display) |
+| `deprecated` | boolean | Whether the element is deprecated |
+| `deprecatedInVersion` | string | Version in which it was deprecated |
+| `willBeRemovedInVersion` | string | Version in which it will be removed |
+
+## Component Structure
+
+The component renders:
+
+1. **Deprecation Warning** (when applicable) - Shown above the tabs
+2. **Tabbed Interface**:
+   - **Attribute:Value** - Simple key-value display of element metadata
+   - **JSON-LD** - JSON-LD serialization
+   - **Turtle** - Turtle serialization
+   - **RDF/XML** - RDF/XML serialization
+
+**Note**: The `isDefinedBy` and `subPropertyOf` fields appear only in the RDF serializations (JSON-LD, Turtle, RDF/XML) and not in the Attribute:Value table display.
+
+## Deprecation Information
+
+If an element is marked as deprecated in the front matter (`deprecated: true`), the component will:
+
+1. Display a warning banner above the tabs with the deprecation information
+2. Include deprecation information in the Attribute:Value tab
+3. Include deprecation properties in all RDF formats
+
+For example, if you set:
+
+```yaml
+RDF:
+  # Other properties...
+  deprecated: true
+  deprecatedInVersion: "1.2.0"
+  willBeRemovedInVersion: "2.0.0"
+```
+
+The component will display a warning like:
+
+```
+DEPRECATED in version 1.2.0. Will be removed in version 2.0.0.
+```
+
+## RDF Output
+
+The component produces different RDF serializations with the following features:
+
+1. **JSON-LD**
+   - Uses standard context with common RDF prefixes
+   - Properly formats labels and descriptions with language tags
+   - Generates URIs based on element type (Class vs Property)
+   - `upper_value` field is intentionally excluded from JSON-LD output
+   - Includes all RDF properties including `isDefinedBy` and `subPropertyOf`
+
+2. **Turtle**
+   - Concise representation with prefixes
+   - Readable for humans familiar with RDF
+   - Includes all RDF properties
+
+3. **RDF/XML**
+   - Legacy XML-based format
+   - Useful for older systems
+   - Full RDF/XML representation with proper types (Class vs Property)
+
+### Namespaces
+
+The component uses the following namespace prefixes in RDF output:
+
+- `rdf`: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+- `rdfs`: http://www.w3.org/2000/01/rdf-schema#
+- `owl`: http://www.w3.org/2002/07/owl#
+- `skos`: http://www.w3.org/2004/02/skos/core#
+- `dcterms`: http://purl.org/dc/terms/
+- `ifla`: http://iflastandards.info/ns/isbd/terms/
+- `isbdm`: http://iflastandards.info/ns/isbdm/elements/
+
+## Accessibility
+
+The component uses:
+- Semantic HTML elements
+- Appropriate contrast ratios
+- ARIA attributes where necessary
+- Responsive layout that works across device sizes
+
+## Internationalization
+
+The component supports internationalization through:
+- Language-tagged attributes in RDF output
+- RTL/LTR layout support
+- Language-specific formatting
+
+## Related Components
+
+- `InLink` - Internal link component used within element documentation
+- `SeeAlso` - Component for displaying related element references
+- `Mandatory` - Component for indicating mandatory elements
