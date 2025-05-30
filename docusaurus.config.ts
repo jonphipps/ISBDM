@@ -192,17 +192,7 @@ const config: Config = {
               docId: 'assess/index',
               label: 'Assessment',
             },
-            {
-              type: 'doc',
-              docId: 'attributes/index',
-              label: 'Attributes',
-            },
-            {
-              type: 'doc',
-              docId: 'relationships/index',
-              label: 'Relationships',
-            },
-            {
+             {
               type: 'doc',
               docId: 'glossary/index',
               label: 'Glossary',
