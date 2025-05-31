@@ -1,0 +1,84 @@
+---
+title: InLink Wrapping Demo
+description: Demonstrating the InLink component's smart text wrapping behavior
+---
+
+import InLink from '@site/src/components/global/InLink';
+
+# InLink Smart Wrapping Demo
+
+This page demonstrates how the InLink component handles text wrapping, especially with parentheses.
+
+## Default Behavior (Smart Wrap Enabled)
+
+The InLink component automatically inserts zero-width spaces before opening parentheses, allowing text to break at those points when needed:
+
+<div style={{width: '300px', border: '1px solid #ccc', padding: '10px', marginBottom: '20px'}}>
+  <InLink href="/example">
+    Catalogue of shipwrecked books (2018; William Collins; volume; case binding)
+  </InLink>
+</div>
+
+<div style={{width: '200px', border: '1px solid #ccc', padding: '10px', marginBottom: '20px'}}>
+  <InLink href="/example">
+    A very long title that contains (some parenthetical information) and continues afterwards
+  </InLink>
+</div>
+
+## Multiple Parentheses
+
+The component handles multiple sets of parentheses:
+
+<div style={{width: '250px', border: '1px solid #ccc', padding: '10px', marginBottom: '20px'}}>
+  <InLink href="/example">
+    Book title (author) published by (publisher) in year (2024)
+  </InLink>
+</div>
+
+## Word Breaking
+
+If text still overflows after breaking at parentheses, it will break between words:
+
+<div style={{width: '150px', border: '1px solid #ccc', padding: '10px', marginBottom: '20px'}}>
+  <InLink href="/example">
+    Verylongwordwithoutspaces (parenthetical) anotherlongword
+  </InLink>
+</div>
+
+## Disabled Smart Wrap
+
+You can disable smart wrapping by setting `smartWrap={false}`:
+
+<div style={{width: '300px', border: '1px solid #ccc', padding: '10px', marginBottom: '20px'}}>
+  <InLink href="/example" smartWrap={false}>
+    Catalogue of shipwrecked books (2018; William Collins; volume; case binding)
+  </InLink>
+</div>
+
+## Usage
+
+```jsx
+import InLink from '@site/src/components/global/InLink';
+
+// Default usage with smart wrapping
+<InLink href="/docs/example">
+  Text with (parentheses) that will wrap smartly
+</InLink>
+
+// Disable smart wrapping
+<InLink href="/docs/example" smartWrap={false}>
+  Text with (parentheses) without smart wrapping
+</InLink>
+```
+
+## How It Works
+
+1. The component automatically inserts a zero-width space (`\u200B`) before each opening parenthesis
+2. The CSS allows normal text wrapping (`white-space: normal`)
+3. If text still overflows, it uses `word-break: break-word` to break long words
+4. The visual appearance of the text remains unchanged - the zero-width spaces are invisible
+
+This ensures that:
+- Text preferentially breaks before parentheses when space is limited
+- Long words that still overflow will break to fit the container
+- The link remains readable and maintains its styling

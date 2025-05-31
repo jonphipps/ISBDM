@@ -1,5 +1,5 @@
 .inLink {
-  display: inline;
+  display: inline-block;
   background-color: #ffd6cc;
   border: 1px solid #000000;
   border-radius: 0.3rem;
@@ -7,9 +7,12 @@
   padding: 0.1rem 0.3rem;
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
-  white-space: nowrap;
+  white-space: normal;
   overflow-wrap: break-word;
-  word-break: normal;
+  word-break: break-word;
+  hyphens: none;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 .inLink:hover {
   background-color: #e62e00;

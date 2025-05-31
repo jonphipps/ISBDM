@@ -1,7 +1,8 @@
 // InLink.module.scss
 
 .inLink {
-  display: inline;
+  // Use inline-block to allow wrapping while maintaining inline flow
+  display: inline-block;
   background-color: #ffd6cc;
   border: 1px solid #000000;
   border-radius: 0.3rem;
@@ -9,11 +10,17 @@
   padding: 0.1rem 0.3rem;
   text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
-  // Smart wrapping: prevent breaks except where we've added zero-width spaces
-  white-space: nowrap;
+  // Allow text to wrap naturally at zero-width spaces and when overflowing
+  white-space: normal;
+  // Break long words if they still overflow after breaking at zero-width spaces
   overflow-wrap: break-word;
-  // Ensure the link can shrink when needed
-  word-break: normal;
+  word-break: break-word;
+  // Prevent breaking within short segments
+  hyphens: none;
+  // Ensure the link can shrink to fit its container
+  max-width: 100%;
+  // Preserve line breaks at zero-width spaces
+  word-wrap: break-word;
   
   &:hover {
     background-color: #e62e00;
