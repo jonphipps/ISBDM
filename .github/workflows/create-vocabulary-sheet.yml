@@ -1,0 +1,97 @@
+name: Create Vocabulary Sheet
+
+on:
+  repository_dispatch:
+    types: [create-vocabulary]
+  workflow_dispatch:
+    inputs:
+      profileType:
+        description: 'Profile type (values or elements)'
+        required: true
+        type: choice
+        options:
+          - values
+          - elements
+      vocabularyName:
+        description: 'Vocabulary name (lowercase, hyphens only)'
+        required: true
+        type: string
+      title:
+        description: 'Vocabulary title'
+        required: true
+        type: string
+      description:
+        description: 'Vocabulary description'
+        required: true
+        type: string
+      languages:
+        description: 'Languages (comma-separated, e.g., en,fr,es)'
+        required: true
+        type: string
+        default: 'en'
+
+jobs:
+  create-sheet:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: |
+          yarn add googleapis
+          yarn add tsx
+
+      - name: Create vocabulary sheet
+        env:
+          GSHEETS_SA_KEY: ${{ secrets.GSHEETS_SA_KEY }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          if [ "${{ github.event_name }}" == "repository_dispatch" ]; then
+            # Handle repository_dispatch event
+            echo '{
+              "profileType": "${{ github.event.client_payload.profileType }}",
+              "vocabularyName": "${{ github.event.client_payload.vocabularyName }}",
+              "title": "${{ github.event.client_payload.title }}",
+              "description": "${{ github.event.client_payload.description }}",
+              "languages": ${{ toJson(github.event.client_payload.languages) }}
+            }' > config.json
+          else
+            # Handle workflow_dispatch event
+            LANGUAGES_ARRAY=$(echo "${{ github.event.inputs.languages }}" | jq -R 'split(",")')
+            echo '{
+              "profileType": "${{ github.event.inputs.profileType }}",
+              "vocabularyName": "${{ github.event.inputs.vocabularyName }}",
+              "title": "${{ github.event.inputs.title }}",
+              "description": "${{ github.event.inputs.description }}",
+              "languages": '"$LANGUAGES_ARRAY"'
+            }' > config.json
+          fi
+          
+          # Run the script with config
+          yarn tsx scripts/create-vocabulary-sheet-action.ts config.json
+
+      - name: Comment on issue (if triggered via issue)
+        if: github.event.client_payload.issue_number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('result.json', 'utf8'));
+            
+            github.rest.issues.createComment({
+              issue_number: ${{ github.event.client_payload.issue_number }},
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ Vocabulary sheet created successfully!\n\n📊 [Open Spreadsheet](${result.spreadsheetUrl})\n📝 Vocabulary: ${result.vocabularyName}`
+            });

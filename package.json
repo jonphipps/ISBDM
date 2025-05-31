@@ -38,7 +38,10 @@
     "ci:test": "yarn lint && yarn run test",
     "ci:build-all": "yarn docs:build && yarn vocab:release --dry-run",
     "sheets:import": "ts-node scripts/sheets-import.ts",
-    "sheets:export": "ts-node scripts/sheets-export.ts"
+    "sheets:export": "ts-node scripts/sheets-export.ts",
+    "sheet:create": "tsx scripts/create-sheet.ts",
+    "vocabulary:create": "tsx scripts/create-vocabulary-sheet.ts",
+    "vocabulary:create-action": "tsx scripts/create-vocabulary-sheet-action.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",

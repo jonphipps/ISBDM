@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create ISBDM Vocabulary</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .language-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .language-checkbox {
+            display: flex;
+            align-items: center;
+        }
+        .language-checkbox input {
+            width: auto;
+            margin-right: 5px;
+        }
+        button {
+            background: #0366d6;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #0256c7;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .error {
+            color: #d73a49;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .success {
+            color: #28a745;
+            margin-top: 20px;
+            padding: 15px;
+            background: #d4edda;
+            border-radius: 4px;
+            display: none;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #0366d6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create ISBDM Vocabulary</h1>
+        
+        <form id="vocabularyForm">
+            <div class="form-group">
+                <label for="profileType">Profile Type*</label>
+                <select id="profileType" name="profileType" required>
+                    <option value="">Select a profile type</option>
+                    <option value="values">Values</option>
+                    <option value="elements">Elements</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vocabularyName">Vocabulary Name*</label>
+                <input 
+                    type="text" 
+                    id="vocabularyName" 
+                    name="vocabularyName" 
+                    pattern="[a-z0-9-]+" 
+                    placeholder="e.g., sensory-specification" 
+                    required
+                />
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title*</label>
+                <input 
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    placeholder="e.g., Sensory Specification Vocabulary" 
+                    required
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description*</label>
+                <textarea 
+                    id="description" 
+                    name="description" 
+                    placeholder="Describe the purpose and scope of this vocabulary" 
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Languages*</label>
+                <div class="language-checkboxes">
+                    <label class="language-checkbox">
+                        <input type="checkbox" name="languages" value="en" checked> English
+                    </label>
+                    <label class="language-checkbox">
+                        <input type="checkbox" name="languages" value="fr"> French
+                    </label>
+                    <label class="language-checkbox">
+                        <input type="checkbox" name="languages" value="es"> Spanish
+                    </label>
+                    <label class="language-checkbox">
+                        <input type="checkbox" name="languages" value="de"> German
+                    </label>
+                    <label class="language-checkbox">
+                        <input type="checkbox" name="languages" value="it"> Italian
+                    </label>
+                    <label class="language-checkbox">
+                        <input type="checkbox" name="languages" value="pt"> Portuguese
+                    </label>
+                </div>
+                <div class="error" id="languageError"></div>
+            </div>
+
+            <button type="submit">Create Vocabulary Sheet</button>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Creating your vocabulary sheet...</p>
+        </div>
+
+        <div class="success" id="success">
+            <h3>Success!</h3>
+            <p>Your vocabulary sheet has been created.</p>
+            <p><a id="sheetLink" href="#" target="_blank">Open Spreadsheet</a></p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('vocabularyForm');
+        const loading = document.getElementById('loading');
+        const success = document.getElementById('success');
+        const sheetLink = document.getElementById('sheetLink');
+        const nameInput = document.getElementById('vocabularyName');
+        const nameError = document.getElementById('nameError');
+        const languageError = document.getElementById('languageError');
+
+        // Validate vocabulary name
+        nameInput.addEventListener('input', (e) => {
+            const value = e.target.value;
+            if (value && !/^[a-z0-9-]+$/.test(value)) {
+                nameError.textContent = 'Only lowercase letters, numbers, and hyphens allowed';
+            } else {
+                nameError.textContent = '';
+            }
+        });
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(form);
+            const languages = formData.getAll('languages');
+            
+            // Validate languages
+            if (languages.length === 0) {
+                languageError.textContent = 'Please select at least one language';
+                return;
+            } else {
+                languageError.textContent = '';
+            }
+            
+            const data = {
+                profileType: formData.get('profileType'),
+                vocabularyName: formData.get('vocabularyName'),
+                title: formData.get('title'),
+                description: formData.get('description'),
+                languages: languages
+            };
+
+            // Show loading state
+            form.style.display = 'none';
+            loading.style.display = 'block';
+
+            try {
+                // Call your backend API endpoint here
+                // For GitHub Actions, you might trigger a workflow via repository dispatch
+                const response = await fetch('/api/create-vocabulary', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to create vocabulary');
+                }
+
+                const result = await response.json();
+                
+                // Show success
+                loading.style.display = 'none';
+                success.style.display = 'block';
+                sheetLink.href = result.spreadsheetUrl;
+                
+            } catch (error) {
+                loading.style.display = 'none';
+                form.style.display = 'block';
+                alert('Error creating vocabulary: ' + error.message);
+            }
+        });
+    </script>
+</body>
+</html>
