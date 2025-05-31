@@ -13,6 +13,9 @@ const config: Config = {
   tagline: 'International Standard Bibliographic Description for Manifestation',
   url: 'https://jonphipps.github.io',
   baseUrl: '/ISBDM/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'jonphipps', // or organization
   projectName: 'ISBDM',
   trailingSlash: false, // recommended for GitHub Pages
@@ -48,18 +51,12 @@ const config: Config = {
     }
   },
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'iflastandards', // Usually your GitHub org/user name.
-  projectName: 'ISBDM', // Usually your repo name.
-
-
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'fr', 'es', 'de'],
+    locales: ['en', 'fr', 'es'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -69,9 +66,6 @@ const config: Config = {
       },
       es: {
         label: 'Español',
-      },
-      de: {
-        label: 'Deutsch',
       },
     },
   },
@@ -103,9 +97,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-              'https://github.com/iflastandards/ISBDM/edit/main/',
-          versions: {
+          editUrl: 'https://github.com/jonphipps/ISBDM/blob/main/',          versions: {
             current: {
               label: 'Latest',
               path: '',
@@ -153,7 +145,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-              'https://github.com/iflastandards/ISBDM/edit/main/blog/',
+              'https://github.com/jonphipps/ISBDM/blob/blog/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
