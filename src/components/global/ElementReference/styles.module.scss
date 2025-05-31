@@ -123,6 +123,11 @@
 
 [data-theme='dark'] {
   .elementReference {
+    // Headers in dark mode
+    h2 {
+      color: var(--ifm-heading-color);
+    }
+
     .deprecationWarning {
       background-color: rgba(255, 243, 205, 0.1);
       color: #ffeeba;
@@ -137,19 +142,69 @@
 
     .referenceTable {
       .row {
+        // Ensure borders are visible in dark mode
+        border-color: var(--ifm-color-emphasis-300);
+        
         .label {
           background-color: var(--ifm-color-emphasis-200);
+          color: var(--ifm-color-content);
+          border-right-color: var(--ifm-color-emphasis-300);
+        }
+        
+        .value {
+          background-color: var(--ifm-background-color);
+          color: var(--ifm-color-content);
         }
       }
     }
 
     .elementLinks {
       .elementLink {
+        color: var(--ifm-link-color);
+        
         &:hover {
           background-color: #ff6b3d;
           color: #ffffff;
         }
       }
     }
+
+    // Tab content area
+    .attributeValueTable {
+      border-color: var(--ifm-color-emphasis-300);
+      
+      .attributeRow {
+        border-bottom-color: var(--ifm-color-emphasis-300);
+        
+        .attribute {
+          color: var(--ifm-color-content-secondary);
+        }
+        
+        .attributeValue {
+          color: var(--ifm-color-content);
+        }
+      }
+    }
+  }
+}
+
+// Global styles for tabs inside ElementReference in dark mode
+:global([data-theme='dark']) .elementReference {
+  // Style the tab list
+  :global(.tabs__item) {
+    color: var(--ifm-tabs-color);
+    
+    &:hover {
+      background-color: var(--ifm-hover-overlay);
+    }
+    
+    &:global(.tabs__item--active) {
+      color: var(--ifm-tabs-color-active);
+    }
+  }
+  
+  // Style code blocks in tabs
+  :global(pre) {
+    background-color: var(--ifm-code-background);
   }
 }

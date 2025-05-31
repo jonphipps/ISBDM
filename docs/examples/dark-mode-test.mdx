@@ -1,0 +1,139 @@
+---
+title: Dark Mode Test Page
+description: Comprehensive test page for dark mode styling
+sidebar_class_name: sidebar-level-1
+sidebar_label: Dark Mode Test
+id: 'dark-mode-test'
+RDF:
+  definition: This is a test element for verifying dark mode styles
+  domain: Test Domain
+  type: DatatypeProperty
+  scopeNote: This is a test scope note to verify dark mode rendering
+  range: 'Test Range'
+  elementSubType:
+  - uri: http://test.com/sub1
+    url: /docs/test/sub1
+    label: Test Sub-type 1
+  - uri: http://test.com/sub2
+    url: /docs/test/sub2
+    label: Test Sub-type 2
+---
+
+# Dark Mode Test Page
+
+This page tests all components and styles in dark mode.
+
+## Element Reference Component
+
+<ElementReference frontMatter={frontMatter} />
+
+## Guide Blocks
+
+<div className="guid">
+This is a guide block testing dark mode. It should have a dark blue-grey background with light text.
+
+### Header in Guide Block
+This header should be visible in dark mode.
+
+Here's a link: <InLink href="/docs/test">Test InLink in Guide</InLink>
+</div>
+
+## Stipulation Blocks
+
+<div className="stip">
+  This is a stipulation block testing dark mode. It should have a dark brown background with light text.
+  
+  ### Header in Stip Block
+  This header should also be visible in dark mode.
+  
+  <details>
+  <summary>Collapsible Example in Stip</summary>
+  
+  | Column 1 | Column 2 |
+  |:---------|:---------|
+  | Test Value 1 | Test Value 2 |
+  | Another Value | <InLink href="/docs/test">InLink in table</InLink> |
+  
+  *This is emphasized text in the collapsible section.*
+  </details>
+</div>
+
+## InLink Component Tests
+
+### InLink in regular content
+Here's an <InLink href="/docs/test">InLink in regular content</InLink> that should be visible in dark mode.
+
+### InLink in guide block
+<div className="guid">
+  Testing <InLink href="/docs/test">InLink inside guide block</InLink>
+</div>
+
+### InLink in stip block
+<div className="stip">
+  Testing <InLink href="/docs/test">InLink inside stip block</InLink>
+</div>
+
+## Table Tests
+
+### Regular Table
+| Header 1 | Header 2 | Header 3 |
+|:---------|:---------|:---------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+
+### Table in Guide Block
+<div className="guid">
+  <details>
+  <summary>Table Example</summary>
+  
+  | Property | Value |
+  |:---------|:------|
+  | Test Property | Test Value |
+  | Another Property | <InLink href="/docs/test">InLink in table</InLink> |
+  
+  </details>
+</div>
+
+## Headers Test
+
+### H3 Header
+#### H4 Header
+##### H5 Header
+###### H6 Header
+
+## Complex Nested Content
+
+<div className="stip">
+  <details>
+  <summary>Complex Example</summary>
+  
+  ### Nested Header
+  
+  This section contains:
+  - A list item with <InLink href="/docs/test">an InLink</InLink>
+  - Another list item
+  - A third item with *emphasized text*
+  
+  | Complex Table | With Links |
+  |:--------------|:-----------|
+  | Regular text  | <InLink href="/docs/test1">Link 1</InLink> |
+  | More text     | <InLink href="/docs/test2">Link 2</InLink> |
+  
+  **Bold text** and *italic text* should both be visible.
+  
+  </details>
+</div>
+
+## Color Contrast Test
+
+<div className="guid">
+  <p>Regular text in guide block</p>
+  <p><em>Emphasized text in guide block</em></p>
+  <p><strong>Bold text in guide block</strong></p>
+</div>
+
+<div className="stip">
+  <p>Regular text in stip block</p>
+  <p><em>Emphasized text in stip block</em></p>
+  <p><strong>Bold text in stip block</strong></p>
+</div>

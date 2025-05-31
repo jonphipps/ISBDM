@@ -59,6 +59,21 @@ This document outlines the dark mode fixes implemented for various ISBDM compone
 **Changes:**
 - Enhanced dark mode hover states for element links
 - Hover color: `#ff6b3d` (orange)
+- Fixed table row borders and backgrounds
+- Improved tab component styling
+
+### 6. Standard Markdown Tables
+**Location:** `src/css/custom.css`
+
+**Changes:**
+- Added comprehensive dark mode styles for standard tables:
+  - Table background: `var(--ifm-background-surface-color)`
+  - Header background: `var(--ifm-color-emphasis-200)`
+  - Border color: `var(--ifm-color-emphasis-300)`
+  - Text color: `var(--ifm-color-content)`
+  - Alternating row backgrounds for better readability
+  - Hover effects on table rows
+  - Proper link colors inside tables
 
 ## Color Palette Used
 
@@ -96,6 +111,8 @@ To test dark mode:
 2. **Guide and stipulation blocks** had no dark mode styles, causing white backgrounds in dark mode
 3. **Tables inside collapsible sections** had poor contrast in dark mode
 4. **Links inside content blocks** were difficult to read in dark mode
+5. **Standard Markdown tables** lacked proper dark mode styling, appearing with light backgrounds
+6. **Table headers and cells** had poor contrast and visibility in dark mode
 
 ## Future Improvements
 

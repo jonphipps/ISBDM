@@ -99,6 +99,9 @@
   word-break: break-word;
 }
 
+[data-theme=dark] .elementReference h2 {
+  color: var(--ifm-heading-color);
+}
 [data-theme=dark] .elementReference .deprecationWarning {
   background-color: rgba(255, 243, 205, 0.1);
   color: #ffeeba;
@@ -109,12 +112,49 @@
   color: #f5c6cb;
   border-color: rgba(245, 198, 203, 0.2);
 }
+[data-theme=dark] .elementReference .referenceTable .row {
+  border-color: var(--ifm-color-emphasis-300);
+}
 [data-theme=dark] .elementReference .referenceTable .row .label {
   background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-content);
+  border-right-color: var(--ifm-color-emphasis-300);
+}
+[data-theme=dark] .elementReference .referenceTable .row .value {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+}
+[data-theme=dark] .elementReference .elementLinks .elementLink {
+  color: var(--ifm-link-color);
 }
 [data-theme=dark] .elementReference .elementLinks .elementLink:hover {
   background-color: #ff6b3d;
   color: #ffffff;
+}
+[data-theme=dark] .elementReference .attributeValueTable {
+  border-color: var(--ifm-color-emphasis-300);
+}
+[data-theme=dark] .elementReference .attributeValueTable .attributeRow {
+  border-bottom-color: var(--ifm-color-emphasis-300);
+}
+[data-theme=dark] .elementReference .attributeValueTable .attributeRow .attribute {
+  color: var(--ifm-color-content-secondary);
+}
+[data-theme=dark] .elementReference .attributeValueTable .attributeRow .attributeValue {
+  color: var(--ifm-color-content);
+}
+
+:global([data-theme="dark"]) .elementReference :global(.tabs__item) {
+  color: var(--ifm-tabs-color);
+}
+:global([data-theme="dark"]) .elementReference :global(.tabs__item):hover {
+  background-color: var(--ifm-hover-overlay);
+}
+:global([data-theme="dark"]) .elementReference :global(.tabs__item):global(.tabs__item--active) {
+  color: var(--ifm-tabs-color-active);
+}
+:global([data-theme="dark"]) .elementReference :global(pre) {
+  background-color: var(--ifm-code-background);
 }
 
 /*# sourceMappingURL=styles.module.css.map */

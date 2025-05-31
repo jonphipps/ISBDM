@@ -40,6 +40,12 @@
   --ifm-color-primary-lighter: #6ab0ff;
   --ifm-color-primary-lightest: #7ac0ff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Ensure proper heading colors in dark mode */
+  --ifm-heading-color: #ffffff;
+  --ifm-font-color-base: #e0e0e0;
+  --ifm-color-content: #e0e0e0;
+  --ifm-color-content-secondary: #b0b0b0;
 }
 
 /* No custom sidebar styling */
@@ -454,6 +460,105 @@
 h1 {
   --ifm-h1-font-size: 1.7rem !important; /* Force the variable on h1 elements */
   font-size: var(--ifm-h1-font-size) !important; /* Use the forced variable */
+}
+
+/* Dark mode heading colors */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
+  color: var(--ifm-heading-color);
+}
+
+/* Ensure headers inside content blocks are visible */
+[data-theme='dark'] .markdown .guid h1,
+[data-theme='dark'] .markdown .guid h2,
+[data-theme='dark'] .markdown .guid h3,
+[data-theme='dark'] .markdown .guid h4,
+[data-theme='dark'] .markdown .stip h1,
+[data-theme='dark'] .markdown .stip h2,
+[data-theme='dark'] .markdown .stip h3,
+[data-theme='dark'] .markdown .stip h4 {
+  color: #e0e0e0;
+}
+
+/* Fix for main page title in dark mode */
+[data-theme='dark'] .markdown > h1:first-child {
+  color: var(--ifm-heading-color);
+}
+
+/* Ensure article headers are visible in dark mode */
+[data-theme='dark'] article header h1 {
+  color: var(--ifm-heading-color);
+}
+
+/* Dark mode styles for standard Markdown tables */
+[data-theme='dark'] .markdown table {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-content);
+}
+
+[data-theme='dark'] .markdown table thead tr {
+  background-color: var(--ifm-color-emphasis-200);
+  border-bottom-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .markdown table thead th {
+  color: var(--ifm-color-content);
+  border-color: var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-color-emphasis-200);
+  font-weight: 600;
+}
+
+[data-theme='dark'] .markdown table tbody tr {
+  border-bottom-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .markdown table tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme='dark'] .markdown table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .markdown table tbody td {
+  color: var(--ifm-color-content);
+  border-color: var(--ifm-color-emphasis-300);
+  background-color: transparent;
+}
+
+/* Ensure links in tables are visible */
+[data-theme='dark'] .markdown table a {
+  color: var(--ifm-link-color);
+}
+
+[data-theme='dark'] .markdown table a:hover {
+  color: var(--ifm-link-hover-color);
+}
+
+/* Ensure tables in guide/stip blocks override default dark mode table styles */
+[data-theme='dark'] .markdown .guid table,
+[data-theme='dark'] .markdown .stip table {
+  background-color: transparent;
+}
+
+[data-theme='dark'] .markdown .guid table thead tr,
+[data-theme='dark'] .markdown .stip table thead tr {
+  background-color: transparent;
+}
+
+[data-theme='dark'] .markdown .guid table tbody tr:nth-child(odd),
+[data-theme='dark'] .markdown .stip table tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+
+[data-theme='dark'] .markdown .guid table tbody tr:hover,
+[data-theme='dark'] .markdown .stip table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Fix spacing in nested lists */
