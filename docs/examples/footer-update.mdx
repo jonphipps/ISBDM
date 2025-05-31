@@ -1,0 +1,112 @@
+---
+title: Footer Update with IFLA Branding
+description: Documentation of the updated footer component with IFLA standard colors and integrated sitemap
+---
+
+# Footer Update with IFLA Branding
+
+This document showcases the updated footer component that follows IFLA branding standards and includes an integrated sitemap.
+
+## Key Features
+
+### 1. IFLA Standard Colors
+
+The footer now uses the official IFLA color palette:
+- **IFLA Navy** (#002147) - Primary background color
+- **IFLA Gold** (#fdb913) - Section headings and hover effects
+- **IFLA Blue** (#1a4480) - Link colors
+
+### 2. Organized Content Structure
+
+The footer is divided into four main sections:
+
+#### Quick Links
+- Documentation
+- About
+- Blog
+- Sitemap
+
+#### ISBD Elements
+- Statements
+- Notes
+- Attributes
+- Relationships
+
+#### Resources
+- Value Vocabularies
+- String Encoding Schemes
+- Glossary
+- Examples
+
+#### Connect
+- GitHub Repository
+- IFLA Website
+
+### 3. Integrated Sitemap
+
+A new sitemap page has been created at `/sitemap` that provides:
+- Complete overview of all documentation pages
+- Organized by category
+- Responsive grid layout
+- IFLA-branded styling
+
+### 4. Accessibility Features
+
+The footer includes:
+- Proper color contrast for readability
+- Focus indicators for keyboard navigation
+- Semantic HTML structure
+- Screen reader-friendly links
+
+### 5. Responsive Design
+
+The footer adapts to different screen sizes:
+- Multi-column layout on desktop
+- Single column on mobile
+- Flexible grid system
+
+## Technical Implementation
+
+### Footer Component
+Located at: `src/theme/Footer/index.tsx`
+
+The footer component:
+- Overrides the default Docusaurus footer
+- Uses SCSS modules for styling
+- Implements IFLA branding consistently
+- Provides clear navigation structure
+
+### Sitemap Page
+Located at: `src/pages/sitemap.tsx`
+
+The sitemap:
+- Uses Docusaurus API to dynamically list all pages
+- Organizes content by category
+- Provides quick access to all documentation
+- Maintains consistent styling with the rest of the site
+
+### Styling
+Located at: `src/theme/Footer/styles.module.scss`
+
+Features:
+- SASS color variables for IFLA branding
+- Dark mode support
+- Hover effects and transitions
+- Accessibility improvements
+
+## Usage
+
+The footer appears automatically on all pages of the site. No additional configuration is needed.
+
+To link to the sitemap from other pages, use:
+```jsx
+<Link to={useBaseUrl('/sitemap')}>View Sitemap</Link>
+```
+
+## Future Enhancements
+
+Potential improvements could include:
+- Language switcher integration
+- Social media links
+- Newsletter subscription
+- Quick search functionality

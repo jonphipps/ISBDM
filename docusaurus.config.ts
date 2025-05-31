@@ -283,20 +283,6 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          label: 'Site map',
-          to: '/docs/siteMap.html',
-        },
-      ],
-      copyright: `
-          <div>
-            <a href="https://creativecommons.org/licenses/by/4.0/">
-              <img src="/img/cc0_by.png" alt="Badge for Creative Commons Attribution 4.0 International license" height="30" />
-            </a>
-            Gordon Dunsire and Mirna Willer (Main design and content editors).
-          </div>
-        `,
     },
     prism: {
       theme: prismThemes.github,
