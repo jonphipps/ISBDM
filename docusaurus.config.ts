@@ -11,8 +11,11 @@ const config: Config = {
   },
   title: 'ISBD for Manifestation',
   tagline: 'International Standard Bibliographic Description for Manifestation',
-  url: 'https://www.iflastandards.info',
+  url: 'https://jonphipps.github.io',
   baseUrl: '/ISBDM/',
+  organizationName: 'jonphipps, // or organization
+  projectName: 'ISBDM',
+  trailingSlash: false, // recommended for GitHub Pages
   onBrokenLinks: 'warn', // Changed from 'throw' to 'warn' for development
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
