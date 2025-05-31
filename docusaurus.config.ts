@@ -13,7 +13,7 @@ const config: Config = {
   tagline: 'International Standard Bibliographic Description for Manifestation',
   url: 'https://jonphipps.github.io',
   baseUrl: '/ISBDM/',
-  organizationName: 'jonphipps, // or organization
+  organizationName: 'jonphipps', // or organization
   projectName: 'ISBDM',
   trailingSlash: false, // recommended for GitHub Pages
   onBrokenLinks: 'warn', // Changed from 'throw' to 'warn' for development
