@@ -2538,6 +2538,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@docusaurus/plugin-client-redirects@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "@docusaurus/plugin-client-redirects@npm:3.8.0"
+  dependencies:
+    "@docusaurus/core": "npm:3.8.0"
+    "@docusaurus/logger": "npm:3.8.0"
+    "@docusaurus/utils": "npm:3.8.0"
+    "@docusaurus/utils-common": "npm:3.8.0"
+    "@docusaurus/utils-validation": "npm:3.8.0"
+    eta: "npm:^2.2.0"
+    fs-extra: "npm:^11.1.1"
+    lodash: "npm:^4.17.21"
+    tslib: "npm:^2.6.0"
+  peerDependencies:
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  checksum: 10c0/6877cb4390d8c23bef0274e6adbd17a1a9c0085986083461440d813b1a1fa997494ff3b25524dc90a027f513f832d39a07b81dd410ea8951688f0c7d86fb069a
+  languageName: node
+  linkType: hard
+
 "@docusaurus/plugin-content-blog@npm:3.8.0":
   version: 3.8.0
   resolution: "@docusaurus/plugin-content-blog@npm:3.8.0"
@@ -13521,6 +13541,7 @@ __metadata:
     "@docusaurus/eslint-plugin": "npm:^3.8.0"
     "@docusaurus/faster": "npm:^3.8.0"
     "@docusaurus/module-type-aliases": "npm:3.8.0"
+    "@docusaurus/plugin-client-redirects": "npm:^3.8.0"
     "@docusaurus/plugin-content-docs": "npm:^3.8.0"
     "@docusaurus/preset-classic": "npm:3.8.0"
     "@docusaurus/theme-classic": "npm:^3.8.0"

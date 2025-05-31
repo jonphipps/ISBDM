@@ -75,7 +75,26 @@ const config: Config = {
       },
     },
   },
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        // This will be populated at build time
+        redirects: [],
+        createRedirects(existingPath) {
+          // Check if this is an element path that needs redirection
+          const elementMatch = existingPath.match(/^\/docs\/(attributes|statements|notes|relationships)\/(\d+)$/);
+          if (elementMatch) {
+            const elementId = elementMatch[2];
+            // Create redirect from old elements path
+            return [`/docs/elements/${elementId}`];
+          }
+          return undefined;
+        },
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
