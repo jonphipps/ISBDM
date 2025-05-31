@@ -1,5 +1,4 @@
 /* Styles for the example table component */
-
 .tableContainer {
   margin-bottom: 1.5rem;
 }
@@ -11,17 +10,15 @@
   table-layout: fixed;
   font-size: 0.95rem;
   line-height: 1.4;
-
-  td {
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ddd;
-    vertical-align: top;
-  }
-  
   /* Support for dark mode */
-  [data-theme='dark'] & td {
-    border-color: #444;
-  }
+}
+.exampleTable td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+[data-theme=dark] .exampleTable td {
+  border-color: #444;
 }
 
 .elementColumn {
@@ -44,27 +41,24 @@
   padding: 2px 8px;
   cursor: pointer;
   font-weight: bold;
-  
   /* Support for dark mode */
-  [data-theme='dark'] & {
-    background-color: #4a5568;
-    border-color: #718096;
-    color: #e2e8f0;
-    
-    &:hover {
-      background-color: #5a6578;
-      border-color: #8190a6;
-    }
-  }
+}
+[data-theme=dark] .detailTrigger {
+  background-color: #4a5568;
+  border-color: #718096;
+  color: #e2e8f0;
+}
+[data-theme=dark] .detailTrigger:hover {
+  background-color: #5a6578;
+  border-color: #8190a6;
 }
 
 .detailRow {
   background-color: #f8f9fa;
-  
   /* Support for dark mode */
-  [data-theme='dark'] & {
-    background-color: #2d2d2d;
-  }
+}
+[data-theme=dark] .detailRow {
+  background-color: #2d2d2d;
 }
 
 .detailCell {
@@ -78,11 +72,10 @@
   font-size: 0.9em;
   color: #336699;
   line-height: 1.4;
-
   /* Support for dark mode */
-  [data-theme='dark'] & {
-    color: #6699cc;
-  }
+}
+[data-theme=dark] .detailContent {
+  color: #6699cc;
 }
 
 .caption {
@@ -92,20 +85,19 @@
   font-style: italic;
   padding: 0.5rem 1rem;
   text-align: left;
-  
   /* Improved background styling */
   background-color: #f8f9fa;
   border-left: 3px solid #ddd;
   border-radius: 0 4px 4px 0;
-  
   /* Make the caption text wrap properly */
   word-break: normal;
   overflow-wrap: break-word;
-  
   /* Support for dark mode */
-  [data-theme='dark'] & {
-    color: #aaa;
-    background-color: #2d2d2d;
-    border-left-color: #444;
-  }
 }
+[data-theme=dark] .caption {
+  color: #aaa;
+  background-color: #2d2d2d;
+  border-left-color: #444;
+}
+
+/*# sourceMappingURL=styles.module.css.map */

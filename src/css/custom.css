@@ -462,6 +462,15 @@ h1 {
   font-size: var(--ifm-h1-font-size) !important; /* Use the forced variable */
 }
 
+/* Ensure main content text is visible in dark mode */
+[data-theme='dark'] .markdown {
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='dark'] .markdown p {
+  color: var(--ifm-font-color-base);
+}
+
 /* Dark mode heading colors */
 [data-theme='dark'] h1,
 [data-theme='dark'] h2,
@@ -591,6 +600,18 @@ h1 {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   padding: .5rem;
+}
+
+/* Dark mode styles for the detail trigger button */
+[data-theme='dark'] .detailTrigger_src-components-global-ExampleTable-styles-module {
+  background-color: #4a5568 !important;
+  border: 1px solid #718096 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme='dark'] .detailTrigger_src-components-global-ExampleTable-styles-module:hover {
+  background-color: #5a6578 !important;
+  border-color: #8190a6 !important;
 }
 .guid,
 .stip {
@@ -751,6 +772,29 @@ h1 {
 .linkOutline:hover {
   background-color: #0000ff !important;
   color: #ffffff !important;
+}
+
+/* Dark mode styles for menu links */
+[data-theme='dark'] .linkMenuElement:link,
+[data-theme='dark'] .linkMenuElement:visited,
+[data-theme='dark'] .linkMenuElement:active,
+[data-theme='dark'] .linkMenuEntry:link,
+[data-theme='dark'] .linkMenuEntry:visited,
+[data-theme='dark'] .linkMenuEntry:active,
+[data-theme='dark'] .linkPathEntry:link,
+[data-theme='dark'] .linkPathEntry:visited,
+[data-theme='dark'] .linkPathEntry:active {
+  background-color: #374151 !important;
+  color: #e5e7eb !important;
+  border-color: #4b5563 !important;
+}
+
+[data-theme='dark'] .linkMenuElement:hover,
+[data-theme='dark'] .linkMenuEntry:hover,
+[data-theme='dark'] .linkPathEntry:hover {
+  background-color: #ff6b3d !important;
+  color: #ffffff !important;
+  border-color: #ff6b3d !important;
 }
 /* src/css/custom.css */
 /* IFLA Docusaurus Sidebar Hierarchy Styles - Design 1 Implementation */

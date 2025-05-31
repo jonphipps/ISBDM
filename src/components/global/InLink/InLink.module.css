@@ -21,14 +21,14 @@
   outline-offset: 2px;
 }
 :global([data-theme="dark"]) .inLink {
-  background-color: #4a3833;
-  border-color: #8b6959;
-  color: #ffd6cc;
+  background-color: #4a3833 !important;
+  border-color: #8b6959 !important;
+  color: #ffd6cc !important;
 }
 :global([data-theme="dark"]) .inLink:hover {
-  background-color: #ff6b3d;
-  color: #ffffff;
-  border-color: #ff6b3d;
+  background-color: #ff6b3d !important;
+  color: #ffffff !important;
+  border-color: #ff6b3d !important;
 }
 
 /*# sourceMappingURL=InLink.module.css.map */
