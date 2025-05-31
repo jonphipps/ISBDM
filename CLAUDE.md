@@ -80,12 +80,13 @@
 - Run linters and type checking with appropriate commands
 
 ## Package Management
-- Always use yarn instead of npm
+- Always use yarn v2+ (berry) instead of npm
 
 ## Development Tips
 - When running 'yarn start', set the timeout to 30 seconds instead of 120
 - Set timeout of 30 seconds on yarn build and yarn run
 
 ## Important Context
-- This is a Docusaurus v3.7 site
+- This is a Docusaurus v3.8 site
 - MUST CONSULT CONTEXT7 FOR LATEST DOCUMENTATION AND USE THE PROVIDED EXAMPLES RATHER THAN TRAINING
+- The site is multilingual with i18n support
