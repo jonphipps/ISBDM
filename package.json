@@ -28,7 +28,16 @@
     "dev": "node scripts/dev.js",
     "list": "node scripts/dev.js list",
     "generate": "node scripts/dev.js generate",
-    "parse-prd": "node scripts/dev.js parse-prd"
+    "parse-prd": "node scripts/dev.js parse-prd",
+    "dctap:generate": "node scripts/dctap-generate.js --profile ./profiles/current.csv --out ./spreadsheets/template.xlsx",
+    "sheets:ingest": "node scripts/sheets-to-mdx.js --sheet 'https://docs.google.com/...'",
+    "docs:build": "docusaurus build",
+    "vocab:release": "node scripts/release-vocab.js",
+    "docs:release": "node scripts/release-docs.js",
+    "ci:test": "yarn lint && yarn run test",
+    "ci:build-all": "yarn docs:build && yarn vocab:release --dry-run",
+    "sheets:import": "ts-node scripts/sheets-import.ts",
+    "sheets:export": "ts-node scripts/sheets-export.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",

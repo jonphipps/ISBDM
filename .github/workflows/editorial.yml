@@ -1,0 +1,45 @@
+name: 📚 Editorial Tasks
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Which editorial helper do you want to run?"
+        required: true
+        type: choice
+        options:
+          - dctap:generate
+          - sheets:ingest
+          - docs:build
+          - vocab:release
+          - docs:release
+          - ci:test
+  # optional automatic triggers
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'profiles/**'
+
+jobs:
+  run-task:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+      - run: corepack enable
+      - name: Install deps
+        run: yarn install --immutable
+      - name: Execute chosen Yarn script
+        run: |
+          echo "Running ${{ github.event.inputs.task }}…"
+          yarn ${{ github.event.inputs.task }}
+      - name: Commit & push changes (if any)
+        if: github.event.inputs.task == 'dctap:generate' || github.event.inputs.task == 'sheets:ingest' || startsWith(github.event.inputs.task, 'release')
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(ci): auto‑run ${{ github.event.inputs.task }}"
