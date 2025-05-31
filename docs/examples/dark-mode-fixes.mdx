@@ -1,0 +1,105 @@
+---
+title: Dark Mode Fixes for ISBDM Components
+description: Documentation of dark mode styling fixes for ISBDM components and content blocks
+---
+
+# Dark Mode Fixes for ISBDM Components
+
+This document outlines the dark mode fixes implemented for various ISBDM components and content blocks.
+
+## Fixed Components
+
+### 1. InLink Component
+**Location:** `src/components/global/InLink/InLink.module.scss`
+
+**Changes:**
+- Fixed the dark mode selector from `[data-theme='dark'] &` to `:global([data-theme='dark']) &`
+- Applied appropriate dark mode colors:
+  - Background: `#4a3833` (dark brown)
+  - Border: `#8b6959` (medium brown)
+  - Text: `#ffd6cc` (light peach)
+  - Hover background: `#ff6b3d` (orange)
+
+### 2. Guide Blocks (.guid)
+**Location:** `src/css/custom.css`
+
+**Changes:**
+- Added dark mode styles for `.guid` blocks:
+  - Background: `#1a2332` (dark blue-grey)
+  - Border: `#2a3a52` (medium blue-grey)
+  - Text: `#e0e0e0` (light grey)
+
+### 3. Stipulation Blocks (.stip)
+**Location:** `src/css/custom.css`
+
+**Changes:**
+- Added dark mode styles for `.stip` blocks:
+  - Background: `#332620` (dark brown)
+  - Border: `#4a3833` (medium brown)
+  - Text: `#e0e0e0` (light grey)
+
+### 4. Collapsible Details Sections
+**Location:** `src/css/custom.css`
+
+**Changes for .guid details:**
+- Summary background: `#2a3a52` (medium blue-grey)
+- Content background: `#2a3a52` (medium blue-grey)
+- Table headers: `#3a4a62` (darker blue-grey)
+- Links: `#4a3833` background with `#ffd6cc` text
+
+**Changes for .stip details:**
+- Summary background: `#5a453a` (medium brown)
+- Content background: `#5a453a` (medium brown)
+- Table headers: `#6a5543` (darker brown)
+- Links: `#7a5543` background with `#ffd6cc` text
+
+### 5. ElementReference Component
+**Location:** `src/components/global/ElementReference/styles.module.scss`
+
+**Changes:**
+- Enhanced dark mode hover states for element links
+- Hover color: `#ff6b3d` (orange)
+
+## Color Palette Used
+
+### Dark Mode Blues (for .guid elements)
+- `#1a2332` - Darkest (background)
+- `#2a3a52` - Medium (borders, details)
+- `#3a4a62` - Medium-dark (table headers)
+- `#4a5a72` - Lightest (borders)
+
+### Dark Mode Browns (for .stip elements)
+- `#332620` - Darkest (background)
+- `#4a3833` - Medium-dark (borders, link backgrounds)
+- `#5a453a` - Medium (details background)
+- `#6a5543` - Medium-light (table headers)
+- `#7a5543` - Light (link backgrounds in details)
+- `#8a6553` - Lightest (borders)
+
+### Accent Colors
+- `#ff6b3d` - Orange (hover states)
+- `#ffd6cc` - Peach (link text)
+- `#6ba3f0` - Light blue (emphasis text)
+- `#e0e0e0` - Light grey (regular text)
+
+## Testing Dark Mode
+
+To test dark mode:
+1. Click the theme toggle in the top navigation
+2. Check that all content remains readable
+3. Verify hover states work correctly
+4. Ensure tables and links have proper contrast
+
+## Known Issues Resolved
+
+1. **InLink components** were not applying dark mode styles due to incorrect CSS selector scoping
+2. **Guide and stipulation blocks** had no dark mode styles, causing white backgrounds in dark mode
+3. **Tables inside collapsible sections** had poor contrast in dark mode
+4. **Links inside content blocks** were difficult to read in dark mode
+
+## Future Improvements
+
+Consider implementing:
+- CSS custom properties for easier theme customization
+- Consistent color variables across all components
+- Automated contrast testing for accessibility compliance

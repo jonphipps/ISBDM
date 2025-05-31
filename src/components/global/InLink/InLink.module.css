@@ -1,0 +1,34 @@
+.inLink {
+  display: inline;
+  background-color: #ffd6cc;
+  border: 1px solid #000000;
+  border-radius: 0.3rem;
+  color: #000000;
+  padding: 0.1rem 0.3rem;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.inLink:hover {
+  background-color: #e62e00;
+  color: #ffffff;
+  text-decoration: none;
+}
+.inLink:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+:global([data-theme="dark"]) .inLink {
+  background-color: #4a3833;
+  border-color: #8b6959;
+  color: #ffd6cc;
+}
+:global([data-theme="dark"]) .inLink:hover {
+  background-color: #ff6b3d;
+  color: #ffffff;
+  border-color: #ff6b3d;
+}
+
+/*# sourceMappingURL=InLink.module.css.map */

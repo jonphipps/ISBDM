@@ -27,14 +27,15 @@
   }
   
   // Maintain dark mode compatibility
-  [data-theme='dark'] & {
-    background-color: var(--ifm-color-danger-darker);
-    border-color: var(--ifm-color-gray-600);
-    color: var(--ifm-color-gray-100);
+  :global([data-theme='dark']) & {
+    background-color: #4a3833;
+    border-color: #8b6959;
+    color: #ffd6cc;
     
     &:hover {
-      background-color: var(--ifm-color-danger);
-      color: var(--ifm-color-white);
+      background-color: #ff6b3d;
+      color: #ffffff;
+      border-color: #ff6b3d;
     }
   }
 }
