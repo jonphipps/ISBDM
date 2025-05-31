@@ -6,48 +6,51 @@ import React from 'react';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  icon: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Entity-Based Cataloging',
+    icon: '🏗️',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        ISBDM implements the IFLA Library Reference Model (LRM) for manifestations, 
+        providing a modern foundation for describing bibliographic resources in 
+        an interconnected, semantic web-ready format.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Smart Navigation',
+    icon: '🧭',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Every element is just two clicks away. Navigate through hierarchical 
+        relationships, cross-references, and semantic connections with an 
+        intuitive interface designed for cataloging professionals.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Living Documentation',
+    icon: '📚',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Unlike static PDFs, ISBDM evolves with your needs. Updates are instant, 
+        examples are interactive, and the entire standard adapts to how you 
+        use it - with collapsible sections and smart search.
       </>
     ),
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, icon, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <div className={styles.featureIcon}>{icon}</div>
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
@@ -61,6 +64,9 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
+        <Heading as="h2" className="text--center margin-bottom--xl">
+          What Makes ISBDM Different
+        </Heading>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

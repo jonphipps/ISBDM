@@ -264,10 +264,21 @@ const config: Config = {
           ]
         },
         {
-          type: 'doc',
-          docId: 'about/index',
-          position: 'right',
+          type: 'dropdown',
           label: 'About',
+          position: 'right',
+          items: [
+            {
+              type: 'doc',
+              docId: 'about/index',
+              label: 'About ISBDM',
+            },
+            {
+              type: 'doc',
+              docId: 'about/docusaurus-for-ifla',
+              label: 'Modern Documentation Platform',
+            },
+          ],
         },
 
         {to: '/blog', label: 'Blog', position: 'left'},
