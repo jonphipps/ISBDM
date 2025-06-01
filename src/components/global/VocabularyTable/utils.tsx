@@ -265,6 +265,9 @@ export const exportToCSV = (props: VocabularyTableProps): string => {
   // Extract all available languages
   const languages = extractAvailableLanguages(conceptsArray);
   
+  // If no multilingual data found, default to 'en' to ensure content is exported
+  const exportLanguages = languages.length > 0 ? languages : ['en'];
+  
   // Build headers
   const headers = ['uri', 'rdf:type'];
   
@@ -272,7 +275,7 @@ export const exportToCSV = (props: VocabularyTableProps): string => {
   const properties = ['skos:prefLabel', 'skos:definition', 'skos:scopeNote', 'skos:altLabel', 'skos:notation', 'skos:example', 'skos:changeNote', 'skos:historyNote', 'skos:editorialNote'];
   
   properties.forEach(prop => {
-    languages.forEach(lang => {
+    exportLanguages.forEach(lang => {
       headers.push(`${prop}@${lang}`);
     });
   });
@@ -290,14 +293,28 @@ export const exportToCSV = (props: VocabularyTableProps): string => {
     
     // Add multilingual data
     properties.forEach(prop => {
-      const conceptProp = prop.replace('skos:', '') as keyof ConceptProps;
-      let conceptValue = concept[conceptProp];
+      // Map SKOS properties to ConceptProps fields
+      const skosToConceptMap: Record<string, keyof ConceptProps> = {
+        'skos:prefLabel': 'value',
+        'skos:definition': 'definition',
+        'skos:scopeNote': 'scopeNote',
+        'skos:altLabel': 'altLabel',
+        'skos:notation': 'notation',
+        'skos:example': 'example',
+        'skos:changeNote': 'changeNote',
+        'skos:historyNote': 'historyNote',
+        'skos:editorialNote': 'editorialNote'
+      };
       
-      languages.forEach(lang => {
+      const conceptProp = skosToConceptMap[prop];
+      let conceptValue = conceptProp ? concept[conceptProp] : undefined;
+      
+      exportLanguages.forEach(lang => {
         let cellValue = '';
         
         if (conceptValue) {
           if (typeof conceptValue === 'string') {
+            // For simple strings, use the value for all languages
             cellValue = conceptValue;
           } else if (typeof conceptValue === 'object' && conceptValue[lang]) {
             const langValue = conceptValue[lang];

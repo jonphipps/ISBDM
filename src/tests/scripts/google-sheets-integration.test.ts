@@ -268,8 +268,8 @@ describe('Google Sheets Integration - Real Logic Tests', () => {
     it('should handle API rate limiting gracefully', () => {
       const shouldRetry = (error: any): boolean => {
         return error.code === 429 || 
-               error.message?.includes('quota') ||
-               error.message?.includes('rate limit');
+               (error.message?.toLowerCase().includes('quota') ?? false) ||
+               (error.message?.toLowerCase().includes('rate limit') ?? false);
       };
 
       const calculateBackoff = (attempt: number): number => {
