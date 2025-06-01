@@ -37,17 +37,18 @@ const config: Config = {
       showTitle: false,
       showURIs: true, // Whether to display URIs in the table, set to false for glossaries
       showCSVErrors: false, // Whether to display CSV validation errors by default
-      profilePath: "",
+      profile: "isbdm-values-profile-revised.csv",
+      profileShapeId: "Concept",
       RDF: {
         "rdf:type": ["skos:ConceptScheme"]
       },
       // Common defaults for elements and defines the vocabulary properties
       elementDefaults: {
         uri: "https://www.iflastandards.info/ISBDM/elements",
-        prefix: "isbdm",
         classPrefix: "C", // Class Prefix for numeric URIs. Can be blank for no prefix.
         propertyPrefix: "P", // Property Prefix for numeric URIs. Can be blank for no prefix.
-        profilePath: "",
+        profile: "isbdm-elements-profile.csv",
+        profileShapeId: "Element",
       }
     }
   },
