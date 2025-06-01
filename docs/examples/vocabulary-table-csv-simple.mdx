@@ -14,7 +14,7 @@ These examples demonstrate basic usage of the VocabularyTable component with CSV
 The simplest way to load a CSV vocabulary - just provide the CSV file path:
 
 <VocabularyTable 
-  csvFile="/data/sensory-test.csv"
+  csvFile="/data/CSV/sensory-test.csv"
 />
 
 ## CSV with Basic Metadata
@@ -25,7 +25,7 @@ Add vocabulary-level information in the front matter:
   vocabularyId="sensory-basic"
   title="Sensory Specification Terms"
   description="Basic sensory content specifications"
-  csvFile="/data/sensory-test.csv"
+  csvFile="/data/CSV/sensory-test.csv"
   showTitle={true}
 />
 
@@ -37,7 +37,7 @@ Perfect for documentation glossaries:
   vocabularyId="sensory-glossary"
   title="Sensory Terms Glossary"
   description="Quick reference for sensory content types"
-  csvFile="/data/sensory-test.csv"
+  csvFile="/data/CSV/sensory-test.csv"
   showTitle={true}
   showURIs={false}
   showLanguageSelector={false}
@@ -51,7 +51,7 @@ Demonstrate language switching capabilities:
   vocabularyId="sensory-multilingual"
   title="Vocabulaire de spécification sensorielle"
   description="Termes multilingues pour les spécifications sensorielles"
-  csvFile="/data/sensory-test.csv"
+  csvFile="/data/CSV/sensory-test.csv"
   showTitle={true}
   defaultLanguage="fr"
   filterPlaceholder="Rechercher des termes..."
@@ -65,7 +65,7 @@ Using the full production vocabulary with extensive language support:
   vocabularyId="sensory-production"
   title="Production Sensory Vocabulary"
   description="Complete vocabulary used in library systems worldwide"
-  csvFile="/data/sensory-specification.csv"
+  csvFile="/data/CSV/sensory-specification.csv"
   showTitle={true}
   defaultLanguage="en"
 />

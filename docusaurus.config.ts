@@ -37,6 +37,7 @@ const config: Config = {
       showTitle: false,
       showURIs: true, // Whether to display URIs in the table, set to false for glossaries
       showCSVErrors: false, // Whether to display CSV validation errors by default
+      profilePath: "",
       RDF: {
         "rdf:type": ["skos:ConceptScheme"]
       },
@@ -46,7 +47,7 @@ const config: Config = {
         prefix: "isbdm",
         classPrefix: "C", // Class Prefix for numeric URIs. Can be blank for no prefix.
         propertyPrefix: "P", // Property Prefix for numeric URIs. Can be blank for no prefix.
-
+        profilePath: "",
       }
     }
   },
