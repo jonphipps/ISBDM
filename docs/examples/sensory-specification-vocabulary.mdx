@@ -5,8 +5,6 @@ description: Example vocabulary using sensory-specification.csv with multilingua
 sidebar_label: Vocabulary - Multi-language Example
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Sensory Specification Production Vocabulary
 
 This example demonstrates the VocabularyTable component using the `sensory-specification.csv` file, which contains the production vocabulary with extensive multilingual support across 9 languages.
@@ -29,7 +27,7 @@ This example demonstrates the VocabularyTable component using the `sensory-speci
   prefix="sensoryspecfication"
   uri="https://iflastandards.info/ns/isbd/terms/contentqualification/sensoryspecfication"
   isDefinedBy="https://iflastandards.info/ns/isbd/terms/contentqualification/sensoryspecfication"
-  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  csvFile="/data/sensory-specification.csv"
   showTitle={true}
   defaultLanguage="en"
 />
@@ -40,7 +38,7 @@ This example demonstrates the VocabularyTable component using the `sensory-speci
   vocabularyId="sensory-specification-fr"
   title="Vocabulaire de spécification sensorielle"
   description="Termes normalisés pour décrire les caractéristiques sensorielles du contenu bibliographique"
-  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  csvFile="/data/sensory-specification.csv"
   showTitle={true}
   defaultLanguage="fr"
   filterPlaceholder="Rechercher des termes..."
@@ -52,7 +50,7 @@ This example demonstrates the VocabularyTable component using the `sensory-speci
   vocabularyId="sensory-specification-zh"
   title="感官规范词汇表"
   description="用于描述书目内容感官特征的标准化术语"
-  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  csvFile="/data/sensory-specification.csv"
   showTitle={true}
   defaultLanguage="zh"
   filterPlaceholder="搜索术语..."
@@ -64,7 +62,7 @@ This example demonstrates the VocabularyTable component using the `sensory-speci
   vocabularyId="sensory-specification-compact"
   title="Sensory Terms Reference"
   description="Quick reference guide for sensory specification terms"
-  csvFile={useBaseUrl('/data/sensory-specification.csv')}
+  csvFile="/data/sensory-specification.csv"
   showTitle={true}
   showURIs={false}
   showLanguageSelector={true}

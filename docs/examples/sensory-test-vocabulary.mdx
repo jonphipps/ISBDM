@@ -5,8 +5,6 @@ description: Example vocabulary using sensory-test.csv with rich SKOS properties
 sidebar_label: Vocabulary - Multi-attribute Example
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # Sensory Specification Test Vocabulary
 
 This example demonstrates the VocabularyTable component using the `sensory-test.csv` file, which includes comprehensive SKOS properties including examples, change notes, history notes, and editorial notes.
@@ -30,7 +28,7 @@ This example demonstrates the VocabularyTable component using the `sensory-test.
   prefix="sensoryspec"
   uri="https://iflastandards.info/ns/isbd/terms/contentqualification/sensoryspecfication"
   isDefinedBy="https://iflastandards.info/ns/isbd/terms/contentqualification/sensoryspecfication"
-  csvFile={useBaseUrl('/data/sensory-test.csv')}
+  csvFile="/data/sensory-test.csv"
   showTitle={true}
   defaultLanguage="en"
   availableLanguages={["en", "fr", "es"]}
@@ -42,7 +40,7 @@ This example demonstrates the VocabularyTable component using the `sensory-test.
   vocabularyId="sensory-test-custom"
   title="Sensory Terms (Custom Display)"
   description="Same vocabulary with customized display options"
-  csvFile={useBaseUrl('/data/sensory-test.csv')}
+  csvFile="/data/sensory-test.csv"
   showTitle={true}
   showURIs={false}
   defaultLanguage="fr"
@@ -55,7 +53,7 @@ This example demonstrates the VocabularyTable component using the `sensory-test.
   vocabularyId="sensory-glossary"
   title="Sensory Terms Glossary"
   description="Simplified glossary view without technical URIs"
-  csvFile={useBaseUrl('/data/sensory-test.csv')}
+  csvFile="/data/sensory-test.csv"
   showTitle={true}
   showURIs={false}
   showLanguageSelector={false}

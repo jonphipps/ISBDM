@@ -514,7 +514,7 @@ sensoryspec:T1002,http://www.w3.org/2004/02/skos/core#Concept,visual,"Content pe
         expect(screen.getByText('visual')).toBeInTheDocument();
       });
 
-      expect(fetch).toHaveBeenCalledWith('test.csv');
+      expect(fetch).toHaveBeenCalledWith('/test.csv');
     });
 
     it('shows error state when CSV file fails to load', async () => {

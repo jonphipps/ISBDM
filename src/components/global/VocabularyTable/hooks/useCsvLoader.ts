@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { CSVConceptRow } from '../types';
 
 interface CsvLoaderState {
@@ -14,6 +15,9 @@ export function useCsvLoader(csvFile?: string): CsvLoaderState {
     error: null
   });
 
+  // Resolve the CSV file path using useBaseUrl
+  const resolvedCsvPath = useBaseUrl(csvFile || '');
+
   useEffect(() => {
     if (!csvFile) {
       setState({ data: [], loading: false, error: null });
@@ -24,8 +28,8 @@ export function useCsvLoader(csvFile?: string): CsvLoaderState {
       setState(prev => ({ ...prev, loading: true, error: null }));
       
       try {
-        // Use dynamic import to load the CSV file
-        const response = await fetch(csvFile);
+        // Use the resolved path from useBaseUrl
+        const response = await fetch(resolvedCsvPath);
         if (!response.ok) {
           throw new Error(`Failed to load CSV file: ${response.statusText}`);
         }
@@ -61,7 +65,7 @@ export function useCsvLoader(csvFile?: string): CsvLoaderState {
     };
 
     loadCsvFile();
-  }, [csvFile]);
+  }, [csvFile, resolvedCsvPath]);
 
   return state;
 }
