@@ -51,3 +51,5 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+[![Create New Vocabulary](https://img.shields.io/badge/Create-New%20Vocabulary-blue.svg)](https://github.com/YOUR_ORG/ISBDM/actions/workflows/create-vocabulary-sheet.yml)
