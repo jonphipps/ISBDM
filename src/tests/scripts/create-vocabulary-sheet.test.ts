@@ -4,7 +4,8 @@ import {
   VocabularyConfig,
   initializeGoogle,
   findOrCreateWorkbook,
-  createVocabularySheet
+  createVocabularySheet,
+  DCTAP_PROFILES
 } from '../../../scripts/create-vocabulary-sheet';
 
 // Mock googleapis
@@ -271,8 +272,6 @@ describe('create-vocabulary-sheet', () => {
 
   describe('DCTAP profiles', () => {
     it('should have correct values profile columns', () => {
-      const { DCTAP_PROFILES } = require('../../../scripts/create-vocabulary-sheet');
-      
       expect(DCTAP_PROFILES.values.columns).toEqual([
         'valueID',
         'label',
@@ -285,8 +284,6 @@ describe('create-vocabulary-sheet', () => {
     });
 
     it('should have correct elements profile columns', () => {
-      const { DCTAP_PROFILES } = require('../../../scripts/create-vocabulary-sheet');
-      
       expect(DCTAP_PROFILES.elements.columns).toEqual([
         'elementID',
         'label',

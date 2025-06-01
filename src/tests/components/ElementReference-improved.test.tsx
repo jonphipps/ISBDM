@@ -3,21 +3,14 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import ElementReference from '../../components/global/ElementReference';
 
-// Mock only what's necessary
-vi.mock('@docusaurus/useDocusaurusContext', () => ({
-  default: () => ({
-    siteConfig: {
-      customFields: {
-        elementDefaults: {
-          uri: "https://www.iflastandards.info/ISBDM/elements",
-          prefix: "isbdm",
-          classPrefix: "C", 
-          propertyPrefix: "P",
-        }
-      }
-    }
-  })
-}));
+// Use existing mocks from __mocks__ folder
+vi.mock('@docusaurus/useDocusaurusContext');
+vi.mock('@docusaurus/Link');
+vi.mock('@docusaurus/useBaseUrl');
+vi.mock('@docusaurus/theme-common');
+vi.mock('@theme/Tabs');
+vi.mock('@theme/TabItem');
+vi.mock('@theme/CodeBlock');
 
 describe('ElementReference - URI Generation Logic Tests', () => {
   describe('URI Prefix Logic', () => {
@@ -65,10 +58,16 @@ describe('ElementReference - URI Generation Logic Tests', () => {
           'ObjectProperty': ['rdf:Property', 'owl:ObjectProperty']
         };
 
-        // Find the base type
-        const baseType = Object.keys(typeMap).find(key => 
-          type.toLowerCase().includes(key.toLowerCase())
-        ) || 'Property';
+        // Find the base type - need to check ObjectProperty before Property
+        let baseType = 'Property'; // default
+        
+        if (type.toLowerCase().includes('class')) {
+          baseType = 'Class';
+        } else if (type.toLowerCase().includes('objectproperty')) {
+          baseType = 'ObjectProperty';
+        } else if (type.toLowerCase().includes('datatypeproperty')) {
+          baseType = 'DatatypeProperty';
+        }
 
         return typeMap[baseType];
       };

@@ -46,17 +46,7 @@ interface ElementReferenceProps {
 }
 
 // Adapter function to convert from new frontmatter structure to component-expected structure
-function adaptFrontMatter(frontMatter: any): { RDF: RDFData } {
-  // Get config from Docusaurus context
-  const {siteConfig} = useDocusaurusContext();
-  
-  // Extract element defaults from config
-  const elementDefaults = siteConfig.customFields?.elementDefaults || {
-    uri: "http://iflastandards.info/ns/isbdm/elements",
-    prefix: "isbdm",
-    classPrefix: "C",
-    propertyPrefix: "P",
-  };
+function adaptFrontMatter(frontMatter: any, elementDefaults: any): { RDF: RDFData } {
   
   // Check if frontMatter already has the expected structure with RDF containing required properties
   if (frontMatter.RDF?.definition && 
@@ -147,8 +137,19 @@ function adaptFrontMatter(frontMatter: any): { RDF: RDFData } {
 export default function ElementReference({
   frontMatter,
 }: ElementReferenceProps): JSX.Element {
+  // Get config from Docusaurus context
+  const {siteConfig} = useDocusaurusContext();
+  
+  // Extract element defaults from config
+  const elementDefaults = siteConfig.customFields?.elementDefaults || {
+    uri: "https://www.iflastandards.info/ISBDM/elements",
+    prefix: "isbdm",
+    classPrefix: "C",
+    propertyPrefix: "P",
+  };
+  
   // Apply adapter to frontMatter before using it
-  const adaptedFrontMatter = adaptFrontMatter(frontMatter);
+  const adaptedFrontMatter = adaptFrontMatter(frontMatter, elementDefaults);
   
   const {
     language = "en",
@@ -303,13 +304,13 @@ export default function ElementReference({
             )}
           </div>
         </TabItem>
-        <TabItem value="jsonld" label="JSON-LD" data-testid="tab-json-ld">
+        <TabItem value="json-ld" label="JSON-LD" data-testid="tab-json-ld">
           <CodeBlock language="json" data-testid="codeblock-json">{jsonLD}</CodeBlock>
         </TabItem>
         <TabItem value="turtle" label="Turtle" data-testid="tab-turtle">
           <CodeBlock language="turtle" data-testid="codeblock-turtle">{turtle}</CodeBlock>
         </TabItem>
-        <TabItem value="rdfxml" label="RDF/XML" data-testid="tab-rdf-xml">
+        <TabItem value="rdf-xml" label="RDF/XML" data-testid="tab-rdf-xml">
           <CodeBlock language="xml" data-testid="codeblock-xml">{rdfXML}</CodeBlock>
         </TabItem>
       </Tabs>

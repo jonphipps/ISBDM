@@ -102,7 +102,7 @@ async function findOrCreateWorkbook(
   
   // Search for existing workbook
   const searchResponse = await drive.files.list({
-    q: `name='${workbookName}' and mimeType='application/vnd.google-apps.spreadsheet'`,
+    q: `name='${workbookName}' and mimeType='application/vnd.google-apps.spreadsheet' and trashed=false`,
     fields: 'files(id, name)',
   });
 
@@ -173,11 +173,11 @@ async function createVocabularySheet(
   sheets: sheets_v4.Sheets,
   spreadsheetId: string,
   config: VocabularyConfig
-): Promise<void> {
+): Promise<number> {
   const profile = DCTAP_PROFILES[config.profileType];
   
   // Add new sheet for vocabulary
-  await sheets.spreadsheets.batchUpdate({
+  const response = await sheets.spreadsheets.batchUpdate({
     spreadsheetId,
     requestBody: {
       requests: [{
@@ -213,6 +213,10 @@ async function createVocabularySheet(
       values: [headers]
     }
   });
+
+  // Extract and return the sheet ID
+  const sheetId = response.data.replies?.[0]?.addSheet?.properties?.sheetId || 0;
+  return sheetId;
 }
 
 // Create or update index sheet
@@ -331,4 +335,4 @@ if (require.main === module) {
   main();
 }
 
-export { VocabularyConfig, initializeGoogle, findOrCreateWorkbook, createVocabularySheet };
+export { VocabularyConfig, initializeGoogle, findOrCreateWorkbook, createVocabularySheet, DCTAP_PROFILES };
