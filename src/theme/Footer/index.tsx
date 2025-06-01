@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 
 type Props = WrapperProps<typeof FooterType>;
 
-export default function FooterWrapper(props: Props): JSX.Element {
+export default function FooterWrapper(props: Props): React.JSX.Element {
   return (
     <>
       <footer className={styles.iflaFooter}>
@@ -30,7 +30,7 @@ export default function FooterWrapper(props: Props): JSX.Element {
                 <li><Link to={useBaseUrl('/docs/statements')}>Statements</Link></li>
                 <li><Link to={useBaseUrl('/docs/notes')}>Notes</Link></li>
                 <li><Link to={useBaseUrl('/docs/attributes')}>Attributes</Link></li>
-                <li><Link to={useBaseUrl('/docs/relationships')}>Relationships</Link></li>
+                <li><Link to={useBaseUrl('/docs/relationships/index')}>Relationships</Link></li>
               </ul>
             </div>
             
