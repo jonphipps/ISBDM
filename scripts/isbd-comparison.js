@@ -79,10 +79,22 @@ class ISBDComparisonTool {
             const row = indexData[i];
             if (row[tokenCol]) {
                 const token = row[tokenCol];
+                const uri = row[idCol] || '';
+                
+                // Skip instruction rows (they don't have valid URIs)
+                if (!uri || !uri.startsWith('http')) {
+                    continue;
+                }
+                
+                // Skip rows that are clearly instructions (contain colons or long text)
+                if (token.includes(':') || token.length > 50) {
+                    continue;
+                }
+                
                 this.conceptSchemes.push({
                     token: token,
                     title: row[titleCol] || '',
-                    uri: row[idCol] || '',
+                    uri: uri,
                     hasRdf: !['qualiprocess', 'process'].includes(token) // New ones don't have RDF
                 });
             }
@@ -221,6 +233,33 @@ class ISBDComparisonTool {
     }
 
     /**
+     * Expand prefixed URI to full URI
+     */
+    expandUri(prefixedUri, scheme) {
+        if (!prefixedUri) return prefixedUri;
+        
+        // If it's already a full URI, return as is
+        if (prefixedUri.startsWith('http://') || prefixedUri.startsWith('https://')) {
+            return prefixedUri;
+        }
+        
+        // Check if it matches the pattern prefix:localname
+        const match = prefixedUri.match(/^([^:]+):(.+)$/);
+        if (match) {
+            const prefix = match[1];
+            const localName = match[2];
+            
+            // Use the scheme URI as the base namespace
+            // For ISBD vocabularies, the pattern is http://iflastandards.info/ns/isbd/terms/{vocabulary}/{localname}
+            if (scheme.uri && scheme.uri.includes('/ns/isbd/terms/')) {
+                return `${scheme.uri}/${localName}`;
+            }
+        }
+        
+        return prefixedUri;
+    }
+
+    /**
      * Fetch concepts from a Google Sheet and parse SKOS structure
      */
     async fetchSheetConcepts(sheetName) {
@@ -230,6 +269,9 @@ class ISBDComparisonTool {
         const headers = data[0];
         const columnMap = this.organizeColumns(headers);
         const concepts = [];
+        
+        // Find the scheme for this sheet
+        const scheme = this.conceptSchemes.find(s => s.token === sheetName);
 
         console.log(`   📊 Found columns for ${sheetName}:`, Array.from(columnMap.keys()));
 
@@ -247,9 +289,9 @@ class ISBDComparisonTool {
             const notationValues = this.extractPropertyValues(row, columnMap.get('skos:notation') || new Map());
             const altLabelValues = this.extractPropertyValues(row, columnMap.get('skos:altLabel') || new Map(), 'en');
 
-            // Create concept object
+            // Create concept object with expanded URI
             const concept = {
-                uri: uriValues[0],
+                uri: this.expandUri(uriValues[0], scheme),
                 prefLabel: prefLabelValues[0] || '',
                 definition: definitionValues[0] || '',
                 notation: notationValues[0] || '',
@@ -319,12 +361,16 @@ class ISBDComparisonTool {
     parseRdfConcepts(rdfText, vocabUri) {
         const concepts = [];
 
+        // First, let's remove the ConceptScheme block to avoid confusion
+        const schemeRegex = /<(?:skos:)?ConceptScheme[^>]*>.*?<\/(?:skos:)?ConceptScheme>/gs;
+        const rdfWithoutScheme = rdfText.replace(schemeRegex, '');
+
         // Simple regex-based parsing for SKOS concepts
         // This is basic but should work for well-formed ISBD RDF
         const conceptRegex = /<(?:skos:)?Concept[^>]*(?:rdf:about|about)=["']([^"']+)["'][^>]*>(.*?)<\/(?:skos:)?Concept>/gs;
 
         let match;
-        while ((match = conceptRegex.exec(rdfText)) !== null) {
+        while ((match = conceptRegex.exec(rdfWithoutScheme)) !== null) {
             const uri = match[1];
             const conceptContent = match[2];
 
@@ -417,7 +463,8 @@ class ISBDComparisonTool {
                     uri: sheetConcept.uri,
                     prefLabel: sheetConcept.prefLabel,
                     issue: 'Not found in RDF',
-                    rowIndex: sheetConcept.rowIndex
+                    rowIndex: sheetConcept.rowIndex,
+                    debug: `Looking for: ${sheetConcept.uri}`
                 });
                 return;
             }
