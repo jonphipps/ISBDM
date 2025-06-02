@@ -90,3 +90,6 @@
 - This is a Docusaurus v3.8 site
 - MUST CONSULT CONTEXT7 FOR LATEST DOCUMENTATION AND USE THE PROVIDED EXAMPLES RATHER THAN TRAINING
 - The site is multilingual with i18n support
+
+## Memory Context
+- Reference this document as part of the context going forward
