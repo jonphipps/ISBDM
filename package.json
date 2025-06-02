@@ -4,6 +4,7 @@
   "description": "HTML to MDX converter for IFLA ISBDM documentation",
   "main": "html-to-mdx.js",
   "private": true,
+  "type": "module",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -41,7 +42,11 @@
     "sheets:export": "ts-node scripts/sheets-export.ts",
     "sheet:create": "tsx scripts/create-sheet.ts",
     "vocabulary:create": "tsx scripts/create-vocabulary-sheet.ts",
-    "vocabulary:create-action": "tsx scripts/create-vocabulary-sheet-action.ts"
+    "vocabulary:create-action": "tsx scripts/create-vocabulary-sheet-action.ts",
+    "detect:language-mismatches": "node scripts/detect-language-mismatches.js",
+    "detect:language-mismatches-local": "node scripts/detect-language-mismatches-local.js",
+    "detect:language-mismatches-skos": "node scripts/detect-language-mismatches-skos.js",
+    "check:language-tags": "node scripts/check-mediatype-languages.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
@@ -81,6 +86,7 @@
     "js-yaml": "^4.1.0",
     "jsdom": "^26.1.0",
     "jsonwebtoken": "^9.0.2",
+    "langdetect": "^0.2.1",
     "lru-cache": "^11.1.0",
     "mermaid": "^11.6.0",
     "openai": "^4.103.0",
@@ -108,6 +114,7 @@
     "@types/jest-axe": "^3.5.9",
     "@types/js-yaml": "^4.0.9",
     "@types/jsdom": "^21.1.7",
+    "@types/langdetect": "^0",
     "@types/react": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.33.0",
     "@typescript-eslint/parser": "^8.33.0",

@@ -11,7 +11,8 @@
  * SPREADSHEET_ID=1_QI2DqNomn0jCqSdjOxCZVF6wxz6FuRuIKBMweaGmfQ
  */
 
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Use native fetch (Node.js 18+)
 const fetch = globalThis.fetch;
@@ -598,7 +599,13 @@ async function runISBDComparison() {
 }
 
 // Run if this file is executed directly
-if (require.main === module) {
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+if (import.meta.url === `file://${process.argv[1]}`) {
     runISBDComparison()
         .then(results => {
             console.log('\n🎉 Comparison completed successfully!');
@@ -610,4 +617,4 @@ if (require.main === module) {
         });
 }
 
-module.exports = { ISBDComparisonTool, runISBDComparison };
+export { ISBDComparisonTool, runISBDComparison };

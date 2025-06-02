@@ -47,3 +47,4 @@ tasks.json
 tasks/ 
 **/.claude/settings.local.json
 /.yarn/.cache/*
+/tmp/

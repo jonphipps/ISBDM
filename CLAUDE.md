@@ -81,6 +81,7 @@
 
 ## Package Management
 - Always use yarn v2+ (berry) instead of npm
+- Always use yarn to manage node packages
 
 ## Development Tips
 - When running 'yarn start', set the timeout to 30 seconds instead of 120
