@@ -1,0 +1,379 @@
+.editorMain {
+  padding: 2rem 0;
+  min-height: calc(100vh - var(--ifm-navbar-height));
+  background: var(--ifm-background-color);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.dashboardContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.quickActions {
+  margin-bottom: 3rem;
+}
+.quickActions h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.actionCard {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.actionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+.actionCard .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.actionCard h3 {
+  color: var(--ifm-heading-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.actionCard p {
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.activeProjects {
+  margin-bottom: 3rem;
+}
+.activeProjects h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.projectList {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.projectCard {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+.projectCard:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.projectHeader h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--ifm-heading-color);
+}
+
+.status {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+  background: var(--ifm-color-info-contrast-background);
+  color: var(--ifm-color-info-contrast-foreground);
+}
+.status.review {
+  background: var(--ifm-color-warning-contrast-background);
+  color: var(--ifm-color-warning-contrast-foreground);
+}
+.status.published {
+  background: var(--ifm-color-success-contrast-background);
+  color: var(--ifm-color-success-contrast-foreground);
+}
+
+.projectMeta {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+.projectMeta span {
+  display: flex;
+  align-items: center;
+}
+
+.projectActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn, .btnSecondary {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background: var(--ifm-color-primary);
+  color: white;
+}
+.btn:hover, .btnSecondary:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+}
+.btnSecondary:hover {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.workflowSection {
+  margin-bottom: 3rem;
+}
+.workflowSection h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.workflowCard {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+.workflowCard h3 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--ifm-heading-color);
+}
+
+.workflowCount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+}
+
+.workflowList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+.workflowList li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+.workflowList li:last-child {
+  border-bottom: none;
+}
+
+.time {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.viewAll {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+.translationStats {
+  margin-bottom: 1rem;
+}
+
+.langProgress {
+  display: grid;
+  grid-template-columns: 80px 1fr 40px;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.progressBar {
+  background: var(--ifm-color-emphasis-200);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--ifm-color-primary);
+  transition: width 0.3s ease;
+}
+
+.activityList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+.activityList li {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+.activityList li:last-child {
+  border-bottom: none;
+}
+
+.activityIcon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.activityList strong {
+  display: block;
+  color: var(--ifm-heading-color);
+  font-size: 0.95rem;
+}
+
+.activityList span {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.toolsSection {
+  margin-bottom: 3rem;
+}
+.toolsSection h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.toolCard {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.toolCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+.toolCard h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--ifm-heading-color);
+}
+.toolCard p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.toolIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme=dark] .actionCard:hover,
+[data-theme=dark] .toolCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+[data-theme=dark] .projectCard,
+[data-theme=dark] .workflowCard,
+[data-theme=dark] .actionCard,
+[data-theme=dark] .toolCard {
+  background: var(--ifm-background-surface-color);
+}
+[data-theme=dark] .status.review {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+[data-theme=dark] .status.published {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 0 1rem;
+  }
+  .header h1 {
+    font-size: 2rem;
+  }
+  .actionGrid {
+    grid-template-columns: 1fr;
+  }
+  .workflowGrid {
+    grid-template-columns: 1fr;
+  }
+  .projectMeta {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .projectActions {
+    flex-wrap: wrap;
+  }
+}
+
+/*# sourceMappingURL=styles.module.css.map */
