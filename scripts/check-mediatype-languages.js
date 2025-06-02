@@ -345,11 +345,21 @@ async function checkAllSheets() {
                     const declaredLang = langMatch[1];
                     const text = value.trim();
                     
-                    // Skip short text or technical/structured text
-                    if (text.length < (useAI ? 25 : 15)) continue; // Higher threshold for AI to save API calls
+                    // Check for obvious script mismatches first (bypass length threshold)
+                    const isChinese = /[\u4e00-\u9fa5]/.test(text);
+                    const isCyrillic = /[\u0400-\u04FF]/.test(text);
+                    const isArabic = /[\u0600-\u06FF]/.test(text);
                     
-                    // Skip text that looks like technical labels or structured data
-                    if (isLikelyTechnicalText(text)) continue;
+                    const hasScriptMismatch = 
+                        (isChinese && declaredLang !== 'zh') ||
+                        (isCyrillic && !['ru', 'bg', 'sr', 'mk', 'uk'].includes(declaredLang)) ||
+                        (isArabic && !['ar', 'fa', 'ur'].includes(declaredLang));
+                    
+                    // Skip short text unless it's a script mismatch or technical/structured text
+                    if (!hasScriptMismatch && text.length < (useAI ? 25 : 15)) continue; // Higher threshold for AI to save API calls
+                    
+                    // Skip text that looks like technical labels or structured data (unless script mismatch)
+                    if (!hasScriptMismatch && isLikelyTechnicalText(text)) continue;
                     
                     // Detect language
                     try {
@@ -382,22 +392,13 @@ async function checkAllSheets() {
                             if (text.length < 50) confidenceThreshold = 0.92;
                         }
                         
-                        // Check for mismatches with high confidence
-                        if (confidence > confidenceThreshold) {
-                                // Special checks for obvious script mismatches
-                                const isChinese = /[\u4e00-\u9fa5]/.test(text);
-                                const isCyrillic = /[\u0400-\u04FF]/.test(text);
-                                const isArabic = /[\u0600-\u06FF]/.test(text);
-                                
+                        // Check for mismatches with high confidence or script mismatches
+                        if (confidence > confidenceThreshold || hasScriptMismatch) {
                                 // Only report if there's a clear mismatch
                                 let shouldReport = false;
                                 
-                                // Always report script mismatches (high confidence)
-                                if (isChinese && declaredLang !== 'zh') {
-                                    shouldReport = true;
-                                } else if (isCyrillic && !['ru', 'bg', 'sr', 'mk', 'uk'].includes(declaredLang)) {
-                                    shouldReport = true;
-                                } else if (isArabic && !['ar', 'fa', 'ur'].includes(declaredLang)) {
+                                // Always report script mismatches (regardless of confidence)
+                                if (hasScriptMismatch) {
                                     shouldReport = true;
                                 } else if (!isChinese && !isCyrillic && !isArabic && 
                                           detectedLang !== declaredLang && 
