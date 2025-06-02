@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { VocabularyTable } from '../../components/global/VocabularyTable';
 import { expect, describe, it, vi } from 'vitest';
 
@@ -66,7 +66,8 @@ describe('VocabularyTable Profile-Based Validation', () => {
       );
 
       // Should not show validation errors for repeatable properties with arrays
-      expect(screen.queryByText('CSV Data Quality Issues')).not.toBeInTheDocument();
+      // Should not show error badge for valid data
+      expect(screen.queryByText(/validation issue.*found/)).not.toBeInTheDocument();
     });
 
     it('shows error for array notation on non-repeatable properties', () => {
@@ -88,7 +89,10 @@ describe('VocabularyTable Profile-Based Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
       expect(screen.getByText(/Property "rdf:type" is not repeatable/)).toBeInTheDocument();
     });
   });
@@ -116,7 +120,10 @@ describe('VocabularyTable Profile-Based Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
       expect(screen.getByText(/Missing required skos:prefLabel for some languages/)).toBeInTheDocument();
       expect(screen.getByText(/Languages without prefLabel: es/)).toBeInTheDocument();
     });
@@ -145,7 +152,10 @@ describe('VocabularyTable Profile-Based Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
       expect(screen.getByText(/Missing skos:prefLabel@fr in 2 row\(s\)/)).toBeInTheDocument();
     });
   });
@@ -171,7 +181,10 @@ describe('VocabularyTable Profile-Based Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
       expect(screen.getByText(/Unknown column: "custom:property"/)).toBeInTheDocument();
       expect(screen.getByText(/Unknown column: "unknown:field"/)).toBeInTheDocument();
     });
@@ -196,7 +209,8 @@ describe('VocabularyTable Profile-Based Validation', () => {
       );
 
       // Validation section should not be shown
-      expect(screen.queryByText('CSV Data Quality Issues')).not.toBeInTheDocument();
+      // Should not show error badge for valid data
+      expect(screen.queryByText(/validation issue.*found/)).not.toBeInTheDocument();
     });
 
     it('shows validation errors when showCSVErrors is true', () => {
@@ -217,7 +231,10 @@ describe('VocabularyTable Profile-Based Validation', () => {
       );
 
       // Validation section should be shown
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
     });
   });
 
@@ -250,7 +267,8 @@ describe('VocabularyTable Profile-Based Validation', () => {
       );
 
       // Should not show validation issues for profile-compliant data
-      expect(screen.queryByText('CSV Data Quality Issues')).not.toBeInTheDocument();
+      // Should not show error badge for valid data
+      expect(screen.queryByText(/validation issue.*found/)).not.toBeInTheDocument();
     });
   });
 });

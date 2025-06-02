@@ -4,7 +4,6 @@
   "description": "HTML to MDX converter for IFLA ISBDM documentation",
   "main": "html-to-mdx.js",
   "private": true,
-  "type": "module",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

@@ -264,27 +264,37 @@ export function VocabularyTable({
         )}
       </div>
 
-      {/* Show CSV validation issues */}
+      {/* Show CSV validation issues as collapsible error badge */}
       {resolvedShowCSVErrors && csvValidation && csvValidation.issues.length > 0 && (
-        <div className={styles.validationSection}>
-          <h4 className={styles.validationHeader}>CSV Data Quality Issues</h4>
-          <div className={styles.validationIssues}>
-            {csvValidation.issues.map((issue, index) => (
-              <div 
-                key={index} 
-                className={`${styles.validationIssue} ${styles[issue.type]}`}
-              >
-                <span className={styles.issueType}>
-                  {issue.type === 'error' ? '❌ Error' : '⚠️ Warning'}:
-                </span>
-                <span className={styles.issueMessage}>{issue.message}</span>
-                {issue.details && (
-                  <div className={styles.issueDetails}>{issue.details}</div>
-                )}
-              </div>
-            ))}
+        <details className={styles.errorBadgeContainer}>
+          <summary className={`${styles.errorBadge} ${csvValidation.issues.some(issue => issue.type === 'error') ? styles.errorBadgeError : styles.errorBadgeWarning}`}>
+            <span className={styles.errorBadgeIcon}>
+              {csvValidation.issues.some(issue => issue.type === 'error') ? '❌' : '⚠️'}
+            </span>
+            <span className={styles.errorBadgeText}>
+              {csvValidation.issues.length} validation issue{csvValidation.issues.length > 1 ? 's' : ''} found
+            </span>
+            <span className={styles.errorBadgeChevron}>▼</span>
+          </summary>
+          <div className={styles.errorBadgeContent}>
+            <div className={styles.validationIssues}>
+              {csvValidation.issues.map((issue, index) => (
+                <div 
+                  key={index} 
+                  className={`${styles.validationIssue} ${styles[issue.type]}`}
+                >
+                  <span className={styles.issueType}>
+                    {issue.type === 'error' ? '❌ Error' : '⚠️ Warning'}:
+                  </span>
+                  <span className={styles.issueMessage}>{issue.message}</span>
+                  {issue.details && (
+                    <div className={styles.issueDetails}>{issue.details}</div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </details>
       )}
 
       {/* Show CSV loading state */}

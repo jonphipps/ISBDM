@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { VocabularyTable } from '../../components/global/VocabularyTable';
 import { expect, describe, it, vi } from 'vitest';
 
@@ -63,7 +63,13 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge instead of direct text
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      
+      // Expand the details to see the errors
+      fireEvent.click(errorBadge);
+      
       expect(screen.getByText(/Property "rdf:type" is not repeatable/)).toBeInTheDocument();
     });
   });
@@ -87,7 +93,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       expect(screen.getByText(/Missing URI in 1 row/)).toBeInTheDocument();
     });
 
@@ -110,7 +120,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       // Now shows per-language errors
       expect(screen.getByText(/Missing skos:prefLabel@en in 1 row/)).toBeInTheDocument();
       expect(screen.getByText(/Missing skos:prefLabel@fr in 1 row/)).toBeInTheDocument();
@@ -133,7 +147,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       expect(screen.getByText(/Missing "skos:definition" column/)).toBeInTheDocument();
     });
   });
@@ -162,7 +180,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       expect(screen.getByText(/Inconsistent language coverage/)).toBeInTheDocument();
     });
 
@@ -189,7 +211,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       expect(screen.getByText(/1 row\(s\) with inconsistent language data/)).toBeInTheDocument();
     });
   });
@@ -213,7 +239,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      expect(screen.getByText('CSV Data Quality Issues')).toBeInTheDocument();
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       expect(screen.getByText(/Found 1 invalid URI/)).toBeInTheDocument();
     });
   });
@@ -247,8 +277,8 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      // Should not show validation section at all
-      expect(screen.queryByText('CSV Data Quality Issues')).not.toBeInTheDocument();
+      // Should not show error badge at all
+      expect(screen.queryByText(/validation issue.*found/)).not.toBeInTheDocument();
     });
   });
 
@@ -281,13 +311,18 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
-      const validationSection = screen.getByText('CSV Data Quality Issues').parentElement!;
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
       
       // Should show multiple issues
-      expect(validationSection).toHaveTextContent(/Missing URI/);
-      expect(validationSection).toHaveTextContent(/Missing skos:prefLabel@/); // Now shows per-language
-      expect(validationSection).toHaveTextContent(/invalid URI/);
-      expect(validationSection).toHaveTextContent(/2 row\(s\) with inconsistent language data/);
+      expect(screen.getByText(/Missing URI/)).toBeInTheDocument();
+      // Use getAllByText since there are multiple prefLabel errors
+      const prefLabelErrors = screen.getAllByText(/Missing skos:prefLabel@/);
+      expect(prefLabelErrors.length).toBeGreaterThan(0); // Should have at least one prefLabel error
+      expect(screen.getByText(/invalid URI/)).toBeInTheDocument();
+      expect(screen.getByText(/2 row\(s\) with inconsistent language data/)).toBeInTheDocument();
     });
   });
 
@@ -308,6 +343,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       const errorElement = screen.getByText(/❌ Error/);
       expect(errorElement).toBeInTheDocument();
       // Check for CSS module class pattern
@@ -331,6 +371,11 @@ describe('VocabularyTable CSV Validation', () => {
         />
       );
 
+      // Check for error badge and expand it
+      const errorBadge = screen.getByText(/validation issue.*found/);
+      expect(errorBadge).toBeInTheDocument();
+      fireEvent.click(errorBadge);
+      
       const warningElement = screen.getByText(/⚠️ Warning/);
       expect(warningElement).toBeInTheDocument();
       // Check for CSS module class pattern
@@ -352,8 +397,8 @@ describe('VocabularyTable CSV Validation', () => {
 
       render(<VocabularyTable {...conceptsData} />);
 
-      // Should not show validation section for non-CSV data
-      expect(screen.queryByText('CSV Data Quality Issues')).not.toBeInTheDocument();
+      // Should not show error badge for non-CSV data
+      expect(screen.queryByText(/validation issue.*found/)).not.toBeInTheDocument();
     });
   });
 });

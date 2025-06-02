@@ -1,0 +1,82 @@
+---
+id: vocabulary-error-badge-demo
+title: Vocabulary Error Badge Demo
+description: Demonstration of the VocabularyTable error badge feature
+sidebar_label: Error Badge Demo
+---
+
+# Vocabulary Error Badge Demo
+
+This page demonstrates the new error badge feature for the VocabularyTable component.
+
+## Error Badge Feature
+
+The VocabularyTable component now includes a subtle error badge that appears at the top of the vocabulary when there are CSV validation issues. The badge:
+
+- Shows as a small, rounded badge with an appropriate icon (❌ for errors, ⚠️ for warnings)
+- Displays the count of validation issues
+- Uses HTML `<details>` and `<summary>` elements for accessibility
+- Can be clicked to expand and show detailed error information
+- Automatically styles differently for errors vs warnings
+- Works in both light and dark modes
+
+## How to Enable
+
+Set `showCSVErrors={true}` on the VocabularyTable component:
+
+```jsx
+<VocabularyTable 
+  csvFile="/data/CSV/your-file.csv"
+  showCSVErrors={true}
+  // ... other props
+/>
+```
+
+## Global Configuration
+
+You can also enable error display globally in `docusaurus.config.ts`:
+
+```typescript
+customFields: {
+  vocabularyDefaults: {
+    showCSVErrors: true, // Enable by default for all vocabularies
+    // ... other defaults
+  }
+}
+```
+
+## Demo with Real CSV Data
+
+The sensory specification vocabulary includes comprehensive validation:
+
+<VocabularyTable 
+  vocabularyId="sensory-specification-errors"
+  title="Sensory Specification with Error Display"
+  description="Example showing error badge functionality"
+  csvFile="/data/CSV/sensory-specification.csv"
+  showTitle={true}
+  defaultLanguage="en"
+  showCSVErrors={true}
+/>
+
+## Visual Design
+
+The error badge features:
+
+- **Subtle Design**: Small, rounded badge that doesn't dominate the interface
+- **Contextual Colors**: Error badges use red/pink colors, warning badges use yellow/amber
+- **Interactive Feedback**: Slight hover animation and focus states for accessibility
+- **Collapsible Details**: Click to expand/collapse detailed error information
+- **Dark Mode Support**: Automatically adapts colors for dark theme
+
+## Technical Implementation
+
+The error badge uses:
+
+- HTML5 `<details>` and `<summary>` elements for semantic collapsible content
+- CSS transitions for smooth expand/collapse animations
+- Accessibility features including proper ARIA attributes
+- CSS modules for component-scoped styling
+- TypeScript for type safety
+
+This feature helps vocabulary maintainers quickly identify and address data quality issues while keeping the interface clean and user-friendly.
