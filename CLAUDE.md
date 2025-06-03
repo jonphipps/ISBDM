@@ -35,6 +35,7 @@
 - Include tests for basic rendering, props variations, and accessibility
 - Use jest-axe for accessibility testing
 - Run all tests before submitting PRs
+- Always put test output into the tmp folder
 
 ### Testing Toolchain
 | Test Type | Tools | Frequency | Execution Time |
