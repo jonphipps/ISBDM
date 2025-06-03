@@ -90,10 +90,17 @@ async function loadDctapProfile(dctapPath: string): Promise<Map<string, boolean>
     }
   } catch (error) {
     console.error(`Warning: Could not load DCTAP profile from ${dctapPath}:`, error);
-    // Set defaults for known repeatable properties
+    // Set defaults for known repeatable properties (from context files with @container: @language)
+    // Note: skos:prefLabel is excluded as it's unique per language (not repeatable within language)
     repeatableProperties.set(expandCurie('skos:definition'), true);
     repeatableProperties.set(expandCurie('skos:scopeNote'), true);
     repeatableProperties.set(expandCurie('rdfs:label'), true);
+    repeatableProperties.set(expandCurie('skos:altLabel'), true);
+    repeatableProperties.set(expandCurie('skos:changeNote'), true);
+    repeatableProperties.set(expandCurie('skos:editorialNote'), true);
+    repeatableProperties.set(expandCurie('skos:historyNote'), true);
+    repeatableProperties.set(expandCurie('skos:example'), true);
+    repeatableProperties.set(expandCurie('skos:notation'), true);
   }
   
   return repeatableProperties;
@@ -540,8 +547,10 @@ function generateCsvHeaders(
     for (const lang of sortedLangs) {
       const maxCount = langCounts.get(lang)!;
       
-      if (isRepeatable && maxCount > 1) {
-        for (let i = 0; i < maxCount; i++) {
+      if (isRepeatable) {
+        // Always add [0] index for repeatable properties, even with single values
+        const actualMaxCount = Math.max(maxCount, 1);
+        for (let i = 0; i < actualMaxCount; i++) {
           const header = lang ? `${curie}@${lang}[${i}]` : `${curie}[${i}]`;
           headers.push(header);
         }
@@ -626,6 +635,13 @@ program
             [expandCurie('skos:definition'), true],
             [expandCurie('skos:scopeNote'), true],
             [expandCurie('rdfs:label'), true],
+            // Note: skos:prefLabel excluded - unique per language (not repeatable within language)
+            [expandCurie('skos:altLabel'), true],
+            [expandCurie('skos:changeNote'), true],
+            [expandCurie('skos:editorialNote'), true],
+            [expandCurie('skos:historyNote'), true],
+            [expandCurie('skos:example'), true],
+            [expandCurie('skos:notation'), true],
           ]);
       
       // Parse RDF file
