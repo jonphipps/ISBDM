@@ -50,7 +50,11 @@
     "check:language-tags:ai": "node scripts/check-mediatype-languages.mjs --ai",
     "check:language-tags:ai:md": "node scripts/check-mediatype-languages.mjs --ai --markdown",
     "check:language-tags:ai:test": "node scripts/check-mediatype-languages.mjs --ai --test",
-    "check:language-tags:help": "node scripts/check-mediatype-languages.mjs --help"
+    "check:language-tags:help": "node scripts/check-mediatype-languages.mjs --help",
+    "compare:vocabulary": "node scripts/vocabulary-comparison.mjs",
+    "compare:vocabulary:help": "node scripts/vocabulary-comparison.mjs --help",
+    "compare:vocabulary:md": "node scripts/vocabulary-comparison.mjs --markdown",
+    "compare:vocabulary:validate": "node scripts/vocabulary-comparison.mjs --skip-rdf-check --markdown"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
