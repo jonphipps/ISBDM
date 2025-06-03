@@ -506,6 +506,53 @@ function extractResourceData(store: Store): Map<string, ResourceData> {
   return resources;
 }
 
+function filterContainerResources(resources: Map<string, ResourceData>): Map<string, ResourceData> {
+  const filtered = new Map<string, ResourceData>();
+  
+  for (const [uri, resource] of resources) {
+    // Check if this resource has a type that indicates it's a container
+    const rdfTypeProperty = expandCurie('rdf:type');
+    const types = resource.properties.get(rdfTypeProperty);
+    
+    if (types) {
+      const typeValues = types.map(t => t.value);
+      
+      // Filter out ConceptSchemes and other container types
+      if (typeValues.includes('skos:ConceptScheme') || 
+          typeValues.includes(expandCurie('skos:ConceptScheme'))) {
+        console.error(`Filtered out ConceptScheme: ${toCurie(uri)}`);
+        continue;
+      }
+    }
+    
+    // Also filter out resources that appear to be ElementSets or namespaces
+    // (typically end with / and have no specific type or have container-like properties)
+    if (uri.endsWith('/') || uri.endsWith('#')) {
+      const hasTopConcept = resource.properties.has(expandCurie('skos:hasTopConcept'));
+      const hasTitle = resource.properties.has(expandCurie('dc:title'));
+      const hasNoSpecificType = !resource.properties.has(rdfTypeProperty) || 
+                                resource.properties.get(rdfTypeProperty)?.length === 0;
+      
+      // If it looks like a container (has top concepts, has title but no specific type)
+      if (hasTopConcept || (hasTitle && hasNoSpecificType)) {
+        console.error(`Filtered out container resource: ${toCurie(uri)}`);
+        continue;
+      }
+    }
+    
+    // Filter out status/metadata concepts that aren't the main content
+    if (uri.includes('RegStatus') || uri.includes('/uri/')) {
+      console.error(`Filtered out metadata resource: ${toCurie(uri)}`);
+      continue;
+    }
+    
+    // Keep this resource
+    filtered.set(uri, resource);
+  }
+  
+  return filtered;
+}
+
 function generateCsvHeaders(
   resources: Map<string, ResourceData>,
   repeatableProperties: Map<string, boolean>
@@ -648,8 +695,12 @@ program
       const store = await parseRdfFile(rdfFile, options.format);
       
       // Extract resource data
-      const resources = extractResourceData(store);
-      console.error(`Found ${resources.size} resources`);
+      const allResources = extractResourceData(store);
+      console.error(`Found ${allResources.size} total resources`);
+      
+      // Filter out container resources (ConceptSchemes, ElementSets, etc.)
+      const resources = filterContainerResources(allResources);
+      console.error(`After filtering: ${resources.size} resources (filtered out ${allResources.size - resources.size} containers)`);
       
       // Generate CSV
       const headers = generateCsvHeaders(resources, repeatableProperties);
