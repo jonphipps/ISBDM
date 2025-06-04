@@ -14,7 +14,6 @@ import VocabularyTable from '@site/src/components/global/VocabularyTable';
 
 // Import both the basic ElementReference and the wrapper
 import ElementReference from '@site/src/components/global/ElementReference';
-import ElementReferenceWrapper from '@site/src/components/global/ElementReferenceWrapper';
 
 // Export the enhanced MDX components
 export default {
