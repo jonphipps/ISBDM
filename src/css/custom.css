@@ -1047,3 +1047,105 @@ h1 {
     border-left-width: 6px !important;
   }
 }
+
+/* Fix navbar dropdown arrow wrapping */
+.navbar__item.dropdown .navbar__link {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Ensure the dropdown caret stays inline */
+.navbar__item.dropdown .navbar__link:after {
+  display: inline-block;
+  margin-left: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Alternative fix using flexbox */
+.navbar__item.dropdown > .navbar__link {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Ensure dropdown toggle text doesn't wrap */
+.navbar__item.dropdown .navbar__link > span {
+  white-space: nowrap;
+}
+
+/* Fix for mobile view if needed */
+@media (max-width: 996px) {
+  .navbar__item.dropdown .navbar__link {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Fix dark mode toggle visibility */
+.navbar__items--right .react-toggle {
+  background-color: var(--ifm-color-emphasis-200) !important;
+}
+
+/* Dark mode toggle track */
+[data-theme='dark'] .navbar__items--right .react-toggle-track {
+  background-color: #4b5563 !important;
+}
+
+[data-theme='light'] .navbar__items--right .react-toggle-track {
+  background-color: #e5e7eb !important;
+}
+
+/* Dark mode toggle thumb */
+.navbar__items--right .react-toggle-thumb {
+  border: 2px solid var(--ifm-color-emphasis-400) !important;
+  background-color: #ffffff !important;
+}
+
+/* Dark mode toggle icons */
+.navbar__items--right .react-toggle-track-check,
+.navbar__items--right .react-toggle-track-x {
+  opacity: 1 !important;
+}
+
+/* Ensure moon icon is visible in dark mode */
+[data-theme='dark'] .navbar__items--right .react-toggle-track-check {
+  color: #fbbf24 !important; /* Golden yellow for moon */
+}
+
+/* Ensure sun icon is visible in light mode */
+[data-theme='light'] .navbar__items--right .react-toggle-track-x {
+  color: #f59e0b !important; /* Orange for sun */
+}
+
+/* Alternative approach using the toggle wrapper */
+.navbar__toggle {
+  background-color: transparent !important;
+}
+
+/* Ensure the color mode toggle is always visible */
+[data-theme='dark'] .navbar__toggle {
+  color: var(--ifm-navbar-link-color) !important;
+}
+
+/* If using the clean-switch class */
+.clean-btn.toggleButton_gllP {
+  color: var(--ifm-navbar-link-color) !important;
+  opacity: 1 !important;
+}
+
+[data-theme='dark'] .clean-btn.toggleButton_gllP {
+  color: #e5e7eb !important;
+}
+
+/* Hover states */
+.navbar__items--right .react-toggle:hover .react-toggle-track {
+  box-shadow: 0 0 0 3px rgba(253, 185, 19, 0.2) !important; /* IFLA gold glow */
+}
+
+/* Focus states for accessibility */
+.navbar__items--right .react-toggle:focus-within .react-toggle-track {
+  box-shadow: 0 0 0 3px rgba(253, 185, 19, 0.4) !important;
+}
