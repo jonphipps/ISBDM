@@ -58,8 +58,7 @@
     "rdf:to-csv": "tsx scripts/rdf-to-csv.ts",
     "rdf:folder-to-csv": "tsx scripts/rdf-folder-to-csv.ts",
     "check:languages": "tsx scripts/check-missing-languages.ts",
-    "check:languages:help": "tsx scripts/check-missing-languages.ts --help",
-    "convert:fullimages": "tsx scripts/convert-fullimages-to-mdx.ts"
+    "check:languages:help": "tsx scripts/check-missing-languages.ts --help"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.52.0",
