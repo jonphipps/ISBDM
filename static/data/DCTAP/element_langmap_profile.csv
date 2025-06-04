@@ -30,7 +30,7 @@ owl:equivalentProperty,Equivalent Property,false,true,IRI,,,,OWL equivalent prop
 owl:inverseOf,Inverse Of,false,true,IRI,,,,OWL inverse property
 owl:propertyDisjointWith,Property Disjoint With,false,true,IRI,,,,OWL property disjoint with
 owl:sameAs,Same As,false,true,IRI,,,,OWL same as property
-skos:prefLabel,Preferred Label,true,true,LITERAL,rdf:langString,maxPerLanguage:1,languageTag,"SKOS preferred label - mandatory, max one per language"
+skos:prefLabel,Preferred Label,false,true,LITERAL,rdf:langString,maxPerLanguage:1,languageTag,"SKOS preferred label - not mandatory for elements, max one per language"
 skos:altLabel,Alternative Label,false,true,LITERAL,rdf:langString,,,SKOS alternative label with language container
 skos:broadMatch,Broad Match,false,true,IRI,,,,SKOS broad match relationship
 skos:closeMatch,Close Match,false,true,IRI,,,,SKOS close match relationship
