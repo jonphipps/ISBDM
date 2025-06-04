@@ -14,6 +14,9 @@ const { namedNode, literal, quad } = DataFactory;
 interface DctapProperty {
   propertyID: string;
   repeatable?: string;
+  valueDataType?: string;
+  valueConstraint?: string;
+  valueConstraintType?: string;
 }
 
 interface PropertyValue {
@@ -32,8 +35,10 @@ const DEFAULT_PREFIXES: Record<string, string> = {
   rdfs: 'http://www.w3.org/2000/01/rdf-schema#',
   rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
   dcterms: 'http://purl.org/dc/terms/',
+  dc: 'http://purl.org/dc/elements/1.1/',
   owl: 'http://www.w3.org/2002/07/owl#',
   xsd: 'http://www.w3.org/2001/XMLSchema#',
+  reg: 'http://metadataregistry.org/uri/profile/regap/',
 };
 
 // This will be populated with prefixes from the parsed RDF file
@@ -68,8 +73,16 @@ function toCurie(uri: string): string {
   return uri;
 }
 
-async function loadDctapProfile(dctapPath: string): Promise<Map<string, boolean>> {
+interface DctapProfileData {
+  repeatableProperties: Map<string, boolean>;
+  urlLiteralProperties: Map<string, boolean>;
+  maxPerLanguageProperties: Map<string, number>;
+}
+
+async function loadDctapProfile(dctapPath: string): Promise<DctapProfileData> {
   const repeatableProperties = new Map<string, boolean>();
+  const urlLiteralProperties = new Map<string, boolean>();
+  const maxPerLanguageProperties = new Map<string, number>();
   
   try {
     const csvContent = fs.readFileSync(dctapPath, 'utf-8');
@@ -77,6 +90,7 @@ async function loadDctapProfile(dctapPath: string): Promise<Map<string, boolean>
       columns: true,
       skip_empty_lines: true,
       trim: true,
+      comment: '#',
     }) as DctapProperty[];
     
     for (const record of records) {
@@ -86,12 +100,27 @@ async function loadDctapProfile(dctapPath: string): Promise<Map<string, boolean>
                            record.repeatable === '1';
         const expandedUri = expandCurie(record.propertyID);
         repeatableProperties.set(expandedUri, isRepeatable);
+        
+        // Check if this property should remain as a URL literal (not converted to CURIE)
+        if (record.valueDataType === 'xsd:anyURI' || record.valueDataType === 'anyURI') {
+          urlLiteralProperties.set(expandedUri, true);
+        }
+        
+        // Check for maxPerLanguage constraint
+        if (record.valueConstraint && record.valueConstraint.startsWith('maxPerLanguage:')) {
+          const maxCount = parseInt(record.valueConstraint.split(':')[1]);
+          if (!isNaN(maxCount)) {
+            maxPerLanguageProperties.set(expandedUri, maxCount);
+            if (maxCount === 1) {
+              console.error(`Property ${record.propertyID} has maxPerLanguage:1 constraint`);
+            }
+          }
+        }
       }
     }
   } catch (error) {
     console.error(`Warning: Could not load DCTAP profile from ${dctapPath}:`, error);
     // Set defaults for known repeatable properties (from context files with @container: @language)
-    // Note: skos:prefLabel is excluded as it's unique per language (not repeatable within language)
     repeatableProperties.set(expandCurie('skos:definition'), true);
     repeatableProperties.set(expandCurie('skos:scopeNote'), true);
     repeatableProperties.set(expandCurie('rdfs:label'), true);
@@ -101,9 +130,12 @@ async function loadDctapProfile(dctapPath: string): Promise<Map<string, boolean>
     repeatableProperties.set(expandCurie('skos:historyNote'), true);
     repeatableProperties.set(expandCurie('skos:example'), true);
     repeatableProperties.set(expandCurie('skos:notation'), true);
+    // skos:prefLabel defaults to maxPerLanguage:1
+    maxPerLanguageProperties.set(expandCurie('skos:prefLabel'), 1);
+    repeatableProperties.set(expandCurie('skos:prefLabel'), true);
   }
   
-  return repeatableProperties;
+  return { repeatableProperties, urlLiteralProperties, maxPerLanguageProperties };
 }
 
 function inferNamespaceFromURIs(uris: string[]): void {
@@ -292,8 +324,64 @@ function detectRdfFormat(filePath: string): string {
   return format;
 }
 
+async function extractPrefixesFromJsonLd(jsonldData: any): Promise<void> {
+  // Extract prefixes from the JSON-LD context
+  if (jsonldData['@context']) {
+    const context = jsonldData['@context'];
+    
+    // Handle both array and object contexts
+    const contexts = Array.isArray(context) ? context : [context];
+    
+    for (const ctx of contexts) {
+      if (typeof ctx === 'object' && ctx !== null) {
+        for (const [key, value] of Object.entries(ctx)) {
+          // Skip complex mappings and focus on simple prefix: namespace mappings
+          if (typeof value === 'string' && value.startsWith('http') && !key.startsWith('@')) {
+            if (!PREFIXES[key]) {
+              PREFIXES[key] = value;
+              console.error(`Extracted JSON-LD prefix '${key}' for namespace: ${value}`);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+function extractPrefixesFromRdfXml(filePath: string): void {
+  try {
+    const xmlContent = fs.readFileSync(filePath, 'utf-8');
+    
+    // Extract xmlns declarations from the root RDF element
+    const xmlnsRegex = /xmlns:(\w+)="([^"]+)"/g;
+    let match;
+    
+    while ((match = xmlnsRegex.exec(xmlContent)) !== null) {
+      const [, prefix, namespace] = match;
+      if (!PREFIXES[prefix]) {
+        PREFIXES[prefix] = namespace;
+        console.error(`Extracted RDF/XML prefix '${prefix}' for namespace: ${namespace}`);
+      }
+    }
+    
+    // Also extract default namespace if present
+    const defaultNsRegex = /xmlns="([^"]+)"/;
+    const defaultMatch = defaultNsRegex.exec(xmlContent);
+    if (defaultMatch) {
+      const namespace = defaultMatch[1];
+      console.error(`Found default namespace: ${namespace}`);
+    }
+    
+  } catch (error) {
+    console.error('Error extracting prefixes from RDF/XML:', error);
+  }
+}
+
 async function parseJsonLdToNQuads(filePath: string): Promise<string> {
   const jsonldData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  
+  // Extract prefixes from the JSON-LD context before processing
+  await extractPrefixesFromJsonLd(jsonldData);
   
   // Determine which local context to use
   const scriptDir = __dirname;
@@ -307,7 +395,8 @@ async function parseJsonLdToNQuads(filePath: string): Promise<string> {
       const contextMappings: Record<string, string> = {
         'http://metadataregistry.org/uri/schema/Contexts/elements_langmap.jsonld': 'elements_langmap.jsonld',
         'http://metadataregistry.org/uri/schema/Contexts/concepts_langmap.jsonld': 'concepts_langmap.jsonld',
-        'http://iflastandards.info/ns/isbd/terms/Contexts/concepts_langmap.jsonld': 'concepts_langmap.jsonld'
+        'http://iflastandards.info/ns/isbd/terms/Contexts/concepts_langmap.jsonld': 'concepts_langmap.jsonld',
+        'http://iflastandards.info/ns/isbd/terms/contentqualification/Contexts/concepts_langmap.jsonld': 'concepts_langmap.jsonld'
       };
       
       if (contextMappings[url]) {
@@ -317,6 +406,10 @@ async function parseJsonLdToNQuads(filePath: string): Promise<string> {
         
         if (fs.existsSync(contextPath)) {
           const localContext = JSON.parse(fs.readFileSync(contextPath, 'utf-8'));
+          
+          // Extract prefixes from the local context file
+          await extractPrefixesFromJsonLd(localContext);
+          
           return {
             contextUrl: null,
             document: localContext,
@@ -382,12 +475,18 @@ async function parseRdfFile(filePath: string, forcedFormat?: string): Promise<St
       rdfXmlParser.on('end', () => {
         // Extract prefixes if available
         const prefixes = (rdfXmlParser as any).prefixes;
+        console.error('RDF/XML parser prefixes:', prefixes);
         if (prefixes) {
           for (const [prefix, iri] of Object.entries(prefixes)) {
             if (typeof iri === 'string') {
               PREFIXES[prefix] = iri;
+              console.error(`Extracted RDF/XML prefix '${prefix}' for namespace: ${iri}`);
             }
           }
+        } else {
+          console.error('No prefixes found in RDF/XML parser, attempting manual extraction');
+          // Try to extract prefixes from the raw XML content
+          extractPrefixesFromRdfXml(filePath);
         }
         
         console.error('Extracted prefixes from RDF file:', Object.keys(PREFIXES).join(', '));
@@ -448,7 +547,7 @@ async function parseRdfFile(filePath: string, forcedFormat?: string): Promise<St
   });
 }
 
-function extractResourceData(store: Store): Map<string, ResourceData> {
+function extractResourceData(store: Store, urlLiteralProperties: Map<string, boolean> = new Map()): Map<string, ResourceData> {
   const resources = new Map<string, ResourceData>();
   
   // Get all unique subjects (resources)
@@ -493,10 +592,17 @@ function extractResourceData(store: Store): Map<string, ResourceData> {
           language: object.language || undefined,
         });
       } else if (object.termType === 'NamedNode') {
-        // Convert URI to CURIE if possible
-        values.push({
-          value: toCurie(object.value),
-        });
+        // Check if this property should remain as a URL literal
+        if (urlLiteralProperties.has(predicate)) {
+          values.push({
+            value: object.value, // Keep as full URL
+          });
+        } else {
+          // Convert URI to CURIE if possible
+          values.push({
+            value: toCurie(object.value),
+          });
+        }
       }
     }
     
@@ -555,7 +661,8 @@ function filterContainerResources(resources: Map<string, ResourceData>): Map<str
 
 function generateCsvHeaders(
   resources: Map<string, ResourceData>,
-  repeatableProperties: Map<string, boolean>
+  repeatableProperties: Map<string, boolean>,
+  maxPerLanguageProperties: Map<string, number> = new Map()
 ): string[] {
   const headers: string[] = ['uri'];
   const propertyLanguageCounts = new Map<string, Map<string, number>>();
@@ -593,13 +700,21 @@ function generateCsvHeaders(
     
     for (const lang of sortedLangs) {
       const maxCount = langCounts.get(lang)!;
+      const maxPerLanguage = maxPerLanguageProperties.get(property);
       
       if (isRepeatable) {
-        // Always add [0] index for repeatable properties, even with single values
-        const actualMaxCount = Math.max(maxCount, 1);
-        for (let i = 0; i < actualMaxCount; i++) {
-          const header = lang ? `${curie}@${lang}[${i}]` : `${curie}[${i}]`;
+        // Check if this property has a maxPerLanguage constraint
+        if (maxPerLanguage && maxPerLanguage === 1) {
+          // For maxPerLanguage:1, don't add indices - just one value per language
+          const header = lang ? `${curie}@${lang}` : curie;
           headers.push(header);
+        } else {
+          // Always add [0] index for repeatable properties, even with single values
+          const actualMaxCount = Math.max(maxCount, 1);
+          for (let i = 0; i < actualMaxCount; i++) {
+            const header = lang ? `${curie}@${lang}[${i}]` : `${curie}[${i}]`;
+            headers.push(header);
+          }
         }
       } else {
         const header = lang ? `${curie}@${lang}` : curie;
@@ -614,7 +729,8 @@ function generateCsvHeaders(
 function generateCsvRows(
   resources: Map<string, ResourceData>,
   headers: string[],
-  repeatableProperties: Map<string, boolean>
+  repeatableProperties: Map<string, boolean>,
+  urlLiteralProperties: Map<string, boolean> = new Map()
 ): string[][] {
   const rows: string[][] = [];
   
@@ -644,9 +760,13 @@ function generateCsvRows(
           
           if (filteredValues.length > targetIndex) {
             const val = filteredValues[targetIndex].value;
-            // Convert URI values to CURIEs if possible
+            // Check if this property should remain as a URL literal
             if (val.startsWith('http://') || val.startsWith('https://')) {
-              value = toCurie(val);
+              if (urlLiteralProperties.has(property)) {
+                value = val; // Keep as full URL
+              } else {
+                value = toCurie(val); // Convert URI to CURIE
+              }
             } else {
               value = val;
             }
@@ -676,26 +796,32 @@ program
   .action(async (rdfFile: string, options) => {
     try {
       // Load DCTAP profile if provided
-      const repeatableProperties = options.profile 
+      const profileData = options.profile 
         ? await loadDctapProfile(options.profile)
-        : new Map([
-            [expandCurie('skos:definition'), true],
-            [expandCurie('skos:scopeNote'), true],
-            [expandCurie('rdfs:label'), true],
-            // Note: skos:prefLabel excluded - unique per language (not repeatable within language)
-            [expandCurie('skos:altLabel'), true],
-            [expandCurie('skos:changeNote'), true],
-            [expandCurie('skos:editorialNote'), true],
-            [expandCurie('skos:historyNote'), true],
-            [expandCurie('skos:example'), true],
-            [expandCurie('skos:notation'), true],
-          ]);
+        : {
+            repeatableProperties: new Map([
+              [expandCurie('skos:definition'), true],
+              [expandCurie('skos:scopeNote'), true],
+              [expandCurie('rdfs:label'), true],
+              // Note: skos:prefLabel excluded - unique per language (not repeatable within language)
+              [expandCurie('skos:altLabel'), true],
+              [expandCurie('skos:changeNote'), true],
+              [expandCurie('skos:editorialNote'), true],
+              [expandCurie('skos:historyNote'), true],
+              [expandCurie('skos:example'), true],
+              [expandCurie('skos:notation'), true],
+            ]),
+            urlLiteralProperties: new Map(),
+            maxPerLanguageProperties: new Map([
+              [expandCurie('skos:prefLabel'), 1]
+            ])
+          };
       
       // Parse RDF file
       const store = await parseRdfFile(rdfFile, options.format);
       
       // Extract resource data
-      const allResources = extractResourceData(store);
+      const allResources = extractResourceData(store, profileData.urlLiteralProperties);
       console.error(`Found ${allResources.size} total resources`);
       
       // Filter out container resources (ConceptSchemes, ElementSets, etc.)
@@ -703,8 +829,8 @@ program
       console.error(`After filtering: ${resources.size} resources (filtered out ${allResources.size - resources.size} containers)`);
       
       // Generate CSV
-      const headers = generateCsvHeaders(resources, repeatableProperties);
-      const rows = generateCsvRows(resources, headers, repeatableProperties);
+      const headers = generateCsvHeaders(resources, profileData.repeatableProperties, profileData.maxPerLanguageProperties);
+      const rows = generateCsvRows(resources, headers, profileData.repeatableProperties, profileData.urlLiteralProperties);
       
       // Create CSV output
       const csvData = [headers, ...rows];
