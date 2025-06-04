@@ -5,10 +5,6 @@ sidebar_label: Vocabulary - How to Document a Vocabulary
 
 *A non-technical guide to using the VocabularyTable component for documenting library metadata vocabularies*
 
-## What is a Vocabulary?
-
-A vocabulary is a collection of terms with their definitions used in library metadata. For example, a "Media Type" vocabulary might include terms like "book," "DVD," "digital file," each with clear definitions and usage notes.
-
 ## Overview: Two Ways to Create Vocabularies
 
 You can document vocabularies in two ways:
