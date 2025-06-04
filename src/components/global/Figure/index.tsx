@@ -71,21 +71,21 @@ export const Figure: React.FC<FigureProps> = ({
           )}
         >
           {caption}
+          {expandLink && (
+            <div className={styles.figureExpandLink}>
+              <a 
+                href={processedExpandLink}
+                className={clsx(
+                  'linkImage',
+                  styles.figureLink
+                )}
+                aria-label={`Expand image - view full size ${alt || caption}`}
+              >
+                {expandText}
+              </a>
+            </div>
+          )}
         </figcaption>
-        {expandLink && (
-          <figcaption className={clsx('figure-caption', styles.figureCaption)}>
-            <a 
-              href={processedExpandLink}
-              className={clsx(
-                'linkImage',
-                styles.figureLink
-              )}
-              aria-label={`Expand image - view full size ${alt || caption}`}
-            >
-              {expandText}
-            </a>
-          </figcaption>
-        )}
       </figure>
     </div>
   );
